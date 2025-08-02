@@ -1,0 +1,472 @@
+/* -------------- Fonts -------------- */
+
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 200;
+  src: url("/assets/fonts/now.thin.otf");
+}
+
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 400;
+  src: url("assets/fonts/now.light.otf");
+}
+
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 700;
+  src: url("assets/fonts/now.bold.otf");
+}
+
+/** Medium */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 500;
+  src: url("assets/fonts/now.regular.otf");
+}
+
+/** Semi Bold */
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 600;
+  src: url("assets/fonts/now.medium.otf");
+}
+
+/* -------------- Themes -------------- */
+
+:root {
+  --primary-color: #163853;
+  --primary-color-faded: #5a86b22a;
+  --secondary-color: #7091b1;
+  --font-color: #163853;
+  --font-color-alternate: #163853;
+  --font-color-codeblock: #163853;
+  --bg-color: #dddddd;
+  --bg-color-alternate: #f2f0f0;
+  --bg-color-codeblock: #333333;
+  --heading-color: #163853;
+}
+
+[data-theme="dark"] {
+  --primary-color: #163853;
+  --primary-color-faded: #94a6b9d6;
+  --secondary-color: #94a6b9d6;
+  --font-color: #ffffff;
+  --font-color-alternate: #ffffff;
+  --font-color-codeblock: #ffffff;
+  --bg-color: #181818;;
+  --bg-color-alternate: #222121;
+  --bg-color-codeblock: #222121;
+  --heading-color: #163853;
+}
+/* -------------- Main -------------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  padding-top: 50px;
+  font-size: 12pt;
+  font-family: "San Francisco", sans-serif;
+  font-weight: 450;
+}
+
+
+.custom-link {
+  color: #0c0c0c;
+  transition-duration: 0.4s;
+}
+.custom-link:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.custom-link>img {
+  filter: invert(77%) sepia(1%) saturate(0%) hue-rotate(113deg) brightness(99%) contrast(93%);
+  margin-left: 5px;
+  margin-top:-5px;
+  height:18px;
+  transition-duration: 0.4s;
+}
+.custom-link:hover>img {
+  filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(186deg) brightness(103%) contrast(101%);
+}
+
+.dot {
+  height: 7px;
+  width: 7px;
+  background-color: var(--font-color-alternate);
+  border-radius: 50%;
+  display: inline-block;
+  margin: 2px;
+}
+
+code {
+  color: var(--font-color);
+  background-color: var(--bg-color-alternate);
+}
+
+pre {
+  color: var(--font-color-codeblock);
+  background-color: var(--bg-color-codeblock);
+  border: 0;
+  font-size: 8pt;
+  width: 100%;
+  flex-grow: 1;
+  text-align: left;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+pre code {
+  white-space: inherit;
+  overflow: inherit;
+}
+
+/* -------------- Navbar -------------- */
+
+nav.navbar.navbar-inverse {
+  border: 0;
+  background-color: var(--heading-color);
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  font-size: 12pt;
+  color: white
+}
+
+/* -------------- Hero -------------- */
+
+.hero {
+  max-height: 27em;
+  height: 58vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  align-items: flex-start;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  background-color: var(--primary-color);
+}
+
+.hero h1 {
+  font-size: 6em;
+}
+
+.hero p {
+  font-size: 6.5vw;
+  max-width: 20em;
+  font-weight: 500;
+}
+
+.logo-tagline {
+  color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .hero p {
+    font-size: 3em;
+  }
+}
+
+.hero .logo-icon img {
+  width: 80%;
+  max-width: 8em;
+  text-align: center;
+  margin-top: 0.5em;
+  border: 8px solid white;
+}
+
+@media screen and (max-height: 300px) {
+  .hero .logo-both img {
+    max-width: 100%;
+    max-height: calc(100vh - 75px);
+  }
+}
+
+/* -------------- Theme-switch -------------- */
+
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+
+  padding-top: 19px;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 0.9em;
+  position: relative;
+  width: 1.8em;
+}
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #ccc;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  /* bottom: 0.05em; */
+  content: "";
+  width: 0.8em;
+  height: 0.8em;
+  /* left: 4px; */
+  position: absolute;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #66bb6a;
+}
+
+input:checked + .slider:before {
+  transform: translateX(1em);
+}
+
+.slider.round {
+  border-radius: 18px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.slider:after {
+  content: "🌓";
+  font-size: 0.8em;
+  color:rgb(255, 207, 50);
+  position: absolute;
+  top: -3px;
+  right: -20px;
+}
+
+input:checked + .slider:after {
+  content: "🌓";
+  font-size: 0.8em;
+  color:rgb(255, 207, 50);
+  position: absolute;
+  top: -3px;
+  right: -20px;
+}
+
+/* -------------- Section -------------- */
+
+section {
+  padding: 3em 0;
+}
+
+/* -------------- Section header -------------- */
+
+.section-header h2 {
+  margin-bottom: 0;
+}
+
+.section-header {
+  padding: 0.3em 0;
+  margin-bottom: 1.5em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.section-header p {
+  color: var(--font-color-alternate);
+}
+
+@media (min-width: 768px) {
+  .section-header {
+    width: 85%;
+  }
+}
+
+/* -------------- Info row -------------- */
+
+.info-row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .info-row {
+    flex-direction: row;
+    width: 85%;
+  }
+  .info-row-reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.info-row h1,
+.info-row h2,
+.info-row h3,
+.info-row h4,
+.info-row h5,
+.info-row h6 {
+  color: var(--font-color);
+  font-weight: 500;
+  margin-top: 0;
+}
+
+.info-row>.info-row-left,
+.info-row>.info-row-right {
+  flex-grow: 0;
+  flex-shrink: 0;
+  max-width: 100%;
+}
+@media (min-width: 768px) {
+  .info-row>.info-row-left,
+  .info-row>.info-row-right {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+}
+
+.info-row>div>img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.info-row b {
+  font-weight: 600;
+}
+
+.info-row-left {
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .info-row-left {
+    padding-left: 0;
+    padding-right: 1em;
+  }
+  .info-row-right {
+    padding-left: 1em;
+    padding-right: 0;
+  }
+}
+
+/* -------------- Collapser-button -------------- */
+
+.collapser {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--primary-color);
+  color: var(--font-color);
+  cursor: pointer;
+  padding-left: 18px;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition-duration: 0.4s;
+}
+
+.collapser h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.collapser:hover {
+  background-color: var(--secondary-color);
+}
+
+.collapser:before {
+  float: right;
+  content: "\002B";
+  color: var(--font-color);
+  font-size: 2em;
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+
+.active:before {
+  content: "\2212";
+  color: var(--font-color);
+  font-size: 2em;
+  font-weight: bold;
+  margin-right: 0.5em;
+}
+
+.collapsercontent {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: var(--primary-color-faded);
+}
+
+.collapsercontent .info-row {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .collapser {
+    width: 85%;
+  }
+  .collapsercontent {
+    width: 85%;
+  }
+}
+
+/* -------------- Papers table -------------- */
+
+.papers-table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.papers-table-row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 0.25em;
+  margin-bottom: 1em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  background-color: transparent;
+  border: 2px solid #5A86B2;
+  border-color: #5A86B2;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: left;
+  transition-duration: 0.4s;
+}
+
+.papers-table-row>div {
+  padding: 0.5em;
+}
+
+.papers-table-row:hover {
+  background-color: #5A86B2;
+  color: white;
+  text-decoration: none;
+}

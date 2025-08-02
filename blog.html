@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="raffael-kaas7.github.io">
+  <meta name="author" content="Raffael Kaas">
+
+  <title>Welcome | Raffael Kaas</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-right">
+        <div class="theme-switch-wrapper" style="padding-left: 1em">
+          <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+          </label>
+        </div>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse navbar-left">
+        <ul class="nav navbar-nav" style="font-weight: 400;">
+          <li><a class="custom-link" href="/#top">Home</a></li>
+          <li><a class="custom-link" href="/#about">About Me</a></li>
+          <li><a class="custom-link" href="/#blog">Blog</a></li>
+          <!-- <li><a class="custom-link" href="#projects">Projects</a></li> -->
+          <li>
+            <!-- <a class="custom-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank"><img src="assets/img/linkedin_blue.png"
+                alt="LinkedIn Icon" /></a> -->
+            <a class="custom-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank">LinkedIn</a>
+          </li>
+          <li>
+            <a class="custom-link" href="https://github.com/raffael-kaas7" target="_blank"><img src="assets/img/github.svg"
+              alt="Github Icon" /></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="logo-icon"><img src="assets/img/me.png" alt="Raffael Kaas" style="border-radius: 50%;"></p>
+      <p class="logo-tagline">Raffael Kaas</p>
+    </div>
+  </div>
+
+  <a name="blog" style="background-color: var(--bg-color-alternate);"></a>
+  <section>
+    <div class="container"></div>
+  </section>
+
+  <section style="background-color: var(--heading-color); padding: 1.5em 0; text-align: center; color: white;">
+    <!-- <a class="custom-link" href="mailto://mail@rkaas.de" style="font-weight: 400; font-size: 13pt;">
+      <img src="assets/img/envelope.svg" alt="Envelope" style="margin-top: 2px; margin-right: 2px;" />
+      mail@rkaas.com
+    </a> -->
+    <p>Raffael Kaas | Irisstr. 8 | 88097 | Eriskirch | mail@rkaas.de</p>
+  </section>
+
+  <script>
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    function switchTheme(e) {
+      if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+      else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    }
+    toggleSwitch.addEventListener('change', switchTheme, false);
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <script>
+    async function loadBlogPost() {
+      const blogContainer = document.querySelector('a[name="blog"] + section .container');
+      const blogDir = '/assets/blog/';
+  
+      // Get the query parameter from the URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const post = urlParams.get('post');
+  
+      if (!post) {
+        blogContainer.innerHTML = '<p>No blog post specified.</p>';
+        return;
+      }
+  
+      try {
+        // Fetch the Markdown content of the specified post
+        const response = await fetch(`${blogDir}${post}.md`);
+        console.log(response);
+        if (!response.ok) throw new Error('Blog post not found');
+        const markdown = await response.text();
+  
+        // Convert Markdown to HTML using marked.js
+        //console.log("typeof marked", typeof marked); // Debugging: Check if marked is loaded
+        const html = marked.parse(markdown); 
+  
+        // Display the blog post
+        const postDiv = document.createElement('div');
+        postDiv.classList.add('blog-post');
+        postDiv.innerHTML = html;
+        blogContainer.appendChild(postDiv);
+      } catch (error) {
+        console.error('Error loading blog post:', error);
+        blogContainer.innerHTML = '<p>Failed to load the blog post. Please try again later.</p>';
+      }
+    }
+  
+    // Load the blog post on page load
+    document.addEventListener('DOMContentLoaded', loadBlogPost);
+  </script>
+</body>
+</html>

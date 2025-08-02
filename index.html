@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="raffael-kaas7.github.io">
+  <meta name="author" content="Raffael Kaas">
+
+  <title>Welcome | Raffael Kaas</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-right">
+        <div class="theme-switch-wrapper" style="padding-left: 1em">
+          <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+          </label>
+        </div>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse navbar-left">
+        <ul class="nav navbar-nav" style="font-weight: 400;">
+          <li><a class="custom-link" href="#top">Home</a></li>
+          <li><a class="custom-link" href="#about">About Me</a></li>
+          <li><a class="custom-link" href="#blog">Blog</a></li>
+          <!-- <li><a class="custom-link" href="#projects">Projects</a></li> -->
+          <li>
+            <!-- <a class="custom-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank"><img src="assets/img/linkedin_blue.png"
+                alt="LinkedIn Icon" /></a> -->
+            <a class="custom-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank">LinkedIn</a>
+          </li>
+          <li>
+            <a class="custom-link" href="https://github.com/raffael-kaas7" target="_blank"><img src="assets/img/github.svg"
+              alt="Github Icon" /></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="logo-icon"><img src="assets/img/me.png" alt="Raffael Kaas" style="border-radius: 50%;"></p>
+      <p class="logo-tagline">Raffael Kaas</p>
+    </div>
+  </div>
+
+  <a name="about"></a>
+  <section class="">
+    <div class="container">
+      <div class="section-header">
+        <h2>About Me</h2>
+        <hr align="left" style="margin-top: 0; margin-bottom: 1em; height: 2px; width: 100%; border-width: 0; color: gray;
+          background-color: gray">
+        <i>
+          <p>
+            Hi, I'm Raffael – a software engineer living at Lake Constance, working in the automotive industry. 
+            I hold a Master of Engineering with a focus on autonomous systems. 
+            Over the past few years, I've worked on a wide range of complex software projects – from building my own quadrocopter during university, to launching autonomous shuttles in Rotterdam, 
+            and now developing series production software for power converters in e-mobility.
+          </p>
+          <br>
+          <p>
+            I enjoy working on Linux-based environment, using C/C++ for embedded software development and Python to make life easier. 
+            I'm comfortable with rapid prototyping using ROS and have hands-on experience with RTOS and debugging microcontrollers.
+          </p>
+          <br>
+          <p>
+            Outside of engineering, I’m usually in motion — whether I’m running, playing soccer, or lifting weights. 
+            I also have a strong interest in finance and investing, and enjoy diving into new ideas through books, travel, or meaningful conversations.
+          </p>
+        </i>
+      </div>
+    </div>
+  </section>
+
+  <!-- <a name="projects"></a>
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <h2>My current Projects</h2>
+        <hr align="left" style="margin-top: 0; margin-bottom: 1em; height: 2px; width: 100%; border-width: 0; color: gray;
+          background-color: gray">
+      </div>  
+    </div>
+  </section> -->
+
+  <a name="blog"></a>
+  <section id="blog-preview" style="background-color: var(--bg-color-alternate);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Blog</h2>
+        <hr align="left" style="margin-top: 0; margin-bottom: 1em; height: 2px; width: 100%; border-width: 0; color: gray;
+          background-color: gray">
+        <i>
+          <ul class="list-unstyled" style="text-align: left;">
+            <!-- List of blog titles with links to the full articles -->
+            <li><a href="blog.html?post=lessons-learned-in-software-engineering" class="custom-link" style="color: inherit;"># 2025-30-07 | More Than Just Coding – Some of My Lessons Learned from Building Complex Software Products</a></li>
+          </ul>
+        </i>
+      </div>
+    </div>
+  </section>
+
+  <section style="background-color: var(--heading-color); padding: 1.5em 0; text-align: center; color: white;">
+    <!-- <a class="custom-link" href="mailto://mail@rkaas.de" style="font-weight: 400; font-size: 13pt;">
+      <img src="assets/img/envelope.svg" alt="Envelope" style="margin-top: 2px; margin-right: 2px;" />
+      mail@rkaas.com
+    </a> -->
+    <p>Raffael Kaas | Irisstr. 8 | 88097 | Eriskirch | mail@rkaas.de</p>
+  </section>
+
+  <script>
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    function switchTheme(e) {
+      if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+      else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    }
+    toggleSwitch.addEventListener('change', switchTheme, false);
+  </script>
+
+</body>
+
+</html>
