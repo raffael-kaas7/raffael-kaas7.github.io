@@ -34,7 +34,7 @@
 
 /* -------------- Themes -------------- */
 
-:root {
+[data-theme="light"] {
   --primary-color: #163853;
   --primary-color-faded: #5a86b22a;
   --secondary-color: #7091b1;

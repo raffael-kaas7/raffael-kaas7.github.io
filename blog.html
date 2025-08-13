@@ -68,14 +68,29 @@
 
   <script>
     const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+  
+    // Function to switch themes
     function switchTheme(e) {
       if (e.target.checked) {
         document.documentElement.setAttribute('data-theme', 'dark');
-      }
-      else {
+        localStorage.setItem('theme', 'dark'); // Save theme to localStorage
+      } else {
         document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light'); // Save theme to localStorage
       }
     }
+  
+    // Load the saved theme on page load
+    const currentTheme = localStorage.getItem('theme') || 'light'; // Default to 'light' if no theme is saved
+    document.documentElement.setAttribute('data-theme', currentTheme);
+  
+    // Update the toggle switch state based on the saved theme
+    if (currentTheme === 'dark') {
+      toggleSwitch.checked = true;
+    } else {
+      toggleSwitch.checked = false;
+    }
+  
     toggleSwitch.addEventListener('change', switchTheme, false);
   </script>
 
