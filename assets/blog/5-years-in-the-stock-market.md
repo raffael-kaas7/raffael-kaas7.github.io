@@ -46,7 +46,7 @@ When I started, I spent countless evenings watching Finanzfluss and reading book
 
 Beyond these “foundation”-books, I’m glad I also read some others that broadened my horizon and shaped the way I see markets today. I love the books of André Kostolany. His entertaining personal anecdotes from decades of experience made me see the stock market from a completely different angle. Then there’s '*Die Zürich Axiome*' by Max Gunther – it challenged some of the “safe and steady” principles I had picked up earlier and made me reflect on how I personally handle risk. Last but not least, The '*Psychology of Money*' by Morgan Housel opened my eyes to just how much biases and emotions influence financial decisions.
 
-<center><img src="/assets/blog/img/favorite-books-investing.jpeg" alt="drawing" width="400" style="transform:rotate(-90deg)"/></center>  
+<center><img src="/assets/blog/img/favorite-books-investing.jpeg" alt="drawing" width="50%" style="transform:rotate(-90deg)"/></center>  
 
 #### **Final Words**
 

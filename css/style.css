@@ -1,35 +1,35 @@
 /* -------------- Fonts -------------- */
 
 @font-face {
-  font-family: "San Francisco";
+  font-family: "Now";
   font-weight: 200;
-  src: url("/assets/fonts/now.thin.otf");
+  src: url("../assets/fonts/now.thin.otf");
 }
 
 @font-face {
-  font-family: "San Francisco";
+  font-family: "Now";
   font-weight: 400;
-  src: url("assets/fonts/now.light.otf");
+  src: url("../assets/fonts/now.light.otf");
 }
 
 @font-face {
-  font-family: "San Francisco";
+  font-family: "Now";
   font-weight: 700;
-  src: url("assets/fonts/now.bold.otf");
+  src: url("../assets/fonts/now.bold.otf");
 }
 
 /** Medium */
 @font-face {
-  font-family: "San Francisco";
+  font-family: "Now";
   font-weight: 500;
-  src: url("assets/fonts/now.regular.otf");
+  src: url("../assets/fonts/now.regular.otf");
 }
 
 /** Semi Bold */
 @font-face {
-  font-family: "San Francisco";
+  font-family: "Now";
   font-weight: 600;
-  src: url("assets/fonts/now.medium.otf");
+  src: url("../assets/fonts/now.medium.otf");
 }
 
 /* -------------- Themes -------------- */
@@ -251,20 +251,20 @@ input:checked + .slider:before {
 }
 
 .slider:after {
-  content: "🌓";
+  content: "🌙";
   font-size: 0.8em;
   color:rgb(255, 207, 50);
   position: absolute;
-  top: -3px;
+  top: -4px;
   right: -20px;
 }
 
 input:checked + .slider:after {
-  content: "🌓";
+  content: "🌙";
   font-size: 0.8em;
   color:rgb(255, 207, 50);
   position: absolute;
-  top: -3px;
+  top: -4px;
   right: -20px;
 }
 

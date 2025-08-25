@@ -1,53 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="raffael-kaas7.github.io">
-  <meta name="author" content="Raffael Kaas">
 
   <title>Welcome | Raffael Kaas</title>
 
+  <meta name="description" content="Raffael Kaas – Personal Website">
+  <meta name="author" content="Raffael Kaas">
+  <link rel="canonical" href="https://raffael-kaas7.github.io/">
+
+  <meta property="og:title" content="Raffael Kaas – Personal Website">
+  <meta property="og:description" content="About Me | Projects | Blog">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://raffael-kaas7.github.io/">
+  <meta property="og:image" content="https://raffael-kaas7.github.io/assets/img/me.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Raffael Kaas – Software Engineer">
+  <meta name="twitter:description" content="About Me | Projects | Blog">
+  <meta name="twitter:image" content="https://raffael-kaas7.github.io/assets/img/me.png">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!-- Structured Data: Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Raffael Kaas",
+    "jobTitle": "Software Engineer",
+    "url": "https://raffael-kaas7.github.io/",
+    "image": "https://raffael-kaas7.github.io/assets/img/me.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/raffael-kaas-4b0869152",
+      "https://github.com/raffael-kaas7"
+    ],
+    "knowsAbout": ["Embedded Systems", "ROS", "Linux", "C++", "Python", "ADAS", "Automotive"]
+  }
+  </script>
 </head>
 
 <body>
+  <!-- Invisible H1 -->
+  <h1 class="sr-only">Raffael Kaas – Software Engineer</h1>
+
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
-      <div class="navbar-right">
-        <div class="theme-switch-wrapper" style="padding-left: 1em">
-          <label class="theme-switch" for="checkbox">
-            <input type="checkbox" id="checkbox" />
-            <div class="slider round"></div>
-          </label>
-        </div>
+      <div class="navbar-left">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="navbar-right theme-switch-wrapper" style="padding-left: 1em">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round"></div>
+        </label>
       </div>
       <div id="navbar" class="collapse navbar-collapse navbar-left">
         <ul class="nav navbar-nav" style="font-weight: 400;">
           <li><a class="custom-link" href="#top">Home</a></li>
           <li><a class="custom-link" href="#about">About Me</a></li>
           <li><a class="custom-link" href="#blog">Blog</a></li>
-          <!-- <li><a class="custom-link" href="#projects">Projects</a></li> -->
+          <li><a class="custom-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank" rel="me noopener">LinkedIn</a></li>
           <li>
-            <!-- <a class="custom-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank"><img src="assets/img/linkedin_blue.png"
-                alt="LinkedIn Icon" /></a> -->
-            <a class="custom-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank">LinkedIn</a>
-          </li>
-          <li>
-            <a class="custom-link" href="https://github.com/raffael-kaas7" target="_blank"><img src="assets/img/github.svg"
-              alt="Github Icon" /></a>
+            <a class="custom-link" href="https://github.com/raffael-kaas7" target="_blank" rel="me noopener">
+              <img src="assets/img/github.svg" alt="GitHub profile of Raffael Kaas" />
+            </a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  
+
   <div class="hero">
     <div class="hero-inner">
-      <p class="logo-icon"><img src="assets/img/me.png" alt="Raffael Kaas" style="border-radius: 50%;"></p>
+      <p class="logo-icon">
+        <img src="assets/img/me.png" alt="Portrait of Raffael Kaas, Software Engineer" style="border-radius: 50%;">
+      </p>
       <p class="logo-tagline">Raffael Kaas</p>
     </div>
   </div>
@@ -57,23 +95,22 @@
     <div class="container">
       <div class="section-header">
         <h2>About Me</h2>
-        <hr align="left" style="margin-top: 0; margin-bottom: 1em; height: 2px; width: 100%; border-width: 0; color: gray;
-          background-color: gray">
+        <hr align="left" style="margin-top: 0; margin-bottom: 1em; height: 2px; width: 100%; border-width: 0; color: gray; background-color: gray">
         <i>
           <p>
-            Hi, I'm Raffael – a software engineer living at Lake Constance, working in the automotive industry. 
-            I hold a Master of Engineering with a focus on autonomous systems. 
-            Over the past few years, I've worked on a wide range of complex software projects – from building my own quadrocopter during university, to launching autonomous shuttles in Rotterdam, 
+            Hi, I'm Raffael – a software engineer living at Lake Constance, working in the automotive industry.
+            I hold a Master of Engineering with a focus on autonomous systems.
+            Over the past few years, I've worked on a wide range of complex software projects – from building my own quadrocopter during university, to launching autonomous shuttles in Rotterdam,
             and now developing series production software for power converters in e-mobility.
           </p>
           <br>
           <p>
-            I prefer working on a Linux-based environment, using C/C++ for embedded software development and Python to make life easier. 
-            I like using ROS for rapid prototyping and have hands-on experience with RTOS and debugging microcontrollers.
+            I enjoy working on a Linux-based system, using C/C++ for embedded software development and Python to make life easier or to quickly prototype ideas.
+            I’ve worked on many projects using ROS on high-performance computers, but I also have a lot of hands-on experience with microcontrollers and low-level debugging.
           </p>
           <br>
           <p>
-            Outside of engineering, I’m usually in motion — whether I’m running, playing soccer, or lifting heavy weights. 
+            Outside of engineering, I’m usually in motion — whether I’m running, playing soccer, or lifting heavy weights.
             Besides sports, I have a strong interest in finance and investing, and enjoy diving into new ideas through books, travel, or meaningful conversations.
           </p>
         </i>
@@ -97,13 +134,12 @@
     <div class="container">
       <div class="section-header">
         <h2>Blog</h2>
-        <hr align="left" style="margin-top: 0; margin-bottom: 1em; height: 2px; width: 100%; border-width: 0; color: gray;
-          background-color: gray">
+        <hr align="left" style="margin-top: 0; margin-bottom: 1em; height: 2px; width: 100%; border-width: 0; color: gray; background-color: gray">
         <i>
           <ul class="list-unstyled" style="text-align: left;">
             <!-- List of blog titles with links to the full articles -->
             <li><a href="blog.html?post=lessons-learned-in-software-engineering" class="custom-link" style="color: inherit;"># 30-07-2025 | More than just coding – some of my lessons learned from building complex software products</a></li>
-            <li><a href="blog.html?post=5-years-in-the-stock-market" class="custom-link" style="color: inherit;"># 03-08-2025 | 5 years in the stock market – a personal reflection </a></li>
+            <li><a href="blog.html?post=5-years-in-the-stock-market" class="custom-link" style="color: inherit;"># 03-08-2025 | 5 years in the stock market – a personal reflection</a></li>
           </ul>
         </i>
       </div>
@@ -111,16 +147,12 @@
   </section>
 
   <section style="background-color: var(--heading-color); padding: 1.5em 0; text-align: center; color: white;">
-    <!-- <a class="custom-link" href="mailto://mail@rkaas.de" style="font-weight: 400; font-size: 13pt;">
-      <img src="assets/img/envelope.svg" alt="Envelope" style="margin-top: 2px; margin-right: 2px;" />
-      mail@rkaas.com
-    </a> -->
-    <p>Raffael Kaas | Irisstr. 8 | 88097 | Eriskirch | mail@rkaas.de</p>
+    <p>Raffael Kaas | Irisstr. 8 | 88097 | Eriskirch | <a class="custom-link" style="color: inherit;" href="mailto:mail@rkaas.de">mail@rkaas.de</a></p>
   </section>
 
   <script>
     const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-  
+
     // Function to switch themes
     function switchTheme(e) {
       if (e.target.checked) {
@@ -131,7 +163,7 @@
         localStorage.setItem('theme', 'light'); // Save theme to localStorage
       }
     }
-  
+
     // Load the saved theme on page load
     const currentTheme = localStorage.getItem('theme') || 'light'; // Default to 'light' if no theme is saved
     document.documentElement.setAttribute('data-theme', currentTheme);
