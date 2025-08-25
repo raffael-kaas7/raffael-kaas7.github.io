@@ -1,50 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="raffael-kaas7.github.io">
-  <meta name="author" content="Raffael Kaas">
 
   <title>Welcome | Raffael Kaas</title>
 
+  <meta name="description" content="Raffael Kaas – Personal Website">
+  <meta name="author" content="Raffael Kaas">
+  <link rel="canonical" href="https://raffael-kaas7.github.io/">
+
+  <meta property="og:title" content="Raffael Kaas – Personal Website">
+  <meta property="og:description" content="About Me | Projects | Blog">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://raffael-kaas7.github.io/">
+  <meta property="og:image" content="https://raffael-kaas7.github.io/assets/img/me.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Raffael Kaas – Software Engineer">
+  <meta name="twitter:description" content="About Me | Projects | Blog">
+  <meta name="twitter:image" content="https://raffael-kaas7.github.io/assets/img/me.png">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!-- Structured Data: Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Raffael Kaas",
+    "jobTitle": "Software Engineer",
+    "url": "https://raffael-kaas7.github.io/",
+    "image": "https://raffael-kaas7.github.io/assets/img/me.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/raffael-kaas-4b0869152",
+      "https://github.com/raffael-kaas7"
+    ],
+    "knowsAbout": ["Embedded Systems", "ROS", "Linux", "C++", "Python", "ADAS", "Automotive"]
+  }
+  </script>
 </head>
 
-
 <body>
+  <!-- Invisible H1 -->
+  <h1 class="sr-only">Raffael Kaas – Software Engineer</h1>
+
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
-      <div class="navbar-right">
-        <div class="theme-switch-wrapper" style="padding-left: 1em">
-          <label class="theme-switch" for="checkbox">
-            <input type="checkbox" id="checkbox" />
-            <div class="slider round"></div>
-          </label>
-        </div>
+      <div class="navbar-left">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="navbar-right theme-switch-wrapper" style="padding-left: 1em">
+        <label class="theme-switch" for="checkbox">
+          <input type="checkbox" id="checkbox" />
+          <div class="slider round"></div>
+        </label>
       </div>
       <div id="navbar" class="collapse navbar-collapse navbar-left">
         <ul class="nav navbar-nav" style="font-weight: 400;">
           <li><a class="custom-link" href="/#top">Home</a></li>
           <li><a class="custom-link" href="/#about">About Me</a></li>
           <li><a class="custom-link" href="/#blog">Blog</a></li>
-          <!-- <li><a class="custom-link" href="#projects">Projects</a></li> -->
+          <li><a class="custom-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank" rel="me noopener">LinkedIn</a></li>
           <li>
-            <!-- <a class="custom-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank"><img src="assets/img/linkedin_blue.png"
-                alt="LinkedIn Icon" /></a> -->
-            <a class="custom-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank">LinkedIn</a>
-          </li>
-          <li>
-            <a class="custom-link" href="https://github.com/raffael-kaas7" target="_blank"><img src="assets/img/github.svg"
-              alt="Github Icon" /></a>
+            <a class="custom-link" href="https://github.com/raffael-kaas7" target="_blank" rel="me noopener">
+              <img src="assets/img/github.svg" alt="GitHub profile of Raffael Kaas" />
+            </a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+
   
   <div class="hero">
     <div class="hero-inner">
@@ -95,6 +131,33 @@
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  <script>
+    function removeHash() {
+      history.pushState("", document.title, window.location.pathname
+        + window.location.search);
+    };
+    $(window).bind('hashchange', function (event) {
+      var hash = location.hash.replace('#', '');
+      if (hash == 'top')
+        removeHash();
+    });
+
+    $(function () {
+      var navCollapse = $(".navbar-collapse");
+      var navBrand = $(".navbar-brand");
+      navBrand.on("click", null, function () {
+        navCollapse.collapse('hide');
+      });
+      navCollapse.on("click", "a:not([data-toggle])", null, function () {
+        navCollapse.collapse('hide');
+      });
+    });
+  </script>
 
   <script>
     async function loadBlogPost() {
