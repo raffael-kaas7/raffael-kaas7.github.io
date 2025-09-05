@@ -99,7 +99,7 @@
       <img src="assets/img/envelope.svg" alt="Envelope" style="margin-top: 2px; margin-right: 2px;" />
       mail@rkaas.com
     </a> -->
-    <p>Raffael Kaas | Irisstr. 8 | 88097 | Eriskirch | mail@rkaas.de</p>
+    <p>Copyright © 2025 Raffael Kaas. All rights reserved.</p>
   </section>
 
   <script>
@@ -197,6 +197,46 @@
   
     // Load the blog post on page load
     document.addEventListener('DOMContentLoaded', loadBlogPost);
+  </script>
+
+  <!-- image carousel: vibe coding experiment -->
+  <script>
+    const carouselImages = [
+      '/assets/blog/img/asset-allocation.png',
+      '/assets/blog/img/dividends-hidden.png',
+      '/assets/blog/img/authentication-graphs-hidden.png',
+      '/assets/blog/img/multiple-depots-hidden.png'
+    ];
+    let carouselIndex = 0;
+    function showCarouselImage(idx) {
+      const img = document.getElementById('carousel-img');
+      if (img) {
+        img.style.opacity = 0;
+        setTimeout(() => {
+          img.src = carouselImages[idx];
+          img.style.opacity = 1;
+        }, 150);
+      }
+    }
+    function carouselPrev() {
+      carouselIndex = (carouselIndex - 1 + carouselImages.length) % carouselImages.length;
+      showCarouselImage(carouselIndex);
+    }
+    function carouselNext() {
+      carouselIndex = (carouselIndex + 1) % carouselImages.length;
+      showCarouselImage(carouselIndex);
+    }
+    function openModal() {
+      const modal = document.getElementById('img-modal');
+      const modalImg = document.getElementById('modal-img');
+      modalImg.src = carouselImages[carouselIndex];
+      modal.classList.add('active');
+    }
+    function closeModal(event) {
+      if (event.target.id === 'img-modal') {
+        document.getElementById('img-modal').classList.remove('active');
+      }
+    }
   </script>
 </body>
 </html>

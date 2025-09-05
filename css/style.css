@@ -43,7 +43,7 @@
   --font-color-codeblock: #163853;
   --bg-color: #dddddd;
   --bg-color-alternate: #f2f0f0;
-  --bg-color-codeblock: #333333;
+  --bg-color-codeblock: #ebe7e7;
   --heading-color: #163853;
 }
 
@@ -56,7 +56,7 @@
   --font-color-codeblock: #ffffff;
   --bg-color: #181818;;
   --bg-color-alternate: #222121;
-  --bg-color-codeblock: #222121;
+  --bg-color-codeblock: #ebe7e7;
   --heading-color: #163853;
 }
 /* -------------- Main -------------- */
@@ -109,11 +109,12 @@ code {
   background-color: var(--bg-color-alternate);
 }
 
+
 pre {
   color: var(--font-color-codeblock);
   background-color: var(--bg-color-codeblock);
   border: 0;
-  font-size: 8pt;
+  font-size: 0.95em;
   width: 100%;
   flex-grow: 1;
   text-align: left;
@@ -124,6 +125,11 @@ pre {
 pre code {
   white-space: inherit;
   overflow: inherit;
+  font-size: 0.95em;
+}
+
+.section-break {
+  height: 1.5em;
 }
 
 /* -------------- Navbar -------------- */
