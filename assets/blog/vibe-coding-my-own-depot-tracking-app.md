@@ -1,5 +1,5 @@
 ### **04-09-2025**
-### **Building my first application with agentic AI (#VibeCoding)**
+### **Building my first application with agentic AI**
 
 Recently, my LinkedIn feed has been overflowing with posts about "vibe coding" and AI agents. Engineers - and even non-programmers - are building entire applications just by talking to an agent. Since I've already integrated LLMs into both my daily engineering work and personal projects, I was curious: Could I really build a complete application using nothing but my voice and AI assistance?
 
