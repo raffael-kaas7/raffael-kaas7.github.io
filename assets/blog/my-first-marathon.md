@@ -1,5 +1,18 @@
-### **14-10-2025**
-### **Running my first marathon**
+---
+title: "Running my First Marathon"
+slug: "my-first-marathon"
+date: "2025-10-14"
+lastmod: "2025-11-18"
+description: "Training plan, mistakes, equipment, and race-day lessons from my first full marathon in Lindau / Bregenz."
+keywords: ["first marathon","marathon training plan","zone 2 running","VO2max", "running challenge", "3-Länder-Marathon"]
+author: "Raffael Kaas"
+readingTime: 7
+ogImage: "/assets/blog/img/Gruppenbild.jpeg"
+canonical: "https://rkaas.de/blog.html?post=my-first-marathon"
+tags: ["running","fitness","endurance"]
+language: "en"
+draft: false
+---
 
 Since I was a kid, sports have always been part of my life. I grew up playing soccer several times a week, discovered gravel biking when I moved to Lake Constance, and more recently got into lifting weights at the gym. Soccer was the biggest part for me – training and matches three times a week for years. But after a severe knee injury and lots of muscle strains, I decided to stop playing actively.
 
@@ -9,7 +22,7 @@ I knew a half-marathon would be “doable,” even with messy training. But 42 k
 
 <div class="section-break"></div>
 
-#### **Training and preparation**
+## Training and Preparation
 
 The marathon was scheduled for October 12, 2025. The soccer season ended at the end of May, so I had a clear cut to start running in June, which meant about four months of training. That should be enough, knowing that I wasn’t starting from zero but already had a good fitness base.
 
@@ -71,19 +84,19 @@ In the images below, you can see some of my training data from Garmin Connect. Y
 
 <div class="garmin-app">
   <figure>
-    <img src="/assets/blog/img/vo2max.jpeg" alt="vo2max">
+  <img src="/assets/blog/img/vo2max.jpeg" alt="VO2max trend chart from Garmin Connect">
     <figcaption></figcaption>
   </figure>
   <figure>
-    <img src="/assets/blog/img/pace-estimation.jpeg" alt="pace estimation">
+  <img src="/assets/blog/img/pace-estimation.jpeg" alt="Predicted race pace estimation">
     <figcaption></figcaption>
   </figure>
   <figure>
-    <img src="/assets/blog/img/training.jpeg" alt="training state">
+  <img src="/assets/blog/img/training.jpeg" alt="Training state timeline from Garmin">
     <figcaption></figcaption>
   </figure>
   <figure>
-    <img src="/assets/blog/img/distances.jpeg" alt="running distances per month">
+  <img src="/assets/blog/img/distances.jpeg" alt="Running distances per month bar chart">
     <figcaption></figcaption>
   </figure>
 </div>
@@ -91,7 +104,7 @@ In the images below, you can see some of my training data from Garmin Connect. Y
 <div class="section-break"></div>
 
 
-#### **Race day – and the result**
+## Race Day – and the Result
 
 October came faster than expected. Standing at the start line in Lindau with thousands of runners, I felt both nervous and excited. I needed to run faster than 5:40 min/km on average to reach my goal, so I started at around 5:20 min/km with the plan to slow down slightly in the second half if necessary. In the end, I finished my very first marathon in 3 hours and 51 minutes.
 
@@ -120,7 +133,7 @@ The marathon itself was a really cool event and, for me, most importantly, a new
 
 <div class="finisher-photo">
   <figure>
-  <img src="/assets/blog/img/Gruppenbild.jpeg" alt="Finisher photo">
+  <img src="/assets/blog/img/Gruppenbild.jpeg" alt="Marathon finishers group photo at the 3-Länder-Marathon">
     <figcaption></figcaption>
   </figure>
 </div>

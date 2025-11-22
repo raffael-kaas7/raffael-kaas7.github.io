@@ -1,5 +1,18 @@
-### **13-08-2025** 
-### **My first 5 years in the stock market – a personal reflection**
+---
+title: "My First 5 Years in the Stock Market – a Personal Reflection"
+slug: "5-years-in-the-stock-market"
+date: "2025-08-13"
+lastmod: "2025-11-18"
+description: "What I learned in my first five years of investing: strategies, mistakes, favorite books, and why freedom and a self-determined life is the real goal."
+keywords: ["first 5 years investing","stock market lessons","investing mistakes","ETFs vs single stocks","dividend investing","books about investing"]
+author: "Raffael Kaas"
+readingTime: 5
+ogImage: "/assets/blog/img/favorite-books-investing.jpeg"
+canonical: "https://rkaas.de/blog.html?post=5-years-in-the-stock-market"
+tags: ["investing","personal-finance"]
+language: "en"
+draft: false
+---
 
 Five years ago, fresh out of university and newly relocated to the beautiful Lake Constance, I began my journey into the world of investing. Looking back, it's been a path filled with learnings, mistakes, switching strategies, and – maybe most importantly – discovering what money and wealth actually mean to me.
 
@@ -18,7 +31,7 @@ For me, building wealth has never been about buying expensive things later. It�
 Building wealth based on multiple assets is a solid foundation for a free, self-determined life.  
 <div class="section-break"></div>
 
-#### **First steps: Learning the basics**
+## First Steps: Learning the Basics
 
 During my studies, I always worked part-time to cover basic living costs. But after graduation, for the first time, I found myself with a bit more financial capacity. I was still living in a shared flat, but I finally had the chance to think beyond rent, groceries, and semester tickets.
 
@@ -28,7 +41,7 @@ I opened a brokerage account separate from my main bank account and started “p
 <div class="section-break"></div>
 
 
-#### **Finding my personal strategy**
+## Finding my Personal Strategy
 
 Being an engineer, I naturally went deep into research mode. I started reading extensively on passive investing and dived into more complex topics like factor investing – adjusting my strategy to include momentum and value-based approaches.
 
@@ -51,19 +64,31 @@ I now have more capital in single stocks than in ETFs, and I genuinely enjoy bei
 I don’t like rebalancing by selling well-performing companies. Many studies show that overall market returns are often driven by a few outstanding stocks. My approach: let the winners run, and use the losers for the "Verlusttopf". I prefer rebalancing through new investments instead.  
 <div class="section-break"></div>
 
-#### **Books that shaped my thinking**
+## Books that Shaped my Thinking
 
 Looking back, there were a few books and resources that really influenced how I think about investing today.
 When I started, I spent countless evenings watching Finanzfluss and reading books like those by Gerd Kommer – that’s where I built my basic understanding.
 
 Beyond these “foundation”-books, I’m glad I also read some others that broadened my horizon and shaped the way I see markets today. I love the books of André Kostolany. His entertaining personal anecdotes from decades of experience made me see the stock market from a completely different angle. Then there’s '*Die Zürich Axiome*' by Max Gunther – it challenged some of the “safe and steady” principles I had picked up earlier and made me reflect on how I personally handle risk. Last but not least, The '*Psychology of Money*' by Morgan Housel opened my eyes to just how much biases and emotions influence financial decisions.
 
-<center><img src="/assets/blog/img/favorite-books-investing.jpeg" alt="book-recommendations" width="50%" style="transform:rotate(-90deg)"/></center>  
+<center>
+    <figure>
+        <img src="/assets/blog/img/favorite-books-investing.jpeg" alt="A few of my favorite investing books" width="50%" style="transform:rotate(-90deg)"/>
+        <figcaption>Some of my favorite books that shaped my investing mindset.</figcaption>
+    </figure>
+</center>
 
 
-#### **Final words**
+## Final Words
 
 Starting to invest at 24 turned out to be one of the best decisions I’ve made. I’m also glad I navigated the process myself instead of relying on an investment advisor or expensive financial products.
 
 It hasn’t been a straight path. I’ve switched strategies, made mistakes, and spent months doubting certain decisions. But over time, I learned what fits my personality and my goals. For me, investing has become more than just a way to grow money – it’s about freedom, patience, and understanding what really matters.
+
+<div class="section-break"></div>
+
+### Further Reading
+
+A macro view on why starting matters more than timing: [There has never been a better time to invest than now](/blog.html?post=there-has-never-been-a-better-time-for-investing-than-now)
+
 <div class="section-break"></div>

@@ -26,6 +26,11 @@
   <!-- Styles -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  
+  <!-- Date, X min read-->
+  <style>
+    .post-meta { color: #666; margin-top: 0rem; margin-bottom: 1rem; font-size: 1.4rem; }
+  </style>
 
   <!-- Structured Data: Person -->
   <script type="application/ld+json">
@@ -161,6 +166,71 @@
   </script>
 
   <script>
+    // Minimal front matter (YAML-like) parser for simple key: value pairs and arrays
+    function parseFrontMatter(text) {
+      const fmRegex = /^---\n([\s\S]*?)\n---\n?/;
+      const match = text.match(fmRegex);
+      if (!match) return { fm: null, body: text };
+      const yaml = match[1];
+      const fm = {};
+      yaml.split(/\r?\n/).forEach(line => {
+        if (!line.trim() || line.trim().startsWith('#')) return;
+        const idx = line.indexOf(':');
+        if (idx === -1) return;
+        const key = line.slice(0, idx).trim();
+        let val = line.slice(idx + 1).trim();
+        // Remove surrounding quotes
+        if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+          val = val.slice(1, -1);
+        }
+        // Arrays in [a, b] or ["a", "b"]
+        if (val.startsWith('[') && val.endsWith(']')) {
+          try { val = JSON.parse(val.replace(/(['\"])?([a-zA-Z0-9_\-\s\/\.\:\,\&\(\)]+)(\1)?/g, (m)=>m)); } catch (e) {
+            // Fallback: split by comma
+            val = val.slice(1, -1).split(',').map(s => s.trim().replace(/^['\"]|['\"]$/g, ''));
+          }
+        } else if (val === 'true' || val === 'false') {
+          val = (val === 'true');
+        } else if (/^\d{4}-\d{2}-\d{2}$/.test(val)) {
+          // keep date as string
+        } else if (!isNaN(val) && val !== '') {
+          val = Number(val);
+        }
+        fm[key] = val;
+      });
+      const body = text.replace(fmRegex, '');
+      return { fm, body };
+    }
+
+    function setOrCreateMeta(name, content, attr = 'name') {
+      if (!content) return;
+      let el = document.head.querySelector(`meta[${attr}="${name}"]`);
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute(attr, name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+    }
+
+    function setOrCreateLink(rel, href) {
+      if (!href) return;
+      let el = document.head.querySelector(`link[rel="${rel}"]`);
+      if (!el) {
+        el = document.createElement('link');
+        el.setAttribute('rel', rel);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('href', href);
+    }
+
+    function absoluteUrl(pathOrUrl) {
+      if (!pathOrUrl) return null;
+      try {
+        return new URL(pathOrUrl, window.location.origin).toString();
+      } catch(e) { return pathOrUrl; }
+    }
+
     async function loadBlogPost() {
       const blogContainer = document.querySelector('a[name="blog"] + section .container');
       const blogDir = '/assets/blog/';
@@ -180,16 +250,91 @@
         console.log(response);
         if (!response.ok) throw new Error('Blog post not found');
         const markdown = await response.text();
+        const { fm, body } = parseFrontMatter(markdown);
   
         // Convert Markdown to HTML using marked.js
         //console.log("typeof marked", typeof marked); // Debugging: Check if marked is loaded
-        const html = marked.parse(markdown); 
+        const html = marked.parse(body); 
   
         // Display the blog post
         const postDiv = document.createElement('div');
         postDiv.classList.add('blog-post');
-        postDiv.innerHTML = html;
+        // If front matter defines a title, render it as H1 for accessibility
+        if (fm && fm.title) {
+          const h1 = document.createElement('h1');
+          h1.textContent = fm.title;
+          postDiv.appendChild(h1);
+          // Meta line (date • reading time)
+          const meta = document.createElement('p');
+          meta.className = 'post-meta';
+          const parts = [];
+          if (fm.date) {
+            try {
+              const dt = new Date(fm.date);
+              parts.push(dt.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' }));
+            } catch(e) { parts.push(fm.date); }
+          }
+          if (fm.readingTime) {
+            parts.push(`${fm.readingTime} min read`);
+          }
+          if (parts.length) {
+            meta.textContent = parts.join(' • ');
+            postDiv.appendChild(meta);
+          }
+        }
+        postDiv.innerHTML += html;
         blogContainer.appendChild(postDiv);
+
+        // Inject dynamic meta tags and JSON-LD if FM present
+        if (fm) {
+          const title = fm.title ? `${fm.title} – Raffael Kaas` : document.title;
+          if (fm.title) document.title = title;
+
+          setOrCreateMeta('description', fm.description || '');
+          setOrCreateMeta('author', fm.author || 'Raffael Kaas');
+
+          // Canonical URL
+          const canonical = fm.canonical || `${window.location.origin}${window.location.pathname}?post=${fm.slug || post}`;
+          setOrCreateLink('canonical', canonical);
+
+          // Open Graph
+          setOrCreateMeta('og:title', fm.title || '', 'property');
+          setOrCreateMeta('og:description', fm.description || '', 'property');
+          setOrCreateMeta('og:type', 'article', 'property');
+          setOrCreateMeta('og:url', canonical, 'property');
+          const ogImgAbs = absoluteUrl(fm.ogImage || '/assets/img/me.png');
+          setOrCreateMeta('og:image', ogImgAbs, 'property');
+
+          // Twitter
+          setOrCreateMeta('twitter:card', 'summary_large_image');
+          setOrCreateMeta('twitter:title', fm.title || 'Raffael Kaas – Software Engineer');
+          setOrCreateMeta('twitter:description', fm.description || '');
+          setOrCreateMeta('twitter:image', ogImgAbs);
+
+          // Article JSON-LD
+          const jsonLd = {
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: fm.title || '',
+            datePublished: fm.date || undefined,
+            dateModified: fm.lastmod || fm.date || undefined,
+            author: {
+              '@type': 'Person',
+              name: fm.author || 'Raffael Kaas'
+            },
+            image: ogImgAbs,
+            mainEntityOfPage: canonical,
+            keywords: Array.isArray(fm.keywords) ? fm.keywords.join(', ') : undefined
+          };
+          // Remove any existing Article JSON-LD we added earlier
+          const oldLd = document.querySelector('script[data-dynamic-jsonld="article"]');
+          if (oldLd) oldLd.remove();
+          const ldScript = document.createElement('script');
+          ldScript.type = 'application/ld+json';
+          ldScript.setAttribute('data-dynamic-jsonld', 'article');
+          ldScript.textContent = JSON.stringify(jsonLd, null, 2);
+          document.head.appendChild(ldScript);
+        }
       } catch (error) {
         console.error('Error loading blog post:', error);
         blogContainer.innerHTML = '<p>Failed to load the blog post. Please try again later.</p>';

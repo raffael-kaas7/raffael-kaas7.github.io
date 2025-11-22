@@ -1,5 +1,18 @@
-### **12-11-2025**
-### **There has never been a better time to invest than now**
+---
+title: "There has Never Been a Better Time to Invest Than Now"
+slug: "there-has-never-been-a-better-time-for-investing-than-now"
+date: "2025-11-12"
+lastmod: "2025-11-18"
+description: "Despite headlines, technology and market access make today the best time in history to invest. Here’s why and how to keep a long‑term view."
+keywords: ["why invest now","best time to invest","long-term investing","S&P 500 history","ETFs", "saving plan"]
+author: "Raffael Kaas"
+readingTime: 7
+ogImage: "/assets/blog/img/sp500-chart.png"
+canonical: "https://rkaas.de/blog.html?post=there-has-never-been-a-better-time-for-investing-than-now"
+tags: ["investing","personal-finance"]
+language: "en"
+draft: false
+---
 
 If you spend too much time scrolling through social media or reading the news, it’s easy to feel like the world is almost collapsing. Every day seems to bring another crisis — wars, inflation, layoffs, political conflicts, environmental disasters. That’s not an accident. Your feeds aren’t a balanced reflection of reality but a reflection of what keeps people most engaged. These platforms are built on algorithms that reward whatever keeps you hooked.
 
@@ -9,7 +22,7 @@ One thing that always reminds me of this bias is when people in my social circle
 
 <div class="section-break"></div>
 
-#### **The most accessible time to build wealth**
+## The most accessible time to build wealth
 
 Fifty years ago, the average retail person had very limited options. For many, real estate was the only understandable and accessible path to wealth — and in a growing economy with low crime and a rising population, that worked well — including my parents. If you weren't lucky enough to live in such a country, or you just didn't fulfill the conditions to get a mortgage, the capital market was the alternative. But back then…
 
@@ -24,7 +37,7 @@ Just as important: financial education has become democratized. Fifty years ago,
 
 <div class="section-break"></div>
 
-#### **Technology, population and global growth**
+## Technology, population and global growth
 
 At the same time, we’re living through one of the most productive and innovative time in history. Technology is scaling exponentially — from artificial intelligence and biotechnology to new energy sources and space exploration. These are not speculative dreams anymore. These are real industries with real revenue and growing global demand. There are definitely some big problems to be solved in the future for humanity and the world. Solving these challenges requires innovation — and that’s where capital is growing.
 
@@ -36,7 +49,7 @@ By investing, you become a shareholder in this global progress. You participate 
 
 <div class="section-break"></div>
 
-#### **Keep a long-term perspective and ignore headlines**
+## Keep a long-term perspective and ignore headlines
 
 Of course, there are always bad things happening — recessions, inflation, geopolitical tensions. That’s normal. There has never been a time in history without uncertainty. And yes, a market crash will come sooner or later. But if you look at the long-term data, markets and economies have always recovered and reached new highs. Don't get fooled by crash prophets chasing thousands of clicks.
 
@@ -71,8 +84,8 @@ Here you can see the historical performance of the S&P 500 index from 1970 to 20
 
 <div class="chart">
     <figure>
-        <img src="assets/blog/img/sp500-chart.png" alt="S&P 500 Historical Performance"/>
-        <figcaption></figcaption>
+  <img src="assets/blog/img/sp500-chart.png" alt="S&P 500 historical performance chart from 1970 to 2025"/>
+  <figcaption>S&P 500 total return trend across cycles.</figcaption>
     </figure>
 </div>
 
@@ -85,8 +98,12 @@ Since this is an exponential trend and humans tend to think linearly, here is th
 
 <div class="chart">
     <figure>
-        <img src="assets/blog/img/sp500-chart-log.png" alt="S&P 500 Historical Performance (Logarithmic View)"/>
-        <figcaption></figcaption>
+  <img src="assets/blog/img/sp500-chart-log.png" alt="S&P 500 historical performance on logarithmic scale"/>
+  <figcaption>Log scale highlights consistent compounding over decades.</figcaption>
     </figure>
 </div>
+
+### Further reading
+
+Some lessons I learned during my first five years of investing: [My first 5 years in the stock market](/blog.html?post=5-years-in-the-stock-market)
 

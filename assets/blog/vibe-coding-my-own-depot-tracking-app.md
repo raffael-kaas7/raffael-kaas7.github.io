@@ -1,14 +1,29 @@
-### **04-09-2025**
-### **Building my first application with agentic AI**
+---
+title: "Building my first application with agentic AI"
+slug: "vibe-coding-my-own-depot-tracking-app"
+date: "2025-09-04"
+lastmod: "2025-11-18"
+description: "I built a dividend-tracking portfolio app with agentic AI in a few evenings — here’s the setup, features, lessons learned, and code."
+keywords: ["agentic AI","vibe coding","build app with AI","dividend tracking app","Comdirect API","Flask Dash portfolio"]
+author: "Raffael Kaas"
+readingTime: 8
+ogImage: "/assets/blog/img/asset-allocation.png"
+canonical: "https://rkaas.de/blog.html?post=vibe-coding-my-own-depot-tracking-app"
+tags: ["ai","software-engineering","investing","portfolio"]
+language: "en"
+draft: false
+---
 
-Recently, my LinkedIn feed has been overflowing with posts about "vibe coding" and AI agents. Engineers - and even non-programmers - are building entire applications just by talking to an agent. Since I've already integrated LLMs into both my daily engineering work and personal projects, I was curious: Could I really build a complete application using nothing but my voice and AI assistance?
+Recently, my LinkedIn feed has been overflowing with posts about "vibe coding" and agentic AI — building entire applications by guiding an AI agent step by step.
+
+Since I've already integrated LLMs into both my daily engineering work and personal projects, I was curious: Could I really build a complete application using nothing but my voice and AI assistance?
 
 I decided to find out. My goal: create an investment portfolio analysis app with dividend tracking features - something I'd wanted for personal use anyway. Most existing apps like those from Finanzfluss or Parqet hide their best dividend features behind paywalls. Time to build my own.
 
 I already had some groundwork done: OAuth2 authentication with Comdirect's developer API, data retrieval, and a rough architecture for my Flask / Dash application. But the implementation was minimal, and the UI looked like it was designed by an embedded software engineer. It was the perfect starting point for a vibe coding experiment - especially with an agent that would hopefully have a better sense for design and UX than I do.
 <div class="section-break"></div>
 
-#### **My setup and starting point**
+## My setup and starting point
 
 Before diving in, I set up my environment properly:
 
@@ -20,7 +35,7 @@ Because I had started the project earlier without an integrated AI agent, I alre
 <div class="section-break"></div>
 
 
-#### **What I built in just a few evenings**
+## What I built in just a few evenings
 
 The results far exceeded my expectations and matched the hype I'd seen in all those LinkedIn posts. In just a handful of evenings, I managed to implement an app with the following features:
 
@@ -40,7 +55,7 @@ The results far exceeded my expectations and matched the hype I'd seen in all th
 
 <div class="image-carousel">
     <button class="carousel-arrow left" onclick="carouselPrev()">&#8592;</button>
-    <img id="carousel-img" src="/assets/blog/img/asset-allocation.png" alt="Asset Allocation" onclick="openModal()" style="cursor: pointer;" />
+    <img id="carousel-img" src="/assets/blog/img/asset-allocation.png" alt="Asset allocation chart screenshot from the app UI" onclick="openModal()" style="cursor: pointer;" />
     <button class="carousel-arrow right" onclick="carouselNext()">&#8594;</button>
 </div>
 
@@ -105,10 +120,10 @@ The results far exceeded my expectations and matched the hype I'd seen in all th
 </style>
 <div class="section-break"></div>
 
-If you have a Comdirect account, you can try the app yourself. The source code is available on [my GitHub](https://github.com/raffael-kaas7/depot_tracker) and all relevant information is available in the README. You just need to register yourself in order to get your secrets for the Developer API.
+If you have a Comdirect account, you can try the app yourself. The source code is available on [my GitHub](https://github.com/raffael-kaas7/depot_tracker) and all relevant information is available in the README. You just need to register to get your secrets for the Developer API.
 <div class="section-break"></div>
 
-#### **Lessons learned from vibe coding**
+## Lessons learned from vibe coding
 
 This experiment taught me that you can simply start using agentic AI without learning much about best practices in advance. It works from the very beginning to build features and get running results. Over time, you will quickly learn and adapt your workflow based on what works best for you along with the agent. Here are some of my key takeaways from vibe coding my first project:
 <div class="section-break"></div>
@@ -143,7 +158,7 @@ This experiment taught me that you can simply start using agentic AI without lea
 <div class="section-break"></div>
 
 
-#### **Final thoughts**
+## Final thoughts
 
 Working with the agent on my project was really impressive. Complex features that would normally take me hours to research, implement, and debug were completed in minutes of conversation and copy-pasting terminal output.
 
