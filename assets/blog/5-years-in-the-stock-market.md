@@ -64,19 +64,23 @@ I now have more capital in single stocks than in ETFs, and I genuinely enjoy bei
 I don’t like rebalancing by selling well-performing companies. Many studies show that overall market returns are often driven by a few outstanding stocks. My approach: let the winners run, and use the losers for the "Verlusttopf". I prefer rebalancing through new investments instead.  
 <div class="section-break"></div>
 
-## Books that Shaped my Thinking
+## Books that Shaped My Thinking
 
 Looking back, there were a few books and resources that really influenced how I think about investing today.
 When I started, I spent countless evenings watching Finanzfluss and reading books like those by Gerd Kommer – that’s where I built my basic understanding.
 
 Beyond these “foundation”-books, I’m glad I also read some others that broadened my horizon and shaped the way I see markets today. I love the books of André Kostolany. His entertaining personal anecdotes from decades of experience made me see the stock market from a completely different angle. Then there’s '*Die Zürich Axiome*' by Max Gunther – it challenged some of the “safe and steady” principles I had picked up earlier and made me reflect on how I personally handle risk. Last but not least, The '*Psychology of Money*' by Morgan Housel opened my eyes to just how much biases and emotions influence financial decisions.
 
+<div class="section-break"></div>
+
 <center>
     <figure>
-        <img src="/assets/blog/img/favorite-books-investing.jpeg" alt="A few of my favorite investing books" width="50%" style="transform:rotate(-90deg)"/>
+        <img src="/assets/blog/img/favorite-books-investing.jpeg" alt="A few of my favorite investing books" width="70%" />
         <figcaption>Some of my favorite books that shaped my investing mindset.</figcaption>
     </figure>
 </center>
+
+<div class="section-break"></div>
 
 
 ## Final Words

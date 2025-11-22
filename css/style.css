@@ -45,6 +45,10 @@
   --bg-color-alternate: #f2f0f0;
   --bg-color-codeblock: #ebe7e7;
   --heading-color: #163853;
+  /* Blog-only link palette (light theme) */
+  --blog-link-color: #0d3f63;
+  --blog-link-hover-color: #05283f;
+  --blog-link-visited-color: #4c2f7a;
 }
 
 [data-theme="dark"] {
@@ -58,6 +62,10 @@
   --bg-color-alternate: #222121;
   --bg-color-codeblock: #222121;
   --heading-color: #163853;
+  /* Blog-only link palette (dark theme) */
+  --blog-link-color: #8ecbff;
+  --blog-link-hover-color: #ffffff;
+  --blog-link-visited-color: #c5a6ff;
 }
 /* -------------- Main -------------- */
 
@@ -188,7 +196,7 @@ nav.navbar.navbar-inverse {
   max-width: 8em;
   text-align: center;
   margin-top: 0.5em;
-  border: 8px solid white;
+  border: 0.5rem solid white;
 }
 
 @media screen and (max-height: 300px) {
@@ -476,3 +484,156 @@ section {
   color: white;
   text-decoration: none;
 }
+
+/* -------------- Blog (markdown-rendered) -------------- */
+
+/* Container that holds a single converted markdown post */
+.blog-post {
+  position: relative;
+  padding: 1.25rem 1.25rem;
+  /* border-left: 2px solid var(--primary-color); */
+  /* border-right: 2px solid var(--primary-color); */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Narrower gutters on small screens */
+/* @media (max-width: 768px) {
+  .blog-post {
+    padding: 0.9rem 0.9rem;
+    border-left-width: 1px;
+    border-right-width: 1px;
+  }
+} */
+
+/* Headings only in blog posts: uppercase and slightly smaller */
+.blog-post h1,
+.blog-post h2,
+.blog-post h3,
+.blog-post h4,
+.blog-post h5,
+.blog-post h6 {
+  text-transform: uppercase;
+  /* letter-spacing: 0.02em; */
+  color: var(--font-color);
+  position: relative;
+  padding-bottom: 0.3rem;
+}
+
+/* Underline line below each heading (matches homepage hr styling) */
+.blog-post h1::after,
+.blog-post h2::after,
+.blog-post h3::after,
+.blog-post h4::after,
+.blog-post h5::after,
+.blog-post h6::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: gray; /* same as inline hr on main page */
+  margin-top: 0.35rem;
+}
+
+/* Blog-only link styling (scoped; does not affect homepage links) */
+.blog-post a {
+  color: var(--blog-link-color);
+  text-decoration: underline; /* always underlined in blog posts */
+  transition: color 0.25s ease, background-color 0.25s ease;
+  position: relative;
+}
+.blog-post a:hover,
+.blog-post a:focus {
+  color: var(--blog-link-hover-color);
+  text-decoration: underline;
+}
+.blog-post a:visited {
+  color: var(--blog-link-visited-color);
+  text-decoration: underline;
+}
+.blog-post a:active {
+  color: var(--blog-link-hover-color);
+}
+
+/* Main page blog list hover: colored box with inverted colors (theme aware) */
+#blog-preview .section-header ul li a {
+  text-decoration: none; /* override global underline on hover */
+  display: block;
+  padding: 0px 0px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+#blog-preview .section-header ul li a:hover,
+#blog-preview .section-header ul li a:focus {
+  color: var(--bg-color) !important; /* override inline color: inherit */
+  background-color: var(--font-color);
+  border-color: var(--font-color);
+  text-decoration: none; /* keep no underline on hover */
+}
+
+/* Ensure visited+hover also inverts correctly */
+#blog-preview .section-header ul li a:visited:hover,
+#blog-preview .section-header ul li a:visited:focus {
+  background-color: var(--font-color);
+  color: var(--bg-color) !important;
+  border-color: var(--font-color);
+  text-decoration: none;
+}
+
+.blog-post h1 { font-size: 2.2rem; font-weight: 600; margin-top: 1.2rem; }
+.blog-post h2 { font-size: 1.8rem; font-weight: 600; margin-top: 1.2rem; }
+.blog-post h3 { font-size: 1.6rem;  font-weight: 600; margin-top: 1.2rem; }
+.blog-post h4 { font-size: 1.6rem;  font-weight: 600; margin-top: 1.2rem; }
+
+/* Meta line under the title */
+.blog-post .post-meta {
+  color: #666;
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+/* Standardized style for single images (auto-wrapped in a figure) */
+/* .blog-post figure.blog-figure {
+  margin: 1.25rem auto;
+  text-align: center;
+}
+.blog-post figure.blog-figure img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.blog-post figure.blog-figure figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--font-color-alternate);
+  font-style: italic;
+} */
+
+/* Don’t interfere with multi-image widgets/grids */
+/* .blog-post .garmin-app img,
+.blog-post .image-carousel img,
+.blog-post .img-modal img,
+.blog-post .chart img,
+.blog-post .finisher-photo img {
+  box-shadow: none;
+  border-radius: 0;
+} */
+
+/* Blog list on home page: improve mobile readability without changing desktop */
+/* @media (max-width: 600px) {
+  #blog-preview .section-header ul li a {
+    display: block;
+    font-size: 0.95rem;
+    line-height: 1.35;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--primary-color-faded);
+    word-break: break-word;
+  }
+  #blog-preview .section-header ul li:last-child a {
+    border-bottom: none;
+  } 
+} */

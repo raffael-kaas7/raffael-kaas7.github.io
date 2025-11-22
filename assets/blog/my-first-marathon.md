@@ -82,6 +82,8 @@ Another very important aspect not to forget is knowing what you’re going to we
 
 In the images below, you can see some of my training data from Garmin Connect. You can see that I continuously increased the distances per month. Somehow I was very often in the "maintaining" state and not always in "productive." Shortly before the event, I went into the "recovering" state according to the taper-down plan. The pace estimation seems to only consider your cardiovascular fitness, but not your muscles, tendons, and joints – and these were definitely my bottleneck running the full marathon distance.
 
+<div class="section-break"></div>
+
 <div class="garmin-app">
   <figure>
   <img src="/assets/blog/img/vo2max.jpeg" alt="VO2max trend chart from Garmin Connect">

@@ -27,10 +27,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   
-  <!-- Date, X min read-->
-  <style>
-    .post-meta { color: #666; margin-top: 0rem; margin-bottom: 1rem; font-size: 1.4rem; }
-  </style>
 
   <!-- Structured Data: Person -->
   <script type="application/ld+json">
@@ -284,6 +280,29 @@
         }
         postDiv.innerHTML += html;
         blogContainer.appendChild(postDiv);
+
+        // Enhance single images: wrap standalone <img> (not inside known galleries) in a standardized figure
+        const isGalleryParent = (el) => {
+          if (!el) return false;
+          return el.closest('.garmin-app, .image-carousel, .img-modal, .chart, .finisher-photo');
+        };
+        const imgs = postDiv.querySelectorAll('img');
+        imgs.forEach(img => {
+          if (isGalleryParent(img)) return; // skip galleries and custom widgets
+          // If already inside a figure, skip
+          if (img.closest('figure')) return;
+          const figure = document.createElement('figure');
+          figure.className = 'blog-figure';
+          img.parentNode.insertBefore(figure, img);
+          figure.appendChild(img);
+          // Caption preference: use title attribute, else alt if reasonably descriptive
+          const captionText = img.getAttribute('title') || img.getAttribute('alt');
+          if (captionText && captionText.trim().length > 0) {
+            const cap = document.createElement('figcaption');
+            cap.textContent = captionText.trim();
+            figure.appendChild(cap);
+          }
+        });
 
         // Inject dynamic meta tags and JSON-LD if FM present
         if (fm) {

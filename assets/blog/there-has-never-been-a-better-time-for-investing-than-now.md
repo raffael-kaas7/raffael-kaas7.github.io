@@ -66,28 +66,13 @@ Here you can see the historical performance of the S&P 500 index from 1970 to 20
 
 <div class="section-break"></div>
 
-<style>
-  .chart img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0; /* left-aligned */
-    border-radius: 0;
-  }
-
-  @media (max-width: 700px) {
-    .finisher-photo img {
-      width: 100%;
-    }
-  }
-</style>
-
-<div class="chart">
+<center>
     <figure>
-  <img src="assets/blog/img/sp500-chart.png" alt="S&P 500 historical performance chart from 1970 to 2025"/>
-  <figcaption>S&P 500 total return trend across cycles.</figcaption>
+        <img src="assets/blog/img/sp500-chart.png" alt="S&P 500 historical performance chart from 1970 to 2025" width="100%" />
+        <figcaption>S&P 500 total return trend across cycles.</figcaption>
     </figure>
-</div>
+</center>
+
 
 <div class="section-break"></div>
 
@@ -95,13 +80,12 @@ Since this is an exponential trend and humans tend to think linearly, here is th
 
 <div class="section-break"></div>
 
-
-<div class="chart">
+<center>
     <figure>
-  <img src="assets/blog/img/sp500-chart-log.png" alt="S&P 500 historical performance on logarithmic scale"/>
-  <figcaption>Log scale highlights consistent compounding over decades.</figcaption>
+        <img src="assets/blog/img/sp500-chart-log.png" alt="S&P 500 historical performance on logarithmic scale" width="100%" />
+        <figcaption>Log scale highlights consistent compounding over decades.</figcaption>
     </figure>
-</div>
+</center>
 
 ### Further reading
 
