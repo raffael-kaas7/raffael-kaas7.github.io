@@ -241,11 +241,18 @@
       }
   
       try {
-        // Fetch the Markdown content of the specified post
-        const response = await fetch(`${blogDir}${post}.md`);
-        console.log(response);
-        if (!response.ok) throw new Error('Blog post not found');
-        const markdown = await response.text();
+        // Fetch the Markdown content of the specified post (try .md, fallback .html)
+        let markdown = null;
+        let response = await fetch(`${blogDir}${post}.md`, { cache: 'no-store' });
+        if (!response.ok) {
+          // Fallback: maybe Pages processed front matter into HTML: /assets/blog/post.html
+            response = await fetch(`${blogDir}${post}.html`, { cache: 'no-store' });
+        }
+        if (!response.ok) {
+          console.error('Fetch failed for both .md and .html', response.status, response.statusText);
+          throw new Error('Blog post not found');
+        }
+        markdown = await response.text();
         const { fm, body } = parseFrontMatter(markdown);
   
         // Convert Markdown to HTML using marked.js
