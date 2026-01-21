@@ -93,6 +93,6 @@ It hasn’t been a straight path. I’ve switched strategies, made mistakes, and
 
 ### Further Reading
 
-A macro view on why starting matters more than timing: [There has never been a better time to invest than now](/blog.html?post=there-has-never-been-a-better-time-for-investing-than-now)
+A macro view on why starting matters more than timing: [There has never been a better time to invest than now](/blog.html?post=there-has-never-been-a-better-time-to-invest-than-now)
 
 <div class="section-break"></div>
