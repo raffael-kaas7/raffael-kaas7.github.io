@@ -38,9 +38,10 @@
   --primary-color: #163853;
   --primary-color-faded: #5a86b22a;
   --secondary-color: #7091b1;
-  --font-color: #163853;
-  --font-color-alternate: #163853;
-  --font-color-codeblock: #163853;
+  /* Slightly darker text for better contrast */
+  --font-color: #102f46;
+  --font-color-alternate: #102f46;
+  --font-color-codeblock: #102f46;
   --bg-color: #dddddd;
   --bg-color-alternate: #ededed;
   --bg-color-codeblock: #ededed;
@@ -588,7 +589,8 @@ section {
 
 /* Meta line under the title */
 .blog-post .post-meta {
-  color: #666;
+  color: var(--font-color);
+  opacity: 0.85;
   margin-top: 0rem;
   margin-bottom: 1rem;
   font-size: 1.4rem;

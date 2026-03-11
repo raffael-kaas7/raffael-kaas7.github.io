@@ -14,6 +14,9 @@ language: "en"
 draft: false
 ---
 
+**Update (March 2026):** AI agents and the models behind them have improved drastically in just half a year, so parts of this post may already feel a bit dated. Nevertheless, The app itself is fully functional and has been running on my home server ever since.
+<div class="section-break"></div>
+
 Recently, my LinkedIn feed has been overflowing with posts about "vibe coding" and agentic AI — building entire applications by guiding an AI agent step by step.
 
 Since I've already integrated LLMs into both my daily engineering work and personal projects, I was curious: Could I really build a complete application using nothing but my voice and AI assistance?
@@ -53,69 +56,32 @@ The results far exceeded my expectations and matched the hype I'd seen in all th
 - Calculate asset allocation and visualize it with pie charts. In addition to the usual categories (asset classes, sectors, regions), I also added a custom "Personal Risk Estimation" category, allowing me to classify each asset based on my own risk assessment (low, medium, high risk). This gives me a quick overview of the overall risk profile of my portfolio from my personal perspective.
 <div class="section-break"></div>
 
-<div class="image-carousel">
-    <button class="carousel-arrow left" onclick="carouselPrev()">&#8592;</button>
-    <img id="carousel-img" src="/assets/blog/img/asset-allocation.png" alt="Asset allocation chart screenshot from the app UI" onclick="openModal()" style="cursor: pointer;" />
-    <button class="carousel-arrow right" onclick="carouselNext()">&#8594;</button>
-</div>
-
-<div id="img-modal" class="img-modal" onclick="closeModal(event)">
-  <img id="modal-img" src="" alt="Enlarged image" />
+<div class="image-grid">
+  <img src="/assets/blog/img/asset-allocation.png" alt="Asset allocation chart" />
+  <img src="/assets/blog/img/dividends-hidden.png" alt="Dividend analytics" />
+  <img src="/assets/blog/img/multiple-depots-hidden.png" alt="Multiple depots view" />
+  <img src="/assets/blog/img/authentication-graphs-hidden.png" alt="Authentication buttons and graphs" />
 </div>
 
 <style>
-.image-carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
     padding: 16px 0;
 }
-.image-carousel img {
-    width: 90%;
-    max-width: 90vw;
+
+.image-grid img {
+    width: 100%;
     height: auto;
     border-radius: 0px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    flex-shrink: 0;
-    transition: opacity 0.3s;
-}
-.img-modal {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0,0,0,0.7);
-    align-items: center;
-    justify-content: center;
-    cursor: zoom-out;
-}
-.img-modal.active {
-    display: flex;
-}
-.img-modal img {
-    max-width: 95vw;
-    max-height: 90vh;
-    border-radius: 16px;
-    box-shadow: 0 4px 32px rgba(0,0,0,0.25);
-    background: #fff;
-    margin: auto;
 }
 
-.carousel-arrow {
-    font-size: 2rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #163853;
-    padding: 0 12px;
-    user-select: none;
-}
-.carousel-arrow:focus {
-    outline: none;
+@media (max-width: 768px) {
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
 <div class="section-break"></div>

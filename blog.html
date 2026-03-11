@@ -309,6 +309,13 @@
           }
         });
 
+        // Lazy-load images only for the long roadtrip post
+        if (post === 'roadtrip-from-perth-to-sydney') {
+          postDiv.querySelectorAll('img').forEach(img => {
+            if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+          });
+        }
+
         // Inject dynamic meta tags and JSON-LD if FM present
         if (fm) {
           const title = fm.title ? `${fm.title} – Raffael Kaas` : document.title;

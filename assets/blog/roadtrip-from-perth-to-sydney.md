@@ -41,8 +41,8 @@ In December 2025, we drove from Perth to Sydney in a motorhome. Western Australi
     background: #f2f2f2;
   }
   .img-grid figcaption, .img-wide figcaption {
-    font-size: 0.95rem;
-    color: #666;
+    font-size: 1.1rem;
+    color: var(--font-color);
     margin-top: 8px;
     line-height: 1.3;
   }
@@ -74,7 +74,7 @@ In December 2025, we drove from Perth to Sydney in a motorhome. Western Australi
   }
 </style>
 
-<div class="img-wide"> <figure> <img src="/assets/blog/img/roadtrip/sydney_opera.webp" alt="Sydney Opera House" > <figcaption>Sydney Opera House.</figcaption> </figure> </div>
+<div class="img-wide"> <figure> <img src="/assets/blog/img/roadtrip/sydney_opera.webp" alt="Sydney Opera House" > <figcaption>Sydney Opera House</figcaption> </figure> </div>
 
 
 <div class="section-break"></div>
@@ -96,16 +96,16 @@ The first morning we went for a run on [Heirisson Island](https://visitperth.com
 <div class="img-grid">
   <figure>
     <img src="/assets/blog/img/roadtrip/perth_skyline.webp" alt="Swan River Perth Skyline" >
-    <figcaption>Swan River Perth Skyline.</figcaption>
+    <figcaption>Swan River Perth Skyline</figcaption>
   </figure>
   <div>
     <figure style="margin-bottom: 14px;">
       <img src="/assets/blog/img/roadtrip/perth_kingspark.webp" alt="Perth skyline sunset view from Kings Park" >
-      <figcaption>Sunset view from Kings Park.</figcaption>
+      <figcaption>Sunset view from Kings Park</figcaption>
     </figure>
     <figure>
       <img src="/assets/blog/img/roadtrip/perth_skyline_2.webp" alt="Perth skyline view" >
-      <figcaption>Perth skyline view.</figcaption>
+      <figcaption>Perth skyline view</figcaption>
     </figure>
   </div>
 </div>
@@ -119,19 +119,19 @@ Rottnest Island was our first proper day trip. We took the ferry from the city (
 <div class="img-grid">
   <figure>
     <img src="/assets/blog/img/roadtrip/rottnest_boat.webp" alt="Ferry to Rottnest Island" >
-    <figcaption>Ferry to Rottnest Island.</figcaption>
+    <figcaption>Ferry to Rottnest Island</figcaption>
   </figure>
   <figure>
     <img src="/assets/blog/img/roadtrip/rottnest_bikes.webp" alt="Bikes on Rottnest Island" >
-    <figcaption>The bikes we rented.</figcaption>
+    <figcaption>The bikes we rented</figcaption>
   </figure>
   <figure>
     <img src="/assets/blog/img/roadtrip/rottnest_beach_view.webp" alt="Beach view from the cycle route" >
-    <figcaption>Beach view on Rottnest Island.</figcaption>
+    <figcaption>Beach view on Rottnest Island</figcaption>
   </figure>
   <figure>
     <img src="/assets/blog/img/roadtrip/rottnest_beach.webp" alt="One of many beautiful beaches" >
-    <figcaption>One of many beautiful beaches.</figcaption>
+    <figcaption>One of many beautiful beaches</figcaption>
   </figure>
 </div>
 
@@ -163,11 +163,11 @@ We used a BBQ station and made chicken with rice. Across Australia you will see 
 <div class="img-grid">
   <figure>
     <img src="/assets/blog/img/roadtrip/busselton_jetty.webp" alt="Busselton Jetty" >
-    <figcaption>Busselton Jetty.</figcaption>
+    <figcaption>Busselton Jetty</figcaption>
   </figure>
   <figure>
-    <img src="/assets/blog/img/roadtrip/first_camp_site.JPG" alt="Our first proper campsite" >
-    <figcaption>First proper campsite.</figcaption>
+    <img src="/assets/blog/img/roadtrip/first_camp_site.webp" alt="Our first proper campsite" >
+    <figcaption>First proper campsite</figcaption>
   </figure>
 </div>
 
@@ -184,11 +184,11 @@ In the afternoon we headed towards Margaret River, but we had problems finding a
 <div class="img-grid">
   <figure>
     <img src="/assets/blog/img/roadtrip/castlerock_trail.webp" alt="Trail to Castle Rock Bay" >
-    <figcaption>Trail to Castle Rock Bay.</figcaption>
+    <figcaption>Trail to Castle Rock Bay</figcaption>
   </figure>
   <figure>
     <img src="/assets/blog/img/roadtrip/castlerock.webp" alt="Castle Rock Bay" >
-    <figcaption>Castle Rock Bay.</figcaption>
+    <figcaption>Castle Rock Bay</figcaption>
   </figure>
 </div>
 
@@ -209,11 +209,11 @@ We stayed at [BIG4 Denmark Ocean Beach Holiday Park](https://www.big4.com.au/car
 <div class="img-grid">
   <figure>
     <img src="/assets/blog/img/roadtrip/street.webp" alt="Road through the south-west" >
-    <figcaption>Somewhere between Augusta and Denmark.</figcaption>
+    <figcaption>Somewhere between Augusta and Denmark</figcaption>
   </figure>
   <figure>
     <img src="/assets/blog/img/roadtrip/kangaroo_camp_site.webp" alt="Kangaroos at the campsite" >
-    <figcaption>Kangaroos at the campsite.</figcaption>
+    <figcaption>Kangaroos at the campsite</figcaption>
   </figure>
 </div>
 
@@ -228,11 +228,11 @@ After that we went to Elephant Cove and Greens Pool. Both are absurdly beautiful
 <div class="img-grid">
   <figure>
     <img src="/assets/blog/img/roadtrip/top_tree.webp" alt="Valley of the Giants treetop walk" >
-    <figcaption>Valley of the Giants treetop walk.</figcaption>
+    <figcaption>Valley of the Giants treetop walk</figcaption>
   </figure>
   <figure>
     <img src="/assets/blog/img/roadtrip/elefant_cove.webp" alt="Elephant Cove" >
-    <figcaption>Elephant Cove.</figcaption>
+    <figcaption>Elephant Cove</figcaption>
   </figure>
 </div>
 
@@ -244,7 +244,7 @@ In Albany we stopped at Bunnings and upgraded our camper setup with some fairy l
 
 That day we went out for breakfast. I really enjoyed ordering poached eggs, since I’m not great at making them myself. Eggs Benedict is a solid choice — usually two poached eggs plus toast, spinach, and Hollandaise.
 
-My girlfriend started ordering Mocha everywhere from that point on — hot or iced — while I kept ordering a Long Black (Americano). Australians do great coffee. In other travels that was often something I missed from home, but not in Australia.
+My girlend started ordering Mocha everywhere from that point on — hot or iced — while I kept ordering a Long Black (Americano). Australians do great coffee. In other travels that was often something I missed from home, but not in Australia.
 
 Around Albany itself, we did the [Bald Head hike](https://www.thelifeofpy.com/bald-head-walk-trail?srsltid=AfmBOoqaSncd4A_s4o-gNky2keQ600WQ-HqjO5yzlmRWydnYQPvwfKI4) in Torndirrup National Park. Coastal trail, strong wind, insane views — probably the number one hike of our whole trip. We cooled down at Misery Beach afterwards, which is extremely beautiful but had surprisingly expensive parking. I think it included the entry fee to the national park itself. Still worth it. Normally you don’t pay for parking in Australia (except big-city car parks, which we never used with the 3m+ height motorhome).
 
@@ -253,11 +253,11 @@ Our first-choice campsite was unfortunately booked out, so we stayed at Happy Da
 <div class="img-grid">
   <figure>
     <img src="/assets/blog/img/roadtrip/albany_trail.webp" alt="Bald Head hike" >
-    <figcaption>Bald Head hike (Torndirrup National Park).</figcaption>
+    <figcaption>Bald Head hike (Torndirrup National Park)</figcaption>
   </figure>
   <figure>
     <img src="/assets/blog/img/roadtrip/albany_view.webp" alt="Coastal view near Albany" >
-    <figcaption>Coastal views near Albany.</figcaption>
+    <figcaption>Coastal views near Albany</figcaption>
   </figure>
 </div>
 
@@ -281,19 +281,19 @@ We stayed at an EcoCamp campsite at [Dunns Eco Park](https://www.dunnsecopark.co
 <div class="img-grid">
   <figure>
     <img src="/assets/blog/img/roadtrip/ecocamp.webp" alt="EcoCamp campsite" >
-    <figcaption>EcoCamp in the eucalyptus trees.</figcaption>
+    <figcaption>EcoCamp in the eucalyptus trees</figcaption>
   </figure>
   <figure>
     <img src="/assets/blog/img/roadtrip/cape_le_grand.webp" alt="Cape Le Grand National Park" >
-    <figcaption>Cape Le Grand National Park.</figcaption>
+    <figcaption>Cape Le Grand National Park</figcaption>
   </figure>
   <figure>
     <img src="/assets/blog/img/roadtrip/thistle_cove.webp" alt="Thistle Cove" >
-    <figcaption>Thistle Cove.</figcaption>
+    <figcaption>Thistle Cove</figcaption>
   </figure>
   <figure>
     <img src="/assets/blog/img/roadtrip/hellfire_bay.webp" alt="Hellfire Bay" >
-    <figcaption>Hellfire Bay.</figcaption>
+    <figcaption>Hellfire Bay</figcaption>
   </figure>
 </div>
 <div class="section-break"></div>
@@ -324,11 +324,11 @@ Somewhere during the day you cross the border from Western Australia to South Au
 <div class="img-grid">
   <figure>
     <img src="/assets/blog/img/roadtrip/nulllabor.webp" alt="Nullarbor cliffs" >
-    <figcaption>Nullarbor cliffs.</figcaption>
+    <figcaption>Nullarbor cliffs</figcaption>
   </figure>
   <figure>
     <img src="/assets/blog/img/roadtrip/camper.webp" alt="Free Camping Nullarbor" >
-    <figcaption>Free Camping Nullarbor.</figcaption>
+    <figcaption>Free Camping Nullarbor</figcaption>
   </figure>
 </div>
 
@@ -362,11 +362,11 @@ The campsite “Farm Beach” required online booking for 20 AUD — also a good
 <div class="img-grid">
   <figure>
     <img src="/assets/blog/img/roadtrip/talia_caves.webp" alt="Talia Caves" >
-    <figcaption>Talia Caves.</figcaption>
+    <figcaption>Talia Caves</figcaption>
   </figure>
   <figure>
     <img src="/assets/blog/img/roadtrip/farm_beach.webp" alt="Farm Beach" >
-    <figcaption>Farm Beach.</figcaption>
+    <figcaption>Farm Beach</figcaption>
   </figure>
 </div>
 
@@ -382,11 +382,11 @@ Energy was low, so we focused on recovery: good campsite, good facilities, littl
 <div class="img-grid">
   <figure>
     <img src="/assets/blog/img/roadtrip/port_lincoln_1.webp" alt="Port Lincoln" >
-    <figcaption>Port Lincoln.</figcaption>
+    <figcaption>Port Lincoln</figcaption>
   </figure>
   <figure>
     <img src="/assets/blog/img/roadtrip/port_lincoln_2.webp" alt="Port Lincoln" >
-    <figcaption>Port Lincoln (foreshore).</figcaption>
+    <figcaption>Port Lincoln (foreshore)</figcaption>
   </figure>
 </div>
 
@@ -403,11 +403,11 @@ We stayed at a [free camp directly near the beach](https://maps.app.goo.gl/LxSRt
 <div class="img-grid">
   <figure>
     <img src="/assets/blog/img/roadtrip/burger_2.webp" alt="Clinton Free Camping." >
-    <figcaption>Clinton Free Camping.</figcaption>
+    <figcaption>Clinton Free Camping</figcaption>
   </figure>
   <figure>
     <img src="/assets/blog/img/roadtrip/burger.webp" alt="Dinner at the ocean" >
-    <figcaption>Dinner at the ocean.</figcaption>
+    <figcaption>Dinner at the ocean</figcaption>
   </figure>
 </div>
 
@@ -424,11 +424,11 @@ The next day we returned to the [Adelaide Central Market](https://maps.app.goo.g
 <div class="img-grid">
   <figure>
     <img src="/assets/blog/img/roadtrip/adelaide_markt.webp" alt="Adelaide Central Market" >
-    <figcaption>Adelaide Central Market.</figcaption>
+    <figcaption>Adelaide Central Market</figcaption>
   </figure>
   <figure>
     <img src="/assets/blog/img/roadtrip/adelaide_library.webp" alt="State Library of South Australia" >
-    <figcaption>State Library of South Australia.</figcaption>
+    <figcaption>State Library of South Australia</figcaption>
   </figure>
 </div>
 
@@ -441,7 +441,7 @@ We left Adelaide and before starting the Great Ocean Road we did a stop at Cooro
 <div class="img-grid">
   <figure>
     <img src="/assets/blog/img/roadtrip/caroong.webp" alt="Coorong National Park" >
-    <figcaption>Coorong National Park.</figcaption>
+    <figcaption>Coorong National Park</figcaption>
   </figure>
   <figure>
     <img src="/assets/blog/img/roadtrip/emus.webp" alt="Emus in Coorong National Park" >
@@ -474,7 +474,7 @@ After check-in we visited The Grotto and London Bridge. London Bridge in the eve
 <div class="img-grid">
   <figure>
     <img src="/assets/blog/img/roadtrip/blue_lake_horizontal.webp" alt="Blue Lake" >
-    <figcaption>Blue Lake (Mount Gambier).</figcaption>
+    <figcaption>Blue Lake (Mount Gambier)</figcaption>
   </figure>
   <figure>
     <img src="/assets/blog/img/roadtrip/portland_horizontal.webp" alt="Portland ocean view" >
@@ -497,11 +497,11 @@ We also visited the [Great Ocean Road Wildlife Park](https://maps.app.goo.gl/452
 <div class="img-grid">
   <figure>
     <img src="/assets/blog/img/roadtrip/grotto.webp" alt="The Grotto" >
-    <figcaption>The Grotto.</figcaption>
+    <figcaption>The Grotto</figcaption>
   </figure>
   <figure>
     <img src="/assets/blog/img/roadtrip/12_apostel.webp" alt="The Twelve Apostles" >
-    <figcaption>The Twelve Apostles.</figcaption>
+    <figcaption>The Twelve Apostles</figcaption>
   </figure>
 </div>
 
@@ -553,11 +553,11 @@ After check-in and breakfast we drove to the Blue Mountains. We did a small hike
 <div class="img-grid">
   <figure>
     <img src="/assets/blog/img/roadtrip/blue_mountains.webp" alt="Blue Mountains" >
-    <figcaption>Blue Mountains.</figcaption>
+    <figcaption>Blue Mountains</figcaption>
   </figure>
   <figure>
     <img src="/assets/blog/img/roadtrip/3_sisters.webp" alt="Three Sisters" >
-    <figcaption>The Three Sisters.</figcaption>
+    <figcaption>The Three Sisters</figcaption>
   </figure>
 </div>
 
@@ -580,7 +580,7 @@ That day we didn’t go into the city. It was enough. We just went to Macquarie 
   </figure>
   <figure>
     <img src="/assets/blog/img/roadtrip/car_wash.webp" alt="Car wash" >
-    <figcaption>Car wash before drop-off.</figcaption>
+    <figcaption>Car wash before drop-off</figcaption>
   </figure>
 </div>
 
@@ -607,15 +607,15 @@ Later we went towards our planned vantage point for the fireworks: Campbells Cov
 <div class="img-grid">
   <figure>
     <img src="/assets/blog/img/roadtrip/qvb.webp" alt="Queen Victoria Building" >
-    <figcaption>Queen Victoria Building.</figcaption>
+    <figcaption>Queen Victoria Building</figcaption>
   </figure>
   <figure>
     <img src="/assets/blog/img/roadtrip/harbour_bridge.webp" alt="Sydney Harbour Bridge" >
-    <figcaption>Sydney Harbour Bridge.</figcaption>
+    <figcaption>Sydney Harbour Bridge</figcaption>
   </figure>
 </div>
 
-<div class="img-wide"> <figure> <img src="/assets/blog/img/roadtrip/new_year.webp" alt="Sydney New Year’s Eve" > <figcaption>New Year’s Eve in Sydney.</figcaption> </figure> </div>
+<div class="img-wide"> <figure> <img src="/assets/blog/img/roadtrip/new_year.webp" alt="Sydney New Year’s Eve" > <figcaption>New Year’s Eve in Sydney</figcaption> </figure> </div>
 
 
 <div class="section-break"></div>
