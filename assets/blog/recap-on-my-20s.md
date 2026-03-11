@@ -1,8 +1,8 @@
 ---
 title: "Turning 30 – a personal recap and lessons from my 20s"
 slug: "recap-on-my-20s"
-date: "2026-03-15"
-lastmod: "2026-03-15"
+date: "2026-03-11"
+lastmod: "2026-03-11"
 description: "Turning 30 made me look back: a short recap of my 20s and the lessons I want to carry into my 30s."
 keywords: ["turning 30","recap of my 20s","life lessons","personal reflection","relationships","dopamin", "goals", "personal growth", "habits"]
 author: "Raffael Kaas"

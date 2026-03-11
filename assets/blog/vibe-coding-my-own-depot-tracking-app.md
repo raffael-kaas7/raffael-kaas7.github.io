@@ -7,7 +7,7 @@ description: "I built a dividend-tracking portfolio app with agentic AI in a few
 keywords: ["agentic AI","vibe coding","build app with AI","dividend tracking app","Comdirect API","Flask Dash portfolio"]
 author: "Raffael Kaas"
 readingTime: 8
-ogImage: "/assets/blog/img/asset-allocation.png"
+ogImage: "/assets/blog/img/asset-allocation.webp"
 canonical: "https://rkaas.de/blog.html?post=vibe-coding-my-own-depot-tracking-app"
 tags: ["ai","software-engineering","investing","portfolio"]
 language: "en"
@@ -57,10 +57,10 @@ The results far exceeded my expectations and matched the hype I'd seen in all th
 <div class="section-break"></div>
 
 <div class="image-grid">
-  <img src="/assets/blog/img/asset-allocation.png" alt="Asset allocation chart" />
-  <img src="/assets/blog/img/dividends-hidden.png" alt="Dividend analytics" />
-  <img src="/assets/blog/img/multiple-depots-hidden.png" alt="Multiple depots view" />
-  <img src="/assets/blog/img/authentication-graphs-hidden.png" alt="Authentication buttons and graphs" />
+    <img src="/assets/blog/img/asset-allocation.webp" alt="Asset allocation chart" />
+    <img src="/assets/blog/img/dividends-hidden.webp" alt="Dividend analytics" />
+    <img src="/assets/blog/img/multiple-depots-hidden.webp" alt="Multiple depots view" />
+    <img src="/assets/blog/img/authentication-graphs-hidden.webp" alt="Authentication buttons and graphs" />
 </div>
 
 <style>

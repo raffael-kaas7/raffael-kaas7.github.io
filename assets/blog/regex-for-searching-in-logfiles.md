@@ -7,7 +7,7 @@ description: "A collection of practical regex patterns for searching in logfiles
 keywords: ["regex","log files","logfiles","search patterns", "easy regex","regular expressions"]
 author: "Raffael Kaas"
 readingTime: 7
-ogImage: "/assets/blog/img/Gruppenbild.jpeg"
+ogImage: "/assets/blog/img/Gruppenbild.webp"
 canonical: "https://rkaas.de/blog.html?post=regex-for-searching-in-logfiles"
 tags: ["software-engineering","logfiles","search patterns"]
 language: "en"

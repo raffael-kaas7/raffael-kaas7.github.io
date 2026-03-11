@@ -7,7 +7,7 @@ description: "Training plan, mistakes, equipment, and race-day lessons from my f
 keywords: ["first marathon","marathon training plan","zone 2 running","VO2max", "running challenge", "3-Länder-Marathon"]
 author: "Raffael Kaas"
 readingTime: 7
-ogImage: "/assets/blog/img/Gruppenbild.jpeg"
+ogImage: "/assets/blog/img/Gruppenbild.webp"
 canonical: "https://rkaas.de/blog.html?post=my-first-marathon"
 tags: ["running","fitness","endurance"]
 language: "en"
@@ -86,19 +86,19 @@ In the images below, you can see some of my training data from Garmin Connect. Y
 
 <div class="garmin-app">
   <figure>
-  <img src="/assets/blog/img/vo2max.jpeg" alt="VO2max trend chart from Garmin Connect">
+  <img src="/assets/blog/img/vo2max.webp" alt="VO2max trend chart from Garmin Connect">
     <figcaption></figcaption>
   </figure>
   <figure>
-  <img src="/assets/blog/img/pace-estimation.jpeg" alt="Predicted race pace estimation">
+  <img src="/assets/blog/img/pace-estimation.webp" alt="Predicted race pace estimation">
     <figcaption></figcaption>
   </figure>
   <figure>
-  <img src="/assets/blog/img/training.jpeg" alt="Training state timeline from Garmin">
+  <img src="/assets/blog/img/training.webp" alt="Training state timeline from Garmin">
     <figcaption></figcaption>
   </figure>
   <figure>
-  <img src="/assets/blog/img/distances.jpeg" alt="Running distances per month bar chart">
+  <img src="/assets/blog/img/distances.webp" alt="Running distances per month bar chart">
     <figcaption></figcaption>
   </figure>
 </div>
@@ -135,7 +135,7 @@ The marathon itself was a really cool event and, for me, most importantly, a new
 
 <div class="finisher-photo">
   <figure>
-  <img src="/assets/blog/img/Gruppenbild.jpeg" alt="Marathon finishers group photo at the 3-Länder-Marathon">
+  <img src="/assets/blog/img/Gruppenbild.webp" alt="Marathon finishers group photo at the 3-Länder-Marathon">
     <figcaption></figcaption>
   </figure>
 </div>

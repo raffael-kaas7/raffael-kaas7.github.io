@@ -7,7 +7,7 @@ description: "What I learned in my first five years of investing: strategies, mi
 keywords: ["first 5 years investing","stock market lessons","investing mistakes","ETFs vs single stocks","dividend investing","books about investing"]
 author: "Raffael Kaas"
 readingTime: 5
-ogImage: "/assets/blog/img/favorite-books-investing.jpeg"
+ogImage: "/assets/blog/img/favorite-books-investing.webp"
 canonical: "https://rkaas.de/blog.html?post=5-years-in-the-stock-market"
 tags: ["investing","personal-finance"]
 language: "en"
@@ -75,7 +75,7 @@ Beyond these “foundation”-books, I’m glad I also read some others that bro
 
 <center>
     <figure>
-        <img src="/assets/blog/img/favorite-books-investing.jpeg" alt="A few of my favorite investing books" width="70%" />
+        <img src="/assets/blog/img/favorite-books-investing.webp" alt="A few of my favorite investing books" width="70%" />
         <figcaption>Some of my favorite books that shaped my investing mindset.</figcaption>
     </figure>
 </center>
