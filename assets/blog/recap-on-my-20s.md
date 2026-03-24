@@ -1,5 +1,5 @@
 ---
-title: "Turning 30 – a personal recap and lessons from my 20s"
+title: "Turning 30 — a personal recap and lessons from my 20s"
 slug: "recap-on-my-20s"
 date: "2026-03-11"
 lastmod: "2026-03-11"
