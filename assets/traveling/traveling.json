@@ -1,0 +1,126 @@
+{
+  "aliases": {
+    "Australia": "AU",
+    "Austria": "AT",
+    "Switzerland": "CH",
+    "Czech Republic": "CZ",
+    "Germany": "DE",
+    "Spain": "ES",
+    "France": "FR",
+    "Croatia": "HR",
+    "Hungary": "HU",
+    "Ireland": "IE",
+    "Italy": "IT",
+    "Morocco": "MA",
+    "Netherlands": "NL",
+    "Peru": "PE",
+    "Poland": "PL",
+    "Portugal": "PT",
+    "Qatar": "QA",
+    "Thailand": "TH",
+    "United States": "US",
+    "Vietnam": "VN"
+  },
+  "countries": {
+    "AT": {
+      "visited": true,
+      "color": "var(--secondary-color)",
+      "note": "Austria"
+    },
+    "CH": {
+      "visited": true,
+      "color": "var(--blog-link-color)",
+      "note": "Switzerland"
+    },
+    "CZ": {
+      "visited": true,
+      "color": "var(--blog-link-visited-color)",
+      "note": "Czech Republic"
+    },
+    "DE": {
+      "visited": true,
+      "color": "var(--blog-link-color)",
+      "note": "Germany (Home base)"
+    },
+    "ES": {
+      "visited": true,
+      "color": "var(--secondary-color)",
+      "note": "Spain"
+    },
+    "FR": {
+      "visited": true,
+      "color": "var(--blog-link-visited-color)",
+      "note": "France"
+    },
+    "HR": {
+      "visited": true,
+      "color": "var(--blog-link-color)",
+      "note": "Croatia"
+    },
+    "HU": {
+      "visited": true,
+      "color": "var(--secondary-color)",
+      "note": "Hungary"
+    },
+    "IE": {
+      "visited": true,
+      "color": "var(--blog-link-color)",
+      "note": "Ireland"
+    },
+    "IT": {
+      "visited": true,
+      "color": "var(--blog-link-visited-color)",
+      "note": "Italy"
+    },
+    "MA": {
+      "visited": true,
+      "color": "var(--secondary-color)",
+      "note": "Morocco"
+    },
+    "NL": {
+      "visited": true,
+      "color": "var(--blog-link-color)",
+      "note": "Netherlands"
+    },
+    "PE": {
+      "visited": true,
+      "color": "var(--blog-link-visited-color)",
+      "note": "Peru"
+    },
+    "PL": {
+      "visited": true,
+      "color": "var(--secondary-color)",
+      "note": "Poland"
+    },
+    "PT": {
+      "visited": true,
+      "color": "var(--blog-link-color)",
+      "note": "Portugal"
+    },
+    "QA": {
+      "visited": true,
+      "color": "var(--blog-link-visited-color)",
+      "note": "Qatar"
+    },
+    "TH": {
+      "visited": true,
+      "color": "var(--secondary-color)",
+      "note": "Thailand"
+    },
+    "US": {
+      "visited": true,
+      "color": "var(--blog-link-color)",
+      "note": "United States (West Coast)"
+    },
+    "VN": {
+      "visited": true,
+      "color": "var(--blog-link-visited-color)",
+      "note": "Vietnam"
+    },
+    "AU": {
+      "visited": true,
+      "color": "var(--secondary-color)",
+      "note": "Australia"
+    }
+  }
+}

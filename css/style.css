@@ -639,3 +639,79 @@ section {
     border-bottom: none;
   } 
 } */
+
+/* -------------- Traveling map -------------- */
+
+.traveling-title {
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+}
+
+.traveling {
+  width: 100%;
+}
+
+.traveling-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  margin-bottom: 0.75em;
+}
+
+.traveling-zoom-btn {
+  background-color: var(--primary-color);
+  border: 0;
+  color: white;
+  padding: 0.25em 0.8em;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: background-color 0.25s ease;
+}
+
+.traveling-zoom-btn:hover,
+.traveling-zoom-btn:focus {
+  background-color: var(--secondary-color);
+}
+
+.traveling-zoom-label {
+  opacity: 0.9;
+}
+
+.traveling-map-viewport {
+  position: relative;
+  overflow: auto;
+  border-radius: 10px;
+  border: 2px solid var(--primary-color-faded);
+  background-color: var(--bg-color);
+  max-height: 65vh;
+  cursor: grab;
+}
+
+.traveling-map-viewport.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.traveling-map-inner {
+  display: block;
+  padding: 0.5em;
+}
+
+.traveling-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.traveling-tooltip {
+  position: absolute;
+  z-index: 10;
+  max-width: 260px;
+  background-color: var(--heading-color);
+  color: white;
+  padding: 0.45em 0.6em;
+  border-radius: 10px;
+  font-size: 0.95em;
+  line-height: 1.25;
+  pointer-events: none;
+}
