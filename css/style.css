@@ -313,6 +313,59 @@ section {
   }
 }
 
+/* -------------- Footer -------------- */
+
+.site-footer {
+  background-color: var(--heading-color);
+  color: white;
+  padding: 1.6em 0;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer-inner {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45em;
+  justify-content: center;
+}
+
+.footer-contact {
+  align-items: baseline;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  gap: 0.65em;
+  justify-content: center;
+}
+
+.footer-contact span {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.footer-copyright {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9em;
+}
+
+.footer-email {
+  color: inherit;
+  font-weight: 400;
+  text-decoration: none;
+  transition: opacity 0.25s ease, text-decoration-color 0.25s ease;
+}
+
+.footer-email:hover,
+.footer-email:focus {
+  color: inherit;
+  opacity: 0.82;
+  text-decoration: underline;
+}
+
 /* -------------- Info row -------------- */
 
 .info-row {
