@@ -5,26 +5,35 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Raffael Kaas - Homepage</title>
+  <title>Raffael Kaas - Blog</title>
 
-  <meta name="description" content="Raffael Kaas – Homepage">
+  <meta name="description" content="Raffael Kaas - Blog">
   <meta name="author" content="Raffael Kaas">
   <link rel="canonical" href="https://rkaas.de/">
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <meta property="og:title" content="Raffael Kaas – Homepage">
-  <meta property="og:description" content="About Me | Projects | Blog">
+  <meta property="og:title" content="Raffael Kaas - Blog">
+  <meta property="og:description" content="Personal writing by Raffael Kaas">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rkaas.de/">
   <meta property="og:image" content="https://rkaas.de/assets/img/me.png">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Raffael Kaas">
-  <meta name="twitter:description" content="About Me | Projects | Blog">
+  <meta name="twitter:description" content="Personal writing by Raffael Kaas">
   <meta name="twitter:image" content="https://rkaas.de/assets/img/me.png">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
   <link rel="stylesheet" type="text/css" href="css/style.css">
 
   <!-- Structured Data: Person -->
@@ -37,126 +46,68 @@
     "url": "https://rkaas.de/",
     "image": "https://rkaas.de/assets/img/me.png",
     "sameAs": [
-      "https://www.linkedin.com/in/raffael-kaas-4b0869152",
-      "https://github.com/raffael-kaas7"
+      "https://www.linkedin.com/in/raffael-kaas-4b0869152"
     ],
     "knowsAbout": ["Embedded Systems", "ROS", "Linux", "C++", "Python", "ADAS", "Automotive"]
   }
   </script>
 </head>
-<body>
-  <!-- Invisible H1 -->
-  <h1 class="sr-only">Raffael Kaas – Software Engineer</h1>
+<body class="blog-page">
+  <h1 class="sr-only">Raffael Kaas - Blog</h1>
 
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-left">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-          aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+  <header class="site-header" id="top">
+    <a class="site-brand" href="/" aria-label="Raffael Kaas homepage">
+      <img src="assets/img/me.png" alt="" class="site-brand-avatar">
+      <span class="site-brand-copy">
+        <span class="site-brand-name">Raffael Kaas</span>
+      </span>
+    </a>
+
+    <button class="pb-theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+      <span class="sr-only">Toggle dark mode</span>
+    </button>
+  </header>
+
+  <main class="blog-page-main">
+    <div id="blog" class="pb-container blog-article-shell"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="pb-container site-footer-inner">
+      <div class="footer-links" aria-label="Contact links">
+        <a class="footer-link" href="mailto:mail@rkaas.de">mail@rkaas.de</a>
+        <a class="footer-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank" rel="me noopener">LinkedIn</a>
       </div>
-      <div class="navbar-right theme-switch-wrapper" style="padding-left: 1em">
-        <label class="theme-switch" for="checkbox">
-          <input type="checkbox" id="checkbox" />
-          <div class="slider round"></div>
-        </label>
-      </div>
-      <div id="navbar" class="collapse navbar-collapse navbar-left">
-        <ul class="nav navbar-nav" style="font-weight: 400;">
-          <li><a class="custom-link" href="/#top">Home</a></li>
-          <li><a class="custom-link" href="/#about">About Me</a></li>
-          <li><a class="custom-link" href="/#blog">Blog</a></li>
-          <li><a class="custom-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank" rel="me noopener">LinkedIn</a></li>
-          <li>
-            <a class="custom-link" href="https://github.com/raffael-kaas7" target="_blank" rel="me noopener">
-              <img src="assets/img/github.svg" alt="GitHub profile of Raffael Kaas" />
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  
-  <!-- <div class="hero">
-    <div class="hero-inner">
-      <p class="logo-icon"><img src="assets/img/me.png" alt="Raffael Kaas" style="border-radius: 50%;"></p>
-      <p class="logo-tagline">Raffael Kaas</p>
-    </div>
-  </div> -->
-
-  <a name="blog" style="background-color: var(--bg-color-alternate);"></a>
-  <section>
-    <div class="container"></div>
-  </section>
-
-  <section class="site-footer">
-    <div class="container site-footer-inner">
-      <p class="footer-contact"><span>e-mail:</span><a class="footer-email" href="mailto:mail@rkaas.de">mail@rkaas.de</a></p>
       <p class="footer-copyright">© 2026 Raffael Kaas. All rights reserved.</p>
     </div>
-  </section>
+  </footer>
 
   <script>
-    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-  
-    // Function to switch themes
-    function switchTheme(e) {
-      if (e.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark'); // Save theme to localStorage
-      } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light'); // Save theme to localStorage
+    (function () {
+      const themeToggle = document.querySelector('.pb-theme-toggle');
+
+      function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        try {
+          localStorage.setItem('theme', theme);
+        } catch (e) {}
+        if (themeToggle) {
+          themeToggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+        }
       }
-    }
-  
-    // Load the saved theme on page load
-    const currentTheme = localStorage.getItem('theme') || 'light'; // Default to 'light' if no theme is saved
-    document.documentElement.setAttribute('data-theme', currentTheme);
-  
-    // Update the toggle switch state based on the saved theme
-    if (currentTheme === 'dark') {
-      toggleSwitch.checked = true;
-    } else {
-      toggleSwitch.checked = false;
-    }
-  
-    toggleSwitch.addEventListener('change', switchTheme, false);
+
+      setTheme(document.documentElement.getAttribute('data-theme') || 'light');
+
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+          setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+      }
+    })();
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-
-  <script>
-    function removeHash() {
-      history.pushState("", document.title, window.location.pathname
-        + window.location.search);
-    };
-    $(window).bind('hashchange', function (event) {
-      var hash = location.hash.replace('#', '');
-      if (hash == 'top')
-        removeHash();
-    });
-
-    $(function () {
-      var navCollapse = $(".navbar-collapse");
-      var navBrand = $(".navbar-brand");
-      navBrand.on("click", null, function () {
-        navCollapse.collapse('hide');
-      });
-      navCollapse.on("click", "a:not([data-toggle])", null, function () {
-        navCollapse.collapse('hide');
-      });
-    });
-  </script>
 
   <script>
     // Minimal front matter (YAML-like) parser for simple key: value pairs and arrays
@@ -225,7 +176,7 @@
     }
 
     async function loadBlogPost() {
-      const blogContainer = document.querySelector('a[name="blog"] + section .container');
+      const blogContainer = document.querySelector('#blog');
       const blogDir = '/assets/blog/';
   
       // Get the query parameter from the URL
@@ -259,6 +210,10 @@
         // Display the blog post
         const postDiv = document.createElement('div');
         postDiv.classList.add('blog-post');
+        const titleImagePlaceholder = document.createElement('div');
+        titleImagePlaceholder.className = 'blog-title-image-placeholder';
+        titleImagePlaceholder.setAttribute('aria-hidden', 'true');
+        postDiv.appendChild(titleImagePlaceholder);
         // If front matter defines a title, render it as H1 for accessibility
         if (fm && fm.title) {
           const h1 = document.createElement('h1');

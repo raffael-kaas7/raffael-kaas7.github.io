@@ -13,21 +13,29 @@
   <link rel="icon" type="image/png" href="favicon.png">
 
   <meta property="og:title" content="Raffael Kaas - Homepage">
-  <meta property="og:description" content="About Me | Projects | Blog">
+  <meta property="og:description" content="About Me | Blog">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rkaas.de/">
   <meta property="og:image" content="https://rkaas.de/assets/img/me.png">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Raffael Kaas">
-  <meta name="twitter:description" content="About Me | Projects | Blog">
+  <meta name="twitter:description" content="About Me | Blog">
   <meta name="twitter:image" content="https://rkaas.de/assets/img/me.png">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
   <link rel="stylesheet" type="text/css" href="css/style.css">
 
-  <!-- Structured Data: Person -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -37,469 +45,180 @@
     "url": "https://rkaas.de/",
     "image": "https://rkaas.de/assets/img/me.png",
     "sameAs": [
-      "https://www.linkedin.com/in/raffael-kaas-4b0869152",
-      "https://github.com/raffael-kaas7"
+      "https://www.linkedin.com/in/raffael-kaas-4b0869152"
     ],
     "knowsAbout": ["Embedded Systems", "ROS", "Linux", "C++", "Python", "ADAS", "Automotive"]
   }
   </script>
 </head>
 
-<body>
-  <!-- Invisible H1 -->
+<body class="personal-blog-home">
   <h1 class="sr-only">Raffael Kaas</h1>
 
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-left">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-          aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+  <header class="site-header" id="top">
+    <a class="site-brand" href="#top" aria-label="Raffael Kaas">
+      <span class="site-brand-copy">
+        <span class="site-brand-name">Raffael Kaas</span>
+      </span>
+    </a>
+
+    <button class="pb-theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+      <span class="sr-only">Toggle dark mode</span>
+    </button>
+  </header>
+
+  <main class="home-shell">
+    <section class="home-hero">
+      <div class="pb-container home-hero-inner">
+        <div class="home-portrait-stack">
+          <div class="home-portrait-wrap">
+            <img src="assets/img/me.png" alt="Portrait of Raffael Kaas, Software Engineer" class="home-portrait">
+          </div>
+        </div>
       </div>
-      <div class="navbar-right theme-switch-wrapper" style="padding-left: 1em">
-        <label class="theme-switch" for="checkbox">
-          <input type="checkbox" id="checkbox" />
-          <div class="slider round"></div>
-        </label>
-      </div>
-      <div id="navbar" class="collapse navbar-collapse navbar-left">
-        <ul class="nav navbar-nav" style="font-weight: 400;">
-          <li><a class="custom-link" href="#top">Home</a></li>
-          <li><a class="custom-link" href="#about">About Me</a></li>
-          <li><a class="custom-link" href="#blog">Blog</a></li>
-          <li><a class="custom-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank" rel="me noopener">LinkedIn</a></li>
-          <!-- <li><a class="custom-link" href="https://github.com/raffael-kaas7" target="_blank" rel="me noopener">GitHub</a></li> -->
-          <li>
-            <a class="custom-link" href="https://github.com/raffael-kaas7" target="_blank" rel="me noopener">
-              <img src="assets/img/github.svg" alt="GitHub profile of Raffael Kaas" />
+    </section>
+
+    <div class="pb-container content-shell">
+      <section class="about-panel" id="about">
+        <div>
+          <h2>About Me</h2>
+        </div>
+        <div class="about-copy">
+          <p>Hi, I'm Raffael, a software engineer living at Lake Constance and working in the automotive industry. I have a Master of Engineering with a focus on autonomous systems. Over the past few years, I've worked on a wide range of complex software projects: building my own quadrocopter during university, launching autonomous shuttles in Rotterdam, and now developing series production software for power converters in e-mobility.</p>
+          <p>I enjoy working on Linux-based systems, using C/C++ for embedded software development and Python to make life easier or to quickly prototype ideas. I've worked on many projects using ROS on high-performance computers, but I also have a lot of hands-on experience with microcontrollers and low-level debugging.</p>
+          <p>Outside of engineering, I'm usually in motion: running, playing soccer, or lifting heavy weights. Besides sports, I have a strong interest in finance and investing, and enjoy diving into new ideas through books, travel, or good conversations.</p>
+        </div>
+      </section>
+
+      <section class="blog-panel" id="blog">
+        <div class="blog-heading">
+          <h2>Blog</h2>
+        </div>
+        <ul class="post-list">
+          <li class="post-item mark-learning">
+            <a href="blog.html?post=how-to-learn-a-new-language">
+              <span class="post-mark" aria-hidden="true"></span>
+              <span class="post-card-copy">
+                <span class="post-date">19-05-2026</span>
+                <span class="post-title">My favorite tools for learning a new language</span>
+              </span>
+            </a>
+          </li>
+          <li class="post-item mark-engineering">
+            <a href="blog.html?post=git-made-simple">
+              <span class="post-mark" aria-hidden="true"></span>
+              <span class="post-card-copy">
+                <span class="post-date">24-03-2026</span>
+                <span class="post-title">Everyone should use Git - my simple day-to-day workflow (CLI only)</span>
+              </span>
+            </a>
+          </li>
+          <li class="post-item mark-life">
+            <a href="blog.html?post=recap-on-my-20s">
+              <span class="post-mark" aria-hidden="true"></span>
+              <span class="post-card-copy">
+                <span class="post-date">11-03-2026</span>
+                <span class="post-title">Turning 30 - a personal recap and lessons from my 20s</span>
+              </span>
+            </a>
+          </li>
+          <li class="post-item mark-travel">
+            <a href="blog.html?post=roadtrip-from-perth-to-sydney">
+              <span class="post-mark" aria-hidden="true"></span>
+              <span class="post-card-copy">
+                <span class="post-date">05-02-2026</span>
+                <span class="post-title">Road trip from Perth to Sydney - one month and 6,700 km</span>
+              </span>
+            </a>
+          </li>
+          <li class="post-item mark-engineering">
+            <a href="blog.html?post=regex-for-searching-in-logfiles">
+              <span class="post-mark" aria-hidden="true"></span>
+              <span class="post-card-copy">
+                <span class="post-date">26-11-2025</span>
+                <span class="post-title">Regex patterns I actually use when searching log files</span>
+              </span>
+            </a>
+          </li>
+          <li class="post-item mark-life">
+            <a href="blog.html?post=my-first-marathon">
+              <span class="post-mark" aria-hidden="true"></span>
+              <span class="post-card-copy">
+                <span class="post-date">14-10-2025</span>
+                <span class="post-title">Running my first marathon</span>
+              </span>
+            </a>
+          </li>
+          <li class="post-item mark-engineering">
+            <a href="blog.html?post=vibe-coding-my-own-depot-tracking-app">
+              <span class="post-mark" aria-hidden="true"></span>
+              <span class="post-card-copy">
+                <span class="post-date">05-09-2025</span>
+                <span class="post-title">Building my first application with agentic AI</span>
+              </span>
+            </a>
+          </li>
+          <li class="post-item mark-learning">
+            <a href="blog.html?post=5-years-in-the-stock-market">
+              <span class="post-mark" aria-hidden="true"></span>
+              <span class="post-card-copy">
+                <span class="post-date">03-08-2025</span>
+                <span class="post-title">My first 5 years in the stock market - a personal reflection</span>
+              </span>
+            </a>
+          </li>
+          <li class="post-item mark-engineering">
+            <a href="blog.html?post=lessons-learned-in-software-engineering">
+              <span class="post-mark" aria-hidden="true"></span>
+              <span class="post-card-copy">
+                <span class="post-date">30-07-2025</span>
+                <span class="post-title">Lessons learned from building complex software products</span>
+              </span>
             </a>
           </li>
         </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="pb-container site-footer-inner">
+      <div class="footer-links" aria-label="Contact links">
+        <a class="footer-link" href="mailto:mail@rkaas.de">mail@rkaas.de</a>
+        <a class="footer-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank" rel="me noopener">LinkedIn</a>
       </div>
-    </div>
-  </nav>
-
-  <div class="hero">
-    <div class="hero-inner">
-      <p class="logo-icon">
-        <img src="assets/img/me.png" alt="Portrait of Raffael Kaas, Software Engineer" style="border-radius: 50%;">
-      </p>
-      <p class="logo-tagline">Raffael Kaas</p>
-    </div>
-  </div>
-
-  <a name="about"></a>
-  <section class="">
-    <div class="container">
-      <div class="section-header">
-        <h2>About Me</h2>
-        <hr align="left" style="margin-top: 0; margin-bottom: 1em; height: 2px; width: 100%; border-width: 0; color: gray; background-color: gray">
-        <i>
-          <p>
-            Hi, I'm Raffael, a software engineer living at Lake Constance and working in the automotive industry.
-            I have a Master of Engineering with a focus on autonomous systems.
-            Over the past few years, I've worked on a wide range of complex software projects: building my own quadrocopter during university, launching autonomous shuttles in Rotterdam,
-            and now developing series production software for power converters in e-mobility.
-          </p>
-          <br>
-          <p>
-            I enjoy working on Linux-based systems, using C/C++ for embedded software development and Python to make life easier or to quickly prototype ideas.
-            I've worked on many projects using ROS on high-performance computers, but I also have a lot of hands-on experience with microcontrollers and low-level debugging.
-          </p>
-          <br>
-          <p>
-            Outside of engineering, I'm usually in motion: running, playing soccer, or lifting heavy weights.
-            Besides sports, I have a strong interest in finance and investing, and enjoy diving into new ideas through books, travel, or good conversations.
-          </p>
-        </i>
-      </div>
-    </div>
-  </section>
-
-  <!-- <a name="projects"></a>
-  <section>
-    <div class="container">
-      <div class="section-header">
-        <h2>My current Projects</h2>
-        <hr align="left" style="margin-top: 0; margin-bottom: 1em; height: 2px; width: 100%; border-width: 0; color: gray;
-          background-color: gray">
-      </div>  
-    </div>
-  </section> -->
-
-  <a name="blog"></a>
-  <section id="blog-preview" style="background-color: var(--bg-color-alternate);">
-    <div class="container">
-      <div class="section-header">
-        <h2>Blog</h2>
-        <hr align="left" style="margin-top: 0; margin-bottom: 1em; height: 2px; width: 100%; border-width: 0; color: gray; background-color: gray">
-        <i>
-          <ul class="list-unstyled blog-preview-list" style="text-align: left;">
-            <!-- List of blog titles with links to the full articles -->
-            <li class="blog-preview-item"><a href="blog.html?post=how-to-learn-a-new-language" class="custom-link blog-preview-link" style="color: inherit;"><span class="blog-preview-date">19-05-2026</span><span class="blog-preview-title">My favorite tools for learning a new language</span></a></li>
-            <li class="blog-preview-item"><a href="blog.html?post=git-made-simple" class="custom-link blog-preview-link" style="color: inherit;"><span class="blog-preview-date">24-03-2026</span><span class="blog-preview-title">Everyone should use Git - my simple day-to-day workflow (CLI only)</span></a></li>
-            <li class="blog-preview-item"><a href="blog.html?post=recap-on-my-20s" class="custom-link blog-preview-link" style="color: inherit;"><span class="blog-preview-date">11-03-2026</span><span class="blog-preview-title">Turning 30 - a personal recap and lessons from my 20s</span></a></li>
-            <li class="blog-preview-item"><a href="blog.html?post=roadtrip-from-perth-to-sydney" class="custom-link blog-preview-link" style="color: inherit;"><span class="blog-preview-date">05-02-2026</span><span class="blog-preview-title">Road trip from Perth to Sydney - one month and 6,700 km</span></a></li>
-            <li class="blog-preview-item"><a href="blog.html?post=regex-for-searching-in-logfiles" class="custom-link blog-preview-link" style="color: inherit;"><span class="blog-preview-date">26-11-2025</span><span class="blog-preview-title">Regex patterns I actually use when searching log files</span></a></li>
-            <!-- <li class="blog-preview-item"><a href="blog.html?post=there-has-never-been-a-better-time-to-invest-than-now" class="custom-link blog-preview-link" style="color: inherit;"><span class="blog-preview-date">17-11-2025</span><span class="blog-preview-title">There has never been a better time to invest than now</span></a></li> -->
-            <li class="blog-preview-item"><a href="blog.html?post=my-first-marathon" class="custom-link blog-preview-link" style="color: inherit;"><span class="blog-preview-date">14-10-2025</span><span class="blog-preview-title">Running my first marathon</span></a></li>
-            <li class="blog-preview-item"><a href="blog.html?post=vibe-coding-my-own-depot-tracking-app" class="custom-link blog-preview-link" style="color: inherit;"><span class="blog-preview-date">05-09-2025</span><span class="blog-preview-title">Building my first application with agentic AI</span></a></li>
-            <li class="blog-preview-item"><a href="blog.html?post=5-years-in-the-stock-market" class="custom-link blog-preview-link" style="color: inherit;"><span class="blog-preview-date">03-08-2025</span><span class="blog-preview-title">My first 5 years in the stock market - a personal reflection</span></a></li>
-            <li class="blog-preview-item"><a href="blog.html?post=lessons-learned-in-software-engineering" class="custom-link blog-preview-link" style="color: inherit;"><span class="blog-preview-date">30-07-2025</span><span class="blog-preview-title">Lessons learned from building complex software products</span></a></li>
-          </ul>
-        </i>
-      </div>
-    </div>
-  </section>
-
-  <!-- <a name="Traveling"></a>
-  <section id="blog-preview" style="background-color: var(--bg-color-alternate);">
-    <div class="container">
-      <div class="section-header">
-      <h2>Traveling</h2>
-      <hr align="left" style="margin-top: 0; margin-bottom: 1em; height: 2px; width: 100%; border-width: 0; color: gray; background-color: gray">
-      <i>
-        <p>
-          I love those world maps people hang at home that show where they’ve traveled so far. I always wanted one myself, but I couldn’t find the right place for it — so I decided to build a digital version instead.
-          And yes, traveling isn’t really a “hobby”. Everyone likes to travel, and I’m aware it’s a privilege to be able to make both time and money work for it.
-          Discovering new places and cultures — and seeing how the world changes from different perspectives — is simply something I genuinely enjoy. I hope to visit many more places in the future, and to return to the ones I loved (or only saw briefly on a short layover) at different stages of life.
-        </p>
-        <br>
-      </i>
-      <div class="traveling">
-        <div class="traveling-controls">
-          <button type="button" class="traveling-zoom-btn" id="travel-zoom-out" aria-label="Zoom out">—</button>
-          <button type="button" class="traveling-zoom-btn" id="travel-zoom-in" aria-label="Zoom in">+</button>
-          <span class="traveling-zoom-label" id="travel-zoom-label" aria-live="polite"></span>
-        </div>
-        <div class="traveling-map-viewport" id="travel-viewport">
-          <div class="traveling-map-inner" id="travel-inner"></div>
-          <div class="traveling-tooltip" id="travel-tooltip" role="tooltip" hidden></div>
-        </div>
-      </div>
-    </div>
-  </section> -->
-
-
-  <section class="site-footer">
-    <div class="container site-footer-inner">
-      <p class="footer-contact"><span>e-mail:</span><a class="footer-email" href="mailto:mail@rkaas.de">mail@rkaas.de</a></p>
       <p class="footer-copyright">© 2026 Raffael Kaas. All rights reserved.</p>
     </div>
-  </section>
-
-
-
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-
-  <script>
-    function removeHash() {
-      history.pushState("", document.title, window.location.pathname
-        + window.location.search);
-    };
-    $(window).bind('hashchange', function (event) {
-      var hash = location.hash.replace('#', '');
-      if (hash == 'top')
-        removeHash();
-    });
-
-    $(function () {
-      var navCollapse = $(".navbar-collapse");
-      var navBrand = $(".navbar-brand");
-      navBrand.on("click", null, function () {
-        navCollapse.collapse('hide');
-      });
-      navCollapse.on("click", "a:not([data-toggle])", null, function () {
-        navCollapse.collapse('hide');
-      });
-    });
-  </script>
-
-  <script>
-    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-
-    // Function to switch themes
-    function switchTheme(e) {
-      if (e.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark'); // Save theme to localStorage
-      } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light'); // Save theme to localStorage
-      }
-    }
-
-    // Load the saved theme on page load
-    const currentTheme = localStorage.getItem('theme') || 'light'; // Default to 'light' if no theme is saved
-    document.documentElement.setAttribute('data-theme', currentTheme);
-  
-    // Update the toggle switch state based on the saved theme
-    if (currentTheme === 'dark') {
-      toggleSwitch.checked = true;
-    } else {
-      toggleSwitch.checked = false;
-    }
-  
-    toggleSwitch.addEventListener('change', switchTheme, false);
-  </script>
+  </footer>
 
   <script>
     (function () {
-      let travelingInitialized = false;
-      let travelingScale = 1;
-      const travelingScaleMin = 0.5;
-      const travelingScaleMax = 6;
-      const travelingScaleStep = 0.5;
-      const travelingDefaultFill = '#3a3a3a';
-      let travelingIsDragging = false;
+      const themeToggle = document.querySelector('.pb-theme-toggle');
+      const pageParams = new URLSearchParams(window.location.search);
 
-      function clamp(num, min, max) {
-        return Math.max(min, Math.min(max, num));
-      }
-
-      function hideTooltip() {
-        const tooltip = document.getElementById('travel-tooltip');
-        if (tooltip) tooltip.hidden = true;
-      }
-
-      function updateTravelingScale() {
-        const inner = document.getElementById('travel-inner');
-        const label = document.getElementById('travel-zoom-label');
-        if (!inner) return;
-        const svg = inner.querySelector('svg');
-        if (svg) {
-          svg.style.width = `${travelingScale * 100}%`;
-          svg.style.height = 'auto';
-        }
-        if (label) label.textContent = `${Math.round(travelingScale * 100)}%`;
-      }
-
-      function safeJson(obj) {
-        if (!obj || typeof obj !== 'object') return { countries: {} };
-        if (!obj.countries || typeof obj.countries !== 'object') return { countries: {} };
-        return obj;
-      }
-
-      async function fetchText(url) {
-        const res = await fetch(url, { cache: 'no-store' });
-        if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
-        return await res.text();
-      }
-
-      async function fetchJson(url) {
-        const res = await fetch(url, { cache: 'no-store' });
-        if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
-        return await res.json();
-      }
-
-      async function initTraveling() {
-        if (travelingInitialized) return;
-        travelingInitialized = true;
-
-        const inner = document.getElementById('travel-inner');
-        const viewport = document.getElementById('travel-viewport');
-        const tooltip = document.getElementById('travel-tooltip');
-        if (!inner || !viewport || !tooltip) return;
-
-        inner.textContent = 'Loading map...';
-
-        let svgText;
-        let config;
+      function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
         try {
-          const [svgRaw, cfg] = await Promise.all([
-            fetchText('assets/world.svg'),
-            fetchJson('assets/traveling/traveling.json')
-          ]);
-          svgText = svgRaw;
-          config = safeJson(cfg);
-        } catch (e) {
-          console.error(e);
-          inner.textContent = 'Failed to load map.';
-          return;
+          localStorage.setItem('theme', theme);
+        } catch (e) {}
+        if (themeToggle) {
+          themeToggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
         }
-
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(svgText, 'image/svg+xml');
-        const svg = doc.documentElement;
-
-        const viewBox = svg.getAttribute('viewBox') || svg.getAttribute('viewbox');
-        if (viewBox) svg.setAttribute('viewBox', viewBox);
-        svg.removeAttribute('width');
-        svg.removeAttribute('height');
-        svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
-        svg.classList.add('traveling-svg');
-
-        inner.textContent = '';
-        inner.appendChild(svg);
-
-        const aliases = (config && typeof config.aliases === 'object' && config.aliases)
-          ? config.aliases
-          : {};
-
-        const paths = svg.querySelectorAll('path');
-        paths.forEach(p => {
-          p.style.fill = travelingDefaultFill;
-          p.style.stroke = 'var(--bg-color-alternate)';
-          p.style.strokeWidth = '0.6';
-          p.style.vectorEffect = 'non-scaling-stroke';
-          p.style.cursor = 'pointer';
-
-          const id = p.getAttribute('id');
-          if (id && /^[A-Z]{2}$/.test(id)) {
-            p.dataset.countryCode = id;
-            return;
-          }
-          const cls = p.getAttribute('class');
-          if (cls) {
-            const raw = cls.trim();
-            if (aliases[raw]) {
-              p.dataset.countryCode = aliases[raw];
-              return;
-            }
-
-            const tokens = raw.split(/\s+/);
-            const matched = tokens.find(t => aliases[t]);
-            if (matched) {
-              p.dataset.countryCode = aliases[matched];
-              return;
-            }
-          }
-
-          const svgName = p.getAttribute('name');
-          if (svgName && aliases[svgName]) {
-            p.dataset.countryCode = aliases[svgName];
-          }
-        });
-
-        paths.forEach(p => {
-          const code = p.dataset.countryCode;
-          if (!code) return;
-          const entry = config.countries[code];
-          const visited = !!(entry && entry.visited);
-          if (!visited) {
-            p.style.fill = travelingDefaultFill;
-            return;
-          }
-
-          const color = entry && typeof entry.color === 'string' && entry.color.trim().length > 0
-            ? entry.color.trim()
-            : 'var(--secondary-color)';
-          p.style.fill = color;
-        });
-
-        svg.addEventListener('mousemove', (e) => {
-          if (travelingIsDragging) {
-            hideTooltip();
-            return;
-          }
-          const target = e.target;
-          const tag = target && target.tagName ? String(target.tagName).toLowerCase() : '';
-          if (!target || tag !== 'path') {
-            hideTooltip();
-            return;
-          }
-          const code = target.dataset.countryCode;
-          if (!code) {
-            hideTooltip();
-            return;
-          }
-
-          const entry = config.countries[code];
-          const note = entry && typeof entry.note === 'string' ? entry.note.trim() : '';
-          if (!note) {
-            hideTooltip();
-            return;
-          }
-
-          tooltip.textContent = note;
-          tooltip.hidden = false;
-          const rect = viewport.getBoundingClientRect();
-          const x = Math.max(8, Math.min(rect.width - 8, (e.clientX - rect.left) + 12));
-          const y = Math.max(8, Math.min(rect.height - 8, (e.clientY - rect.top) + 12));
-          tooltip.style.left = `${x}px`;
-          tooltip.style.top = `${y}px`;
-        });
-
-        svg.addEventListener('mouseleave', hideTooltip);
-        viewport.addEventListener('scroll', hideTooltip);
-
-        updateTravelingScale();
       }
 
-      function setupTravelingPanAndWheel() {
-        const viewport = document.getElementById('travel-viewport');
-        if (!viewport) return;
+      const requestedTheme = pageParams.get('theme');
+      const savedTheme = (requestedTheme === 'dark' || requestedTheme === 'light')
+        ? requestedTheme
+        : (document.documentElement.getAttribute('data-theme') || 'light');
+      setTheme(savedTheme);
 
-        let startClientX = 0;
-        let startClientY = 0;
-        let startScrollLeft = 0;
-        let startScrollTop = 0;
-
-        viewport.addEventListener('mousedown', (e) => {
-          if (e.button !== 0) return;
-          travelingIsDragging = true;
-          hideTooltip();
-          viewport.classList.add('is-dragging');
-          startClientX = e.clientX;
-          startClientY = e.clientY;
-          startScrollLeft = viewport.scrollLeft;
-          startScrollTop = viewport.scrollTop;
-          e.preventDefault();
-        });
-
-        window.addEventListener('mousemove', (e) => {
-          if (!travelingIsDragging) return;
-          const dx = e.clientX - startClientX;
-          const dy = e.clientY - startClientY;
-          viewport.scrollLeft = startScrollLeft - dx;
-          viewport.scrollTop = startScrollTop - dy;
-        });
-
-        window.addEventListener('mouseup', () => {
-          if (!travelingIsDragging) return;
-          travelingIsDragging = false;
-          viewport.classList.remove('is-dragging');
-        });
-
-        viewport.addEventListener('mouseleave', () => {
-          if (!travelingIsDragging) return;
-          travelingIsDragging = false;
-          viewport.classList.remove('is-dragging');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+          setTheme(currentTheme === 'dark' ? 'light' : 'dark');
         });
       }
-
-      function setupTravelingZoom() {
-        const zoomIn = document.getElementById('travel-zoom-in');
-        const zoomOut = document.getElementById('travel-zoom-out');
-        if (zoomIn) {
-          zoomIn.addEventListener('click', () => {
-            travelingScale = clamp(travelingScale + travelingScaleStep, travelingScaleMin, travelingScaleMax);
-            updateTravelingScale();
-          });
-        }
-        if (zoomOut) {
-          zoomOut.addEventListener('click', () => {
-            travelingScale = clamp(travelingScale - travelingScaleStep, travelingScaleMin, travelingScaleMax);
-            updateTravelingScale();
-          });
-        }
-        updateTravelingScale();
-      }
-
-      document.addEventListener('DOMContentLoaded', () => {
-        setupTravelingZoom();
-        setupTravelingPanAndWheel();
-        initTraveling();
-      });
     })();
   </script>
-
 </body>
-
 </html>
