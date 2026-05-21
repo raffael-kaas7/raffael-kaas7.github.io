@@ -110,40 +110,39 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
   <script>
-    // Minimal front matter (YAML-like) parser for simple key: value pairs and arrays
+    function parseFrontMatterValue(value) {
+      let val = value.trim();
+
+      if (val.startsWith('[') && val.endsWith(']')) {
+        try {
+          return JSON.parse(val);
+        } catch (e) {
+          return val.slice(1, -1).split(',').map(item => item.trim().replace(/^['"]|['"]$/g, ''));
+        }
+      }
+
+      if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+        val = val.slice(1, -1);
+      }
+      if (val === 'true' || val === 'false') return val === 'true';
+      if (/^\d{4}-\d{2}-\d{2}$/.test(val)) return val;
+      if (!Number.isNaN(Number(val)) && val !== '') return Number(val);
+      return val;
+    }
+
     function parseFrontMatter(text) {
       const fmRegex = /^---\n([\s\S]*?)\n---\n?/;
       const match = text.match(fmRegex);
       if (!match) return { fm: null, body: text };
-      const yaml = match[1];
       const fm = {};
-      yaml.split(/\r?\n/).forEach(line => {
+      match[1].split(/\r?\n/).forEach(line => {
         if (!line.trim() || line.trim().startsWith('#')) return;
         const idx = line.indexOf(':');
         if (idx === -1) return;
         const key = line.slice(0, idx).trim();
-        let val = line.slice(idx + 1).trim();
-        // Remove surrounding quotes
-        if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
-          val = val.slice(1, -1);
-        }
-        // Arrays in [a, b] or ["a", "b"]
-        if (val.startsWith('[') && val.endsWith(']')) {
-          try { val = JSON.parse(val.replace(/(['\"])?([a-zA-Z0-9_\-\s\/\.\:\,\&\(\)]+)(\1)?/g, (m)=>m)); } catch (e) {
-            // Fallback: split by comma
-            val = val.slice(1, -1).split(',').map(s => s.trim().replace(/^['\"]|['\"]$/g, ''));
-          }
-        } else if (val === 'true' || val === 'false') {
-          val = (val === 'true');
-        } else if (/^\d{4}-\d{2}-\d{2}$/.test(val)) {
-          // keep date as string
-        } else if (!isNaN(val) && val !== '') {
-          val = Number(val);
-        }
-        fm[key] = val;
+        fm[key] = parseFrontMatterValue(line.slice(idx + 1));
       });
-      const body = text.replace(fmRegex, '');
-      return { fm, body };
+      return { fm, body: text.replace(fmRegex, '') };
     }
 
     function setOrCreateMeta(name, content, attr = 'name') {
@@ -178,8 +177,6 @@
     async function loadBlogPost() {
       const blogContainer = document.querySelector('#blog');
       const blogDir = '/assets/blog/';
-  
-      // Get the query parameter from the URL
       const urlParams = new URLSearchParams(window.location.search);
       const post = urlParams.get('post');
   
@@ -189,27 +186,19 @@
       }
   
       try {
-        // Fetch the Markdown content of the specified post (try .md, fallback .html)
-        let markdown = null;
         let response = await fetch(`${blogDir}${post}.md`, { cache: 'no-store' });
         if (!response.ok) {
-          // Fallback: maybe Pages processed front matter into HTML: /assets/blog/post.html
-            response = await fetch(`${blogDir}${post}.html`, { cache: 'no-store' });
+          response = await fetch(`${blogDir}${post}.html`, { cache: 'no-store' });
         }
         if (!response.ok) {
           console.error('Fetch failed for both .md and .html', response.status, response.statusText);
           throw new Error('Blog post not found');
         }
-        markdown = await response.text();
+        const markdown = await response.text();
         const { fm, body } = parseFrontMatter(markdown);
-  
-        // Convert Markdown to HTML using marked.js
-        //console.log("typeof marked", typeof marked); // Debugging: Check if marked is loaded
-        const html = marked.parse(body); 
-  
-        // Display the blog post
         const postDiv = document.createElement('div');
         postDiv.classList.add('blog-post');
+
         if (fm && fm.titleImage) {
           const titleImage = document.createElement('img');
           titleImage.className = 'blog-title-image';
@@ -227,12 +216,12 @@
           titleImagePlaceholder.setAttribute('aria-hidden', 'true');
           postDiv.appendChild(titleImagePlaceholder);
         }
-        // If front matter defines a title, render it as H1 for accessibility
+
         if (fm && fm.title) {
           const h1 = document.createElement('h1');
           h1.textContent = fm.title;
           postDiv.appendChild(h1);
-          // Meta line (date • reading time)
+
           const meta = document.createElement('p');
           meta.className = 'post-meta';
           const parts = [];
@@ -250,25 +239,21 @@
             postDiv.appendChild(meta);
           }
         }
-        postDiv.innerHTML += html;
+
+        postDiv.insertAdjacentHTML('beforeend', marked.parse(body));
         blogContainer.appendChild(postDiv);
 
-        // Enhance single images: wrap standalone <img> (not inside known galleries) in a standardized figure
-        const isGalleryParent = (el) => {
-          if (!el) return false;
-          return el.closest('.garmin-app, .image-carousel, .img-modal, .chart, .finisher-photo');
-        };
+        const isGalleryParent = (el) => el && el.closest('.garmin-app, .finisher-photo');
         const imgs = postDiv.querySelectorAll('img');
         imgs.forEach(img => {
           if (img.classList.contains('blog-title-image')) return;
-          if (isGalleryParent(img)) return; // skip galleries and custom widgets
-          // If already inside a figure, skip
+          if (isGalleryParent(img)) return;
           if (img.closest('figure')) return;
           const figure = document.createElement('figure');
           figure.className = 'blog-figure';
           img.parentNode.insertBefore(figure, img);
           figure.appendChild(img);
-          // Caption preference: use title attribute, else alt if reasonably descriptive
+
           const captionText = img.getAttribute('title') || img.getAttribute('alt');
           if (captionText && captionText.trim().length > 0) {
             const cap = document.createElement('figcaption');
@@ -284,7 +269,6 @@
           });
         }
 
-        // Inject dynamic meta tags and JSON-LD if FM present
         if (fm) {
           const title = fm.title ? `${fm.title} – Raffael Kaas` : document.title;
           if (fm.title) document.title = title;
@@ -292,11 +276,9 @@
           setOrCreateMeta('description', fm.description || '');
           setOrCreateMeta('author', fm.author || 'Raffael Kaas');
 
-          // Canonical URL
           const canonical = fm.canonical || `${window.location.origin}${window.location.pathname}?post=${fm.slug || post}`;
           setOrCreateLink('canonical', canonical);
 
-          // Open Graph
           setOrCreateMeta('og:title', fm.title || '', 'property');
           setOrCreateMeta('og:description', fm.description || '', 'property');
           setOrCreateMeta('og:type', 'article', 'property');
@@ -304,13 +286,11 @@
           const ogImgAbs = absoluteUrl(fm.ogImage || '/assets/img/me.png');
           setOrCreateMeta('og:image', ogImgAbs, 'property');
 
-          // Twitter
           setOrCreateMeta('twitter:card', 'summary_large_image');
           setOrCreateMeta('twitter:title', fm.title || 'Raffael Kaas – Software Engineer');
           setOrCreateMeta('twitter:description', fm.description || '');
           setOrCreateMeta('twitter:image', ogImgAbs);
 
-          // Article JSON-LD
           const jsonLd = {
             '@context': 'https://schema.org',
             '@type': 'Article',
@@ -325,7 +305,6 @@
             mainEntityOfPage: canonical,
             keywords: Array.isArray(fm.keywords) ? fm.keywords.join(', ') : undefined
           };
-          // Remove any existing Article JSON-LD we added earlier
           const oldLd = document.querySelector('script[data-dynamic-jsonld="article"]');
           if (oldLd) oldLd.remove();
           const ldScript = document.createElement('script');
@@ -340,48 +319,7 @@
       }
     }
   
-    // Load the blog post on page load
     document.addEventListener('DOMContentLoaded', loadBlogPost);
-  </script>
-
-  <!-- image carousel: vibe coding experiment -->
-  <script>
-    const carouselImages = [
-      '/assets/blog/img/asset-allocation.webp',
-      '/assets/blog/img/dividends-hidden.webp',
-      '/assets/blog/img/authentication-graphs-hidden.webp',
-      '/assets/blog/img/multiple-depots-hidden.webp'
-    ];
-    let carouselIndex = 0;
-    function showCarouselImage(idx) {
-      const img = document.getElementById('carousel-img');
-      if (img) {
-        img.style.opacity = 0;
-        setTimeout(() => {
-          img.src = carouselImages[idx];
-          img.style.opacity = 1;
-        }, 150);
-      }
-    }
-    function carouselPrev() {
-      carouselIndex = (carouselIndex - 1 + carouselImages.length) % carouselImages.length;
-      showCarouselImage(carouselIndex);
-    }
-    function carouselNext() {
-      carouselIndex = (carouselIndex + 1) % carouselImages.length;
-      showCarouselImage(carouselIndex);
-    }
-    function openModal() {
-      const modal = document.getElementById('img-modal');
-      const modalImg = document.getElementById('modal-img');
-      modalImg.src = carouselImages[carouselIndex];
-      modal.classList.add('active');
-    }
-    function closeModal(event) {
-      if (event.target.id === 'img-modal') {
-        document.getElementById('img-modal').classList.remove('active');
-      }
-    }
   </script>
 </body>
 </html>

@@ -24,58 +24,6 @@ Since I created this website a few months ago, I wanted to write down this trip 
 
 In December 2025, we drove from Perth to Sydney in a motorhome. Western Australia, the Nullarbor, South Australia, Victoria, and New South Wales: beaches that look like paintings, exciting wildlife, weather in all seasons, lots of BBQ stations, big cities, and very friendly people. Here is the full recap:
 
-<style>
-  .img-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin: 18px 0;
-  }
-  .img-grid figure, .img-wide figure {
-    margin: 0;
-  }
-  .img-grid img, .img-wide img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 14px;
-    box-shadow: 0 6px 22px rgba(0,0,0,0.10);
-    background: #f2f2f2;
-  }
-  .img-grid figcaption, .img-wide figcaption {
-    font-size: 1.1rem;
-    color: var(--font-color);
-    margin-top: 8px;
-    line-height: 1.3;
-  }
-  .img-wide {
-    margin: 18px 0;
-  }
-  .img-placeholder {
-    width: 100%;
-    height: 320px;
-    border-radius: 14px;
-    background: repeating-linear-gradient(
-      45deg,
-      #f2f2f2,
-      #f2f2f2 12px,
-      #e9e9e9 12px,
-      #e9e9e9 24px
-    );
-    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #777;
-    font-weight: 600;
-    letter-spacing: 0.2px;
-  }
-  @media (max-width: 700px) {
-    .img-grid { grid-template-columns: 1fr; }
-    .img-placeholder { height: 240px; }
-  }
-</style>
-
 <div class="img-wide"> <figure> <img src="/assets/blog/img/roadtrip/sydney_opera.webp" alt="Sydney Opera House" > <figcaption>Sydney Opera House</figcaption> </figure> </div>
 
 
@@ -150,8 +98,6 @@ We stopped at Aldi, stocked up the fridge, and drove south. Busselton was too fa
 
 <div class="section-break"></div>
 
-<!-- <div class="img-wide"> <figure> <div class="img-placeholder">IMG: Campervan interior</div> <figcaption>Our home for the next month. Slightly chaotic, but perfect.</figcaption> </figure> </div> -->
-
 <div class="section-break"></div>
 
 ## Busselton to Dunsborough (05.12)
@@ -193,8 +139,6 @@ In the afternoon we headed towards Margaret River, but we had problems finding a
     <figcaption>Castle Rock Bay</figcaption>
   </figure>
 </div>
-
-<!-- <div class="img-wide"> <figure> <img src="/assets/blog/img/roadtrip/castlerock_2.webp" alt="camper" > <figcaption>camper.</figcaption> </figure> </div> -->
 
 <div class="section-break"></div>
 

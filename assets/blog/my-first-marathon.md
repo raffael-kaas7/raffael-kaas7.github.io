@@ -42,36 +42,6 @@ Starting with my first runs longer than 15 km, I quickly had problems with my fe
 
 For intervals, I never had issues. A 10 km run with high intensity was fine for me, and I quickly pushed my VO₂max up to 54 (ml/(kg*min)), where it now seems to saturate. The long runs were much tougher. I had to force myself to stay slow, keep the heart rate in zone 2, and not over-pace at the beginning of a 20+ km run.
 
-<style>
-  .garmin-app {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 0px;
-    align-items: start;
-  }
-  .garmin-app img {
-    width: 90%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-  }
-  .garmin-app figcaption {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 6px;
-  }
-  @media (max-width: 700px) {
-    .garmin-app img {
-      width: 90%;
-    }
-    .garmin-app {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-</style>
-
-
 Another newbie mistake I made: I thought I could run without nutrition. After my first 30 km run, I felt really sick. Lesson learned: now I always carry a running vest with 1.5 liters of water, electrolytes, and some fast carbs. With that, even a 30 km Sunday morning run feels manageable, and I can still enjoy the rest of the day afterwards.
 
 The biggest challenge was not motivation but time. A long run of 30+ km easily takes more than three hours. During summer, with trips, friends, and family visits, I sometimes had to do these runs mid-week or very early in the morning.
@@ -117,23 +87,6 @@ Looking back, I can only recommend going for the full distance if you're somehow
 The marathon itself was a really cool event and, for me, an important new experience. I ran the full distance together with a friend, while both our girlfriends completed the half-marathon. Sharing this experience with them made it even more special.
 
 <div class="section-break"></div>
-
-<style>
-  .finisher-photo img {
-    width: 60%;
-    max-width: 800px;
-    height: auto;
-    display: block;
-    margin: 0; /* left-aligned */
-    border-radius: 0;
-  }
-
-  @media (max-width: 700px) {
-    .finisher-photo img {
-      width: 100%;
-    }
-  }
-</style>
 
 <div class="finisher-photo">
   <figure>

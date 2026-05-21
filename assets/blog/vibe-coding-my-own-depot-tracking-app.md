@@ -65,27 +65,6 @@ The results far exceeded my expectations and matched the hype I'd seen in all th
     <img src="/assets/blog/img/authentication-graphs-hidden.webp" alt="Authentication buttons and graphs" />
 </div>
 
-<style>
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-    padding: 16px 0;
-}
-
-.image-grid img {
-    width: 100%;
-    height: auto;
-    border-radius: 0px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-}
-
-@media (max-width: 768px) {
-    .image-grid {
-        grid-template-columns: 1fr;
-    }
-}
-</style>
 <div class="section-break"></div>
 
 If you have a Comdirect account, you can try the app yourself. The source code is available on [my GitHub](https://github.com/raffael-kaas7/depot_tracker) and all relevant information is available in the README. You just need to register to get your secrets for the Developer API.

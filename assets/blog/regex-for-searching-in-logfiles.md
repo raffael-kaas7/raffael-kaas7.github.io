@@ -24,35 +24,6 @@ Log files, depending on the context, can easily have hundreds of thousands of li
 
 In this post I want to share a few very small, practical patterns that I use all the time. No regex hell, just things you can directly copy into grep, Ctrl+F search boxes, or your favorite log viewer/editor.
 
-<style>
-  .regex {
-    font-family: "Fira Code", Menlo, monospace;
-    background: #222;
-    color: #f5f5f5;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 1.6rem;
-  }
-</style>
-
-<style>
-.mark {
-  background: #ffea5c;
-  color: #000;
-  padding: 0 4px;
-  border-radius: 3px;
-  font-family: inherit;
-}
-.mark-alt {
-  background: #8affc3ff;
-  color: #012;
-  padding: 0 4px;
-  border-radius: 3px;
-  font-family: inherit;
-}
-</style>
-
-
 <div class="section-break"></div>
 
 ## Multiple keywords at once
