@@ -7,7 +7,9 @@ description: "My current approach to learning Portuguese with courses, vocabular
 keywords: ["language learning","learn spanish","learn portuguese","duolingo","preply","vocabulary","coursera","chatgpt", "how to learn a new language"]
 author: "Raffael Kaas"
 readingTime: 6
-ogImage: "/assets/img/me.png"
+titleImage: "/assets/blog/img/title/how-to-learn-a-new-language-tools.webp"
+titleImageAlt: "Stylized language-learning desk with an app, video lesson, online tutor, podcast, classroom, speaking practice, friends, and vocabulary cards."
+ogImage: "/assets/blog/img/title/how-to-learn-a-new-language-tools.webp"
 canonical: "https://rkaas.de/blog.html?post=how-to-learn-a-new-language"
 tags: ["learning","languages","personal-growth"]
 language: "en"

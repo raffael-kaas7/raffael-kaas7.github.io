@@ -7,7 +7,9 @@ description: "A collection of practical regex patterns for searching log files e
 keywords: ["regex","log files","logfiles","search patterns", "easy regex","regular expressions"]
 author: "Raffael Kaas"
 readingTime: 7
-ogImage: "/assets/blog/img/Gruppenbild.webp"
+titleImage: "/assets/blog/img/title/regex-for-searching-in-logfiles-terminal.webp"
+titleImageAlt: "Stylized terminal window showing regex searches in a log file with highlighted matches for errors, failed tasks, process names, and non-zero error counts."
+ogImage: "/assets/blog/img/title/regex-for-searching-in-logfiles-terminal.webp"
 canonical: "https://rkaas.de/blog.html?post=regex-for-searching-in-logfiles"
 tags: ["software-engineering","log files","search patterns"]
 language: "en"

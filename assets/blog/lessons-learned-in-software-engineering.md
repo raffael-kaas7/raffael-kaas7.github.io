@@ -7,7 +7,9 @@ description: "Some lessons I learned in my first years in software engineering, 
 keywords: ["software engineering lessons","ASPICE V-Model","team alignment","code quality","process vs speed", "agile tools"]
 author: "Raffael Kaas"
 readingTime: 6
-ogImage: "/assets/img/me.png"
+titleImage: "/assets/blog/img/title/lessons-learned-in-software-engineering.webp"
+titleImageAlt: "Stylized engineering desk illustration with an autonomous shuttle, SAFe ART planning, dependency map, V-Model, MISRA checklist, teamwork sync, and clean C++ code."
+ogImage: "/assets/blog/img/title/lessons-learned-in-software-engineering.webp"
 canonical: "https://rkaas.de/blog.html?post=lessons-learned-in-software-engineering"
 tags: ["software-engineering","process","teams"]
 language: "en"

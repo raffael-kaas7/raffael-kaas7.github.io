@@ -7,7 +7,9 @@ description: "What I learned in my first five years of investing: strategies, mi
 keywords: ["first 5 years investing","stock market lessons","investing mistakes","ETFs vs single stocks","dividend investing","books about investing"]
 author: "Raffael Kaas"
 readingTime: 5
-ogImage: "/assets/blog/img/favorite-books-investing.webp"
+titleImage: "/assets/blog/img/title/5-years-in-the-stock-market-portfolio.webp"
+titleImageAlt: "Stylized illustration of an investing desk with books, a savings plan, ETF and stock cards, charts, quarterly reports, gold, Bitcoin, and dividend symbols."
+ogImage: "/assets/blog/img/title/5-years-in-the-stock-market-portfolio.webp"
 canonical: "https://rkaas.de/blog.html?post=5-years-in-the-stock-market"
 tags: ["investing","personal-finance"]
 language: "en"

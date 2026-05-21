@@ -210,10 +210,23 @@
         // Display the blog post
         const postDiv = document.createElement('div');
         postDiv.classList.add('blog-post');
-        const titleImagePlaceholder = document.createElement('div');
-        titleImagePlaceholder.className = 'blog-title-image-placeholder';
-        titleImagePlaceholder.setAttribute('aria-hidden', 'true');
-        postDiv.appendChild(titleImagePlaceholder);
+        if (fm && fm.titleImage) {
+          const titleImage = document.createElement('img');
+          titleImage.className = 'blog-title-image';
+          titleImage.src = fm.titleImage;
+          titleImage.alt = fm.titleImageAlt || '';
+          titleImage.decoding = 'async';
+          titleImage.fetchPriority = 'high';
+          if (!fm.titleImageAlt) {
+            titleImage.setAttribute('aria-hidden', 'true');
+          }
+          postDiv.appendChild(titleImage);
+        } else {
+          const titleImagePlaceholder = document.createElement('div');
+          titleImagePlaceholder.className = 'blog-title-image-placeholder';
+          titleImagePlaceholder.setAttribute('aria-hidden', 'true');
+          postDiv.appendChild(titleImagePlaceholder);
+        }
         // If front matter defines a title, render it as H1 for accessibility
         if (fm && fm.title) {
           const h1 = document.createElement('h1');
@@ -247,6 +260,7 @@
         };
         const imgs = postDiv.querySelectorAll('img');
         imgs.forEach(img => {
+          if (img.classList.contains('blog-title-image')) return;
           if (isGalleryParent(img)) return; // skip galleries and custom widgets
           // If already inside a figure, skip
           if (img.closest('figure')) return;

@@ -7,7 +7,9 @@ description: "Turning 30 made me look back: a short recap of my 20s and the less
 keywords: ["turning 30","recap of my 20s","life lessons","personal reflection","relationships","dopamine", "goals", "personal growth", "habits"]
 author: "Raffael Kaas"
 readingTime: 5
-ogImage: "/assets/img/me.png"
+titleImage: "/assets/blog/img/title/recap-on-my-20s-journey.webp"
+titleImageAlt: "Abstract illustration of a winding life journey with sport, studying, travel, friendship, reading, and reflection symbols."
+ogImage: "/assets/blog/img/title/recap-on-my-20s-journey.webp"
 canonical: "https://rkaas.de/blog.html?post=recap-on-my-20s"
 tags: ["personal-growth","reflection"]
 language: "en"

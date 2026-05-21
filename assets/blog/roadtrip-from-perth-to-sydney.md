@@ -2,12 +2,14 @@
 title: "Road trip from Perth to Sydney - one month and 6,700 km"
 slug: "roadtrip-from-perth-to-sydney"
 date: "2026-02-05"
-lastmod: "2026-05-19"
+lastmod: "2026-05-21"
 description: "Insights into a road trip from Perth to Sydney in one month."
 keywords: ["roadtrip","australia","motorhome","campervan", "perth","sydney", "melbourne", "great ocean road", "western australia"]
 author: "Raffael Kaas"
 readingTime: 15
-ogImage: "/assets/blog/img/roadtrip/sydney_opera.webp"
+titleImage: "/assets/blog/img/title/roadtrip-from-perth-to-sydney-highlights.webp"
+titleImageAlt: "Illustrated southern Australia map with a dotted road trip route from Perth to Sydney, showing beaches, wildlife, a camper van, barbecue, Adelaide, the Blue Mountains, and Sydney landmarks."
+ogImage: "/assets/blog/img/title/roadtrip-from-perth-to-sydney-highlights.webp"
 canonical: "https://rkaas.de/blog.html?post=roadtrip-from-perth-to-sydney"
 tags: ["roadtrip","australia","perth-sydney"]
 language: "en"
