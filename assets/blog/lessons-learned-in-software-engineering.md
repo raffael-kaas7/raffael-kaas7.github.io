@@ -10,7 +10,7 @@ readingTime: 6
 titleImage: "/assets/blog/img/title/lessons-learned-in-software-engineering.webp"
 titleImageAlt: "Stylized engineering desk illustration with an autonomous shuttle, SAFe ART planning, dependency map, V-Model, MISRA checklist, teamwork sync, and clean C++ code."
 ogImage: "/assets/blog/img/title/lessons-learned-in-software-engineering.webp"
-canonical: "https://rkaas.de/blog.html?post=lessons-learned-in-software-engineering"
+canonical: "https://rkaas.de/blog/lessons-learned-in-software-engineering/"
 tags: ["software-engineering","process","teams"]
 language: "en"
 draft: false

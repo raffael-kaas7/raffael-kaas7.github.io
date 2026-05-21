@@ -9,19 +9,29 @@
 
   <meta name="description" content="Raffael Kaas - Blog">
   <meta name="author" content="Raffael Kaas">
-  <link rel="canonical" href="https://rkaas.de/">
+  <link rel="canonical" href="https://rkaas.de/blog/">
   <link rel="icon" type="image/png" href="favicon.png">
 
   <meta property="og:title" content="Raffael Kaas - Blog">
   <meta property="og:description" content="Personal writing by Raffael Kaas">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://rkaas.de/">
+  <meta property="og:url" content="https://rkaas.de/blog/">
   <meta property="og:image" content="https://rkaas.de/assets/img/me.png">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Raffael Kaas">
   <meta name="twitter:description" content="Personal writing by Raffael Kaas">
   <meta name="twitter:image" content="https://rkaas.de/assets/img/me.png">
+
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const post = params.get('post');
+      if (post && /^[a-z0-9-]+$/.test(post) && !params.has('legacy') && window.location.protocol !== 'file:') {
+        window.location.replace('/blog/' + post + '/');
+      }
+    })();
+  </script>
 
   <script>
     (function () {
@@ -276,7 +286,7 @@
           setOrCreateMeta('description', fm.description || '');
           setOrCreateMeta('author', fm.author || 'Raffael Kaas');
 
-          const canonical = fm.canonical || `${window.location.origin}${window.location.pathname}?post=${fm.slug || post}`;
+          const canonical = fm.canonical || `${window.location.origin}/blog/${fm.slug || post}/`;
           setOrCreateLink('canonical', canonical);
 
           setOrCreateMeta('og:title', fm.title || '', 'property');

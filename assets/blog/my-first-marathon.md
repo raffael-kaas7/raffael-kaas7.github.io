@@ -10,7 +10,7 @@ readingTime: 7
 titleImage: "/assets/blog/img/title/my-first-marathon-training.webp"
 titleImageAlt: "Stylized illustration of Lindau marathon training with a training calendar, running vest, watch, shoes, nutrition, sleep, and strength training gear."
 ogImage: "/assets/blog/img/title/my-first-marathon-training.webp"
-canonical: "https://rkaas.de/blog.html?post=my-first-marathon"
+canonical: "https://rkaas.de/blog/my-first-marathon/"
 tags: ["running","fitness","endurance"]
 language: "en"
 draft: false

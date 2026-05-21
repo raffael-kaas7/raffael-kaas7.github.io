@@ -10,7 +10,7 @@ readingTime: 15
 titleImage: "/assets/blog/img/title/roadtrip-from-perth-to-sydney-highlights.webp"
 titleImageAlt: "Illustrated southern Australia map with a dotted road trip route from Perth to Sydney, showing beaches, wildlife, a camper van, barbecue, Adelaide, the Blue Mountains, and Sydney landmarks."
 ogImage: "/assets/blog/img/title/roadtrip-from-perth-to-sydney-highlights.webp"
-canonical: "https://rkaas.de/blog.html?post=roadtrip-from-perth-to-sydney"
+canonical: "https://rkaas.de/blog/roadtrip-from-perth-to-sydney/"
 tags: ["roadtrip","australia","perth-sydney"]
 language: "en"
 draft: false

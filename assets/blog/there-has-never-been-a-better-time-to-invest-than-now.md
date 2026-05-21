@@ -8,7 +8,7 @@ keywords: ["why invest now","best time to invest","long-term investing","S&P 500
 author: "Raffael Kaas"
 readingTime: 7
 ogImage: "/assets/blog/img/sp500-chart.webp"
-canonical: "https://rkaas.de/blog.html?post=there-has-never-been-a-better-time-to-invest-than-now"
+canonical: "https://rkaas.de/blog/there-has-never-been-a-better-time-to-invest-than-now/"
 tags: ["investing","personal-finance"]
 language: "en"
 draft: false
@@ -69,7 +69,7 @@ Here you can see the historical performance of the S&P 500 index from 1970 to 20
 
 <center>
     <figure>
-        <img src="assets/blog/img/sp500-chart.webp" alt="S&P 500 historical performance chart from 1970 to 2025" width="100%" />
+        <img src="/assets/blog/img/sp500-chart.webp" alt="S&P 500 historical performance chart from 1970 to 2025" width="100%" />
         <figcaption>S&P 500 total return trend across cycles.</figcaption>
     </figure>
 </center>
@@ -83,11 +83,11 @@ Since this is an exponential trend and humans have a hard time grasping it, here
 
 <center>
     <figure>
-        <img src="assets/blog/img/sp500-chart-log.webp" alt="S&P 500 historical performance on logarithmic scale" width="100%" />
+        <img src="/assets/blog/img/sp500-chart-log.webp" alt="S&P 500 historical performance on logarithmic scale" width="100%" />
         <figcaption>Log scale highlights consistent growth rate over decades.</figcaption>
     </figure>
 </center>
 
 ### Further reading
 
-Some lessons I learned during my first five years of investing: [My first 5 years in the stock market](/blog.html?post=5-years-in-the-stock-market)
+Some lessons I learned during my first five years of investing: [My first 5 years in the stock market](/blog/5-years-in-the-stock-market/)

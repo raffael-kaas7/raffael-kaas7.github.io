@@ -10,7 +10,7 @@ readingTime: 5
 titleImage: "/assets/blog/img/title/5-years-in-the-stock-market-portfolio.webp"
 titleImageAlt: "Stylized illustration of an investing desk with books, a savings plan, ETF and stock cards, charts, quarterly reports, gold, Bitcoin, and dividend symbols."
 ogImage: "/assets/blog/img/title/5-years-in-the-stock-market-portfolio.webp"
-canonical: "https://rkaas.de/blog.html?post=5-years-in-the-stock-market"
+canonical: "https://rkaas.de/blog/5-years-in-the-stock-market/"
 tags: ["investing","personal-finance"]
 language: "en"
 draft: false
@@ -95,6 +95,6 @@ It hasn't been a straight path. I've switched strategies, made mistakes, and spe
 
 ### Further Reading
 
-A macro view on why starting matters more than timing: [There has never been a better time to invest than now](/blog.html?post=there-has-never-been-a-better-time-to-invest-than-now)
+A macro view on why starting matters more than timing: [There has never been a better time to invest than now](/blog/there-has-never-been-a-better-time-to-invest-than-now/)
 
 <div class="section-break"></div>

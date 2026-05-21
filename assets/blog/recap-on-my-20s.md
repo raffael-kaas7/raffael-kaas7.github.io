@@ -10,7 +10,7 @@ readingTime: 5
 titleImage: "/assets/blog/img/title/recap-on-my-20s-journey.webp"
 titleImageAlt: "Abstract illustration of a winding life journey with sport, studying, travel, friendship, reading, and reflection symbols."
 ogImage: "/assets/blog/img/title/recap-on-my-20s-journey.webp"
-canonical: "https://rkaas.de/blog.html?post=recap-on-my-20s"
+canonical: "https://rkaas.de/blog/recap-on-my-20s/"
 tags: ["personal-growth","reflection"]
 language: "en"
 draft: false

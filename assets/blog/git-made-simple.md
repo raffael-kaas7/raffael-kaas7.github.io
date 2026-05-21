@@ -10,7 +10,7 @@ readingTime: 6
 titleImage: "/assets/blog/img/title/git-made-simple-workflow.webp"
 titleImageAlt: "Abstract illustration of a Git CLI workflow with a terminal, commit tree, project files, and a diff view."
 ogImage: "/assets/blog/img/title/git-made-simple-workflow.webp"
-canonical: "https://rkaas.de/blog.html?post=git-made-simple"
+canonical: "https://rkaas.de/blog/git-made-simple/"
 tags: ["git workflow", "git cli", "git basics", "git commit", "git commit --amend", "git squash", "git rebase -i", "git force-with-lease", "version control for beginners"]
 language: "en"
 draft: false

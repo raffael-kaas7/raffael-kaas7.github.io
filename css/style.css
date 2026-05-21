@@ -565,6 +565,28 @@ pre code {
   font-size: 0.95rem;
 }
 
+.blog-page .blog-post .static-blog-list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.blog-page .blog-post .static-blog-list li {
+  border-bottom: 1px solid var(--pb-border);
+  display: grid;
+  gap: 0.25rem;
+  padding: 1rem 0;
+}
+
+.blog-page .blog-post .static-blog-list li:first-child {
+  padding-top: 0;
+}
+
+.blog-page .blog-post .static-blog-list .post-meta {
+  display: block;
+  margin: 0;
+}
+
 .blog-page .blog-post img {
   border-radius: 8px;
   height: auto;

@@ -10,7 +10,7 @@ readingTime: 6
 titleImage: "/assets/blog/img/title/how-to-learn-a-new-language-tools.webp"
 titleImageAlt: "Stylized language-learning desk with an app, video lesson, online tutor, podcast, classroom, speaking practice, friends, and vocabulary cards."
 ogImage: "/assets/blog/img/title/how-to-learn-a-new-language-tools.webp"
-canonical: "https://rkaas.de/blog.html?post=how-to-learn-a-new-language"
+canonical: "https://rkaas.de/blog/how-to-learn-a-new-language/"
 tags: ["learning","languages","personal-growth"]
 language: "en"
 draft: false

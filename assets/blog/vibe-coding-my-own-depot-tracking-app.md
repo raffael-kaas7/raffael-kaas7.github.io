@@ -10,7 +10,7 @@ readingTime: 8
 titleImage: "/assets/blog/img/title/vibe-coding-my-own-depot-tracking-app.webp"
 titleImageAlt: "Stylized illustration of voice prompting, an AI agent, the Comdirect API, and an anonymized depot tracker dashboard with charts and tables."
 ogImage: "/assets/blog/img/title/vibe-coding-my-own-depot-tracking-app.webp"
-canonical: "https://rkaas.de/blog.html?post=vibe-coding-my-own-depot-tracking-app"
+canonical: "https://rkaas.de/blog/vibe-coding-my-own-depot-tracking-app/"
 tags: ["ai","software-engineering","investing","portfolio"]
 language: "en"
 draft: false

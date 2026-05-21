@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lessons learned from building complex software products - Raffael Kaas</title>
+
+  <meta name="description" content="Some lessons I learned in my first years in software engineering, from student projects to series production.">
+  <meta name="author" content="Raffael Kaas">
+  <link rel="canonical" href="https://rkaas.de/blog/lessons-learned-in-software-engineering/">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <meta property="og:title" content="Lessons learned from building complex software products">
+  <meta property="og:description" content="Some lessons I learned in my first years in software engineering, from student projects to series production.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rkaas.de/blog/lessons-learned-in-software-engineering/">
+  <meta property="og:image" content="https://rkaas.de/assets/blog/img/title/lessons-learned-in-software-engineering.webp">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lessons learned from building complex software products">
+  <meta name="twitter:description" content="Some lessons I learned in my first years in software engineering, from student projects to series production.">
+  <meta name="twitter:image" content="https://rkaas.de/assets/blog/img/title/lessons-learned-in-software-engineering.webp">
+
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Lessons learned from building complex software products",
+  "datePublished": "2025-07-30",
+  "dateModified": "2026-05-19",
+  "author": {
+    "@type": "Person",
+    "name": "Raffael Kaas"
+  },
+  "image": "https://rkaas.de/assets/blog/img/title/lessons-learned-in-software-engineering.webp",
+  "mainEntityOfPage": "https://rkaas.de/blog/lessons-learned-in-software-engineering/",
+  "keywords": "software engineering lessons, ASPICE V-Model, team alignment, code quality, process vs speed, agile tools"
+}
+  </script>
+</head>
+<body class="blog-page">
+  <h1 class="sr-only">Lessons learned from building complex software products</h1>
+
+  <header class="site-header" id="top">
+    <a class="site-brand" href="/" aria-label="Raffael Kaas homepage">
+      <img src="/assets/img/me.png" alt="" class="site-brand-avatar">
+      <span class="site-brand-copy">
+        <span class="site-brand-name">Raffael Kaas</span>
+      </span>
+    </a>
+
+    <button class="pb-theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+      <span class="sr-only">Toggle dark mode</span>
+    </button>
+  </header>
+
+  <main class="blog-page-main">
+    <div class="pb-container blog-article-shell">
+      <article class="blog-post">
+        <img class="blog-title-image" src="/assets/blog/img/title/lessons-learned-in-software-engineering.webp" alt="Stylized engineering desk illustration with an autonomous shuttle, SAFe ART planning, dependency map, V-Model, MISRA checklist, teamwork sync, and clean C++ code." decoding="async" fetchpriority="high">
+        <h1>Lessons learned from building complex software products</h1>
+        <p class="post-meta">Jul 30, 2025 &bull; 6 min read</p>
+        <p>Over the past few years, I've moved through many different phases of software engineering: solo student projects, agile startup-style development for autonomous driving, and now process-heavy series production in the automotive industry. Along the way, I started by coding my own quadrocopter, deployed autonomous shuttles on the road in Rotterdam, and currently work on base software for power converters used in electric vehicles. I've implemented fancy KPI dashboards as well as low-level software for embedded systems.</p>
+<p>Across these different environments, I've learned a few things that stuck with me: about coding, teamwork, and managing complexity. Here are a few lessons you only learn through experience.</p>
+<div class="section-break"></div>
+<h2>Collaboration and its Impact on my Coding Style</h2>
+<p>When you're working alone, like we often do in student projects, you can move fast. That speed often comes at the cost of maintainability. I learned this the hard way when revisiting old code that was almost impossible to read, even though it worked. You tend to apply quick fixes and stack one workaround on top of another. These are the so-called balconies that were definitely not part of your initial design.</p>
+<p>Working in professional teams changed that. Suddenly, it matters how you structure commits, how readable your code is, and how clearly you communicate intent, because someone else will read it, debug it, or build on top of it. I learned that good Git hygiene, meaningful commit messages, and more simple lines of code are often better than clever tricks. It's key to protect your implementation from accidental changes through good design and regression tests.</p>
+<div class="section-break"></div>
+<h2>Learning to Work Within ASPICE and the V-Model</h2>
+<p>In series development, working with coding guidelines like MISRA and ASPICE-compliant processes becomes mandatory. It adds overhead, but it also brings reliability. What I learned is that the pain is less when you embed these things early and use them smartly. When teams are experienced and project management understands the process from a developer’s point of view, ASPICE can actually speed things up. Yes, it really can! If you're only creating artifacts to "pass the audit," you're wasting time and most likely reducing software quality.</p>
+<p>Well-defined requirements, thoughtful architecture, and early integration testing (... against your architecture) are critical for speeding things up at the actual implementation level (SWE.3). If you think a well-designed, consistent architecture is expensive, try working with a bad one. It is far more costly in the long run.</p>
+<p>Testing on the right side of the V-Model is just as important. If static code analysis is mandatory, the analysis must be accessible to developers quickly and easily, ideally integrated into the IDE. If the tooling or process doesn't support that, the cost-benefit ratio is extremely poor compared to dynamic testing.</p>
+<div class="section-break"></div>
+<h2>Alignment and Team Spirit Before New Agile Tools</h2>
+<p>Some of the most painful and costly mistakes I've seen didn't come from bad code, but from unaligned teams. I've been in projects where two software teams didn't even know who was working on the other side. I've also seen the opposite: well-aligned teams where goals were clear, integration worked smoothly, and problems were solved only once.</p>
+<p>The difference often came down to roles like Scrum Master and Software Coordinator: people who keep the team talking and actively remove roadblocks that developers can't or don't want to solve. Tools like Jira or Codebeamer help, but they don't fix anything without clear responsibilities and synchronized teams. Get the people aligned first. Sometimes, one honest sync between team leads or a well-run planning & retrospective is worth more than weeks of perfectly maintained Kanban boards.</p>
+<p>Never underestimate the power of informal team rituals. Simple icebreakers or check-ins can go a long way in keeping teams healthy and aligned. There are high performers and those still growing - this can shift over time. It is important to keep everyone on board, always. <div class="section-break"></div></p>
+<h2>Every Phase Has Its Joy</h2>
+<p>I've enjoyed every phase: building quadrocopters solo, pushing autonomous shuttles into operation with an agile team, and now working in structured series development. Each phase brings its own challenges. Student work often lacks structure. Startup culture can be chaotic. Series development can make you forget that you're actually a software developer.</p>
+<p>But all of it has made me a better engineer. I've learned a lot about the complexity of modern software projects. The key is to stay curious and enjoy solving problems every day.</p>
+<div class="section-break"></div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="pb-container site-footer-inner">
+      <div class="footer-links" aria-label="Contact links">
+        <a class="footer-link" href="mailto:mail@rkaas.de">mail@rkaas.de</a>
+        <a class="footer-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank" rel="me noopener">LinkedIn</a>
+      </div>
+      <p class="footer-copyright">&copy; 2026 Raffael Kaas. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const themeToggle = document.querySelector('.pb-theme-toggle');
+
+      function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        try {
+          localStorage.setItem('theme', theme);
+        } catch (e) {}
+        if (themeToggle) {
+          themeToggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+        }
+      }
+
+      setTheme(document.documentElement.getAttribute('data-theme') || 'light');
+
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+          setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

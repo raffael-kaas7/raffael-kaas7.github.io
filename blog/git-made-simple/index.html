@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Everyone should use Git - my simple day-to-day workflow (CLI only) - Raffael Kaas</title>
+
+  <meta name="description" content="A minimal Git CLI workflow for clean history: commit early, amend, rebase, squash, and push safely.">
+  <meta name="author" content="Raffael Kaas">
+  <link rel="canonical" href="https://rkaas.de/blog/git-made-simple/">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <meta property="og:title" content="Everyone should use Git - my simple day-to-day workflow (CLI only)">
+  <meta property="og:description" content="A minimal Git CLI workflow for clean history: commit early, amend, rebase, squash, and push safely.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rkaas.de/blog/git-made-simple/">
+  <meta property="og:image" content="https://rkaas.de/assets/blog/img/title/git-made-simple-workflow.webp">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Everyone should use Git - my simple day-to-day workflow (CLI only)">
+  <meta name="twitter:description" content="A minimal Git CLI workflow for clean history: commit early, amend, rebase, squash, and push safely.">
+  <meta name="twitter:image" content="https://rkaas.de/assets/blog/img/title/git-made-simple-workflow.webp">
+
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Everyone should use Git - my simple day-to-day workflow (CLI only)",
+  "datePublished": "2026-03-24",
+  "dateModified": "2026-05-19",
+  "author": {
+    "@type": "Person",
+    "name": "Raffael Kaas"
+  },
+  "image": "https://rkaas.de/assets/blog/img/title/git-made-simple-workflow.webp",
+  "mainEntityOfPage": "https://rkaas.de/blog/git-made-simple/",
+  "keywords": "git, git cli, rebase, merge, squash, amend, clean history, ai coding workflow"
+}
+  </script>
+</head>
+<body class="blog-page">
+  <h1 class="sr-only">Everyone should use Git - my simple day-to-day workflow (CLI only)</h1>
+
+  <header class="site-header" id="top">
+    <a class="site-brand" href="/" aria-label="Raffael Kaas homepage">
+      <img src="/assets/img/me.png" alt="" class="site-brand-avatar">
+      <span class="site-brand-copy">
+        <span class="site-brand-name">Raffael Kaas</span>
+      </span>
+    </a>
+
+    <button class="pb-theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+      <span class="sr-only">Toggle dark mode</span>
+    </button>
+  </header>
+
+  <main class="blog-page-main">
+    <div class="pb-container blog-article-shell">
+      <article class="blog-post">
+        <img class="blog-title-image" src="/assets/blog/img/title/git-made-simple-workflow.webp" alt="Abstract illustration of a Git CLI workflow with a terminal, commit tree, project files, and a diff view." decoding="async" fetchpriority="high">
+        <h1>Everyone should use Git - my simple day-to-day workflow (CLI only)</h1>
+        <p class="post-meta">Mar 24, 2026 &bull; 6 min read</p>
+        <p>There's a noticeable shift happening right now: more and more people are building things. Not only software engineers, but also people who use AI to create scripts, websites, small helper tools, or text-based content. You prompt something. You get the code or text. You test it, tweak it, and continue.</p>
+<p>This change is visible in numbers. <a href="https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/">GitHub’s Octoverse 2025 report</a> shows that, in the last year, GitHub saw its biggest absolute growth ever. On average, one new developer joined GitHub every second (!), and the trend is continuing.</p>
+<p>What's clear for software engineers isn't yet clear for everyone. Once you start iterating with AI-generated code or content, you can progress fast. It can also get messy fast without proper version control. Git becomes relevant for a lot more people.</p>
+<div class="section-break"></div>
+<h2>Git and why I prefer the command line interface (CLI)</h2>
+<p>In simple terms, Git is a way to save project states, compare them, and go back if something breaks. Not file by file. Not like "track changes" in Word, but snapshots of your project over time. It's lightweight and simple to use, even without knowing all the internal details about objects, trees, blobs, etc. You can go far without those details.</p>
+<p>Although it's simple, I've seen people mess up branches with accidental rebases, unexpected merge commits, and weird cherry-picks. These mistakes often happen when people click around in a GUI like SmartGit without fully seeing what the tool is doing. With the CLI, the workflow is usually more explicit and easier to reproduce.</p>
+<p>I use Git from the command line and strongly recommend that every beginner start with the CLI. Below is my favorite workflow and a set of copy-paste commands that solve more than 95% of my daily use cases.</p>
+<div class="section-break"></div>
+<h2>My day-to-day Git workflow</h2>
+<p>It works whether you write everything yourself or start from AI-generated code/content. I personally use <code>git commit --amend</code> a lot on my local repository.</p>
+<ul>
+  <li>Prompt / make a change</li>
+  <li>Review the change</li>
+  <li>Commit</li>
+  <li>Test and fix</li>
+  <li>Amend the last commit or create a new one</li>
+  <li>Repeat</li>
+  <li>If appropriate, clean up and squash multiple commits into a single one</li>
+  <li>Push to the remote repository if available</li>
+</ul>
+<hr>
+<div class="section-break"></div>
+<p><strong>1. Initialize a repository</strong></p>
+<p>If I already created a remote repository (recommended for most cases, e.g., on GitHub), I just clone it. If I start locally without a remote:</p>
+<pre><code>git init</code></pre>
+<hr>
+<p><strong>2. Stage changes</strong></p>
+<p>I normally use VS Code to stage specific files, but that’s just convenience. If you want to add all files to the staging area, that’s usually enough.</p>
+<pre><code>git add .</code></pre>
+<hr>
+<p><strong>3. Commit</strong></p>
+<p>This creates a new commit: a named snapshot of your current project state. Keep messages short but meaningful, and think in functional units, not file changes. Here is a <a href="https://cbea.ms/git-commit/">good reference</a> for proper commit messages.</p>
+<pre><code>git commit -m &quot;your message&quot;</code></pre>
+<hr>
+<p><strong>4. Amend the last commit</strong></p>
+<p>If you forgot something or want to amend the last commit, use this. The commit message stays the same. Very useful when small fixes happen constantly. Be careful using this on commits already pushed to the remote when working on shared branches. But for local commits, I love it.</p>
+<pre><code>git commit --amend --no-edit</code></pre>
+<hr>
+<p><strong>5. Squash commits</strong></p>
+<p>Sometimes it makes sense to clean up the Git history and combine multiple commits into a single one, e.g., when you have multiple “fix ...” commits, or tiny iterations that all belong to one functional change. I prefer doing this via interactive rebase. It lets you combine multiple (<code>n</code>) commits into one:</p>
+<pre><code>git rebase -i HEAD~n</code></pre>
+<hr>
+<p><strong>6. Push</strong></p>
+<p>If you're working with a remote repository, you can push your changes like this:</p>
+<pre><code>git push
+</code></pre>
+<p>Only if you rebased / rewrote history after pushing (e.g., squashed after push):</p>
+<pre><code>git push --force-with-lease</code></pre>
+<hr>
+<p><strong>7. Update your branch</strong></p>
+<p>Here you could start a big discussion about when to rebase and when to merge. I don't want to go too deep here, since it also depends on your hooks and merge-back strategy. If I just want to update my branch with changes that happened on main in the meantime, <code>git merge</code> is the command I can always apply easily (after <code>git fetch</code>):</p>
+<pre><code>git merge origin/main</code></pre>
+<div class="section-break"></div>
+<h2>Final thoughts</h2>
+<p>I've spent enough time with Git to know there's a lot of depth under the hood. Sometimes it's worth understanding, especially when something gets messed up. In day-to-day work, I mostly stick to the simple loop and the handful of commands above. Most of the time, that's all you need for powerful version control.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="pb-container site-footer-inner">
+      <div class="footer-links" aria-label="Contact links">
+        <a class="footer-link" href="mailto:mail@rkaas.de">mail@rkaas.de</a>
+        <a class="footer-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank" rel="me noopener">LinkedIn</a>
+      </div>
+      <p class="footer-copyright">&copy; 2026 Raffael Kaas. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const themeToggle = document.querySelector('.pb-theme-toggle');
+
+      function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        try {
+          localStorage.setItem('theme', theme);
+        } catch (e) {}
+        if (themeToggle) {
+          themeToggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+        }
+      }
+
+      setTheme(document.documentElement.getAttribute('data-theme') || 'light');
+
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+          setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

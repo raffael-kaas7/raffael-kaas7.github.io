@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Building my first application with agentic AI - Raffael Kaas</title>
+
+  <meta name="description" content="I built a dividend-tracking portfolio app with agentic AI in a few evenings. Here is the setup, features, lessons learned, and code.">
+  <meta name="author" content="Raffael Kaas">
+  <link rel="canonical" href="https://rkaas.de/blog/vibe-coding-my-own-depot-tracking-app/">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <meta property="og:title" content="Building my first application with agentic AI">
+  <meta property="og:description" content="I built a dividend-tracking portfolio app with agentic AI in a few evenings. Here is the setup, features, lessons learned, and code.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rkaas.de/blog/vibe-coding-my-own-depot-tracking-app/">
+  <meta property="og:image" content="https://rkaas.de/assets/blog/img/title/vibe-coding-my-own-depot-tracking-app.webp">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Building my first application with agentic AI">
+  <meta name="twitter:description" content="I built a dividend-tracking portfolio app with agentic AI in a few evenings. Here is the setup, features, lessons learned, and code.">
+  <meta name="twitter:image" content="https://rkaas.de/assets/blog/img/title/vibe-coding-my-own-depot-tracking-app.webp">
+
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Building my first application with agentic AI",
+  "datePublished": "2025-09-04",
+  "dateModified": "2026-05-19",
+  "author": {
+    "@type": "Person",
+    "name": "Raffael Kaas"
+  },
+  "image": "https://rkaas.de/assets/blog/img/title/vibe-coding-my-own-depot-tracking-app.webp",
+  "mainEntityOfPage": "https://rkaas.de/blog/vibe-coding-my-own-depot-tracking-app/",
+  "keywords": "agentic AI, vibe coding, build app with AI, dividend tracking app, Comdirect API, Flask Dash portfolio"
+}
+  </script>
+</head>
+<body class="blog-page">
+  <h1 class="sr-only">Building my first application with agentic AI</h1>
+
+  <header class="site-header" id="top">
+    <a class="site-brand" href="/" aria-label="Raffael Kaas homepage">
+      <img src="/assets/img/me.png" alt="" class="site-brand-avatar">
+      <span class="site-brand-copy">
+        <span class="site-brand-name">Raffael Kaas</span>
+      </span>
+    </a>
+
+    <button class="pb-theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+      <span class="sr-only">Toggle dark mode</span>
+    </button>
+  </header>
+
+  <main class="blog-page-main">
+    <div class="pb-container blog-article-shell">
+      <article class="blog-post">
+        <img class="blog-title-image" src="/assets/blog/img/title/vibe-coding-my-own-depot-tracking-app.webp" alt="Stylized illustration of voice prompting, an AI agent, the Comdirect API, and an anonymized depot tracker dashboard with charts and tables." decoding="async" fetchpriority="high">
+        <h1>Building my first application with agentic AI</h1>
+        <p class="post-meta">Sep 04, 2025 &bull; 8 min read</p>
+        <p><strong>Update (March 2026):</strong> AI agents and the models behind them have improved a lot in just half a year, so parts of this post may already feel a bit dated. The app itself is fully functional and has been running on my home server ever since.</p>
+<div class="section-break"></div>
+<p>Recently, my LinkedIn feed has been full of posts about "vibe coding" and agentic AI: building entire applications by guiding an AI agent step by step.</p>
+<p>Since I've already integrated LLMs into both my daily engineering work and personal projects, I was curious: Could I really build a complete application using nothing but my voice and AI assistance?</p>
+<p>I decided to find out. My goal: create an investment portfolio analysis app with dividend tracking features, something I wanted for personal use anyway. Most existing apps like those from Finanzfluss or Parqet hide their best dividend features behind paywalls. Time to build my own.</p>
+<p>I already had some groundwork done: OAuth2 authentication with Comdirect's developer API, data retrieval, and a rough architecture for my Flask / Dash application. The implementation was minimal, and the UI looked like it was designed by an embedded software engineer. It was the perfect starting point for a vibe coding experiment, especially with an agent that would hopefully have a better sense for design and UX than I do.</p>
+<div class="section-break"></div>
+<h2>My setup and starting point</h2>
+<p>Before diving in, I set up my environment properly:</p>
+<ul>
+  <li>VS Code with GitHub Copilot / GitHub Copilot Chat and activated agent mode</li>
+  <li>VS Code Speech extension for true "vibe coding" (speech-to-text functionality)</li>
+</ul>
+<p>Because I had started the project earlier without an integrated AI agent, I already had the basic architecture and some features in place. Having a clear picture of what I wanted to achieve helped me guide the AI effectively. I quickly realized that the agent doesn't need to know the full scope. It's better to focus on simple tasks, one after another.</p>
+<div class="section-break"></div>
+<h2>What I built in just a few evenings</h2>
+<p>The results far exceeded my expectations and matched the hype I'd seen in all those LinkedIn posts. In just a handful of evenings, I managed to implement an app with the following features:</p>
+<ul>
+  <li>Retrieve data from main and secondary depots and accounts via the Comdirect REST API (Developer Portal). Authenticate via photo TAN.</li>
+  <li>List current positions including purchase prices & values, current prices & values, performance, and allocation. Current stock prices are retrieved from Yahoo Finance.</li>
+</ul>
+<ul>
+  <li>Continuously parse account statements to capture and store dividend payments in a persistent local database</li>
+  <li>List total dividends received by a single asset in the depot table</li>
+  <li>List the 3-month momentum of an asset. I don't like tracking stock prices all the time. This metric quickly gives me an impression of how an asset is currently performing compared to the overall market.</li>
+  <li>List multiple depots separately or combined in a single portfolio (allocation adapts accordingly)</li>
+  <li>Comprehensive dividend analytics: total dividends per asset, net income over multiple years, monthly averages</li>
+  <li>Detailed dividend income table with filtering by company, date ranges, and amounts</li>
+  <li>Visual charts showing dividend income trends over time</li>
+  <li>Calculate asset allocation and visualize it with pie charts. In addition to the usual categories (asset classes, sectors, regions), I also added a custom "Personal Risk Estimation" category, allowing me to classify each asset based on my own risk assessment (low, medium, high risk). This gives me a quick overview of the overall risk profile of my portfolio from my personal perspective.</li>
+</ul>
+<div class="section-break"></div>
+<div class="image-grid">
+    <img src="/assets/blog/img/asset-allocation.webp" alt="Asset allocation chart" />
+    <img src="/assets/blog/img/dividends-hidden.webp" alt="Dividend analytics" />
+    <img src="/assets/blog/img/multiple-depots-hidden.webp" alt="Multiple depots view" />
+    <img src="/assets/blog/img/authentication-graphs-hidden.webp" alt="Authentication buttons and graphs" />
+</div>
+<div class="section-break"></div>
+<p>If you have a Comdirect account, you can try the app yourself. The source code is available on <a href="https://github.com/raffael-kaas7/depot_tracker">my GitHub</a> and all relevant information is available in the README. You just need to register to get your secrets for the Developer API.</p>
+<div class="section-break"></div>
+<h2>Lessons learned from vibe coding</h2>
+<p>This experiment taught me that you can start using agentic AI without learning much about best practices in advance. It works from the beginning when you want to build features and get running results. Over time, you learn and adapt your workflow based on what works best for you and the agent. Here are some of my key takeaways from vibe coding my first project:</p>
+<div class="section-break"></div>
+<ul>
+  <li><strong>Begin with the end in mind:</strong> Just like Stephen Covey's second habit, having a clear vision of the final product and how you would implement it from an architectural point of view is important. In my opinion, the agent doesn't need to know the final product, but you should.</li>
+</ul>
+<ul>
+  <li><strong>Break everything down:</strong> Don't try to build multiple features at the same time. Let the agent complete one task before moving to the next. Think of creating user stories from an epic and assigning them one by one to the AI agent.</li>
+</ul>
+<ul>
+  <li><strong>Create a prompt.md file:</strong> Be specific about how to implement things and refer to this file during conversations. This way you don't need to repeat yourself all the time and can focus on describing the actual tasks you want to implement.</li>
+</ul>
+<pre><code class="language-bash">    ---
+    name: depot tracker prompt
+    description: Guidelines for coding the depot tracker app
+    applyTo: [&quot;./**&quot;]
+    ---
+    - Always activate the virtual Python environment before executing terminal commands (source .venv/bin/activate)
+    - Never hardcode secrets. Use environment variables via `dotenv`.
+    - All functions must include docstrings explaining the purpose and parameters.
+    - Comment the intent of functionality (explain the &quot;why&quot; and purpose, not the &quot;what&quot;)
+    - Use comments to explain how Dash components work, to get me into the topic
+    - Follow PEP 8 style guidelines
+    - Include type hints for all function signatures.
+    - Use private methods where appropriate and object-oriented programming principles.</code></pre>
+<ul>
+  <li><strong>Always review the code:</strong> In my case, the AI agent tends to implement backend logic in frontend components, instantiate objects unnecessarily, or create inefficient algorithms or structures. A quick review catches these issues, and the second iteration almost always works well.</li>
+</ul>
+<ul>
+  <li><strong>Commit early and often:</strong> Make a commit after each working task. When the agent occasionally goes off track (and it will), you can easily revert to the last known proper state.</li>
+</ul>
+<ul>
+  <li><strong>Environment isolation is highly recommended:</strong> Using a dedicated virtual environment makes sense. The agent often wants to install packages and dependencies on its own. Having a separate environment prevents messing up your global installations.</li>
+</ul>
+<div class="section-break"></div>
+<h2>Final thoughts</h2>
+<p>Working with the agent on my project was really impressive. Complex features that would normally take me hours to research, implement, and debug were completed in minutes of conversation and copy-pasting terminal output.</p>
+<p>I don't think the agent will completely replace software engineering skills. It's about boosting efficiency. Understanding good architecture, data structures, and clean code principles becomes even more important when working with AI. You need to guide the agent towards good solutions and catch the bad ones quickly. I also think that non-programmers can build a working prototype of their (business-) ideas with the help of AI agents.</p>
+<p>My own depot tracker app serves the purpose I intended. More importantly, I got my first experience with effectively collaborating with AI to build a simple software product. I might consider some refactoring in the future when I want to extend the app, but for now, it just works.</p>
+<p>I think it's important for software engineers to spend time learning how to prompt and guide AI agents effectively. Like any tool, the better you understand its capabilities and limitations, the more value you can extract. I don't think this is a temporary trend. It's a fundamental shift in how we build software.</p>
+<div class="section-break"></div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="pb-container site-footer-inner">
+      <div class="footer-links" aria-label="Contact links">
+        <a class="footer-link" href="mailto:mail@rkaas.de">mail@rkaas.de</a>
+        <a class="footer-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank" rel="me noopener">LinkedIn</a>
+      </div>
+      <p class="footer-copyright">&copy; 2026 Raffael Kaas. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const themeToggle = document.querySelector('.pb-theme-toggle');
+
+      function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        try {
+          localStorage.setItem('theme', theme);
+        } catch (e) {}
+        if (themeToggle) {
+          themeToggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+        }
+      }
+
+      setTheme(document.documentElement.getAttribute('data-theme') || 'light');
+
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+          setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
