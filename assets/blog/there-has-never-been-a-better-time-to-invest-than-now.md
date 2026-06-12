@@ -2,8 +2,8 @@
 title: "There has never been a better time to invest than now"
 slug: "there-has-never-been-a-better-time-to-invest-than-now"
 date: "2025-11-12"
-lastmod: "2026-05-19"
-description: "Despite headlines, technology and market access make today the best time in history to invest. Here's why and how to keep a long-term view."
+lastmod: "2026-05-26"
+description: "This post argues that today's market access, low-cost ETFs, fractional shares, and free financial education make investing more accessible than ever. It also explains why long-term investors should zoom out, ignore crash headlines, and keep investing regularly."
 keywords: ["why invest now","best time to invest","long-term investing","S&P 500 history","ETFs", "saving plan"]
 author: "Raffael Kaas"
 readingTime: 7

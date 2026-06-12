@@ -2,8 +2,8 @@
 title: "Building my first application with agentic AI"
 slug: "vibe-coding-my-own-depot-tracking-app"
 date: "2025-09-04"
-lastmod: "2026-05-19"
-description: "I built a dividend-tracking portfolio app with agentic AI in a few evenings. Here is the setup, features, lessons learned, and code."
+lastmod: "2026-05-26"
+description: "This post explains how I used agentic AI and voice-driven prompting to build a dividend-tracking portfolio app in a few evenings. It covers the Flask/Dash setup, Comdirect API integration, portfolio and dividend features, and the workflow lessons I took from vibe coding."
 keywords: ["agentic AI","vibe coding","build app with AI","dividend tracking app","Comdirect API","Flask Dash portfolio"]
 author: "Raffael Kaas"
 readingTime: 8

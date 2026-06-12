@@ -417,6 +417,14 @@ pre code {
   width: 100%;
 }
 
+.personal-blog-home .post-cover-placeholder {
+  background:
+    linear-gradient(135deg, rgba(112, 145, 177, 0.42), transparent 48%),
+    linear-gradient(45deg, transparent 0 56%, rgba(200, 156, 72, 0.35) 56% 66%, transparent 66% 100%),
+    var(--primary-color);
+  display: block;
+}
+
 .personal-blog-home .post-card-copy {
   display: flex;
   flex: 1;

@@ -2,8 +2,8 @@
 title: "Lessons learned from building complex software products"
 slug: "lessons-learned-in-software-engineering"
 date: "2025-07-30"
-lastmod: "2026-05-19"
-description: "Some lessons I learned in my first years in software engineering, from student projects to series production."
+lastmod: "2026-05-26"
+description: "This post collects lessons from student projects, autonomous shuttle work, and automotive series software. It covers collaboration, code quality, ASPICE and the V-model, team alignment, and why every phase of engineering work has its own value."
 keywords: ["software engineering lessons","ASPICE V-Model","team alignment","code quality","process vs speed", "agile tools"]
 author: "Raffael Kaas"
 readingTime: 6

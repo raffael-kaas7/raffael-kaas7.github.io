@@ -2,8 +2,8 @@
 title: "Everyone should use Git - my simple day-to-day workflow (CLI only)"
 slug: "git-made-simple"
 date: "2026-03-24"
-lastmod: "2026-05-19"
-description: "A minimal Git CLI workflow for clean history: commit early, amend, rebase, squash, and push safely."
+lastmod: "2026-05-26"
+description: "This post explains why Git matters for anyone building with code or AI-generated content. It walks through a simple CLI workflow for staging, committing, amending, squashing, pushing, and updating a branch without making history messy."
 keywords: ["git","git cli","rebase","merge","squash","amend","clean history","ai coding workflow"]
 author: "Raffael Kaas"
 readingTime: 6

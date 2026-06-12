@@ -2,8 +2,8 @@
 title: "Regex patterns I actually use when searching log files"
 slug: "regex-for-searching-in-logfiles"
 date: "2025-11-26"
-lastmod: "2026-05-19"
-description: "A collection of practical regex patterns for searching log files effectively."
+lastmod: "2026-05-26"
+description: "A practical set of small regex patterns I use when searching large log files. The post explains keyword alternatives, wildcard matching, word boundaries, and non-zero error searches with copy-paste examples for grep and editor search."
 keywords: ["regex","log files","logfiles","search patterns", "easy regex","regular expressions"]
 author: "Raffael Kaas"
 readingTime: 7

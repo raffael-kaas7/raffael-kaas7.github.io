@@ -2,8 +2,8 @@
 title: "My favorite tools for learning a new language"
 slug: "how-to-learn-a-new-language"
 date: "2026-05-19"
-lastmod: "2026-05-19"
-description: "My current approach to learning Portuguese with courses, vocabulary, YouTube, AI tools, Duolingo, and online tutors."
+lastmod: "2026-05-26"
+description: "This post summarizes my current approach to learning Portuguese after earlier Spanish practice. It compares on-site classes, online courses, Duolingo, vocabulary cards, LLM-generated beginner texts, YouTube, podcasts, and online tutors."
 keywords: ["language learning","learn spanish","learn portuguese","duolingo","preply","vocabulary","coursera","chatgpt", "how to learn a new language"]
 author: "Raffael Kaas"
 readingTime: 6

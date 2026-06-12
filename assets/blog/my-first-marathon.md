@@ -2,8 +2,8 @@
 title: "Running my first marathon"
 slug: "my-first-marathon"
 date: "2025-10-14"
-lastmod: "2026-05-21"
-description: "Training plan, mistakes, equipment, and race-day lessons from my first full marathon in Lindau / Bregenz."
+lastmod: "2026-05-26"
+description: "A recap of training for and running my first full marathon at the 3-Laender-Marathon in Lindau and Bregenz. The post covers my training plan, shoe problems, nutrition mistakes, race-day pacing, and why the preparation was the real challenge."
 keywords: ["first marathon","marathon training plan","zone 2 running","VO2max", "running challenge", "3-Länder-Marathon"]
 author: "Raffael Kaas"
 readingTime: 7

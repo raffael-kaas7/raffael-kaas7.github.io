@@ -2,8 +2,8 @@
 title: "My first 5 years in the stock market - a personal reflection"
 slug: "5-years-in-the-stock-market"
 date: "2025-08-13"
-lastmod: "2026-05-19"
-description: "What I learned in my first five years of investing: strategies, mistakes, favorite books, and why freedom and a self-determined life are the real goal."
+lastmod: "2026-05-26"
+description: "A personal reflection on my first five years of investing after university. The post covers how I moved from broad ETFs to a more personal mix of dividends, individual stocks, gold, Bitcoin, books, mistakes, and the idea of investing for fincancial independance."
 keywords: ["first 5 years investing","stock market lessons","investing mistakes","ETFs vs single stocks","dividend investing","books about investing"]
 author: "Raffael Kaas"
 readingTime: 5

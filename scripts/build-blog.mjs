@@ -616,7 +616,7 @@ function loadPosts() {
         bodyHtml: renderMarkdown(body),
       };
     })
-    .filter((post) => post.fm.draft !== true)
+    .filter((post) => post.fm.draft !== true && post.fm.title && post.fm.slug && post.fm.date)
     .sort((a, b) => String(b.fm.date || "").localeCompare(String(a.fm.date || "")));
 }
 

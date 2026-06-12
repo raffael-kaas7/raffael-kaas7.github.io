@@ -2,8 +2,8 @@
 title: "Road trip from Perth to Sydney - one month and 6,700 km"
 slug: "roadtrip-from-perth-to-sydney"
 date: "2026-02-05"
-lastmod: "2026-05-21"
-description: "Insights into a road trip from Perth to Sydney in one month."
+lastmod: "2026-05-26"
+description: "A detailed one-month motorhome road trip recap from Perth to Sydney across Western Australia, the Nullarbor, South Australia, Victoria, and New South Wales. The post includes route notes, campsites, beaches, cities, wildlife, BBQ stops, and practical impressions from 6,700 km on the road."
 keywords: ["roadtrip","australia","motorhome","campervan", "perth","sydney", "melbourne", "great ocean road", "western australia"]
 author: "Raffael Kaas"
 readingTime: 15

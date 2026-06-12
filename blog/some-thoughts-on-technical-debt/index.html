@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>A few thoughts on technical debt in Software Engineering - Raffael Kaas</title>
+
+  <meta name="description" content="A personal view on technical debt as a delivery risk. It can lead to unplanned work, postponed features, delayed deliveries, and frustrated teams when it is not visible enough.">
+  <meta name="author" content="Raffael Kaas">
+  <link rel="canonical" href="https://rkaas.de/blog/some-thoughts-on-technical-debt/">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <meta property="og:title" content="A few thoughts on technical debt in Software Engineering">
+  <meta property="og:description" content="A personal view on technical debt as a delivery risk. It can lead to unplanned work, postponed features, delayed deliveries, and frustrated teams when it is not visible enough.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rkaas.de/blog/some-thoughts-on-technical-debt/">
+  <meta property="og:image" content="https://rkaas.de/assets/blog/img/title/some-thoughts-on-technical-debt.webp">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="A few thoughts on technical debt in Software Engineering">
+  <meta name="twitter:description" content="A personal view on technical debt as a delivery risk. It can lead to unplanned work, postponed features, delayed deliveries, and frustrated teams when it is not visible enough.">
+  <meta name="twitter:image" content="https://rkaas.de/assets/blog/img/title/some-thoughts-on-technical-debt.webp">
+
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "A few thoughts on technical debt in Software Engineering",
+  "datePublished": "2026-06-11",
+  "dateModified": "2026-06-11",
+  "author": {
+    "@type": "Person",
+    "name": "Raffael Kaas"
+  },
+  "image": "https://rkaas.de/assets/blog/img/title/some-thoughts-on-technical-debt.webp",
+  "mainEntityOfPage": "https://rkaas.de/blog/some-thoughts-on-technical-debt/",
+  "keywords": "technical debt, software engineering, architecture debt, code quality, delivery risk, refactoring, bad code, unplanned work"
+}
+  </script>
+</head>
+<body class="blog-page">
+  <h1 class="sr-only">A few thoughts on technical debt in Software Engineering</h1>
+
+  <header class="site-header" id="top">
+    <a class="site-brand" href="/" aria-label="Raffael Kaas homepage">
+      <img src="/assets/img/me.png" alt="" class="site-brand-avatar">
+      <span class="site-brand-copy">
+        <span class="site-brand-name">Raffael Kaas</span>
+      </span>
+    </a>
+
+    <button class="pb-theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+      <span class="sr-only">Toggle dark mode</span>
+    </button>
+  </header>
+
+  <main class="blog-page-main">
+    <div class="pb-container blog-article-shell">
+      <article class="blog-post">
+        <img class="blog-title-image" src="/assets/blog/img/title/some-thoughts-on-technical-debt.webp" alt="Stylized scrum planning board with one team planning discussion, blocked technical debt work, an empty Done column, and a delayed release plan." decoding="async" fetchpriority="high">
+        <h1>A few thoughts on technical debt in Software Engineering</h1>
+        <p class="post-meta">Jun 11, 2026 &bull; 6 min read</p>
+        <p>Technical debt is a term almost everyone in software engineering has heard before. Nevertheless, I think it is often not treated as seriously as it should be. People know about it and talk about it, but often in a very vague way.</p>
+<p>Choosing quick solutions to meet deadlines, adding temporary workarounds that stay forever, and building small architectural balconies are part of daily life for almost every developer and project manager.</p>
+<p>The cost is often not directly visible but accumulates over the years, just like a stock savings plan, but for the worse. Technical debt should be visible and, if needed, we should pay it down like a mortgage.</p>
+<div class="section-break"></div>
+<h2>Definition and symptoms</h2>
+<p>For me, technical debt is the accumulated cost of past engineering decisions that make future changes slower and riskier.</p>
+<p>As a developer, you normally see it directly while working on the codebase. You feel slow and frustrated. Technical debt affects your motivation. Most developers like working in a clean codebase where they can move fast. If technical debt is high, this is definitely not the case.</p>
+<p>All other people who are involved in the project can feel it too. If the following symptoms are present in your project, technical debt has most likely reached a serious level:</p>
+<ul>
+  <li>Developers are busy all the time, but new features regularly get delayed.</li>
+  <li>Small changes take days to be merged back.</li>
+  <li>The bug rate is high.</li>
+  <li>A lot of unplanned work comes up during development. Estimates become less reliable.</li>
+</ul>
+<div class="section-break"></div>
+<h2>Types of technical debt</h2>
+<p>You cannot avoid technical debt completely. It is not a problem as long as you are aware of it, track it, and fix it at some point. Cleanups are not only about pretty code. Instead, paying down technical debt reduces future project costs. The following two types of technical debt are very common in code and architecture.</p>
+<p><strong>Deliberate technical debt</strong> is debt you take on consciously. Workarounds, quick fixes, and architectural balconies all increase technical debt. I mean, this is not always bad. Sometimes it is the right decision to ship something on time, but it should be tracked in the backlog and fixed properly later if necessary.</p>
+<p><strong>Accidental or naive technical debt</strong> is different. It can come from missing experience, missing best practices, rushed work or unseen disadvantages. This way, some hidden and unknown technical debt almost always enters the codebase. Same story here: Clean it up once it becomes visible.</p>
+<div class="section-break"></div>
+<h2>The Engineer's responsibility</h2>
+<p>Not every workaround or quick fix comes with a high cost later. In my opinion, engineers need to decide what impact it has on maintainability, scalability, or whatever is relevant in the specific context. There is acceptable debt and there is harmful debt. We need to classify it.</p>
+<p>As engineers, we should try to avoid emotional arguments about "bad code", even when we are frustrated. I sometimes tend to do that myself instead of making the issue concrete and visible.</p>
+<p>If a bigger cleanup or refactoring is needed, the debt needs to show up in planning. For smaller cleanups, I like the "boy scout rule". If you work on a part of the codebase anyway, leave it a bit better than before. This helps to reduce small debt over time. I think most reviewers will appreciate this more than being confused by the additional changes.</p>
+<div class="section-break"></div>
+<h2>Technical debt and unplanned work</h2>
+<p>Can we measure technical debt? In my opinion, the amount of unplanned work highly correlates with the amount of technical debt. If a team is never able to estimate sprint work properly, it is probably because a lot of unplanned work comes up during development. Paying down technical debt should reduce this unplanned work and help the team estimate sprints more reliably.</p>
+<p>Deadlines are great. In my experience, development teams need some pressure in order to progress efficiently. But there also needs to be room for the trade-off between a quick fix and a proper long-term solution. If you always force the quick solution, you allow harmful debt that comes back with high costs later.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="pb-container site-footer-inner">
+      <div class="footer-links" aria-label="Contact links">
+        <a class="footer-link" href="mailto:mail@rkaas.de">mail@rkaas.de</a>
+        <a class="footer-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank" rel="me noopener">LinkedIn</a>
+      </div>
+      <p class="footer-copyright">&copy; 2026 Raffael Kaas. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const themeToggle = document.querySelector('.pb-theme-toggle');
+
+      function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        try {
+          localStorage.setItem('theme', theme);
+        } catch (e) {}
+        if (themeToggle) {
+          themeToggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+        }
+      }
+
+      setTheme(document.documentElement.getAttribute('data-theme') || 'light');
+
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+          setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
