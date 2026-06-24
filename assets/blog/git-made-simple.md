@@ -1,5 +1,5 @@
 ---
-title: "Everyone should use Git - my simple day-to-day workflow (CLI only)"
+title: "Everyone can use Git - my simple day-to-day workflow (CLI only)"
 slug: "git-made-simple"
 date: "2026-03-24"
 lastmod: "2026-05-26"

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Raffael Kaas - Travel Map</title>
+
+  <meta name="description" content="A digital travel map with the countries Raffael Kaas has visited.">
+  <meta name="author" content="Raffael Kaas">
+  <link rel="canonical" href="https://rkaas.de/travel/">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <meta property="og:title" content="Raffael Kaas - Travel Map">
+  <meta property="og:description" content="A digital travel map with the countries I have visited.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rkaas.de/travel/">
+  <meta property="og:image" content="https://rkaas.de/assets/img/me.png">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Raffael Kaas - Travel Map">
+  <meta name="twitter:description" content="A digital travel map with the countries I have visited.">
+  <meta name="twitter:image" content="https://rkaas.de/assets/img/me.png">
+
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Raffael Kaas - Travel Map",
+    "url": "https://rkaas.de/travel/",
+    "author": {
+      "@type": "Person",
+      "name": "Raffael Kaas"
+    }
+  }
+  </script>
+</head>
+
+<body class="travel-page">
+  <h1 class="sr-only">Raffael Kaas - Travel Map</h1>
+
+  <header class="site-header" id="top">
+    <a class="site-brand" href="/" aria-label="Raffael Kaas homepage">
+      <img src="/assets/img/me.png" alt="" class="site-brand-avatar">
+      <span class="site-brand-copy">
+        <span class="site-brand-name">Raffael Kaas</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      <a class="site-nav-link" href="/">Home</a>
+      <a class="site-nav-link" href="/blog/">Blog</a>
+    </nav>
+
+    <button class="pb-theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
+      <span class="sr-only">Toggle dark mode</span>
+    </button>
+  </header>
+
+  <main class="travel-main">
+    <div class="pb-container travel-shell">
+      <section class="travel-hero" aria-labelledby="travel-title">
+        <h1 id="travel-title">Travel Map</h1>
+        <p>I couldn't find a proper place for my travel map at home, so I built a digital one. From time to time, when I find some spare time, I want to add experiences, recommendations, photos, and some fun stories to this place.</p>
+      </section>
+
+      <section class="travel-map-section" aria-label="Visited countries map">
+        <div id="travel-map" class="travel-map" role="img" aria-label="World map with highlighted countries I have visited">
+          <p class="travel-map-message">Loading travel map...</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="pb-container site-footer-inner">
+      <div class="footer-links" aria-label="Contact links">
+        <a class="footer-link" href="mailto:mail@rkaas.de">mail@rkaas.de</a>
+        <a class="footer-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank" rel="me noopener">LinkedIn</a>
+      </div>
+      <p class="footer-copyright">&copy; 2026 Raffael Kaas. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const themeToggle = document.querySelector('.pb-theme-toggle');
+
+      function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        try {
+          localStorage.setItem('theme', theme);
+        } catch (e) {}
+        if (themeToggle) {
+          themeToggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+        }
+      }
+
+      setTheme(document.documentElement.getAttribute('data-theme') || 'light');
+
+      if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+          const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+          setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+      }
+    })();
+  </script>
+  <script>
+    (function () {
+      const mapContainer = document.getElementById('travel-map');
+      if (!mapContainer) return;
+
+      function countryNameForCode(aliases, code) {
+        return Object.keys(aliases || {}).find((name) => aliases[name] === code) || code;
+      }
+
+      function titleForCountry(documentRef, text) {
+        const title = documentRef.createElementNS('http://www.w3.org/2000/svg', 'title');
+        title.textContent = text;
+        return title;
+      }
+
+      function pathMatchesCountry(path, code, name) {
+        return path.id === code ||
+          path.getAttribute('name') === name ||
+          path.getAttribute('class') === name;
+      }
+
+      function applyVisitedCountries(svg, travelData, svgDocument) {
+        const countries = travelData.countries || {};
+        const aliases = travelData.aliases || {};
+        const paths = Array.from(svg.querySelectorAll('path'));
+
+        Object.keys(countries).forEach((code) => {
+          const country = countries[code];
+          if (!country || !country.visited) return;
+
+          const name = countryNameForCode(aliases, code);
+          const label = country.note || name;
+          const matchingPaths = paths.filter((path) => pathMatchesCountry(path, code, name));
+
+          matchingPaths.forEach((path) => {
+            path.classList.add('is-visited');
+            path.style.setProperty('--country-fill', country.color || 'var(--blog-link-color)');
+            path.setAttribute('tabindex', '0');
+            path.setAttribute('aria-label', label);
+            path.prepend(titleForCountry(svgDocument, label));
+          });
+        });
+      }
+
+      Promise.all([
+        fetch('/assets/world.svg').then((response) => {
+          if (!response.ok) throw new Error('Could not load world map');
+          return response.text();
+        }),
+        fetch('/assets/traveling/traveling.json').then((response) => {
+          if (!response.ok) throw new Error('Could not load travel data');
+          return response.json();
+        }),
+      ])
+        .then(([svgText, travelData]) => {
+          const parser = new DOMParser();
+          const svgDocument = parser.parseFromString(svgText, 'image/svg+xml');
+          const svg = svgDocument.documentElement;
+
+          if (!svg || svg.nodeName.toLowerCase() !== 'svg') {
+            throw new Error('Invalid world map');
+          }
+
+          if (!svg.getAttribute('viewBox') && svg.getAttribute('viewbox')) {
+            svg.setAttribute('viewBox', svg.getAttribute('viewbox'));
+            svg.removeAttribute('viewbox');
+          }
+
+          svg.removeAttribute('width');
+          svg.removeAttribute('height');
+          svg.setAttribute('class', 'travel-world-map');
+          svg.setAttribute('role', 'img');
+          svg.setAttribute('aria-label', 'World map with highlighted countries I have visited');
+
+          applyVisitedCountries(svg, travelData, svgDocument);
+          mapContainer.replaceChildren(document.importNode(svg, true));
+        })
+        .catch(() => {
+          mapContainer.innerHTML = '<p class="travel-map-message">The travel map could not be loaded.</p>';
+        });
+    })();
+  </script>
+</body>
+</html>

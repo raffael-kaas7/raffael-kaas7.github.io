@@ -1,10 +1,93 @@
-import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  mkdirSync,
+  readdirSync,
+  readFileSync,
+  writeFileSync,
+} from "node:fs";
 import { basename, join } from "node:path";
 
 const SITE_URL = "https://rkaas.de";
 const BLOG_SOURCE_DIR = "assets/blog";
 const BLOG_OUTPUT_DIR = "blog";
+const SITE_CONFIG_PATH = "site.config.json";
 const AUTHOR_NAME = "Raffael Kaas";
+const HOME_POST_LIMIT = 6;
+const BOOKS_LASTMOD = "2026-06-15";
+const TRAVEL_LASTMOD = "2026-06-15";
+const NAV_ITEMS = [
+  { href: "/", label: "Home", page: "home" },
+  { href: "/blog/", label: "Blog", page: "blog" },
+  { href: "/books/", label: "Books", page: "books" },
+  { href: "/travel/", label: "Travel", page: "travel" },
+];
+const STATIC_NAV_PAGES = [
+  { path: "index.html", page: "home" },
+  { path: "blog.html", page: "blog" },
+  { path: "books/index.html", page: "books" },
+  { path: "travel/index.html", page: "travel" },
+];
+
+const siteConfig = loadSiteConfig();
+const postBlacklist = new Set(siteConfig.blog.postBlacklist);
+
+function normalizePostIdentifier(value) {
+  let identifier = String(value || "").trim();
+  if (!identifier) return "";
+
+  if (/^https?:\/\//i.test(identifier)) {
+    try {
+      identifier = new URL(identifier).pathname;
+    } catch {
+      return identifier;
+    }
+  }
+
+  return identifier
+    .replace(/^\/+/, "")
+    .replace(/^blog\//, "")
+    .replace(/^assets\/blog\//, "")
+    .replace(/\/+$/, "")
+    .replace(/\.md$/i, "");
+}
+
+function normalizePostList(values) {
+  return Array.isArray(values)
+    ? values.map(normalizePostIdentifier).filter(Boolean)
+    : [];
+}
+
+function loadSiteConfig() {
+  const defaultTabs = Object.fromEntries(
+    NAV_ITEMS.map((item) => [item.page, true]),
+  );
+  const defaultBlog = { postBlacklist: [] };
+
+  if (!existsSync(SITE_CONFIG_PATH)) {
+    return { tabs: defaultTabs, blog: defaultBlog };
+  }
+
+  try {
+    const parsed = JSON.parse(readFileSync(SITE_CONFIG_PATH, "utf8"));
+    const blog = parsed.blog || {};
+    return {
+      tabs: {
+        ...defaultTabs,
+        ...(parsed.tabs || {}),
+      },
+      blog: {
+        ...defaultBlog,
+        postBlacklist: normalizePostList(blog.postBlacklist),
+      },
+    };
+  } catch (error) {
+    throw new Error(`Could not read ${SITE_CONFIG_PATH}: ${error.message}`);
+  }
+}
+
+function isTabEnabled(page) {
+  return siteConfig.tabs[page] !== false;
+}
 
 function parseFrontMatterValue(value) {
   let val = value.trim();
@@ -353,6 +436,20 @@ function articleMetaHtml(fm) {
   return `<p class="post-meta">${parts.join(" &bull; ")}</p>`;
 }
 
+function renderSiteNav(currentPage = "blog") {
+  const links = NAV_ITEMS.filter((link) => isTabEnabled(link.page));
+
+  return `<nav class="site-nav" aria-label="Primary">
+      ${links
+        .map((link) => {
+          const currentAttr =
+            link.page === currentPage ? ' aria-current="page"' : "";
+          return `<a class="site-nav-link" href="${link.href}"${currentAttr}>${link.label}</a>`;
+        })
+        .join("\n      ")}
+    </nav>`;
+}
+
 function pageShell({
   bodyClass = "blog-page",
   title,
@@ -363,6 +460,7 @@ function pageShell({
   ogType = "website",
   ogImage,
   twitterCard = "summary_large_image",
+  currentPage = "blog",
   jsonLd,
   mainHtml,
 }) {
@@ -427,6 +525,8 @@ function pageShell({
         <span class="site-brand-name">Raffael Kaas</span>
       </span>
     </a>
+
+    ${renderSiteNav(currentPage)}
 
     <button class="pb-theme-toggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">
       <span class="sr-only">Toggle dark mode</span>
@@ -516,6 +616,7 @@ function renderArticlePage(post) {
     ogDescription: fm.description || "Personal writing by Raffael Kaas",
     ogType: "article",
     ogImage: fm.ogImage || fm.titleImage || "/assets/img/me.png",
+    currentPage: "blog",
     jsonLd,
     mainHtml,
   });
@@ -528,9 +629,21 @@ function renderBlogIndex(posts) {
       const meta = [fm.date ? formatDate(fm.date) : "", fm.readingTime ? `${fm.readingTime} min read` : ""]
         .filter(Boolean)
         .join(" &bull; ");
+      const thumbnailImage = fm.titleImage || fm.ogImage;
+      const thumbnail = thumbnailImage
+        ? `<img class="static-blog-thumb" src="${escapeAttribute(
+            rewriteUrl(thumbnailImage),
+          )}" alt="" aria-hidden="true" loading="lazy">`
+        : '<span class="static-blog-thumb static-blog-thumb-placeholder" aria-hidden="true"></span>';
+
       return `<li>
-          <a href="${blogUrl(slug)}">${escapeHtml(fm.title || slug)}</a>
-          ${meta ? `<span class="post-meta">${meta}</span>` : ""}
+          <a class="static-blog-card" href="${blogUrl(slug)}">
+            ${thumbnail}
+            <span class="static-blog-copy">
+              <span class="static-blog-title">${escapeHtml(fm.title || slug)}</span>
+              ${meta ? `<span class="post-meta">${meta}</span>` : ""}
+            </span>
+          </a>
         </li>`;
     })
     .join("\n");
@@ -555,6 +668,7 @@ ${items}
     ogType: "website",
     ogImage: "/assets/img/me.png",
     twitterCard: "summary",
+    currentPage: "blog",
     jsonLd: {
       "@context": "https://schema.org",
       "@type": "Blog",
@@ -569,15 +683,90 @@ ${items}
   });
 }
 
+function formatHomeDate(dateValue) {
+  const match = String(dateValue || "").match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (match) return `${match[3]}-${match[2]}-${match[1]}`;
+  return formatDate(dateValue);
+}
+
+function renderHomePostItems(posts) {
+  return posts
+    .slice(0, HOME_POST_LIMIT)
+    .map((post) => {
+      const { fm, slug } = post;
+      const cover = fm.titleImage
+        ? `<img class="post-mark post-cover" src="${escapeAttribute(
+            rewriteUrl(fm.titleImage),
+          )}" alt="" aria-hidden="true" loading="lazy">`
+        : '<span class="post-mark post-cover-placeholder" aria-hidden="true"></span>';
+
+      return `          <li class="post-item">
+            <a href="${blogUrl(slug)}">
+              ${cover}
+              <span class="post-card-copy">
+                <span class="post-date">${escapeHtml(formatHomeDate(fm.date))}</span>
+                <span class="post-title">${escapeHtml(fm.title || slug)}</span>
+              </span>
+            </a>
+          </li>`;
+    })
+    .join("\n");
+}
+
+function updateHomepage(posts) {
+  const homepagePath = "index.html";
+  const homepage = readFileSync(homepagePath, "utf8");
+  const postListRegex = /(<ul class="post-list">\n)[\s\S]*?(\n\s*<\/ul>)/;
+
+  if (!postListRegex.test(homepage)) {
+    throw new Error("Could not find homepage post list to update");
+  }
+
+  writeFileSync(
+    homepagePath,
+    homepage.replace(
+      postListRegex,
+      `$1${renderHomePostItems(posts)}$2`,
+    ),
+    "utf8",
+  );
+}
+
+function updateStaticPageNavs() {
+  STATIC_NAV_PAGES.forEach(({ path, page }) => {
+    if (!existsSync(path)) return;
+
+    const html = readFileSync(path, "utf8");
+    const navRegex = /<nav class="site-nav" aria-label="Primary">\n[\s\S]*?\n\s*<\/nav>/;
+
+    if (!navRegex.test(html)) {
+      throw new Error(`Could not find site nav in ${path}`);
+    }
+
+    writeFileSync(
+      path,
+      html.replace(navRegex, renderSiteNav(page)),
+      "utf8",
+    );
+  });
+}
+
 function renderSitemap(posts) {
-  const entries = [
-    { loc: `${SITE_URL}/`, lastmod: latestPostDate(posts) },
-    { loc: `${SITE_URL}/blog/`, lastmod: latestPostDate(posts) },
-    ...posts.map((post) => ({
+  const staticEntries = [
+    { page: "home", loc: `${SITE_URL}/`, lastmod: latestPostDate(posts) },
+    { page: "blog", loc: `${SITE_URL}/blog/`, lastmod: latestPostDate(posts) },
+    { page: "books", loc: `${SITE_URL}/books/`, lastmod: BOOKS_LASTMOD },
+    { page: "travel", loc: `${SITE_URL}/travel/`, lastmod: TRAVEL_LASTMOD },
+  ].filter((entry) => isTabEnabled(entry.page));
+
+  const postEntries = isTabEnabled("blog")
+    ? posts.map((post) => ({
       loc: canonicalUrl(post.slug),
       lastmod: post.fm.lastmod || post.fm.date,
-    })),
-  ];
+    }))
+    : [];
+
+  const entries = [...staticEntries, ...postEntries];
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -599,6 +788,18 @@ function latestPostDate(posts) {
     .filter(Boolean)
     .sort()
     .at(-1);
+}
+
+function isPostBlacklisted(post) {
+  const identifiers = [
+    post.slug,
+    post.sourceFile,
+    slugFromFile(post.sourceFile),
+    blogUrl(post.slug),
+    canonicalUrl(post.slug),
+  ].map(normalizePostIdentifier);
+
+  return identifiers.some((identifier) => postBlacklist.has(identifier));
 }
 
 function loadPosts() {
@@ -628,12 +829,17 @@ function writePost(post) {
 
 function main() {
   const posts = loadPosts();
+  const listedPosts = posts.filter((post) => !isPostBlacklisted(post));
   mkdirSync(BLOG_OUTPUT_DIR, { recursive: true });
   posts.forEach(writePost);
-  writeFileSync(join(BLOG_OUTPUT_DIR, "index.html"), renderBlogIndex(posts), "utf8");
-  writeFileSync("sitemap.xml", renderSitemap(posts), "utf8");
+  writeFileSync(join(BLOG_OUTPUT_DIR, "index.html"), renderBlogIndex(listedPosts), "utf8");
+  updateHomepage(listedPosts);
+  updateStaticPageNavs();
+  writeFileSync("sitemap.xml", renderSitemap(listedPosts), "utf8");
 
-  console.log(`Generated ${posts.length} blog posts and sitemap.xml`);
+  console.log(
+    `Generated ${posts.length} blog posts, listed ${listedPosts.length}, homepage latest ${HOME_POST_LIMIT}, and sitemap.xml`,
+  );
 }
 
 main();

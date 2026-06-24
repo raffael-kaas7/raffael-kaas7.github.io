@@ -1,0 +1,14 @@
+{
+  "tabs": {
+    "home": true,
+    "blog": true,
+    "books": false,
+    "travel": false
+  },
+  "blog": {
+    "postBlacklist": [
+      "My-favorite-full-body-workout-plan", 
+      "there-has-never-been-a-better-time-to-invest-than-now"
+    ]
+  }
+}
