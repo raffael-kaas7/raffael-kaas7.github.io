@@ -77,8 +77,8 @@ Beyond these foundation books, I'm glad I also read others that broadened my hor
 
 <center>
     <figure>
-        <img src="/assets/blog/img/favorite-books-investing.webp" alt="A few of my favorite investing books" width="70%" />
-        <figcaption>Some of my favorite books that shaped my investing mindset.</figcaption>
+        <img src="/assets/book_covers/ueber_die_psychologie_des_geldes_front.webp" alt="The Psychology of Money book cover" width="42%" />
+        <figcaption>One of the books that shaped my investing mindset.</figcaption>
     </figure>
 </center>
 
@@ -95,6 +95,6 @@ It hasn't been a straight path. I've switched strategies, made mistakes, and spe
 
 ### Further Reading
 
-A macro view on why starting matters more than timing: [There has never been a better time to invest than now](/blog/there-has-never-been-a-better-time-to-invest-than-now/)
+A macro view on why starting matters more than timing is still something I may rewrite into a calmer note later.
 
 <div class="section-break"></div>

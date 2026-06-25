@@ -5,58 +5,62 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Raffael Kaas - Homepage</title>
+  <title>Raffael Kaas - Personal Website</title>
 
-  <meta name="description" content="Raffael Kaas - Homepage">
+  <meta name="description" content="Personal website and notes by Raffael Kaas about software, training, books, money, travel, and life outside the screen.">
   <meta name="author" content="Raffael Kaas">
   <link rel="canonical" href="https://rkaas.de/">
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" href="/favicon.png">
 
-  <meta property="og:title" content="Raffael Kaas - Homepage">
-  <meta property="og:description" content="About Me | Blog">
+  <meta property="og:title" content="Raffael Kaas">
+  <meta property="og:description" content="Software engineering, writing, books, travel, and personal notes by Raffael Kaas.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rkaas.de/">
-  <meta property="og:image" content="https://rkaas.de/assets/img/me.png">
+  <meta property="og:image" content="https://rkaas.de/assets/img/me-tshirt.png">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Raffael Kaas">
-  <meta name="twitter:description" content="About Me | Blog">
-  <meta name="twitter:image" content="https://rkaas.de/assets/img/me.png">
+  <meta name="twitter:description" content="Software engineering, writing, books, travel, and personal notes by Raffael Kaas.">
+  <meta name="twitter:image" content="https://rkaas.de/assets/img/me-tshirt.png">
 
   <script>
     (function () {
       try {
-        var theme = localStorage.getItem('theme') || 'light';
+        var theme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', theme);
       } catch (e) {
-        document.documentElement.setAttribute('data-theme', 'light');
+        document.documentElement.setAttribute('data-theme', 'dark');
       }
     })();
   </script>
 
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Raffael Kaas",
-    "jobTitle": "Software Engineer",
-    "url": "https://rkaas.de/",
-    "image": "https://rkaas.de/assets/img/me.png",
-    "sameAs": [
-      "https://www.linkedin.com/in/raffael-kaas-4b0869152"
-    ],
-    "knowsAbout": ["Embedded Systems", "ROS", "Linux", "C++", "Python", "ADAS", "Automotive"]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Raffael Kaas",
+  "jobTitle": "Software Engineer",
+  "url": "https://rkaas.de/",
+  "image": "https://rkaas.de/assets/img/me-tshirt.png",
+  "knowsAbout": [
+    "Embedded Systems",
+    "Linux",
+    "C++",
+    "Python",
+    "Software Engineering",
+    "ADAS",
+    "Automotive"
+  ]
+}
   </script>
 </head>
-
 <body class="personal-blog-home">
   <h1 class="sr-only">Raffael Kaas</h1>
 
   <header class="site-header" id="top">
-    <a class="site-brand" href="#top" aria-label="Raffael Kaas">
+    <a class="site-brand" href="/" aria-label="Raffael Kaas homepage">
+      <img src="/assets/img/me-tshirt.png" alt="" class="site-brand-avatar">
       <span class="site-brand-copy">
         <span class="site-brand-name">Raffael Kaas</span>
       </span>
@@ -72,108 +76,218 @@
     </button>
   </header>
 
-  <main class="home-shell">
-    <section class="home-hero">
-      <div class="pb-container home-hero-inner">
-        <div class="home-portrait-stack">
-          <div class="home-portrait-wrap">
-            <img src="assets/img/me.png" alt="Portrait of Raffael Kaas, Software Engineer" class="home-portrait">
+  <main class="garden-main">
+    <section class="garden-hero">
+      <div class="pb-container garden-hero-inner">
+        <div class="garden-hero-copy">
+          <h1>Raffael Kaas</h1>
+          <p>I build software and use this site for notes about engineering, books, training, money, travel, and things I want to remember.</p>
+        </div>
+        <img src="/assets/img/me-tshirt.png" alt="Portrait of Raffael Kaas" class="garden-profile-photo">
+      </div>
+    </section>
+
+    <section class="garden-section" id="areas" aria-labelledby="areas-title">
+      <div class="pb-container garden-section-inner">
+        <div class="section-heading-row">
+          <div>
+            <h2 id="areas-title">Start with a room</h2>
           </div>
+          <p class="section-heading-copy">The main entrances into this site. Each room collects the articles, notes, and collections around one area.</p>
+        </div>
+        <div class="garden-area-grid">
+          <a class="garden-area-card is-work" href="/work/">
+        <span class="garden-area-marker">Software, systems, projects</span>
+        <span class="garden-area-title">Work</span>
+        <span class="garden-area-description">Software engineering, real projects, AI-assisted development, architecture, and things I learned from building systems.</span>
+        <span class="garden-area-footer">
+          <span class="garden-area-count">9 notes</span>
+          <span class="garden-area-action">visit room</span>
+        </span>
+      </a>
+<a class="garden-area-card is-health" href="/health/">
+        <span class="garden-area-marker">Training, running, recovery</span>
+        <span class="garden-area-title">Health</span>
+        <span class="garden-area-description">Training, running, nutrition, sleep, and the practical process of staying healthy alongside normal work and life.</span>
+        <span class="garden-area-footer">
+          <span class="garden-area-count">5 notes</span>
+          <span class="garden-area-action">visit room</span>
+        </span>
+      </a>
+<a class="garden-area-card is-money" href="/money/">
+        <span class="garden-area-marker">Investing, spending, optionality</span>
+        <span class="garden-area-title">Money</span>
+        <span class="garden-area-description">Investing, spending, business models, financial habits, and what I am still learning about money and tradeoffs.</span>
+        <span class="garden-area-footer">
+          <span class="garden-area-count">5 notes</span>
+          <span class="garden-area-action">visit room</span>
+        </span>
+      </a>
+<a class="garden-area-card is-travel" href="/travel/">
+        <span class="garden-area-marker">Maps, routes, memories</span>
+        <span class="garden-area-title">Travel</span>
+        <span class="garden-area-description">Travel notes, maps, routes, photos, places, and memories I want to keep instead of losing them in a camera roll.</span>
+        <span class="garden-area-footer">
+          <span class="garden-area-count">5 notes</span>
+          <span class="garden-area-action">visit room</span>
+        </span>
+      </a>
+<a class="garden-area-card is-life" href="/life/">
+        <span class="garden-area-marker">Notes, habits, reflections</span>
+        <span class="garden-area-title">Life</span>
+        <span class="garden-area-description">Personal notes on attention, relationships, language learning, getting older, and things I am still trying to understand.</span>
+        <span class="garden-area-footer">
+          <span class="garden-area-count">6 notes</span>
+          <span class="garden-area-action">visit room</span>
+        </span>
+      </a>
+<a class="garden-area-card is-books" href="/books/">
+        <span class="garden-area-marker">Books, quotes, ideas</span>
+        <span class="garden-area-title">Books</span>
+        <span class="garden-area-description">Books that shaped my thinking, ideas I want to remember, and notes from pages I keep returning to.</span>
+        <span class="garden-area-footer">
+          <span class="garden-area-count">4 notes</span>
+          <span class="garden-area-action">visit room</span>
+        </span>
+      </a>
         </div>
       </div>
     </section>
 
-    <div class="pb-container content-shell">
-      <section class="about-panel" id="about">
-        <div>
-          <h2>About Me</h2>
+    <section class="garden-section is-writing" aria-labelledby="latest-title">
+      <div class="pb-container garden-section-inner">
+        <div class="section-heading-row">
+          <div>
+            <h2 id="latest-title">Latest writing</h2>
+          </div>
         </div>
-        <div class="about-copy">
-          <p>Hi, I'm Raffael, a software engineer living at Lake Constance and working in the automotive industry. I have a Master of Engineering with a focus on autonomous systems. Over the past few years, I've worked on a wide range of complex software projects: building my own quadrocopter during university, launching autonomous shuttles in Rotterdam, and now developing series production software for power converters in e-mobility.</p>
-          <p>I enjoy working on Linux-based systems, using C/C++ for embedded software development and Python to make life easier or to quickly prototype ideas. I've worked on many projects using ROS on high-performance computers, but I also have a lot of hands-on experience with microcontrollers and low-level debugging.</p>
-          <p>Outside of engineering, I'm usually in motion: running, playing soccer, or lifting heavy weights. Besides sports, I have a strong interest in finance and investing, and enjoy diving into new ideas through books, travel, or good conversations.</p>
+        <div class="writing-grid">
+          <article class="writing-card is-work is-compact">
+        <a href="/blog/spec-driven-development-vs-vibe-coding/">
+          <img class="writing-card-thumb" src="/assets/blog/img/title/vibe-coding-my-own-depot-tracking-app.webp" alt="" aria-hidden="true" loading="lazy">
+          <span class="writing-card-copy">
+            <span class="writing-card-title">Spec-Driven Development vs Vibe Coding</span>
+            <span class="writing-card-meta">
+              <span class="writing-card-area">Work</span>
+              <span class="writing-card-details">Jul 05, 2026 · 5 min read</span>
+            </span>
+            <span class="writing-card-summary">When a written spec helps me think clearly before prompting an AI agent, and when a smaller exploratory pass is fine.</span>
+          </span>
+        </a>
+      </article>
+<article class="writing-card is-life is-compact">
+        <a href="/blog/building-a-website-that-feels-like-mine/">
+          <img class="writing-card-thumb" src="/assets/blog/img/title/recap-on-my-20s-journey.webp" alt="" aria-hidden="true" loading="lazy">
+          <span class="writing-card-copy">
+            <span class="writing-card-title">Building A Website That Feels Like Mine</span>
+            <span class="writing-card-meta">
+              <span class="writing-card-area">Life</span>
+              <span class="writing-card-details">Jul 04, 2026 · 4 min read</span>
+            </span>
+            <span class="writing-card-summary">A note on making this site more personal, useful, and honest without turning it into a public performance.</span>
+          </span>
+        </a>
+      </article>
+<article class="writing-card is-books is-compact">
+        <a href="/blog/10-favorite-books-i-keep-coming-back-to/">
+          <img class="writing-card-thumb" src="/assets/book_covers/atomic_habits_front.webp" alt="" aria-hidden="true" loading="lazy">
+          <span class="writing-card-copy">
+            <span class="writing-card-title">10 Favorite Books I Keep Coming Back To</span>
+            <span class="writing-card-meta">
+              <span class="writing-card-area">Books</span>
+              <span class="writing-card-details">Jul 03, 2026 · 6 min read</span>
+            </span>
+            <span class="writing-card-summary">Books I keep returning to, not as a ranking, but as a record of ideas that stayed useful.</span>
+          </span>
+        </a>
+      </article>
+<article class="writing-card is-travel is-compact">
+        <a href="/blog/brazil-travel-notes/">
+          <img class="writing-card-thumb" src="/assets/blog/img/roadtrip/rottnest_beach.webp" alt="" aria-hidden="true" loading="lazy">
+          <span class="writing-card-copy">
+            <span class="writing-card-title">Brazil Travel Notes</span>
+            <span class="writing-card-meta">
+              <span class="writing-card-area">Travel</span>
+              <span class="writing-card-details">Jul 02, 2026 · 5 min read</span>
+            </span>
+            <span class="writing-card-summary">Routes, places, language moments, and small memories from Brazil that I do not want to lose in my camera roll.</span>
+          </span>
+        </a>
+      </article>
+<article class="writing-card is-money is-compact">
+        <a href="/blog/how-much-is-enough/">
+          <img class="writing-card-thumb" src="/assets/blog/img/title/5-years-in-the-stock-market-portfolio.webp" alt="" aria-hidden="true" loading="lazy">
+          <span class="writing-card-copy">
+            <span class="writing-card-title">How Much Is Enough?</span>
+            <span class="writing-card-meta">
+              <span class="writing-card-area">Money</span>
+              <span class="writing-card-details">Jul 01, 2026 · 5 min read</span>
+            </span>
+            <span class="writing-card-summary">A personal money note about optionality, enoughness, and where more optimization starts to feel less useful.</span>
+          </span>
+        </a>
+      </article>
+<article class="writing-card is-health is-compact">
+        <a href="/blog/my-favorite-full-body-workout-plan/">
+          <img class="writing-card-thumb" src="/assets/blog/img/training.webp" alt="" aria-hidden="true" loading="lazy">
+          <span class="writing-card-copy">
+            <span class="writing-card-title">My Favorite Full Body Workout Plan</span>
+            <span class="writing-card-meta">
+              <span class="writing-card-area">Health</span>
+              <span class="writing-card-details">Jun 30, 2026 · 4 min read</span>
+            </span>
+            <span class="writing-card-summary">The gym structure I like most right now, why full body training works for me, and where I still keep it flexible.</span>
+          </span>
+        </a>
+      </article>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="blog-panel" id="blog">
-        <div class="blog-heading">
-          <h2>Blog</h2>
-          <a class="blog-all-link" href="/blog/">All articles</a>
+    <section class="garden-section is-about" id="about" aria-labelledby="about-title">
+      <div class="pb-container garden-section-inner about-grid">
+        <h2 id="about-title" class="about-heading">About me</h2>
+        <div class="about-copy">
+          <p>Hi, I am Raffael, a software engineer working in the automotive industry. I have a Master of Engineering with a focus on autonomous systems and have worked on student robots, autonomous shuttles, and series production software for e-mobility.</p>
+          <p>I enjoy Linux-based systems, C/C++ for embedded software development, and Python for prototypes and tools. Outside of engineering, I am usually somewhere between running shoes, a gym session, a book, a travel plan, or a spreadsheet about money.</p>
         </div>
-        <ul class="post-list">
-          <li class="post-item">
-            <a href="/blog/some-thoughts-on-technical-debt/">
-              <img class="post-mark post-cover" src="/assets/blog/img/title/some-thoughts-on-technical-debt.webp" alt="" aria-hidden="true" loading="lazy">
-              <span class="post-card-copy">
-                <span class="post-date">11-06-2026</span>
-                <span class="post-title">A few thoughts on technical debt in Software Engineering</span>
-              </span>
-            </a>
-          </li>
-          <li class="post-item">
-            <a href="/blog/how-to-learn-a-new-language/">
-              <img class="post-mark post-cover" src="/assets/blog/img/title/how-to-learn-a-new-language-tools.webp" alt="" aria-hidden="true" loading="lazy">
-              <span class="post-card-copy">
-                <span class="post-date">19-05-2026</span>
-                <span class="post-title">My favorite tools for learning a new language</span>
-              </span>
-            </a>
-          </li>
-          <li class="post-item">
-            <a href="/blog/git-made-simple/">
-              <img class="post-mark post-cover" src="/assets/blog/img/title/git-made-simple-workflow.webp" alt="" aria-hidden="true" loading="lazy">
-              <span class="post-card-copy">
-                <span class="post-date">24-03-2026</span>
-                <span class="post-title">Everyone can use Git - my simple day-to-day workflow (CLI only)</span>
-              </span>
-            </a>
-          </li>
-          <li class="post-item">
-            <a href="/blog/recap-on-my-20s/">
-              <img class="post-mark post-cover" src="/assets/blog/img/title/recap-on-my-20s-journey.webp" alt="" aria-hidden="true" loading="lazy">
-              <span class="post-card-copy">
-                <span class="post-date">11-03-2026</span>
-                <span class="post-title">Turning 30 - a personal recap and lessons from my 20s</span>
-              </span>
-            </a>
-          </li>
-          <li class="post-item">
-            <a href="/blog/roadtrip-from-perth-to-sydney/">
-              <img class="post-mark post-cover" src="/assets/blog/img/title/roadtrip-from-perth-to-sydney-highlights.webp" alt="" aria-hidden="true" loading="lazy">
-              <span class="post-card-copy">
-                <span class="post-date">05-02-2026</span>
-                <span class="post-title">Road trip from Perth to Sydney - one month and 6,700 km</span>
-              </span>
-            </a>
-          </li>
-          <li class="post-item">
-            <a href="/blog/regex-for-searching-in-logfiles/">
-              <img class="post-mark post-cover" src="/assets/blog/img/title/regex-for-searching-in-logfiles-terminal.webp" alt="" aria-hidden="true" loading="lazy">
-              <span class="post-card-copy">
-                <span class="post-date">26-11-2025</span>
-                <span class="post-title">Regex patterns I actually use when searching log files</span>
-              </span>
-            </a>
-          </li>
-        </ul>
-      </section>
-    </div>
+        <div class="about-terminal" aria-label="Ubuntu terminal showing current notes">
+          <div class="about-terminal-bar" aria-hidden="true">
+            <span class="about-terminal-tab">raffael@rkaas: ~</span>
+            <span class="about-terminal-actions">
+              <span class="about-terminal-action is-search"></span>
+              <span class="about-terminal-action is-menu"></span>
+              <span class="about-terminal-window is-minimize"></span>
+              <span class="about-terminal-window is-maximize"></span>
+              <span class="about-terminal-window is-close"></span>
+            </span>
+          </div>
+          <div class="about-terminal-screen">
+            <span class="about-terminal-line is-command" style="--terminal-delay: 0ms"><span class="about-terminal-user">raffael@rkaas</span><span class="about-terminal-path">:~</span><span class="about-terminal-symbol">$</span> cd ~/my_blog/</span>
+            <span class="about-terminal-line is-command" style="--terminal-delay: 150ms"><span class="about-terminal-user">raffael@rkaas</span><span class="about-terminal-path">:~/my_blog</span><span class="about-terminal-symbol">$</span> cat notes.txt</span>
+            <span class="about-terminal-line is-output is-date" style="--terminal-delay: 300ms">updated: 2026-06-25</span>
+            <span class="about-terminal-line is-output" style="--terminal-delay: 450ms">working on this website redesign</span>
+            <span class="about-terminal-line is-output" style="--terminal-delay: 600ms">preparing article slots for the next months</span>
+            <span class="about-terminal-line is-output" style="--terminal-delay: 750ms">collecting notes that are worth keeping</span>
+            <span class="about-terminal-line is-output" style="--terminal-delay: 900ms">trying to make this place feel more like mine</span>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="pb-container site-footer-inner">
       <div class="footer-links" aria-label="Contact links">
-        <a class="footer-link" href="mailto:mail@rkaas.de">mail@rkaas.de</a>
-        <a class="footer-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank" rel="me noopener">LinkedIn</a>
+        <a class="footer-link" href="mailto:mail@rkaas.de?subject=Hello%20from%20your%20website">text me: mail@rkaas.de</a>
       </div>
-      <p class="footer-copyright">© 2026 Raffael Kaas. All rights reserved.</p>
+      <p class="footer-copyright">&copy; 2026 Raffael Kaas. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
     (function () {
       const themeToggle = document.querySelector('.pb-theme-toggle');
-      const pageParams = new URLSearchParams(window.location.search);
 
       function setTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
@@ -185,15 +299,11 @@
         }
       }
 
-      const requestedTheme = pageParams.get('theme');
-      const savedTheme = (requestedTheme === 'dark' || requestedTheme === 'light')
-        ? requestedTheme
-        : (document.documentElement.getAttribute('data-theme') || 'light');
-      setTheme(savedTheme);
+      setTheme(document.documentElement.getAttribute('data-theme') || 'dark');
 
       if (themeToggle) {
         themeToggle.addEventListener('click', () => {
-          const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+          const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
           setTheme(currentTheme === 'dark' ? 'light' : 'dark');
         });
       }

@@ -26,10 +26,10 @@
   <script>
     (function () {
       try {
-        var theme = localStorage.getItem('theme') || 'light';
+        var theme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', theme);
       } catch (e) {
-        document.documentElement.setAttribute('data-theme', 'light');
+        document.documentElement.setAttribute('data-theme', 'dark');
       }
     })();
   </script>
@@ -57,7 +57,7 @@
 
   <header class="site-header" id="top">
     <a class="site-brand" href="/" aria-label="Raffael Kaas homepage">
-      <img src="/assets/img/me.png" alt="" class="site-brand-avatar">
+      <img src="/assets/img/me-tshirt.png" alt="" class="site-brand-avatar">
       <span class="site-brand-copy">
         <span class="site-brand-name">Raffael Kaas</span>
       </span>
@@ -118,8 +118,8 @@
 <div class="section-break"></div>
 <center>
     <figure>
-        <img src="/assets/blog/img/favorite-books-investing.webp" alt="A few of my favorite investing books" width="70%" />
-        <figcaption>Some of my favorite books that shaped my investing mindset.</figcaption>
+        <img src="/assets/book_covers/ueber_die_psychologie_des_geldes_front.webp" alt="The Psychology of Money book cover" width="42%" />
+        <figcaption>One of the books that shaped my investing mindset.</figcaption>
     </figure>
 </center>
 <div class="section-break"></div>
@@ -128,7 +128,7 @@
 <p>It hasn't been a straight path. I've switched strategies, made mistakes, and spent months doubting certain decisions. Over time, I learned what fits my personality and my goals. For me, investing has become more than just a way to grow money. It's about freedom, patience, and understanding what really matters.</p>
 <div class="section-break"></div>
 <h3>Further Reading</h3>
-<p>A macro view on why starting matters more than timing: <a href="/blog/there-has-never-been-a-better-time-to-invest-than-now/">There has never been a better time to invest than now</a></p>
+<p>A macro view on why starting matters more than timing is still something I may rewrite into a calmer note later.</p>
 <div class="section-break"></div>
       </article>
     </div>
@@ -137,8 +137,7 @@
   <footer class="site-footer">
     <div class="pb-container site-footer-inner">
       <div class="footer-links" aria-label="Contact links">
-        <a class="footer-link" href="mailto:mail@rkaas.de">mail@rkaas.de</a>
-        <a class="footer-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank" rel="me noopener">LinkedIn</a>
+        <a class="footer-link" href="mailto:mail@rkaas.de?subject=Hello%20from%20your%20website">text me: mail@rkaas.de</a>
       </div>
       <p class="footer-copyright">&copy; 2026 Raffael Kaas. All rights reserved.</p>
     </div>
@@ -158,11 +157,11 @@
         }
       }
 
-      setTheme(document.documentElement.getAttribute('data-theme') || 'light');
+      setTheme(document.documentElement.getAttribute('data-theme') || 'dark');
 
       if (themeToggle) {
         themeToggle.addEventListener('click', () => {
-          const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+          const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
           setTheme(currentTheme === 'dark' ? 'light' : 'dark');
         });
       }

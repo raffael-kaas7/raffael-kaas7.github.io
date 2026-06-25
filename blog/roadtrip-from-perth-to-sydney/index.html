@@ -26,10 +26,10 @@
   <script>
     (function () {
       try {
-        var theme = localStorage.getItem('theme') || 'light';
+        var theme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', theme);
       } catch (e) {
-        document.documentElement.setAttribute('data-theme', 'light');
+        document.documentElement.setAttribute('data-theme', 'dark');
       }
     })();
   </script>
@@ -57,7 +57,7 @@
 
   <header class="site-header" id="top">
     <a class="site-brand" href="/" aria-label="Raffael Kaas homepage">
-      <img src="/assets/img/me.png" alt="" class="site-brand-avatar">
+      <img src="/assets/img/me-tshirt.png" alt="" class="site-brand-avatar">
       <span class="site-brand-copy">
         <span class="site-brand-name">Raffael Kaas</span>
       </span>
@@ -471,8 +471,7 @@
   <footer class="site-footer">
     <div class="pb-container site-footer-inner">
       <div class="footer-links" aria-label="Contact links">
-        <a class="footer-link" href="mailto:mail@rkaas.de">mail@rkaas.de</a>
-        <a class="footer-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank" rel="me noopener">LinkedIn</a>
+        <a class="footer-link" href="mailto:mail@rkaas.de?subject=Hello%20from%20your%20website">text me: mail@rkaas.de</a>
       </div>
       <p class="footer-copyright">&copy; 2026 Raffael Kaas. All rights reserved.</p>
     </div>
@@ -492,11 +491,11 @@
         }
       }
 
-      setTheme(document.documentElement.getAttribute('data-theme') || 'light');
+      setTheme(document.documentElement.getAttribute('data-theme') || 'dark');
 
       if (themeToggle) {
         themeToggle.addEventListener('click', () => {
-          const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+          const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
           setTheme(currentTheme === 'dark' ? 'light' : 'dark');
         });
       }

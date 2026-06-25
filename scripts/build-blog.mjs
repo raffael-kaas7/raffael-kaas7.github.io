@@ -3,6 +3,7 @@ import {
   mkdirSync,
   readdirSync,
   readFileSync,
+  rmSync,
   writeFileSync,
 } from "node:fs";
 import { basename, join } from "node:path";
@@ -12,9 +13,18 @@ const BLOG_SOURCE_DIR = "assets/blog";
 const BLOG_OUTPUT_DIR = "blog";
 const SITE_CONFIG_PATH = "site.config.json";
 const AUTHOR_NAME = "Raffael Kaas";
+const PROFILE_IMAGE = "/assets/img/me-tshirt.png";
+const NOW_FILE_PATH = "now.txt";
 const HOME_POST_LIMIT = 6;
 const BOOKS_LASTMOD = "2026-06-15";
 const TRAVEL_LASTMOD = "2026-06-15";
+const DEFAULT_NOW_UPDATED = "updated: 2026-06-25";
+const DEFAULT_NOW_LINES = [
+  "working on this website redesign",
+  "preparing article slots for the next months",
+  "collecting notes that are worth keeping",
+  "trying to make this place feel more like mine",
+];
 const NAV_ITEMS = [
   { href: "/", label: "Home", page: "home" },
   { href: "/blog/", label: "Blog", page: "blog" },
@@ -25,7 +35,83 @@ const STATIC_NAV_PAGES = [
   { path: "index.html", page: "home" },
   { path: "blog.html", page: "blog" },
   { path: "books/index.html", page: "books" },
+  { path: "books/bookshelf/index.html", page: "books" },
   { path: "travel/index.html", page: "travel" },
+  { path: "travel/map/index.html", page: "travel" },
+];
+const AREAS = [
+  {
+    key: "work",
+    label: "Work",
+    href: "/work/",
+    marker: "Software, systems, projects",
+    description:
+      "Software engineering, real projects, AI-assisted development, architecture, and things I learned from building systems.",
+  },
+  {
+    key: "health",
+    label: "Health",
+    href: "/health/",
+    marker: "Training, running, recovery",
+    description:
+      "Training, running, nutrition, sleep, and the practical process of staying healthy alongside normal work and life.",
+  },
+  {
+    key: "money",
+    label: "Money",
+    href: "/money/",
+    marker: "Investing, spending, optionality",
+    description:
+      "Investing, spending, business models, financial habits, and what I am still learning about money and tradeoffs.",
+  },
+  {
+    key: "travel",
+    label: "Travel",
+    href: "/travel/",
+    marker: "Maps, routes, memories",
+    description:
+      "Travel notes, maps, routes, photos, places, and memories I want to keep instead of losing them in a camera roll.",
+  },
+  {
+    key: "life",
+    label: "Life",
+    href: "/life/",
+    marker: "Notes, habits, reflections",
+    description:
+      "Personal notes on attention, relationships, language learning, getting older, and things I am still trying to understand.",
+  },
+  {
+    key: "books",
+    label: "Books",
+    href: "/books/",
+    marker: "Books, quotes, ideas",
+    description:
+      "Books that shaped my thinking, ideas I want to remember, and notes from pages I keep returning to.",
+  },
+];
+const AREA_BY_KEY = new Map(AREAS.map((area) => [area.key, area]));
+const GENERATED_AREA_KEYS = new Set(AREAS.map((area) => area.key));
+const AREA_SPECIAL_LINKS = {
+  books: [
+    {
+      href: "/books/bookshelf/",
+      label: "Bookshelf",
+      title: "Digital Bookshelf",
+      text: "A collection of book covers and short notes for books I want to remember.",
+    },
+  ],
+  travel: [
+    {
+      href: "/travel/map/",
+      label: "Map",
+      title: "Travel Map",
+      text: "A personal atlas for visited places, routes, stories, and travel highlights.",
+    },
+  ],
+};
+const SPECIAL_COLLECTION_PAGES = [
+  { loc: `${SITE_URL}/books/bookshelf/`, lastmod: BOOKS_LASTMOD },
+  { loc: `${SITE_URL}/travel/map/`, lastmod: TRAVEL_LASTMOD },
 ];
 
 const siteConfig = loadSiteConfig();
@@ -149,6 +235,90 @@ function escapeXml(value) {
   return escapeHtml(value).replace(/'/g, "&apos;");
 }
 
+function readNowSnapshot() {
+  const fallback = {
+    updated: DEFAULT_NOW_UPDATED,
+    lines: DEFAULT_NOW_LINES,
+  };
+
+  if (!existsSync(NOW_FILE_PATH)) return fallback;
+
+  const raw = readFileSync(NOW_FILE_PATH, "utf8")
+    .replace(/\r\n/g, "\n")
+    .trimEnd();
+
+  if (!raw.trim()) return fallback;
+
+  const fileLines = raw.split("\n").map((line) => line.trimEnd());
+  const updatedIndex = fileLines.findIndex((line) =>
+    /^updated:/i.test(line.trim()),
+  );
+  const updated =
+    updatedIndex >= 0 ? fileLines[updatedIndex].trim() : DEFAULT_NOW_UPDATED;
+  const lines = fileLines
+    .filter((_, index) => index !== updatedIndex)
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  return {
+    updated,
+    lines: lines.length ? lines : DEFAULT_NOW_LINES,
+  };
+}
+
+function renderTerminalLine(html, className, index) {
+  return `<span class="about-terminal-line ${className}" style="--terminal-delay: ${index * 150}ms">${html}</span>`;
+}
+
+function renderTerminalCommand(command, index, path = "~") {
+  return renderTerminalLine(
+    `<span class="about-terminal-user">raffael@rkaas</span><span class="about-terminal-path">:${escapeHtml(path)}</span><span class="about-terminal-symbol">$</span> ${escapeHtml(command)}`,
+    "is-command",
+    index,
+  );
+}
+
+function renderNowTerminal() {
+  const snapshot = readNowSnapshot();
+  const terminalLines = [];
+  let lineIndex = 0;
+
+  terminalLines.push(renderTerminalCommand("cd ~/my_blog/", lineIndex));
+  lineIndex += 1;
+  terminalLines.push(renderTerminalCommand("cat notes.txt", lineIndex, "~/my_blog"));
+  lineIndex += 1;
+  terminalLines.push(
+    renderTerminalLine(
+      escapeHtml(snapshot.updated),
+      "is-output is-date",
+      lineIndex,
+    ),
+  );
+  lineIndex += 1;
+  snapshot.lines.forEach((line) => {
+    terminalLines.push(
+      renderTerminalLine(escapeHtml(line), "is-output", lineIndex),
+    );
+    lineIndex += 1;
+  });
+
+  return `<div class="about-terminal" aria-label="Ubuntu terminal showing current notes">
+          <div class="about-terminal-bar" aria-hidden="true">
+            <span class="about-terminal-tab">raffael@rkaas: ~</span>
+            <span class="about-terminal-actions">
+              <span class="about-terminal-action is-search"></span>
+              <span class="about-terminal-action is-menu"></span>
+              <span class="about-terminal-window is-minimize"></span>
+              <span class="about-terminal-window is-maximize"></span>
+              <span class="about-terminal-window is-close"></span>
+            </span>
+          </div>
+          <div class="about-terminal-screen">
+            ${terminalLines.join("\n            ")}
+          </div>
+        </div>`;
+}
+
 function slugFromFile(file) {
   return basename(file, ".md");
 }
@@ -165,6 +335,102 @@ function blogUrl(slug) {
 
 function canonicalUrl(slug) {
   return `${SITE_URL}${blogUrl(slug)}`;
+}
+
+function areaUrl(areaKey) {
+  const area = AREA_BY_KEY.get(areaKey);
+  return area ? area.href : "/blog/";
+}
+
+function areaCanonicalUrl(areaKey) {
+  return `${SITE_URL}${areaUrl(areaKey)}`;
+}
+
+function normalizeAreaKey(value) {
+  const key = String(value || "").trim().toLowerCase();
+  return AREA_BY_KEY.has(key) ? key : "";
+}
+
+function normalizeTag(value) {
+  return String(value || "").trim().toLowerCase();
+}
+
+function inferArea(fm) {
+  const explicit = normalizeAreaKey(fm.area);
+  if (explicit) return explicit;
+
+  const tags = Array.isArray(fm.tags) ? fm.tags.map(normalizeTag) : [];
+  const tagSet = new Set(tags);
+  const title = normalizeTag(fm.title);
+  const keywords = Array.isArray(fm.keywords)
+    ? fm.keywords.map(normalizeTag)
+    : [];
+  const haystack = [...tags, ...keywords, title].join(" ");
+
+  if (
+    tagSet.has("software-engineering") ||
+    tagSet.has("git workflow") ||
+    tagSet.has("git cli") ||
+    tagSet.has("ai") ||
+    tagSet.has("process") ||
+    tagSet.has("teams") ||
+    tagSet.has("architecture") ||
+    haystack.includes("software") ||
+    haystack.includes("git") ||
+    haystack.includes("regex") ||
+    haystack.includes("log file") ||
+    /\bai\b/.test(haystack) ||
+    haystack.includes("architecture")
+  ) {
+    return "work";
+  }
+
+  if (
+    haystack.includes("running") ||
+    haystack.includes("fitness") ||
+    haystack.includes("workout") ||
+    haystack.includes("gym") ||
+    haystack.includes("endurance")
+  ) {
+    return "health";
+  }
+
+  if (
+    haystack.includes("investing") ||
+    haystack.includes("finance") ||
+    haystack.includes("portfolio") ||
+    haystack.includes("stock") ||
+    haystack.includes("money")
+  ) {
+    return "money";
+  }
+
+  if (
+    haystack.includes("roadtrip") ||
+    haystack.includes("travel") ||
+    haystack.includes("australia") ||
+    haystack.includes("perth") ||
+    haystack.includes("sydney")
+  ) {
+    return "travel";
+  }
+
+  if (
+    haystack.includes("book") ||
+    haystack.includes("reading")
+  ) {
+    return "books";
+  }
+
+  return "life";
+}
+
+function areaForPost(post) {
+  return AREA_BY_KEY.get(post.area || inferArea(post.fm)) || AREA_BY_KEY.get("life");
+}
+
+function postsForArea(posts, areaKey) {
+  return posts.filter((post) => areaForPost(post).key === areaKey);
 }
 
 function rewriteUrl(url) {
@@ -313,6 +579,14 @@ function renderMarkdown(markdown) {
     const line = lines[index];
     const trimmed = line.trim();
 
+    if (trimmed.startsWith("<!--")) {
+      flushTextBlocks();
+      while (index < lines.length && !lines[index].includes("-->")) {
+        index += 1;
+      }
+      continue;
+    }
+
     if (trimmed.startsWith("```")) {
       flushTextBlocks();
       const language = trimmed.slice(3).trim();
@@ -416,13 +690,15 @@ function formatDate(dateValue) {
 }
 
 function titleImageHtml(fm) {
-  if (!fm.titleImage) {
+  const image = fm.titleImage || fm.ogImage;
+
+  if (!image) {
     return '<div class="blog-title-image-placeholder" aria-hidden="true"></div>';
   }
 
   const hiddenAttr = fm.titleImageAlt ? "" : ' aria-hidden="true"';
   return `<img class="blog-title-image" src="${escapeAttribute(
-    rewriteUrl(fm.titleImage),
+    rewriteUrl(image),
   )}" alt="${escapeAttribute(
     fm.titleImageAlt || "",
   )}" decoding="async" fetchpriority="high"${hiddenAttr}>`;
@@ -434,6 +710,76 @@ function articleMetaHtml(fm) {
   if (fm.readingTime) parts.push(`${fm.readingTime} min read`);
   if (!parts.length) return "";
   return `<p class="post-meta">${parts.join(" &bull; ")}</p>`;
+}
+
+function postSummary(post) {
+  return post.fm.summary || post.fm.description || "";
+}
+
+function thumbnailForPost(post, className = "writing-card-thumb") {
+  const image = post.fm.thumbnail || post.fm.titleImage || post.fm.ogImage;
+  const area = areaForPost(post);
+
+  if (!image) {
+    return `<span class="${className} ${className}-placeholder is-${area.key}" aria-hidden="true"></span>`;
+  }
+
+  return `<img class="${className}" src="${escapeAttribute(
+    rewriteUrl(image),
+  )}" alt="" aria-hidden="true" loading="lazy">`;
+}
+
+function postMetaLine(post, includeArea = true) {
+  const parts = [];
+  if (includeArea) parts.push(areaForPost(post).label);
+  if (post.fm.date) parts.push(formatDate(post.fm.date));
+  if (post.fm.readingTime) parts.push(`${post.fm.readingTime} min read`);
+  return parts.join(" - ");
+}
+
+function postCardDetails(post) {
+  const parts = [];
+  if (post.fm.date) parts.push(formatDate(post.fm.date));
+  if (post.fm.readingTime) parts.push(`${post.fm.readingTime} min read`);
+  return parts.join(" · ");
+}
+
+function renderWritingCard(post, { compact = false } = {}) {
+  const area = areaForPost(post);
+  const details = postCardDetails(post);
+  const summary = postSummary(post);
+  const compactClass = compact ? " is-compact" : "";
+
+  return `<article class="writing-card is-${area.key}${compactClass}">
+        <a href="${blogUrl(post.slug)}">
+          ${thumbnailForPost(post)}
+          <span class="writing-card-copy">
+            <span class="writing-card-title">${escapeHtml(post.fm.title || post.slug)}</span>
+            <span class="writing-card-meta">
+              <span class="writing-card-area">${escapeHtml(area.label)}</span>
+              ${details ? `<span class="writing-card-details">${escapeHtml(details)}</span>` : ""}
+            </span>
+            ${summary ? `<span class="writing-card-summary">${escapeHtml(summary)}</span>` : ""}
+          </span>
+        </a>
+      </article>`;
+}
+
+function renderAreaCard(area, posts) {
+  const publishedCount = postsForArea(posts, area.key).length;
+  const countLabel = publishedCount
+    ? `${publishedCount} ${publishedCount === 1 ? "note" : "notes"}`
+    : "";
+
+  return `<a class="garden-area-card is-${area.key}" href="${escapeAttribute(area.href)}">
+        <span class="garden-area-marker">${escapeHtml(area.marker)}</span>
+        <span class="garden-area-title">${escapeHtml(area.label)}</span>
+        <span class="garden-area-description">${escapeHtml(area.description)}</span>
+        <span class="garden-area-footer">
+          ${countLabel ? `<span class="garden-area-count">${escapeHtml(countLabel)}</span>` : ""}
+          <span class="garden-area-action">visit room</span>
+        </span>
+      </a>`;
 }
 
 function renderSiteNav(currentPage = "blog") {
@@ -464,7 +810,7 @@ function pageShell({
   jsonLd,
   mainHtml,
 }) {
-  const image = absoluteUrl(ogImage || "/assets/img/me.png");
+  const image = absoluteUrl(ogImage || PROFILE_IMAGE);
   const jsonLdHtml = jsonLd
     ? `\n  <script type="application/ld+json">\n${JSON.stringify(
         jsonLd,
@@ -505,10 +851,10 @@ function pageShell({
   <script>
     (function () {
       try {
-        var theme = localStorage.getItem('theme') || 'light';
+        var theme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', theme);
       } catch (e) {
-        document.documentElement.setAttribute('data-theme', 'light');
+        document.documentElement.setAttribute('data-theme', 'dark');
       }
     })();
   </script>
@@ -520,7 +866,7 @@ function pageShell({
 
   <header class="site-header" id="top">
     <a class="site-brand" href="/" aria-label="Raffael Kaas homepage">
-      <img src="/assets/img/me.png" alt="" class="site-brand-avatar">
+      <img src="${PROFILE_IMAGE}" alt="" class="site-brand-avatar">
       <span class="site-brand-copy">
         <span class="site-brand-name">Raffael Kaas</span>
       </span>
@@ -538,8 +884,7 @@ function pageShell({
   <footer class="site-footer">
     <div class="pb-container site-footer-inner">
       <div class="footer-links" aria-label="Contact links">
-        <a class="footer-link" href="mailto:mail@rkaas.de">mail@rkaas.de</a>
-        <a class="footer-link" href="https://www.linkedin.com/in/raffael-kaas-4b0869152" target="_blank" rel="me noopener">LinkedIn</a>
+        <a class="footer-link" href="mailto:mail@rkaas.de?subject=Hello%20from%20your%20website">text me: mail@rkaas.de</a>
       </div>
       <p class="footer-copyright">&copy; 2026 Raffael Kaas. All rights reserved.</p>
     </div>
@@ -559,11 +904,11 @@ function pageShell({
         }
       }
 
-      setTheme(document.documentElement.getAttribute('data-theme') || 'light');
+      setTheme(document.documentElement.getAttribute('data-theme') || 'dark');
 
       if (themeToggle) {
         themeToggle.addEventListener('click', () => {
-          const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+          const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
           setTheme(currentTheme === 'dark' ? 'light' : 'dark');
         });
       }
@@ -578,7 +923,7 @@ function renderArticlePage(post) {
   const { fm, bodyHtml, slug } = post;
   const canonical = canonicalUrl(slug);
   const title = fm.title ? `${fm.title} - ${AUTHOR_NAME}` : `${AUTHOR_NAME} - Blog`;
-  const image = absoluteUrl(fm.ogImage || fm.titleImage || "/assets/img/me.png");
+  const image = absoluteUrl(fm.ogImage || fm.titleImage || PROFILE_IMAGE);
   const keywords = Array.isArray(fm.keywords)
     ? fm.keywords.join(", ")
     : fm.keywords || undefined;
@@ -615,7 +960,7 @@ function renderArticlePage(post) {
     ogTitle: fm.title || title,
     ogDescription: fm.description || "Personal writing by Raffael Kaas",
     ogType: "article",
-    ogImage: fm.ogImage || fm.titleImage || "/assets/img/me.png",
+    ogImage: fm.ogImage || fm.titleImage || PROFILE_IMAGE,
     currentPage: "blog",
     jsonLd,
     mainHtml,
@@ -623,50 +968,37 @@ function renderArticlePage(post) {
 }
 
 function renderBlogIndex(posts) {
-  const items = posts
-    .map((post) => {
-      const { fm, slug } = post;
-      const meta = [fm.date ? formatDate(fm.date) : "", fm.readingTime ? `${fm.readingTime} min read` : ""]
-        .filter(Boolean)
-        .join(" &bull; ");
-      const thumbnailImage = fm.titleImage || fm.ogImage;
-      const thumbnail = thumbnailImage
-        ? `<img class="static-blog-thumb" src="${escapeAttribute(
-            rewriteUrl(thumbnailImage),
-          )}" alt="" aria-hidden="true" loading="lazy">`
-        : '<span class="static-blog-thumb static-blog-thumb-placeholder" aria-hidden="true"></span>';
+  const allPosts = posts.map((post) => renderWritingCard(post, { compact: true })).join("\n");
 
-      return `<li>
-          <a class="static-blog-card" href="${blogUrl(slug)}">
-            ${thumbnail}
-            <span class="static-blog-copy">
-              <span class="static-blog-title">${escapeHtml(fm.title || slug)}</span>
-              ${meta ? `<span class="post-meta">${meta}</span>` : ""}
-            </span>
-          </a>
-        </li>`;
-    })
-    .join("\n");
+  const mainHtml = `<main class="blog-index-main">
+    <div class="pb-container blog-index-shell">
+      <section class="blog-index-hero">
+        <p class="section-kicker">Blog</p>
+        <h1>All writing, newest first.</h1>
+        <p>A chronological archive of notes from all rooms: software, training, money, travel, life, and books.</p>
+      </section>
 
-  const mainHtml = `<main class="blog-page-main">
-    <div class="pb-container blog-article-shell">
-      <article class="blog-post">
-        <h1>Blog</h1>
-        <ul class="static-blog-list">
-${items}
-        </ul>
-      </article>
+      <section class="featured-writing-section" aria-labelledby="featured-writing-title">
+        <div class="section-heading-row">
+          <div>
+            <h2 id="featured-writing-title">All articles</h2>
+          </div>
+        </div>
+        <div class="writing-grid is-list">
+          ${allPosts}
+        </div>
+      </section>
     </div>
   </main>`;
 
   return pageShell({
     title: `${AUTHOR_NAME} - Blog`,
-    description: "Personal writing by Raffael Kaas",
+    description: "Personal writing about software, training, books, money, travel, and notes worth keeping.",
     canonical: `${SITE_URL}/blog/`,
     ogTitle: `${AUTHOR_NAME} - Blog`,
-    ogDescription: "Personal writing by Raffael Kaas",
+    ogDescription: "Personal writing about software, training, books, money, travel, and notes worth keeping.",
     ogType: "website",
-    ogImage: "/assets/img/me.png",
+    ogImage: PROFILE_IMAGE,
     twitterCard: "summary",
     currentPage: "blog",
     jsonLd: {
@@ -713,23 +1045,163 @@ function renderHomePostItems(posts) {
     .join("\n");
 }
 
+function renderHomepage(posts) {
+  const latestCards = posts.slice(0, HOME_POST_LIMIT)
+    .map((post) => renderWritingCard(post, { compact: true }))
+    .join("\n");
+  const areaCards = AREAS.map((area) => renderAreaCard(area, posts)).join("\n");
+
+  const mainHtml = `<main class="garden-main">
+    <section class="garden-hero">
+      <div class="pb-container garden-hero-inner">
+        <div class="garden-hero-copy">
+          <h1>Raffael Kaas</h1>
+          <p>I build software and use this site for notes about engineering, books, training, money, travel, and things I want to remember.</p>
+        </div>
+        <img src="${PROFILE_IMAGE}" alt="Portrait of Raffael Kaas" class="garden-profile-photo">
+      </div>
+    </section>
+
+    <section class="garden-section" id="areas" aria-labelledby="areas-title">
+      <div class="pb-container garden-section-inner">
+        <div class="section-heading-row">
+          <div>
+            <h2 id="areas-title">Start with a room</h2>
+          </div>
+          <p class="section-heading-copy">The main entrances into this site. Each room collects the articles, notes, and collections around one area.</p>
+        </div>
+        <div class="garden-area-grid">
+          ${areaCards}
+        </div>
+      </div>
+    </section>
+
+    <section class="garden-section is-writing" aria-labelledby="latest-title">
+      <div class="pb-container garden-section-inner">
+        <div class="section-heading-row">
+          <div>
+            <h2 id="latest-title">Latest writing</h2>
+          </div>
+        </div>
+        <div class="writing-grid">
+          ${latestCards}
+        </div>
+      </div>
+    </section>
+
+    <section class="garden-section is-about" id="about" aria-labelledby="about-title">
+      <div class="pb-container garden-section-inner about-grid">
+        <h2 id="about-title" class="about-heading">About me</h2>
+        <div class="about-copy">
+          <p>Hi, I am Raffael, a software engineer working in the automotive industry. I have a Master of Engineering with a focus on autonomous systems and have worked on student robots, autonomous shuttles, and series production software for e-mobility.</p>
+          <p>I enjoy Linux-based systems, C/C++ for embedded software development, and Python for prototypes and tools. Outside of engineering, I am usually somewhere between running shoes, a gym session, a book, a travel plan, or a spreadsheet about money.</p>
+        </div>
+        ${renderNowTerminal()}
+      </div>
+    </section>
+  </main>`;
+
+  return pageShell({
+    bodyClass: "personal-blog-home",
+    title: `${AUTHOR_NAME} - Personal Website`,
+    description: "Personal website and notes by Raffael Kaas about software, training, books, money, travel, and life outside the screen.",
+    canonical: `${SITE_URL}/`,
+    ogTitle: AUTHOR_NAME,
+    ogDescription: "Software engineering, writing, books, travel, and personal notes by Raffael Kaas.",
+    ogType: "website",
+    ogImage: PROFILE_IMAGE,
+    twitterCard: "summary",
+    currentPage: "home",
+    jsonLd: {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: AUTHOR_NAME,
+      jobTitle: "Software Engineer",
+      url: `${SITE_URL}/`,
+      image: `${SITE_URL}${PROFILE_IMAGE}`,
+      knowsAbout: ["Embedded Systems", "Linux", "C++", "Python", "Software Engineering", "ADAS", "Automotive"],
+    },
+    mainHtml,
+  });
+}
+
 function updateHomepage(posts) {
-  const homepagePath = "index.html";
-  const homepage = readFileSync(homepagePath, "utf8");
-  const postListRegex = /(<ul class="post-list">\n)[\s\S]*?(\n\s*<\/ul>)/;
+  writeFileSync("index.html", renderHomepage(posts), "utf8");
+}
 
-  if (!postListRegex.test(homepage)) {
-    throw new Error("Could not find homepage post list to update");
-  }
+function renderAreaSpecialLinks(area) {
+  const links = AREA_SPECIAL_LINKS[area.key] || [];
+  if (!links.length) return "";
 
-  writeFileSync(
-    homepagePath,
-    homepage.replace(
-      postListRegex,
-      `$1${renderHomePostItems(posts)}$2`,
-    ),
-    "utf8",
-  );
+  return `<section class="area-page-section is-special-links" aria-labelledby="${escapeAttribute(area.key)}-special-title">
+        <div class="section-heading-row">
+          <div>
+            <h2 id="${escapeAttribute(area.key)}-special-title">In this room</h2>
+          </div>
+        </div>
+        <div class="collection-grid">
+          ${links.map((link) => `<a class="collection-card is-${escapeAttribute(area.key)}" href="${escapeAttribute(link.href)}">
+            <span class="collection-card-media" aria-hidden="true"></span>
+            <span class="collection-card-copy">
+              <span class="collection-card-kicker">${escapeHtml(link.label)}</span>
+              <span class="collection-card-title">${escapeHtml(link.title)}</span>
+              <span class="collection-card-text">${escapeHtml(link.text)}</span>
+            </span>
+          </a>`).join("\n          ")}
+        </div>
+      </section>`;
+}
+
+function renderAreaPage(area, posts) {
+  const areaPosts = postsForArea(posts, area.key);
+  const publishedHtml = areaPosts.length
+    ? `<div class="writing-grid is-list">
+        ${areaPosts.map((post) => renderWritingCard(post)).join("\n        ")}
+      </div>`
+    : '<p class="empty-area-note">I have not published a finished article here yet.</p>';
+
+  const mainHtml = `<main class="area-page-main">
+    <div class="pb-container area-page-shell">
+      <section class="area-page-hero">
+        <p class="section-kicker">${escapeHtml(area.marker)}</p>
+        <h1>${escapeHtml(area.label)}</h1>
+        <p>${escapeHtml(area.description)}</p>
+      </section>
+
+      ${renderAreaSpecialLinks(area)}
+
+      <section class="area-page-section" aria-labelledby="${escapeAttribute(area.key)}-published-title">
+        <div class="section-heading-row">
+          <div>
+            <h2 id="${escapeAttribute(area.key)}-published-title">Articles</h2>
+          </div>
+        </div>
+        ${publishedHtml}
+      </section>
+    </div>
+  </main>`;
+
+  return pageShell({
+    bodyClass: `blog-page area-page area-${area.key}`,
+    title: `${area.label} - ${AUTHOR_NAME}`,
+    description: area.description,
+    canonical: areaCanonicalUrl(area.key),
+    ogTitle: `${area.label} - ${AUTHOR_NAME}`,
+    ogDescription: area.description,
+    ogType: "website",
+    ogImage: PROFILE_IMAGE,
+    twitterCard: "summary",
+    currentPage: "blog",
+    mainHtml,
+  });
+}
+
+function writeAreaPages(posts) {
+  AREAS.filter((area) => GENERATED_AREA_KEYS.has(area.key)).forEach((area) => {
+    const outputDir = area.key;
+    mkdirSync(outputDir, { recursive: true });
+    writeFileSync(join(outputDir, "index.html"), renderAreaPage(area, posts), "utf8");
+  });
 }
 
 function updateStaticPageNavs() {
@@ -755,9 +1227,13 @@ function renderSitemap(posts) {
   const staticEntries = [
     { page: "home", loc: `${SITE_URL}/`, lastmod: latestPostDate(posts) },
     { page: "blog", loc: `${SITE_URL}/blog/`, lastmod: latestPostDate(posts) },
-    { page: "books", loc: `${SITE_URL}/books/`, lastmod: BOOKS_LASTMOD },
-    { page: "travel", loc: `${SITE_URL}/travel/`, lastmod: TRAVEL_LASTMOD },
   ].filter((entry) => isTabEnabled(entry.page));
+  const areaEntries = AREAS
+    .filter((area) => GENERATED_AREA_KEYS.has(area.key))
+    .map((area) => ({
+      loc: areaCanonicalUrl(area.key),
+      lastmod: latestPostDate(postsForArea(posts, area.key)) || latestPostDate(posts),
+    }));
 
   const postEntries = isTabEnabled("blog")
     ? posts.map((post) => ({
@@ -766,7 +1242,7 @@ function renderSitemap(posts) {
     }))
     : [];
 
-  const entries = [...staticEntries, ...postEntries];
+  const entries = [...staticEntries, ...areaEntries, ...SPECIAL_COLLECTION_PAGES, ...postEntries];
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -827,18 +1303,33 @@ function writePost(post) {
   writeFileSync(join(outputDir, "index.html"), renderArticlePage(post), "utf8");
 }
 
+function removeStalePostPages(posts) {
+  if (!existsSync(BLOG_OUTPUT_DIR)) return;
+
+  const slugs = new Set(posts.map((post) => post.slug));
+  readdirSync(BLOG_OUTPUT_DIR, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .forEach((entry) => {
+      if (!slugs.has(entry.name)) {
+        rmSync(join(BLOG_OUTPUT_DIR, entry.name), { recursive: true, force: true });
+      }
+    });
+}
+
 function main() {
   const posts = loadPosts();
   const listedPosts = posts.filter((post) => !isPostBlacklisted(post));
   mkdirSync(BLOG_OUTPUT_DIR, { recursive: true });
-  posts.forEach(writePost);
+  removeStalePostPages(listedPosts);
+  listedPosts.forEach(writePost);
   writeFileSync(join(BLOG_OUTPUT_DIR, "index.html"), renderBlogIndex(listedPosts), "utf8");
   updateHomepage(listedPosts);
+  writeAreaPages(listedPosts);
   updateStaticPageNavs();
   writeFileSync("sitemap.xml", renderSitemap(listedPosts), "utf8");
 
   console.log(
-    `Generated ${posts.length} blog posts, listed ${listedPosts.length}, homepage latest ${HOME_POST_LIMIT}, and sitemap.xml`,
+    `Generated ${listedPosts.length} blog pages from ${posts.length} source posts, and sitemap.xml`,
   );
 }
 
