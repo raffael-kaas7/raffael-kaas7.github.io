@@ -1,5 +1,6 @@
 {
   "scripts": {
-    "build": "node scripts/build-blog.mjs"
+    "build": "node scripts/build-blog.mjs",
+    "build:travel-map": "node scripts/build-travel-map.mjs"
   }
 }

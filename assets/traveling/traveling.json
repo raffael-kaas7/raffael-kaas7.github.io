@@ -1,6 +1,7 @@
 {
   "aliases": {
     "Australia": "AU",
+    "Brazil": "BR",
     "Austria": "AT",
     "Switzerland": "CH",
     "Czech Republic": "CZ",
@@ -21,106 +22,192 @@
     "United States": "US",
     "Vietnam": "VN"
   },
+  "splitCountries": ["US", "AU", "BR"],
+  "highlights": [
+    {
+      "title": "Perth to Sydney road trip",
+      "meta": "Australia - 6,700 km - December 2025",
+      "description": "A one-month motorhome route through Western Australia, the Nullarbor, South Australia, Victoria, New South Wales, and the Gold Coast.",
+      "href": "/blog/roadtrip-from-perth-to-sydney/",
+      "image": "/assets/blog/img/roadtrip/first_camp_site.webp",
+      "imageAlt": "Raffael and his girlfriend with their camper at the first campsite near Dunsborough.",
+      "items": ["Western Australia", "Nullarbor", "Great Ocean Road", "Sydney"]
+    },
+    {
+      "title": "US Southwest",
+      "meta": "United States - selected states",
+      "description": "Desert roads, national parks, and wide open landscapes across California, Nevada, Utah, and Arizona.",
+      "items": ["California", "Nevada", "Utah", "Arizona"]
+    },
+    {
+      "title": "Brazil coast",
+      "meta": "Brazil - selected regions",
+      "description": "A compact South America memory from Rio de Janeiro to Bahia, with the map tracking the exact states instead of filling the whole country.",
+      "items": ["Rio de Janeiro", "Bahia"]
+    }
+  ],
   "countries": {
     "AT": {
       "visited": true,
-      "color": "var(--secondary-color)",
+      "color": "var(--travel-visited-primary)",
       "note": "Austria"
     },
     "CH": {
       "visited": true,
-      "color": "var(--blog-link-color)",
+      "color": "var(--travel-visited-primary)",
       "note": "Switzerland"
     },
     "CZ": {
       "visited": true,
-      "color": "var(--blog-link-visited-color)",
+      "color": "var(--travel-visited-primary)",
       "note": "Czech Republic"
     },
     "DE": {
       "visited": true,
-      "color": "var(--blog-link-color)",
+      "color": "var(--travel-visited-home)",
       "note": "Germany (Home base)"
     },
     "ES": {
       "visited": true,
-      "color": "var(--secondary-color)",
+      "color": "var(--travel-visited-primary)",
       "note": "Spain"
     },
     "FR": {
       "visited": true,
-      "color": "var(--blog-link-visited-color)",
+      "color": "var(--travel-visited-primary)",
       "note": "France"
     },
     "HR": {
       "visited": true,
-      "color": "var(--blog-link-color)",
+      "color": "var(--travel-visited-primary)",
       "note": "Croatia"
     },
     "HU": {
       "visited": true,
-      "color": "var(--secondary-color)",
+      "color": "var(--travel-visited-primary)",
       "note": "Hungary"
     },
     "IE": {
       "visited": true,
-      "color": "var(--blog-link-color)",
+      "color": "var(--travel-visited-primary)",
       "note": "Ireland"
     },
     "IT": {
       "visited": true,
-      "color": "var(--blog-link-visited-color)",
+      "color": "var(--travel-visited-primary)",
       "note": "Italy"
     },
     "MA": {
       "visited": true,
-      "color": "var(--secondary-color)",
+      "color": "var(--travel-visited-primary)",
       "note": "Morocco"
     },
     "NL": {
       "visited": true,
-      "color": "var(--blog-link-color)",
+      "color": "var(--travel-visited-primary)",
       "note": "Netherlands"
     },
     "PE": {
       "visited": true,
-      "color": "var(--blog-link-visited-color)",
+      "color": "var(--travel-visited-primary)",
       "note": "Peru"
     },
     "PL": {
       "visited": true,
-      "color": "var(--secondary-color)",
+      "color": "var(--travel-visited-primary)",
       "note": "Poland"
     },
     "PT": {
       "visited": true,
-      "color": "var(--blog-link-color)",
+      "color": "var(--travel-visited-primary)",
       "note": "Portugal"
     },
     "QA": {
       "visited": true,
-      "color": "var(--blog-link-visited-color)",
+      "color": "var(--travel-visited-primary)",
       "note": "Qatar"
     },
     "TH": {
       "visited": true,
-      "color": "var(--secondary-color)",
+      "color": "var(--travel-visited-primary)",
       "note": "Thailand"
     },
     "US": {
       "visited": true,
-      "color": "var(--blog-link-color)",
-      "note": "United States (West Coast)"
+      "color": "var(--travel-visited-primary)",
+      "note": "United States"
     },
     "VN": {
       "visited": true,
-      "color": "var(--blog-link-visited-color)",
+      "color": "var(--travel-visited-primary)",
       "note": "Vietnam"
     },
     "AU": {
       "visited": true,
-      "color": "var(--secondary-color)",
+      "color": "var(--travel-visited-primary)",
       "note": "Australia"
+    },
+    "BR": {
+      "visited": true,
+      "color": "var(--travel-visited-primary)",
+      "note": "Brazil"
+    }
+  },
+  "regions": {
+    "US-CA": {
+      "visited": true,
+      "color": "var(--travel-visited-primary)",
+      "note": "California"
+    },
+    "US-NV": {
+      "visited": true,
+      "color": "var(--travel-visited-primary)",
+      "note": "Nevada"
+    },
+    "US-UT": {
+      "visited": true,
+      "color": "var(--travel-visited-primary)",
+      "note": "Utah"
+    },
+    "US-AZ": {
+      "visited": true,
+      "color": "var(--travel-visited-primary)",
+      "note": "Arizona"
+    },
+    "AU-WA": {
+      "visited": true,
+      "color": "var(--travel-visited-primary)",
+      "note": "Western Australia"
+    },
+    "AU-SA": {
+      "visited": true,
+      "color": "var(--travel-visited-primary)",
+      "note": "South Australia"
+    },
+    "AU-VIC": {
+      "visited": true,
+      "color": "var(--travel-visited-primary)",
+      "note": "Victoria"
+    },
+    "AU-NSW": {
+      "visited": true,
+      "color": "var(--travel-visited-primary)",
+      "note": "New South Wales"
+    },
+    "AU-QLD": {
+      "visited": true,
+      "color": "var(--travel-visited-primary)",
+      "note": "Queensland"
+    },
+    "BR-RJ": {
+      "visited": true,
+      "color": "var(--travel-visited-primary)",
+      "note": "Rio de Janeiro"
+    },
+    "BR-BA": {
+      "visited": true,
+      "color": "var(--travel-visited-primary)",
+      "note": "Bahia"
     }
   }
 }
