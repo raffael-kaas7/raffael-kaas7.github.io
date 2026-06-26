@@ -340,7 +340,7 @@ function renderNowTerminal() {
 
   terminalLines.push(renderTerminalCommand("cd ~/my_blog/", lineIndex));
   lineIndex += 1;
-  terminalLines.push(renderTerminalCommand("cat notes.txt", lineIndex, "~/my_blog"));
+  terminalLines.push(renderTerminalCommand("cat now.txt", lineIndex, "~/my_blog"));
   lineIndex += 1;
   terminalLines.push(
     renderTerminalLine(
@@ -1028,9 +1028,8 @@ function renderBlogIndex(posts) {
   const mainHtml = `<main class="blog-index-main">
     <div class="pb-container blog-index-shell">
       <section class="blog-index-hero">
-        <p class="section-kicker">Blog</p>
         <h1>All writing, newest first.</h1>
-        <p>A chronological archive of notes from all rooms: software, training, money, travel, life, and books.</p>
+        <p>A chronological archive of notes from all the different spaces: work, health, money, travel, life, and books.</p>
       </section>
 
       <section class="featured-writing-section" aria-labelledby="featured-writing-title">
@@ -1123,7 +1122,7 @@ function renderHomepage(posts) {
           <div>
             <h2 id="areas-title">Main Topics</h2>
           </div>
-          <p class="section-heading-copy">The main topics on my website. Each room shows the articles, notes, and collections around that area.</p>
+          <p class="section-heading-copy">The main topics on my website. Each space shows the articles, notes, and collections around that area.</p>
         </div>
         <div class="garden-area-grid">
           ${areaCards}
@@ -1148,9 +1147,8 @@ function renderHomepage(posts) {
       <div class="pb-container garden-section-inner about-grid">
         <h2 id="about-title" class="about-heading">About me</h2>
         <div class="about-copy">
-          <p>I am a software engineer living at Lake Constance and working in the automotive industry. I have a Master of Engineering with a focus on autonomous systems. Over the past few years, I've worked on a wide range of complex software projects: building my own quadrocopter during university, launching autonomous shuttles in Rotterdam, and now developing series production software for power converters in e-mobility.</p>
-          <p>I enjoy working on Linux-based systems, using C/C++ for embedded software development and Python to make life easier or to quickly prototype ideas. I've worked on many projects using ROS on high-performance computers, but I also have a lot of hands-on experience with microcontrollers and low-level debugging.</p>
-          <p>Outside of engineering, I'm usually in motion: running, playing soccer, or lifting heavy weights. Besides sports, I have a strong interest in finance and investing, and enjoy diving into new ideas through books, travel, or good conversations.</p>
+          <p>I am a software engineer living at Lake Constance and <a href="/work/">working</a> in the automotive industry. I have a Master of Engineering with a focus on autonomous systems. Over the past few years, I've worked on a wide range of complex software projects: building my own quadrocopter during university, launching autonomous shuttles in Rotterdam, and now developing series production software for e-mobility.</p>
+          <p>Outside of engineering, I'm usually in <a href="/health/">motion</a>: running, playing soccer, or lifting heavy weights. Besides sports, I have a strong interest in <a href="/money/">finance and investing</a>, and enjoy diving into <a href="/life/">new ideas</a> through <a href="/books/">books</a>, <a href="/travel/">travel</a>, or good conversations.</p>
           </div>
         ${renderNowTerminal()}
       </div>

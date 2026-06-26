@@ -464,6 +464,20 @@ pre code {
   margin-bottom: 0;
 }
 
+.personal-blog-home .about-copy a {
+  color: var(--blog-link-color);
+  font-weight: 700;
+  text-decoration-color: color-mix(in srgb, currentColor 56%, transparent);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.24em;
+}
+
+.personal-blog-home .about-copy a:hover,
+.personal-blog-home .about-copy a:focus {
+  color: var(--blog-link-hover-color);
+}
+
 .personal-blog-home .blog-heading {
   align-items: end;
   display: flex;
@@ -2180,7 +2194,8 @@ body.travel-page {
 }
 
 .area-page-hero {
-  max-width: none;
+  max-width: 800px;
+  row-gap: clamp(0.95rem, 2vw, 1.25rem);
 }
 
 .blog-index-hero h1,
@@ -2204,6 +2219,7 @@ body.travel-page {
 .area-page-hero .area-page-summary {
   border-left: 3px solid var(--area-color, var(--secondary-color));
   color: var(--font-color);
+  max-width: 680px;
   padding-left: 1rem;
 }
 
@@ -2211,10 +2227,11 @@ body.travel-page {
   display: grid;
   gap: 0.72rem;
   margin-top: 0.35rem;
+  max-width: 760px;
 }
 
 .area-page-hero .area-page-intro p {
-  font-size: 1.02rem;
+  font-size: 1.1rem;
   line-height: 1.68;
   margin: 0;
 }
@@ -2375,6 +2392,10 @@ body.travel-page {
 
   .travel-hero {
     grid-template-columns: 1fr;
+  }
+
+  .area-page-intro {
+    margin-top: 0;
   }
 
 }
