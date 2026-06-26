@@ -44,71 +44,126 @@ const AREAS = [
     key: "work",
     label: "Work",
     href: "/work/",
-    marker: "Software, systems, projects",
+    marker: "Software, Experience, Projects",
     description:
-      "Software engineering, real projects, AI-assisted development, architecture, and things I learned from building systems.",
+      "Thoughts on current trends in software engineering, private projects, and personal experiences.",
+    roomIntro: [
+      {
+        type: "p",
+        text: "During my studies and in my professional career so far, I have mainly worked on embedded systems in the automotive sector.",
+      },
+      {
+        type: "p",
+        text: "I enjoy working on Linux-based systems, using C/C++ for embedded software development and Python to make life easier or to quickly prototype ideas.",
+      },
+      {
+        type: "p",
+        text: "Since the age of agentic coding, I have also tried building applications that include a frontend. Here is my personal [dividend tracker tool](https://github.com/raffael-kaas7/depot_tracker) based on the comdirect developer API.",
+      },
+      {
+        type: "p",
+        text: "I am currently working on my own [Gym Logging Tool](https://liftlytics.de/) with minimized screen time in the gym. It's a Progressive Web App, fully implemented through spec-driven development.",
+      },
+    ],
   },
   {
     key: "health",
     label: "Health",
     href: "/health/",
-    marker: "Training, running, recovery",
+    marker: "Workout, Running, Nutrition",
     description:
-      "Training, running, nutrition, sleep, and the practical process of staying healthy alongside normal work and life.",
+      "All about workout, nutrition, recovery, and how I try staying healthy alongside normal work and life.",
+    roomIntro: [
+      {
+        type: "p",
+        text: "I am not (yet) a die-hard member of the longevity community, but I am definitely inspired by Peter Attia and his book 'Outlive'. I focus on muscle mass, VO2 max, sleep, and mental health.",
+      },
+      {
+        type: "p",
+        text: "I used to actively play soccer, but due to many injuries I decided to quit. Now I keep myself fit with running and gym training / calisthenics.",
+      },
+      {
+        type: "p",
+        text: "I am currently working on my own [Gym Logging Tool](https://liftlytics.de/) with minimized screen time in the gym. It's a Progressive Web App, fully implemented through spec-driven development.",
+      },
+    ],
   },
   {
     key: "money",
     label: "Money",
     href: "/money/",
-    marker: "Investing, spending, optionality",
+    marker: "Investing, Spending, Analysis",
     description:
-      "Investing, spending, business models, financial habits, and what I am still learning about money and tradeoffs.",
+      "My personal thoughts on money: Financial habits, investments, spending, and my passion for the stock market.",
+    roomIntro: [
+      {
+        type: "p",
+        text: "I have been passionate about the stock market for years, closely following companies and market news while being a buy-and-hold investor. So far, the performance of my stock picks compared to my ETFs has, of course, been very disappointing :-)",
+      },
+      {
+        type: "p",
+        text: "I have a separate portfolio for my dividend-paying stocks and funds. Thanks to Comdirect and their official developer API, I can use my own [dividend tracking dashboard](https://github.com/raffael-kaas7/depot_tracker) with a simple pushTAN update mechanism.",
+      },
+    ],
   },
   {
     key: "travel",
     label: "Travel",
     href: "/travel/",
-    marker: "Maps, routes, memories",
+    marker: "Maps, Routes, Memories",
     description:
-      "Travel notes, maps, routes, photos, places, and memories I want to keep instead of losing them in a camera roll.",
+      "Travel notes, maps, routes, photos, places, and memories I want to keep instead of losing them in the cloud.",
+    roomIntro: [
+      {
+        type: "p",
+        text: "In my 20s, I had the privilege of traveling to many countries, also a few outside of Europe, which motivated me to get one of these 'scratch-off-where-you-have-been' world maps. I have a [digital one](/travel/map/).",
+      },
+      {
+        type: "p",
+        text: "Unfortunately, I didn't document everything as thoroughly as I did my [trip through Australia](../blog/roadtrip-from-perth-to-sydney/). Setting up this space is meant to motivate me to do the same documentation work in the future, and hopefully it will also serve as inspiration for some of you.",
+      },
+    ],
   },
   {
     key: "life",
     label: "Life",
     href: "/life/",
-    marker: "Notes, habits, reflections",
+    marker: "Notes, Reflections, Goals",
     description:
-      "Personal notes on attention, relationships, language learning, getting older, and things I am still trying to understand.",
+      "Personal notes on life in general. New interests, achievements, changing goals, failures, reflections.",
+    roomIntro: [
+      {
+        type: "p",
+        text: "I'm not a life coach, and I don't intend to offer advice here. I would describe myself as open-minded and reflective. This space serves as a container for all reflections, ideas, and experiences that don't fit into any of the other topics.",
+      },
+    ],
   },
   {
     key: "books",
     label: "Books",
     href: "/books/",
-    marker: "Books, quotes, ideas",
+    marker: "Books, Quotes, Ideas",
     description:
-      "Books that shaped my thinking, ideas I want to remember, and notes from pages I keep returning to.",
+      "Books that shaped my thinking, ideas I want to remember, and a collection of notes I keep returning to.",
+    roomIntro: [
+      {
+        type: "p",
+        text: "For a couple of years, reading around 20 minutes before sleeping has become a habit. It calms me down and helps me get to sleep. I am not sure if this is best for remembering what I've read, but I enjoy it.",
+      },
+      {
+        type: "p",
+        text: "So far, I've mainly read nonfiction, much of it in the areas of personal development and finance. I imagine that will change in the future because I feel like I am currently saturated by these topics.",
+      },
+      {
+        type: "p",
+        text: "Check out my [digital bookshelf](/books/bookshelf/). You might find your next read.",
+      },
+    ],
   },
 ];
 const AREA_BY_KEY = new Map(AREAS.map((area) => [area.key, area]));
 const GENERATED_AREA_KEYS = new Set(AREAS.map((area) => area.key));
-const AREA_SPECIAL_LINKS = {
-  books: [
-    {
-      href: "/books/bookshelf/",
-      label: "Bookshelf",
-      title: "Digital Bookshelf",
-      text: "A collection of book covers and short notes for books I want to remember.",
-    },
-  ],
-  travel: [
-    {
-      href: "/travel/map/",
-      label: "Map",
-      title: "Travel Map",
-      text: "A personal atlas for visited places, routes, stories, and travel highlights.",
-    },
-  ],
-};
+const AREA_SPECIAL_LINKS = {};
 const SPECIAL_COLLECTION_PAGES = [
   { loc: `${SITE_URL}/books/bookshelf/`, lastmod: BOOKS_LASTMOD },
   { loc: `${SITE_URL}/travel/map/`, lastmod: TRAVEL_LASTMOD },
@@ -1056,7 +1111,7 @@ function renderHomepage(posts) {
       <div class="pb-container garden-hero-inner">
         <div class="garden-hero-copy">
           <h1>Raffael Kaas</h1>
-          <p>I build software and use this site for notes about engineering, books, training, money, travel, and things I want to remember.</p>
+          <p>Welcome to my digital garden! I am writing about my thoughts and experiences of various topics that I want to share and remember. </p>
         </div>
         <img src="${PROFILE_IMAGE}" alt="Portrait of Raffael Kaas" class="garden-profile-photo">
       </div>
@@ -1066,9 +1121,9 @@ function renderHomepage(posts) {
       <div class="pb-container garden-section-inner">
         <div class="section-heading-row">
           <div>
-            <h2 id="areas-title">Start with a room</h2>
+            <h2 id="areas-title">Main Topics</h2>
           </div>
-          <p class="section-heading-copy">The main entrances into this site. Each room collects the articles, notes, and collections around one area.</p>
+          <p class="section-heading-copy">The main topics on my website. Each room shows the articles, notes, and collections around that area.</p>
         </div>
         <div class="garden-area-grid">
           ${areaCards}
@@ -1093,9 +1148,10 @@ function renderHomepage(posts) {
       <div class="pb-container garden-section-inner about-grid">
         <h2 id="about-title" class="about-heading">About me</h2>
         <div class="about-copy">
-          <p>Hi, I am Raffael, a software engineer working in the automotive industry. I have a Master of Engineering with a focus on autonomous systems and have worked on student robots, autonomous shuttles, and series production software for e-mobility.</p>
-          <p>I enjoy Linux-based systems, C/C++ for embedded software development, and Python for prototypes and tools. Outside of engineering, I am usually somewhere between running shoes, a gym session, a book, a travel plan, or a spreadsheet about money.</p>
-        </div>
+          <p>I am a software engineer living at Lake Constance and working in the automotive industry. I have a Master of Engineering with a focus on autonomous systems. Over the past few years, I've worked on a wide range of complex software projects: building my own quadrocopter during university, launching autonomous shuttles in Rotterdam, and now developing series production software for power converters in e-mobility.</p>
+          <p>I enjoy working on Linux-based systems, using C/C++ for embedded software development and Python to make life easier or to quickly prototype ideas. I've worked on many projects using ROS on high-performance computers, but I also have a lot of hands-on experience with microcontrollers and low-level debugging.</p>
+          <p>Outside of engineering, I'm usually in motion: running, playing soccer, or lifting heavy weights. Besides sports, I have a strong interest in finance and investing, and enjoy diving into new ideas through books, travel, or good conversations.</p>
+          </div>
         ${renderNowTerminal()}
       </div>
     </section>
@@ -1152,8 +1208,65 @@ function renderAreaSpecialLinks(area) {
       </section>`;
 }
 
+function renderRoomIntroLink(link) {
+  return renderRoomIntroAnchor(link.label || link.href || "Link", link.href || "#");
+}
+
+function renderRoomIntroAnchor(label, hrefValue, title) {
+  const href = rewriteUrl(hrefValue || "#");
+  const attrs = [`href="${escapeAttribute(href)}"`];
+  if (/^https?:\/\//i.test(href) && !href.startsWith(SITE_URL)) {
+    attrs.push('target="_blank"', 'rel="noopener noreferrer"');
+  }
+  if (title) attrs.push(`title="${escapeAttribute(title)}"`);
+
+  return `<a ${attrs.join(" ")}>${escapeHtml(label)}</a>`;
+}
+
+function renderRoomIntroInline(text) {
+  const linkPattern = /\[([^\]]+)\]\(([^)\s]+)(?:\s+"([^"]+)")?\)/g;
+  let html = "";
+  let lastIndex = 0;
+  let match;
+
+  while ((match = linkPattern.exec(text)) !== null) {
+    html += escapeHtml(text.slice(lastIndex, match.index));
+    html += renderRoomIntroAnchor(match[1], match[2], match[3]);
+    lastIndex = linkPattern.lastIndex;
+  }
+
+  html += escapeHtml(text.slice(lastIndex));
+  return html;
+}
+
+function renderRoomIntroItem(item) {
+  if (!item) return "";
+  if (typeof item === "string") return `<p>${renderRoomIntroInline(item)}</p>`;
+
+  if (item.type === "links" && Array.isArray(item.links) && item.links.length) {
+    return `<div class="area-page-intro-links">
+          ${item.links.map((link) => renderRoomIntroLink(link)).join("\n          ")}
+        </div>`;
+  }
+
+  if (item.text) return `<p>${renderRoomIntroInline(item.text)}</p>`;
+  return "";
+}
+
+function renderRoomIntro(area) {
+  if (!area.roomIntro) return "";
+  const items = Array.isArray(area.roomIntro) ? area.roomIntro : [area.roomIntro];
+  const html = items.map((item) => renderRoomIntroItem(item)).filter(Boolean).join("\n        ");
+  if (!html) return "";
+
+  return `<div class="area-page-intro">
+        ${html}
+      </div>`;
+}
+
 function renderAreaPage(area, posts) {
   const areaPosts = postsForArea(posts, area.key);
+  const roomIntro = renderRoomIntro(area);
   const publishedHtml = areaPosts.length
     ? `<div class="writing-grid is-list">
         ${areaPosts.map((post) => renderWritingCard(post)).join("\n        ")}
@@ -1163,9 +1276,9 @@ function renderAreaPage(area, posts) {
   const mainHtml = `<main class="area-page-main">
     <div class="pb-container area-page-shell">
       <section class="area-page-hero">
-        <p class="section-kicker">${escapeHtml(area.marker)}</p>
         <h1>${escapeHtml(area.label)}</h1>
-        <p>${escapeHtml(area.description)}</p>
+        <p class="area-page-summary">${escapeHtml(area.description)}</p>
+        ${roomIntro}
       </section>
 
       ${renderAreaSpecialLinks(area)}

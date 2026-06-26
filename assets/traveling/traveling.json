@@ -23,29 +23,6 @@
     "Vietnam": "VN"
   },
   "splitCountries": ["US", "AU", "BR"],
-  "highlights": [
-    {
-      "title": "Perth to Sydney road trip",
-      "meta": "Australia - 6,700 km - December 2025",
-      "description": "A one-month motorhome route through Western Australia, the Nullarbor, South Australia, Victoria, New South Wales, and the Gold Coast.",
-      "href": "/blog/roadtrip-from-perth-to-sydney/",
-      "image": "/assets/blog/img/roadtrip/first_camp_site.webp",
-      "imageAlt": "Raffael and his girlfriend with their camper at the first campsite near Dunsborough.",
-      "items": ["Western Australia", "Nullarbor", "Great Ocean Road", "Sydney"]
-    },
-    {
-      "title": "US Southwest",
-      "meta": "United States - selected states",
-      "description": "Desert roads, national parks, and wide open landscapes across California, Nevada, Utah, and Arizona.",
-      "items": ["California", "Nevada", "Utah", "Arizona"]
-    },
-    {
-      "title": "Brazil coast",
-      "meta": "Brazil - selected regions",
-      "description": "A compact South America memory from Rio de Janeiro to Bahia, with the map tracking the exact states instead of filling the whole country.",
-      "items": ["Rio de Janeiro", "Bahia"]
-    }
-  ],
   "countries": {
     "AT": {
       "visited": true,

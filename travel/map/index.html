@@ -7,20 +7,20 @@
 
   <title>Raffael Kaas - Travel Map</title>
 
-  <meta name="description" content="A journal atlas with the countries, regions, and travel stories Raffael Kaas has collected.">
+  <meta name="description" content="A journal atlas with the countries, regions, and routes Raffael Kaas has collected.">
   <meta name="author" content="Raffael Kaas">
   <link rel="canonical" href="https://rkaas.de/travel/map/">
   <link rel="icon" type="image/png" href="/favicon.png">
 
   <meta property="og:title" content="Raffael Kaas - Travel Map">
-  <meta property="og:description" content="A journal atlas with the countries, regions, and travel stories I have collected.">
+  <meta property="og:description" content="A journal atlas with the countries, regions, and routes I have collected.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rkaas.de/travel/map/">
   <meta property="og:image" content="https://rkaas.de/assets/img/me-tshirt.png">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Raffael Kaas - Travel Map">
-  <meta name="twitter:description" content="A journal atlas with the countries, regions, and travel stories I have collected.">
+  <meta name="twitter:description" content="A journal atlas with the countries, regions, and routes I have collected.">
   <meta name="twitter:image" content="https://rkaas.de/assets/img/me-tshirt.png">
 
   <script>
@@ -74,21 +74,9 @@
     <div class="pb-container travel-shell">
       <section class="travel-hero" aria-labelledby="travel-title">
         <div class="travel-hero-copy">
-          <p class="travel-kicker">Journal Atlas</p>
           <h1 id="travel-title">Travel Map</h1>
-          <p>I couldn't find a proper place for my travel map at home, so I built a digital one. This is slowly becoming a personal atlas for places I have visited, stories I want to keep, and routes that deserve more than a forgotten photo folder.</p>
+          <p>I couldn't find a proper place for my travel map at home, so I built a digital one. Countries on my wish-list that I can hopefully see in my 30s: China, Japan and some other places in Africa. </p>
         </div>
-
-        <dl class="travel-stats" aria-label="Travel statistics">
-          <div class="travel-stat">
-            <dt data-travel-stat="countries">21</dt>
-            <dd>Countries visited</dd>
-          </div>
-          <div class="travel-stat">
-            <dt data-travel-stat="stories">1</dt>
-            <dd>Travel story</dd>
-          </div>
-        </dl>
       </section>
 
       <section class="travel-map-section" aria-labelledby="travel-map-title">
@@ -99,10 +87,12 @@
               <h2 id="travel-map-title">World map</h2>
             </div>
 
-            <ul class="travel-map-legend" aria-label="Map legend">
-              <li><span class="travel-legend-swatch is-country" aria-hidden="true"></span>Visited countries</li>
-              <li><span class="travel-legend-swatch is-home" aria-hidden="true"></span>Home base</li>
-            </ul>
+            <div class="travel-map-side">
+              <ul class="travel-map-legend" aria-label="Map legend">
+                <li><span class="travel-legend-swatch is-country" aria-hidden="true"></span><span data-travel-stat="countries">21</span> Visited countries</li>
+                <li><span class="travel-legend-swatch is-home" aria-hidden="true"></span>Home base</li>
+              </ul>
+            </div>
           </div>
 
           <div class="travel-map-scroll">
@@ -111,21 +101,10 @@
             </div>
           </div>
 
-          <p class="travel-map-caption">Full-country visits are filled directly. Australia, Brazil, and the United States use regional detail so the map stays honest about where I actually spent time.</p>
+          <p class="travel-map-caption">All countries I visited are filled completely, except the really big once: Australia, Brazil, and the United States use regional details so the map stays honest about where I actually spent time. I've not been on all these beautiful, small islands that do belong to the european countries :-)</p>
         </div>
       </section>
 
-      <section class="travel-highlights-section" aria-labelledby="travel-highlights-title">
-        <div class="travel-section-heading">
-          <p class="travel-section-kicker">Notes worth keeping</p>
-          <h2 id="travel-highlights-title">Travel highlights</h2>
-          <p>A small, honest collection for now: one finished story, plus mapped places that can grow into posts, photos, and recommendations later.</p>
-        </div>
-
-        <div id="travel-highlights" class="travel-highlights" aria-live="polite">
-          <p class="travel-map-message">Loading travel highlights...</p>
-        </div>
-      </section>
     </div>
   </main>
 
@@ -170,10 +149,8 @@
   <script>
     (function () {
       const mapContainer = document.getElementById('travel-map');
-      const highlightsContainer = document.getElementById('travel-highlights');
       const statElements = {
         countries: document.querySelector('[data-travel-stat="countries"]'),
-        stories: document.querySelector('[data-travel-stat="stories"]'),
       };
 
       function countryNameForCode(aliases, code) {
@@ -247,75 +224,7 @@
       }
 
       function updateTravelStats(travelData) {
-        const storyCount = (travelData.highlights || []).filter((highlight) => highlight && highlight.href).length;
-
         setTravelStat('countries', countVisited(travelData.countries));
-        setTravelStat('stories', storyCount);
-      }
-
-      function appendText(parent, tagName, className, text) {
-        if (!text) return null;
-
-        const element = document.createElement(tagName);
-        element.className = className;
-        element.textContent = text;
-        parent.append(element);
-        return element;
-      }
-
-      function renderHighlights(travelData) {
-        if (!highlightsContainer) return;
-
-        const highlights = travelData.highlights || [];
-        if (!highlights.length) {
-          highlightsContainer.innerHTML = '<p class="travel-map-message">Travel highlights will appear here as I add them.</p>';
-          return;
-        }
-
-        const fragment = document.createDocumentFragment();
-
-        highlights.forEach((highlight) => {
-          if (!highlight || !highlight.title) return;
-
-          const card = document.createElement(highlight.href ? 'a' : 'article');
-          card.className = 'travel-highlight-card';
-
-          if (highlight.href) {
-            card.href = highlight.href;
-            card.classList.add('is-linked');
-            card.setAttribute('aria-label', `${highlight.title} travel story`);
-          }
-
-          if (highlight.image) {
-            const media = document.createElement('div');
-            media.className = 'travel-highlight-media';
-
-            const image = document.createElement('img');
-            image.src = highlight.image;
-            image.alt = highlight.imageAlt || '';
-            image.loading = 'lazy';
-            media.append(image);
-            card.append(media);
-          } else {
-            card.classList.add('is-text-only');
-          }
-
-          const copy = document.createElement('div');
-          copy.className = 'travel-highlight-copy';
-
-          appendText(copy, 'p', 'travel-highlight-meta', highlight.meta);
-          appendText(copy, 'h3', 'travel-highlight-title', highlight.title);
-          appendText(copy, 'p', 'travel-highlight-description', highlight.description);
-
-          if (highlight.href) {
-            appendText(copy, 'span', 'travel-highlight-action', 'Read story');
-          }
-
-          card.append(copy);
-          fragment.append(card);
-        });
-
-        highlightsContainer.replaceChildren(fragment);
       }
 
       const assetVersion = '20260624-travel-photo';
@@ -328,21 +237,12 @@
         return response.text();
       });
 
-      travelDataPromise
-        .then((travelData) => {
-          updateTravelStats(travelData);
-          renderHighlights(travelData);
-        })
-        .catch(() => {
-          if (highlightsContainer) {
-            highlightsContainer.innerHTML = '<p class="travel-map-message">The travel highlights could not be loaded.</p>';
-          }
-        });
-
       if (!mapContainer) return;
 
       Promise.all([mapSvgPromise, travelDataPromise])
         .then(([svgText, travelData]) => {
+          updateTravelStats(travelData);
+
           const parser = new DOMParser();
           const svgDocument = parser.parseFromString(svgText, 'image/svg+xml');
           const svg = svgDocument.documentElement;
