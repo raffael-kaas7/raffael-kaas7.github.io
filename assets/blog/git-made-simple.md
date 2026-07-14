@@ -3,15 +3,16 @@ title: "Everyone can use Git - my simple day-to-day workflow (CLI only)"
 slug: "git-made-simple"
 date: "2026-03-24"
 lastmod: "2026-05-26"
-description: "This post explains why Git matters for anyone building with code or AI-generated content. It walks through a simple CLI workflow for staging, committing, amending, squashing, pushing, and updating a branch without making history messy."
-keywords: ["git","git cli","rebase","merge","squash","amend","clean history","ai coding workflow"]
+summary: "A small and very easy Git workflow for people who ended up using Git while working with agentic AI."
+keywords: ["Git workflow for beginners", "Git CLI", "version control", "git commit amend", "git squash commits", "git rebase", "clean Git history", "AI coding workflow"]
+area: "work"
 author: "Raffael Kaas"
 readingTime: 6
 titleImage: "/assets/blog/img/title/git-made-simple-workflow.webp"
 titleImageAlt: "Abstract illustration of a Git CLI workflow with a terminal, commit tree, project files, and a diff view."
 ogImage: "/assets/blog/img/title/git-made-simple-workflow.webp"
 canonical: "https://rkaas.de/blog/git-made-simple/"
-tags: ["git workflow", "git cli", "git basics", "git commit", "git commit --amend", "git squash", "git rebase -i", "git force-with-lease", "version control for beginners"]
+tags: ["git", "version-control", "cli", "ai-coding", "workflow"]
 language: "en"
 draft: false
 ---

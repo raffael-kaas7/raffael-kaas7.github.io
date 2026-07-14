@@ -3,15 +3,16 @@ title: "Regex patterns I actually use when searching log files"
 slug: "regex-for-searching-in-logfiles"
 date: "2025-11-26"
 lastmod: "2026-05-26"
-description: "A practical set of small regex patterns I use when searching large log files. The post explains keyword alternatives, wildcard matching, word boundaries, and non-zero error searches with copy-paste examples for grep and editor search."
-keywords: ["regex","log files","logfiles","search patterns", "easy regex","regular expressions"]
+summary: "A few regex patterns that are easy to remember and useful for searching in huge log files."
+keywords: ["regex for log files", "search log files", "grep regex", "regular expressions", "log search patterns", "word boundary regex", "non-zero error regex"]
+area: "work"
 author: "Raffael Kaas"
 readingTime: 7
 titleImage: "/assets/blog/img/title/regex-for-searching-in-logfiles-terminal.webp"
 titleImageAlt: "Stylized terminal window showing regex searches in a log file with highlighted matches for errors, failed tasks, process names, and non-zero error counts."
 ogImage: "/assets/blog/img/title/regex-for-searching-in-logfiles-terminal.webp"
 canonical: "https://rkaas.de/blog/regex-for-searching-in-logfiles/"
-tags: ["software-engineering","log files","search patterns"]
+tags: ["regex", "log-files", "debugging", "cli", "search"]
 language: "en"
 draft: false
 ---

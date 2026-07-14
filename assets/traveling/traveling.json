@@ -8,6 +8,7 @@
     "Germany": "DE",
     "Spain": "ES",
     "France": "FR",
+    "Greece": "GR",
     "Croatia": "HR",
     "Hungary": "HU",
     "Ireland": "IE",
@@ -53,6 +54,11 @@
       "visited": true,
       "color": "var(--travel-visited-primary)",
       "note": "France"
+    },
+    "GR": {
+      "visited": true,
+      "color": "var(--travel-visited-primary)",
+      "note": "Greece"
     },
     "HR": {
       "visited": true,

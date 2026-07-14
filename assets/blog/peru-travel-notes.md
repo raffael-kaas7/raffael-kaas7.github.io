@@ -1,0 +1,302 @@
+---
+title: "Peru travel notes (09/2023)"
+slug: "peru-travel-notes"
+date: "2026-07-02"
+summary: "Three weeks travelling through Peru, writing down the route and memories I still remember 3 years after the trip."
+keywords: ["Peru travel notes", "3 weeks in Peru", "Peru itinerary", "Machu Picchu", "Rainbow Mountain", "Colca Canyon", "Lake Titicaca", "Peru Amazon"]
+area: "travel"
+tags: ["peru", "travel-notes", "itinerary", "machu-picchu", "amazon"]
+readingTime: 7
+titleImage: "/assets/blog/img/title/peru-machu-picchu-thumbnail.webp"
+titleImageAlt: "Standing in front of Machu Picchu with the mountain scenery behind me."
+ogImage: "/assets/blog/img/title/peru-machu-picchu-thumbnail.webp"
+language: "en"
+draft: false
+---
+
+In 2023 I travelled through Peru for 3 weeks together with a friend. Unfortunately, I did not write about it directly after the trip like I did for my [Australia road trip](/blog/roadtrip-from-perth-to-sydney/). At least I made a nice photo book and sorted the digital pictures afterwards. Flipping through it several times helped me keep the memories active over the last few years. Looking back, I've changed a lot since end of 2023. That certainly wasn't just because of the trip, but I think it definitely had a positive influence on my growth.
+
+I am writing this down on July 02, 2026, so this is not a full journal. It is more a memory log from the photos and small things I still remember: the Pacific coast, Lima as my first big South American city, amazing food, chicha morada, lots of hiking, altitude headaches, the Amazon, coldness, heat, and many distinct places in only 3 weeks.
+
+<div class="img-wide">
+  <figure>
+    <img src="/assets/blog/img/title/peru-round-trip-map.webp" alt="Illustrated Peru round trip map with labeled stops and subtle bus and flight routes" loading="lazy" decoding="async">
+    <figcaption>My route through Peru in 2023</figcaption>
+  </figure>
+</div>
+
+<div class="section-break"></div>
+
+## Lima (29.08 - 30.08)
+
+We flew via Atlanta and had around 9 hours there before the next flight. We took an Uber into the city and went for a burger. At that time this was my first time in the USA, and I remember being surprised by how empty the city and parks felt. I do not really know why. We couldn't do much in Atlanta. The only recommendation had closed: the Coca-Cola museum.
+
+In Lima, we spent most of our time around Miraflores, which is known as a safe district in Lima. We did a free walking tour to learn something about the places to visit: the coast, the market, parks, and some tips for dinner. Lima has many well-known restaurants, and besides traditional Peruvian food, you can also eat great sushi there.
+
+Due to our limited time we did not go swimming in the Pacific, although there might be good places for it. I learned that Lima is also called "the grey" since it is almost never sunny there. Probably not my favorite city to live in.
+
+
+<div class="img-grid">
+  <figure>
+    <img src="/assets/blog/img/peru/lima-cliff-coast.webp" alt="Coastal cliffs and ocean in Lima" loading="lazy" decoding="async">
+    <figcaption>Lima coast</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/blog/img/peru/lima-miraflores-coast.webp" alt="Sitting above the Pacific coast in Lima" loading="lazy" decoding="async">
+    <figcaption>Pacific view</figcaption>
+  </figure>
+</div>
+
+<div class="section-break"></div>
+
+## Paracas (30.08 - 31.08)
+
+Paracas was our last stop directly at the coast before we moved more inland. We walked through the small city, went for dinner, and had good ceviche. Super delicious, but for me a little bit too much raw fish at once.
+
+We had planned to visit the Ballestas Islands, where you can normally see penguins and other animals. The weather was too stormy, so unfortunately that did not happen. We rented quads and drove through the Paracas National Reserve.
+
+After that we went to Huacachina, the artificial oasis near Ica. We joined a group tour in a big dune buggy and drove through the dunes at sunset. We also tried sandboarding, which was funny and probably also a little dangerous.
+
+From Ica we took a night bus to Arequipa. The buses in Peru were much better than I expected, with seats that can almost lie flat.
+
+<div class="img-wide">
+  <figure>
+    <img src="/assets/blog/img/peru/paracas-coast-friends.webp" alt="Standing with a friend at the Paracas coast" loading="lazy" decoding="async">
+    <figcaption>Paracas National Reserve</figcaption>
+  </figure>
+</div>
+
+<div class="img-grid">
+  <figure>
+    <img src="/assets/blog/img/peru/paracas-quad-buggies.webp" alt="Quad bikes and buggies in the Paracas desert" loading="lazy" decoding="async">
+    <figcaption>Quad bikes in the desert</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/blog/img/peru/paracas-dunes-sunset.webp" alt="Sunset over sand dunes near Paracas" loading="lazy" decoding="async">
+    <figcaption>Dunes at sunset</figcaption>
+  </figure>
+</div>
+
+<div class="section-break"></div>
+
+## Arequipa (01.09)
+
+In Arequipa we visited the market, tried queso helado, and did a free walking tour. The city center felt quite European compared to the places before, especially with the white buildings and the architecture around the main square.
+
+For food I remember rocoto relleno, a stuffed pepper with minced meat. After that we went to bed early because the trip to Colca Canyon started very early the next morning. This became a pattern during the whole vacation: waking up early for the next activity. At least it helped with the jet lag.
+
+Arequipa is already around 2,300 meters above sea level, and I had a small headache there. That followed me through the trip every time we went higher for the first day. The highest point was around 5,050 meters at Vinicunca (Rainbow Mountain).
+
+
+<div class="img-grid img-grid--left-stack">
+  <figure>
+    <img src="/assets/blog/img/peru/arequipa-market.webp" alt="Fruit and market stalls in Arequipa" loading="lazy" decoding="async">
+    <figcaption>Market in Arequipa</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/blog/img/peru/arequipa-plaza.webp" alt="Plaza and church in Arequipa" loading="lazy" decoding="async">
+    <figcaption>Arequipa city center</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/blog/img/peru/arequipa-cathedral-night.webp" alt="Arequipa cathedral and plaza at night" loading="lazy" decoding="async">
+    <figcaption>Cathedral at night</figcaption>
+  </figure>
+</div>
+
+<div class="section-break"></div>
+
+## Colca Canyon (02.09 - 03.09)
+
+Colca Canyon was a guided 2-day hike. The route was simple in principle: on the first day we hiked down into the canyon and stayed in a nice accommodation there. On the second day we hiked back up and visited natural hot springs afterwards to relax. In Colca Canyon you can also observe Andean condors, with a wingspan of up to around 3 meters.
+
+We had a pretty cool group, maybe 10 people in total plus the guide. Everyone was quite fit, so we moved at a good pace.
+
+<div class="img-wide">
+  <figure>
+    <img src="/assets/blog/img/peru/colca-canyon-overlook.webp" alt="Wide mountain landscape in Colca Canyon" loading="lazy" decoding="async">
+    <figcaption>Colca Canyon</figcaption>
+  </figure>
+</div>
+
+<div class="img-grid">
+  <figure>
+    <img src="/assets/blog/img/peru/colca-canyon-trail.webp" alt="Hiking on a trail in Colca Canyon" loading="lazy" decoding="async">
+    <figcaption>On the trail</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/blog/img/peru/colca-canyon-river.webp" alt="River flowing through Colca Canyon" loading="lazy" decoding="async">
+    <figcaption>The river in the valley</figcaption>
+  </figure>
+</div>
+
+<div class="section-break"></div>
+
+## Puno and Uros Islands (04.09)
+
+After the Colca Canyon hike we took a bus to Puno. The drive was beautiful and very high up on the Andean plateau. Puno itself is almost 4,000 meters above sea level, directly at Lake Titicaca.
+
+<div class="img-wide">
+  <figure>
+    <img src="/assets/blog/img/peru/colca-highland-road.webp" alt="Highland road and landscape on the way through Colca Canyon" loading="lazy" decoding="async">
+    <figcaption>Highland road</figcaption>
+  </figure>
+</div>
+
+Of course I had a headache in the evening. Coca leaves seemed to help a bit, and you can find them everywhere in different forms: plain leaves to chew, candies, or simply as tea.
+
+We visited the city and the Uros floating islands. That was very impressive. Puno was also the first place where I really noticed how much shorter many people in Peru often were compared with Germany.
+
+Unfortunately, we did not have enough time on our trip to also visit La Paz in Bolivia, which is quite close by.
+
+<div class="img-grid">
+  <figure>
+    <img src="/assets/blog/img/peru/uros-boat-ride.webp" alt="Sitting in a colorful reed boat on Lake Titicaca" loading="lazy" decoding="async">
+    <figcaption>Lake Titicaca</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/blog/img/peru/uros-floating-islands.webp" alt="Reed boat and floating islands on Lake Titicaca" loading="lazy" decoding="async">
+    <figcaption>Uros islands</figcaption>
+  </figure>
+</div>
+
+<div class="section-break"></div>
+
+## Cusco (05.09)
+
+We also arrived in Cusco by night bus. The city is around 3,500 meters above sea level, so the altitude was still very present. As usual, we did a free walking tour to get a first overview.
+
+In a restaurant recommended by our guide, we actually ordered guinea pig (cuy), a well-known dish in Peru. It was interesting to try once, but I do not need to eat it again.
+
+From Cusco we started several tours: a day trip to Rainbow Mountain and then the Salkantay Trail to Machu Picchu.
+
+<div class="img-grid">
+  <figure>
+    <img src="/assets/blog/img/peru/cusco-city-view.webp" alt="Cusco city and surrounding hills from above" loading="lazy" decoding="async">
+    <figcaption>Cusco from above</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/blog/img/peru/cusco-dinner.webp" alt="Dinner plate in Cusco with meat and potatoes" loading="lazy" decoding="async">
+    <figcaption>Cuy</figcaption>
+  </figure>
+</div>
+
+<div class="section-break"></div>
+
+## Rainbow Mountain (06.09)
+
+We took an early bus to Vinicunca, better known as Rainbow Mountain. From there it was maybe a 1-hour hike to the top. The hike itself was not too hard, but it was cold and the air was really thin.
+
+It was really cool to be up that high, and the colors are very impressive. It is also a very touristy place, so there were many other people around.
+
+<div class="img-grid img-grid--left-stack">
+  <figure>
+    <img src="/assets/blog/img/peru/rainbow-mountain-summit-sign.webp" alt="Summit sign at Rainbow Mountain in cloudy weather" loading="lazy" decoding="async">
+    <figcaption>Summit sign of Rainbow Mountain</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/blog/img/peru/rainbow-mountain-valley.webp" alt="Cloudy mountain valley near Rainbow Mountain" loading="lazy" decoding="async">
+    <figcaption>Cloudy valley near Rainbow Mountain</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/blog/img/peru/rainbow-mountain-portrait.webp" alt="Standing in front of Rainbow Mountain in Peru" loading="lazy" decoding="async">
+    <figcaption>Rainbow Mountain</figcaption>
+  </figure>
+</div>
+
+<div class="section-break"></div>
+
+## Salkantay Trail (07.09 - 10.09)
+
+The Salkantay Trail was probably the highlight of the trip. The full hike to Machu Picchu took 5 days and 4 nights. Three nights were in fixed tents, and the last night was in a hotel in Aguas Calientes. I think it was around 75 km in total.
+
+Some parts were really heavy uphill. The rest was often what the guide called "Inca flat", which basically means it still goes up and down.
+
+We had to carry our day bags ourselves. The extra things we needed for the nights were packed into another bag and carried by mules.
+
+The crew was really nice, and our guide Vidal was perfect for the trip. I learned a lot from him. We also did a Pachamama ceremony (Mother Earth), and it felt like the local people we met had a very different and closer relationship with nature than what I am used to.
+
+Most days we walked almost the whole day, from sunrise around 6am to sunset around 6pm. The food in the evenings was really good, and the tents were better than I expected. But the first night was extremely cold, probably below 0 degrees Celsius, and my sleeping bag was not made for that temperature. I was rarely happier about a sunrise than after that night.
+
+<div class="img-grid img-grid--three-row">
+  <figure>
+    <img src="/assets/blog/img/peru/salkantay-trail-cabin.webp" alt="Small cabin on the Salkantay Trail" loading="lazy" decoding="async">
+    <figcaption>First night</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/blog/img/peru/salkantay-camp-tent.webp" alt="Green tent at a Salkantay Trail camp" loading="lazy" decoding="async">
+    <figcaption>Second night</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/blog/img/peru/salkantay-dome-cabin.webp" alt="Small dome cabin in the forest on the Salkantay route" loading="lazy" decoding="async">
+    <figcaption>Third night</figcaption>
+  </figure>
+</div>
+
+<div class="img-wide">
+  <figure>
+    <img src="/assets/blog/img/peru/salkantay-snowy-peak.webp" alt="Snowy mountain peak on the Salkantay Trail" loading="lazy" decoding="async">
+    <figcaption>Salkantay trail</figcaption>
+  </figure>
+</div>
+
+<div class="section-break"></div>
+
+## Machu Picchu (11.09)
+
+The evening before Machu Picchu we arrived in Aguas Calientes and stayed in a hotel. We had enough time to walk through the very touristy town before going to bed early again.
+
+On the morning of September 11, we went up to Machu Picchu very early, before the tourist buses arrived. I would do it like that again because Machu Picchu without many people is extremely impressive. For me it was not only the buildings themselves, but the whole scenery within the mountains and the story behind the place.
+
+From Aguas Calientes we took the train back to Cusco and then went to Puerto Maldonado by plane. There we had booked 3 days in an Amazon camp.
+
+<div class="img-wide">
+  <figure>
+    <img src="/assets/blog/img/peru/machu-picchu-overlook.webp" alt="Classic view over Machu Picchu and the surrounding mountains" loading="lazy" decoding="async">
+    <figcaption>Machu Picchu</figcaption>
+  </figure>
+</div>
+
+<!-- <div class="img-grid">
+  <figure>
+    <img src="/assets/blog/img/peru/machu-picchu-summit-sign.webp" alt="Standing at the Machu Picchu mountain summit sign above the clouds" loading="lazy" decoding="async">
+    <figcaption>Machu Picchu Mountain</figcaption>
+  </figure>
+</div> -->
+
+<div class="section-break"></div>
+
+## Puerto Maldonado and the Amazon (12.09 - 14.09)
+
+From Puerto Maldonado we took a small boat for around 20 minutes on the Rio Madre de Dios to get to the camp. It was extremely hot and humid. From the camp we did several small tours: a canopy walkway, which probably would not meet German safety standards, a boat tour on a lake at dusk where we watched birds and monkeys, and a short night tour to look for caimans. We saw a caiman directly next to our boat. Most of the time I did not see anything until the guide pointed at it.
+
+At night, once I was safely under the mosquito net, I could really enjoy the sound of the rainforest. It never gets quiet there.
+
+If we had had more time, or if I ever go back to Peru, I would probably fly to Iquitos for a deeper Amazon experience.
+
+<div class="img-wide">
+  <figure>
+    <img src="/assets/blog/img/peru/amazon-river.webp" alt="River and rainforest near Puerto Maldonado" loading="lazy" decoding="async">
+    <figcaption>Animal observation point</figcaption>
+  </figure>
+</div>
+
+<div class="img-grid img-grid--left-stack">
+  <figure>
+    <img src="/assets/blog/img/peru/amazon-lodge-hammock.webp" alt="Hammock at a rainforest lodge near Puerto Maldonado" loading="lazy" decoding="async">
+    <figcaption>Rainforest lodge</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/blog/img/peru/amazon-boat.webp" alt="Boat ride on muddy Amazon water" loading="lazy" decoding="async">
+    <figcaption>Me, fishing for piranhas</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/blog/img/peru/amazon-canopy-walkway.webp" alt="Canopy walkway through trees in the Amazon rainforest" loading="lazy" decoding="async">
+    <figcaption>Canopy walkway</figcaption>
+  </figure>
+</div>
+
+<div class="section-break"></div>
+
+## Back in Lima (15.09 - 16.09)
+
+On the way back we had one more night in Lima and stayed in Miraflores again. We visited downtown, did another city tour, and had a last dinner before flying home.

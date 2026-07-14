@@ -3,15 +3,16 @@ title: "My favorite tools for learning a new language"
 slug: "how-to-learn-a-new-language"
 date: "2026-05-19"
 lastmod: "2026-05-26"
-description: "This post summarizes my current approach to learning Portuguese after earlier Spanish practice. It compares on-site classes, online courses, Duolingo, vocabulary cards, LLM-generated beginner texts, YouTube, podcasts, and online tutors."
-keywords: ["language learning","learn spanish","learn portuguese","duolingo","preply","vocabulary","coursera","chatgpt", "how to learn a new language"]
+summary: "This post summarizes my current approach to learning Portuguese: on-site classes, online courses, vocabulary cards, podcasts, Duolingo, and Preply."
+keywords: ["language learning tools", "learn Portuguese", "learn Spanish", "Duolingo", "Preply", "vocabulary practice", "Coursera Portuguese", "ChatGPT language learning"]
+area: "life"
 author: "Raffael Kaas"
 readingTime: 6
 titleImage: "/assets/blog/img/title/how-to-learn-a-new-language-tools.webp"
 titleImageAlt: "Stylized language-learning desk with an app, video lesson, online tutor, podcast, classroom, speaking practice, friends, and vocabulary cards."
 ogImage: "/assets/blog/img/title/how-to-learn-a-new-language-tools.webp"
 canonical: "https://rkaas.de/blog/how-to-learn-a-new-language/"
-tags: ["learning","languages","personal-growth"]
+tags: ["language-learning", "portuguese", "spanish", "learning-tools"]
 language: "en"
 draft: false
 ---

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Blog Post Review"
+  short_description: "Light edits, SEO, and philosophy checks"
+  default_prompt: "Use $blog-post-review to gently edit this blog draft, check metadata, add obvious internal links, and flag anything that clashes with my writing philosophy."

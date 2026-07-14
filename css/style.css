@@ -464,6 +464,7 @@ pre code {
   margin-bottom: 0;
 }
 
+.garden-hero-copy > p:not(.section-kicker) a,
 .personal-blog-home .about-copy a {
   color: var(--blog-link-color);
   font-weight: 700;
@@ -473,6 +474,8 @@ pre code {
   text-underline-offset: 0.24em;
 }
 
+.garden-hero-copy > p:not(.section-kicker) a:hover,
+.garden-hero-copy > p:not(.section-kicker) a:focus,
 .personal-blog-home .about-copy a:hover,
 .personal-blog-home .about-copy a:focus {
   color: var(--blog-link-hover-color);
@@ -698,6 +701,36 @@ pre code {
   font-size: 0.95rem;
 }
 
+.blog-page .blog-post .post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  list-style: none;
+  margin: -0.25rem 0 1.6rem;
+  padding: 0;
+}
+
+.blog-page .blog-post .post-tags li {
+  border: 1px solid var(--pb-border);
+  border-radius: 999px;
+  color: var(--pb-muted);
+  font-size: 0.82rem;
+  line-height: 1.2;
+  padding: 0.28rem 0.65rem;
+}
+
+.blog-page .blog-post .math-display {
+  color: var(--font-color);
+  margin: 1.2rem 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
+}
+
+.blog-page .blog-post .math-display mjx-container[jax="SVG"] {
+  min-width: max-content;
+}
+
 .blog-page .blog-post .static-blog-list {
   list-style: none;
   margin: 1.5rem 0 0;
@@ -803,6 +836,93 @@ pre code {
   padding-left: 1rem;
 }
 
+.blog-page .blog-post .workout-plan {
+  display: grid;
+  gap: 1.15rem;
+  margin: 1.5rem 0;
+}
+
+.blog-page .blog-post .workout-table {
+  background: var(--pb-surface-strong);
+  border: 1px solid var(--pb-border);
+  border-collapse: separate;
+  border-radius: 8px;
+  border-spacing: 0;
+  overflow: hidden;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.blog-page .blog-post .workout-table caption {
+  caption-side: top;
+  color: var(--font-color);
+  font-size: 1.08rem;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+  text-align: left;
+}
+
+.blog-page .blog-post .workout-table th,
+.blog-page .blog-post .workout-table td {
+  border-top: 1px solid var(--pb-border);
+  color: var(--font-color);
+  font-size: 1rem;
+  line-height: 1.45;
+  padding: 0.72rem 0.85rem;
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: normal;
+}
+
+.blog-page .blog-post .workout-table thead th {
+  background: var(--bg-color-alternate);
+  border-top: 0;
+  font-weight: 700;
+}
+
+.blog-page .blog-post .workout-table:not(.is-rotation) thead th:first-child,
+.blog-page .blog-post .workout-table:not(.is-rotation) tbody th {
+  width: 6rem;
+}
+
+.blog-page .blog-post .workout-table tbody th {
+  color: var(--area-health);
+  font-weight: 700;
+  overflow-wrap: normal;
+}
+
+.blog-page .blog-post .workout-table.is-rotation th,
+.blog-page .blog-post .workout-table.is-rotation td {
+  width: 50%;
+}
+
+.blog-page .blog-post .workout-table.is-rotation th + th,
+.blog-page .blog-post .workout-table.is-rotation td + td {
+  border-left: 2px solid var(--pb-border);
+}
+
+.blog-page .blog-post .workout-table.is-rotation thead th {
+  text-align: center;
+}
+
+.blog-page .blog-post .workout-focus {
+  color: var(--area-health);
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.16rem;
+}
+
+.blog-page .blog-post .workout-name {
+  display: block;
+}
+
+.blog-page .blog-post .workout-table.is-optional thead th:first-child,
+.blog-page .blog-post .workout-table.is-optional tbody th {
+  width: 7rem;
+}
+
 .blog-page .blog-post .image-grid,
 .blog-page .blog-post .img-grid,
 .blog-page .blog-post .garmin-app {
@@ -814,6 +934,10 @@ pre code {
 
 .blog-page .blog-post .image-grid {
   padding: 16px 0;
+}
+
+.blog-page .blog-post .img-grid--three-row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .blog-page .blog-post .img-wide,
@@ -846,6 +970,37 @@ pre code {
 .blog-page .blog-post .img-wide img {
   background: #f2f2f2;
   box-shadow: 0 6px 22px rgba(0, 0, 0, 0.1);
+}
+
+.blog-page .blog-post .img-grid--left-stack {
+  grid-template-areas:
+    "landscape-one portrait"
+    "landscape-two portrait";
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.blog-page .blog-post .img-grid--left-stack figure {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.blog-page .blog-post .img-grid--left-stack figure:nth-child(1) {
+  grid-area: landscape-one;
+}
+
+.blog-page .blog-post .img-grid--left-stack figure:nth-child(2) {
+  grid-area: landscape-two;
+}
+
+.blog-page .blog-post .img-grid--left-stack figure:nth-child(3) {
+  grid-area: portrait;
+}
+
+.blog-page .blog-post .img-grid--left-stack img {
+  flex: 1;
+  height: 100%;
+  object-fit: cover;
 }
 
 .blog-page .blog-post .img-grid figcaption,
@@ -1587,7 +1742,7 @@ body.travel-page {
   font-size: clamp(1rem, 1.25vw, 1.14rem);
   line-height: 1.7;
   margin: 1rem 0 0;
-  max-width: 650px;
+  max-width: 760px;
 }
 
 .garden-hero-actions {
@@ -1830,7 +1985,7 @@ body.travel-page {
   line-height: 1.18;
 }
 
-.writing-card-summary {
+.writing-card-description {
   color: var(--garden-ink-soft);
   display: -webkit-box;
   font-size: 0.96rem;
@@ -1838,6 +1993,10 @@ body.travel-page {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
+}
+
+.writing-grid.is-list .writing-card-description {
+  -webkit-line-clamp: 5;
 }
 
 .writing-card:hover,
@@ -2499,10 +2658,13 @@ body.travel-page {
     max-width: none;
   }
 
-  .writing-card-summary {
+  .writing-card-description {
     font-size: 0.9rem;
     line-height: 1.48;
-    -webkit-line-clamp: 2;
+  }
+
+  .writing-grid.is-list .writing-card-description {
+    -webkit-line-clamp: 4;
   }
 
   .area-page-section.is-special-links .collection-grid {
@@ -2640,6 +2802,38 @@ body.travel-page {
   .blog-page .blog-post .img-grid,
   .blog-page .blog-post .garmin-app {
     grid-template-columns: 1fr;
+  }
+
+  .blog-page .blog-post .img-grid--left-stack {
+    grid-template-areas: none;
+    grid-template-rows: auto;
+  }
+
+  .blog-page .blog-post .img-grid--left-stack figure:nth-child(1),
+  .blog-page .blog-post .img-grid--left-stack figure:nth-child(2),
+  .blog-page .blog-post .img-grid--left-stack figure:nth-child(3) {
+    grid-area: auto;
+  }
+
+  .blog-page .blog-post .img-grid--left-stack img {
+    flex: none;
+    height: auto;
+  }
+
+  .blog-page .blog-post .workout-table th,
+  .blog-page .blog-post .workout-table td {
+    font-size: 0.9rem;
+    padding: 0.62rem 0.48rem;
+  }
+
+  .blog-page .blog-post .workout-table:not(.is-rotation) thead th:first-child,
+  .blog-page .blog-post .workout-table:not(.is-rotation) tbody th {
+    width: 3.9rem;
+  }
+
+  .blog-page .blog-post .workout-table.is-optional thead th:first-child,
+  .blog-page .blog-post .workout-table.is-optional tbody th {
+    width: 5rem;
   }
 
   .travel-main {

@@ -3,15 +3,16 @@ title: "A few thoughts on technical debt in Software Engineering"
 slug: "some-thoughts-on-technical-debt"
 date: "2026-06-11"
 lastmod: "2026-06-11"
-description: "A personal view on technical debt as a delivery risk. It can lead to unplanned work, postponed features, delayed deliveries, and frustrated teams when it is not visible enough."
-keywords: ["technical debt","software engineering","architecture debt","code quality","delivery risk","refactoring", "bad code", "unplanned work"]
+summary: "A personal view on technical debt and its symptoms in software engineering."
+keywords: ["technical debt", "software engineering", "architecture debt", "code quality", "delivery risk", "legacy code", "refactoring", "unplanned work"]
+area: "work"
 author: "Raffael Kaas"
 readingTime: 6
 titleImage: "/assets/blog/img/title/some-thoughts-on-technical-debt.webp"
 titleImageAlt: "Stylized scrum planning board with one team planning discussion, blocked technical debt work, an empty Done column, and a delayed release plan."
 ogImage: "/assets/blog/img/title/some-thoughts-on-technical-debt.webp"
 canonical: "https://rkaas.de/blog/some-thoughts-on-technical-debt/"
-tags: ["software-engineering","technical-debt","architecture"]
+tags: ["software-engineering", "technical-debt", "code-quality", "delivery-risk"]
 language: "en"
 draft: false
 ---

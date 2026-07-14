@@ -1,0 +1,347 @@
+{
+  "type": "FeatureCollection",
+  "name": "peru-2023-route",
+  "properties": {
+    "title": "Peru Rundreise",
+    "dateRange": "2023-08-29/2023-09-16",
+    "sourcePost": "assets/blog/peru-travel-notes.md",
+    "coordinateSource": "OpenStreetMap Nominatim for named stops; Salkantay trail waypoint approximated from Soraypampa, Machu Picchu, and Salkantay mountain context.",
+    "routeModes": {
+      "bus": "Bus or overland transfer",
+      "flight": "Domestic flight",
+      "walk": "Hike or trek",
+      "boat": "Boat excursion"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "stop",
+        "id": "lima",
+        "label": "Lima",
+        "dates": ["2023-08-29", "2023-08-30", "2023-09-14", "2023-09-16"],
+        "notes": "Sightseeing, return stop, departure to Munich."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.0305912, -12.0459808]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "stop",
+        "id": "paracas",
+        "label": "Paracas",
+        "dates": ["2023-08-30", "2023-08-31"],
+        "notes": "Bus from Lima, dunes and quad activity, night bus onward."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-76.2488648, -13.834104]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "stop",
+        "id": "arequipa",
+        "label": "Arequipa",
+        "dates": ["2023-09-01"],
+        "notes": "City sightseeing."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.5369607, -16.3988667]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "stop",
+        "id": "colca-canyon",
+        "label": "Colca Canyon",
+        "dates": ["2023-09-02", "2023-09-03"],
+        "notes": "Two hiking days in the canyon."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-72.048777, -15.5945964]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "stop",
+        "id": "puno",
+        "label": "Puno",
+        "dates": ["2023-09-04"],
+        "notes": "Lake Titicaca base and night bus to Cusco."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-70.0279512, -15.8405962]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "stop",
+        "id": "uros-islands",
+        "label": "Uros Islands",
+        "dates": ["2023-09-04"],
+        "notes": "Floating islands excursion on Lake Titicaca."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-69.9719069, -15.8163443]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "stop",
+        "id": "cusco",
+        "label": "Cusco",
+        "dates": ["2023-09-05", "2023-09-12"],
+        "notes": "City base for Rainbow Mountain, Salkantay Trail, and flight to Puerto Maldonado."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.9785356, -13.5170887]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "stop",
+        "id": "rainbow-mountain",
+        "label": "Rainbow Mountain",
+        "dates": ["2023-09-06"],
+        "localName": "Winikunka / Vinicunca",
+        "notes": "Day hike from the Cusco area."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-71.3029783, -13.8678515]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "stop",
+        "id": "soraypampa",
+        "label": "Soraypampa",
+        "dates": ["2023-09-07"],
+        "notes": "Salkantay Trail starting area."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-72.5737347, -13.3871845]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "waypoint",
+        "id": "salkantay-trail",
+        "label": "Salkantay Trail",
+        "dates": ["2023-09-07", "2023-09-11"],
+        "approximate": true,
+        "notes": "Representative waypoint near the high Andean trekking section."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-72.56, -13.36]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "stop",
+        "id": "machupicchu-pueblo",
+        "label": "Aguas Calientes",
+        "dates": ["2023-09-10", "2023-09-11"],
+        "notes": "Town below Machu Picchu at the end of the trek."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-72.5256464, -13.1542838]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "stop",
+        "id": "machu-picchu",
+        "label": "Machu Picchu",
+        "dates": ["2023-09-11"],
+        "notes": "Arrival after the Salkantay Trail."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-72.5450094, -13.164341]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "stop",
+        "id": "puerto-maldonado",
+        "label": "Puerto Maldonado",
+        "dates": ["2023-09-12", "2023-09-14"],
+        "notes": "Amazon camping and guided wildlife days."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-69.1866773, -12.5938633]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "route",
+        "id": "route-bus-lima-cusco",
+        "label": "Bus route: Lima to Cusco via Paracas, Arequipa, Colca Canyon, and Puno",
+        "mode": "bus",
+        "dates": ["2023-08-30", "2023-09-05"]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-77.0305912, -12.0459808],
+          [-76.2488648, -13.834104],
+          [-71.5369607, -16.3988667],
+          [-72.048777, -15.5945964],
+          [-70.0279512, -15.8405962],
+          [-71.9785356, -13.5170887]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "route",
+        "id": "route-boat-uros",
+        "label": "Boat excursion: Puno to Uros Islands",
+        "mode": "boat",
+        "dates": ["2023-09-04"]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-70.0279512, -15.8405962],
+          [-69.9719069, -15.8163443]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "route",
+        "id": "route-walk-rainbow-mountain",
+        "label": "Day hike: Rainbow Mountain",
+        "mode": "walk",
+        "dates": ["2023-09-06"]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-71.3609, -13.839],
+          [-71.3029783, -13.8678515],
+          [-71.3609, -13.839]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "route",
+        "id": "route-bus-cusco-soraypampa",
+        "label": "Overland transfer: Cusco to Salkantay Trail start",
+        "mode": "bus",
+        "dates": ["2023-09-07"],
+        "inferred": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-71.9785356, -13.5170887],
+          [-72.5737347, -13.3871845]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "route",
+        "id": "route-walk-salkantay",
+        "label": "Salkantay Trail on foot",
+        "mode": "walk",
+        "dates": ["2023-09-07", "2023-09-11"]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-72.5737347, -13.3871845],
+          [-72.56, -13.36],
+          [-72.5256464, -13.1542838],
+          [-72.5450094, -13.164341]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "route",
+        "id": "route-transfer-machu-picchu-cusco",
+        "label": "Return transfer: Machu Picchu area to Cusco",
+        "mode": "bus",
+        "dates": ["2023-09-12"],
+        "inferred": true
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-72.5450094, -13.164341],
+          [-71.9785356, -13.5170887]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "route",
+        "id": "route-flight-cusco-puerto-maldonado",
+        "label": "Flight: Cusco to Puerto Maldonado",
+        "mode": "flight",
+        "dates": ["2023-09-12"]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-71.9785356, -13.5170887],
+          [-69.1866773, -12.5938633]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "route",
+        "id": "route-flight-puerto-maldonado-lima",
+        "label": "Flight: Puerto Maldonado to Lima",
+        "mode": "flight",
+        "dates": ["2023-09-14"]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [-69.1866773, -12.5938633],
+          [-77.0305912, -12.0459808]
+        ]
+      }
+    }
+  ]
+}

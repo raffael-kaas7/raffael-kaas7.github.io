@@ -3,15 +3,16 @@ title: "Lessons learned from building complex software products"
 slug: "lessons-learned-in-software-engineering"
 date: "2025-07-30"
 lastmod: "2026-05-26"
-description: "This post collects lessons from student projects, autonomous shuttle work, and automotive series software. It covers collaboration, code quality, ASPICE and the V-model, team alignment, and why every phase of engineering work has its own value."
-keywords: ["software engineering lessons","ASPICE V-Model","team alignment","code quality","process vs speed", "agile tools"]
+summary: "A quick recap of lessons learned in software engineering after five years in my first full-time job."
+keywords: ["software engineering lessons", "ASPICE V-Model", "systems engineering", "team alignment", "code quality", "process vs speed", "agile tools", "automotive software"]
+area: "work"
 author: "Raffael Kaas"
 readingTime: 6
 titleImage: "/assets/blog/img/title/lessons-learned-in-software-engineering.webp"
 titleImageAlt: "Stylized engineering desk illustration with an autonomous shuttle, SAFe ART planning, dependency map, V-Model, MISRA checklist, teamwork sync, and clean C++ code."
 ogImage: "/assets/blog/img/title/lessons-learned-in-software-engineering.webp"
 canonical: "https://rkaas.de/blog/lessons-learned-in-software-engineering/"
-tags: ["software-engineering","process","teams"]
+tags: ["software-engineering", "systems-engineering", "code-quality", "teams", "process"]
 language: "en"
 draft: false
 ---

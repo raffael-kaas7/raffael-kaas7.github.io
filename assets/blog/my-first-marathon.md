@@ -3,15 +3,16 @@ title: "Running my first marathon"
 slug: "my-first-marathon"
 date: "2025-10-14"
 lastmod: "2026-05-26"
-description: "A recap of training for and running my first full marathon at the 3-Laender-Marathon in Lindau and Bregenz. The post covers my training plan, shoe problems, nutrition mistakes, race-day pacing, and why the preparation was the real challenge."
-keywords: ["first marathon","marathon training plan","zone 2 running","VO2max", "running challenge", "3-Länder-Marathon"]
+summary: "Thoughts and experiences on my first marathon and the months of preparation before it."
+keywords: ["first marathon", "marathon training plan", "3-Laender-Marathon", "Lindau marathon", "Bregenz marathon", "zone 2 running", "race day pacing", "marathon nutrition"]
+area: "health"
 author: "Raffael Kaas"
 readingTime: 7
 titleImage: "/assets/blog/img/title/my-first-marathon-training.webp"
 titleImageAlt: "Stylized illustration of Lindau marathon training with a training calendar, running vest, watch, shoes, nutrition, sleep, and strength training gear."
 ogImage: "/assets/blog/img/title/my-first-marathon-training.webp"
 canonical: "https://rkaas.de/blog/my-first-marathon/"
-tags: ["running","fitness","endurance"]
+tags: ["running", "marathon", "endurance", "training"]
 language: "en"
 draft: false
 ---

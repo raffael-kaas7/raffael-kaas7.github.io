@@ -11,7 +11,6 @@ import { basename, join } from "node:path";
 const SITE_URL = "https://rkaas.de";
 const BLOG_SOURCE_DIR = "assets/blog";
 const BLOG_OUTPUT_DIR = "blog";
-const SITE_CONFIG_PATH = "site.config.json";
 const AUTHOR_NAME = "Raffael Kaas";
 const PROFILE_IMAGE = "/assets/img/me-tshirt.png";
 const NOW_FILE_PATH = "now.txt";
@@ -28,8 +27,6 @@ const DEFAULT_NOW_LINES = [
 const NAV_ITEMS = [
   { href: "/", label: "Home", page: "home" },
   { href: "/blog/", label: "Blog", page: "blog" },
-  { href: "/books/", label: "Books", page: "books" },
-  { href: "/travel/", label: "Travel", page: "travel" },
 ];
 const STATIC_NAV_PAGES = [
   { path: "index.html", page: "home" },
@@ -46,7 +43,7 @@ const AREAS = [
     href: "/work/",
     marker: "Software, Experience, Projects",
     description:
-      "Thoughts on current trends in software engineering, private projects, and personal experiences.",
+      "Personal experiences with software trends and private projects.",
     roomIntro: [
       {
         type: "p",
@@ -72,7 +69,7 @@ const AREAS = [
     href: "/health/",
     marker: "Workout, Running, Nutrition",
     description:
-      "All about workout, nutrition, recovery, and how I try staying healthy alongside normal work and life.",
+      "Workouts, nutrition, recovery, and how I try to stay healthy.",
     roomIntro: [
       {
         type: "p",
@@ -94,7 +91,7 @@ const AREAS = [
     href: "/money/",
     marker: "Investing, Spending, Analysis",
     description:
-      "My personal thoughts on money: Financial habits, investments, spending, and my passion for the stock market.",
+      "Financial habits, investing, spending, and my passion for the stock market.",
     roomIntro: [
       {
         type: "p",
@@ -112,7 +109,7 @@ const AREAS = [
     href: "/travel/",
     marker: "Maps, Routes, Memories",
     description:
-      "Travel notes, maps, routes, photos, places, and memories I want to keep instead of losing them in the cloud.",
+      "Travel memories I want to keep instead of losing them in the cloud.",
     roomIntro: [
       {
         type: "p",
@@ -130,7 +127,7 @@ const AREAS = [
     href: "/life/",
     marker: "Notes, Reflections, Goals",
     description:
-      "Personal notes on life in general. New interests, achievements, changing goals, failures, reflections.",
+      "New interests, achievements, changing goals, failures, and reflections.",
     roomIntro: [
       {
         type: "p",
@@ -144,7 +141,7 @@ const AREAS = [
     href: "/books/",
     marker: "Books, Quotes, Ideas",
     description:
-      "Books that shaped my thinking, ideas I want to remember, and a collection of notes I keep returning to.",
+      "Personal notes on books and ideas that shaped my thinking.",
     roomIntro: [
       {
         type: "p",
@@ -168,67 +165,6 @@ const SPECIAL_COLLECTION_PAGES = [
   { loc: `${SITE_URL}/books/bookshelf/`, lastmod: BOOKS_LASTMOD },
   { loc: `${SITE_URL}/travel/map/`, lastmod: TRAVEL_LASTMOD },
 ];
-
-const siteConfig = loadSiteConfig();
-const postBlacklist = new Set(siteConfig.blog.postBlacklist);
-
-function normalizePostIdentifier(value) {
-  let identifier = String(value || "").trim();
-  if (!identifier) return "";
-
-  if (/^https?:\/\//i.test(identifier)) {
-    try {
-      identifier = new URL(identifier).pathname;
-    } catch {
-      return identifier;
-    }
-  }
-
-  return identifier
-    .replace(/^\/+/, "")
-    .replace(/^blog\//, "")
-    .replace(/^assets\/blog\//, "")
-    .replace(/\/+$/, "")
-    .replace(/\.md$/i, "");
-}
-
-function normalizePostList(values) {
-  return Array.isArray(values)
-    ? values.map(normalizePostIdentifier).filter(Boolean)
-    : [];
-}
-
-function loadSiteConfig() {
-  const defaultTabs = Object.fromEntries(
-    NAV_ITEMS.map((item) => [item.page, true]),
-  );
-  const defaultBlog = { postBlacklist: [] };
-
-  if (!existsSync(SITE_CONFIG_PATH)) {
-    return { tabs: defaultTabs, blog: defaultBlog };
-  }
-
-  try {
-    const parsed = JSON.parse(readFileSync(SITE_CONFIG_PATH, "utf8"));
-    const blog = parsed.blog || {};
-    return {
-      tabs: {
-        ...defaultTabs,
-        ...(parsed.tabs || {}),
-      },
-      blog: {
-        ...defaultBlog,
-        postBlacklist: normalizePostList(blog.postBlacklist),
-      },
-    };
-  } catch (error) {
-    throw new Error(`Could not read ${SITE_CONFIG_PATH}: ${error.message}`);
-  }
-}
-
-function isTabEnabled(page) {
-  return siteConfig.tabs[page] !== false;
-}
 
 function parseFrontMatterValue(value) {
   let val = value.trim();
@@ -601,6 +537,14 @@ function renderParagraph(lines) {
   return `<p>${html}</p>`;
 }
 
+function renderMathDisplay(lines) {
+  return `<div class="math-display">\\[\n${escapeHtml(lines.join("\n"))}\n\\]</div>`;
+}
+
+function containsMath(markdown) {
+  return /(^|\n)\s*\$\$\s*(\n|$)|\\\(|\\\[/.test(markdown);
+}
+
 function renderMarkdown(markdown) {
   const lines = markdown.replace(/\r\n/g, "\n").split("\n");
   const html = [];
@@ -655,6 +599,18 @@ function renderMarkdown(markdown) {
         ? ` class="language-${escapeAttribute(language)}"`
         : "";
       html.push(`<pre><code${classAttr}>${escapeHtml(code.join("\n"))}</code></pre>`);
+      continue;
+    }
+
+    if (trimmed === "$$") {
+      flushTextBlocks();
+      const mathLines = [];
+      index += 1;
+      while (index < lines.length && lines[index].trim() !== "$$") {
+        mathLines.push(lines[index]);
+        index += 1;
+      }
+      html.push(renderMathDisplay(mathLines));
       continue;
     }
 
@@ -767,8 +723,32 @@ function articleMetaHtml(fm) {
   return `<p class="post-meta">${parts.join(" &bull; ")}</p>`;
 }
 
+function frontMatterList(value) {
+  if (Array.isArray(value)) return value;
+  return value ? [value] : [];
+}
+
+function articleKeywords(fm) {
+  const seen = new Set();
+  const values = [
+    ...frontMatterList(fm.keywords).map((value) => String(value || "").trim()),
+    ...frontMatterList(fm.tags).map((value) =>
+      String(value || "").trim().replace(/-/g, " "),
+    ),
+  ]
+    .filter(Boolean)
+    .filter((value) => {
+      const key = value.toLowerCase();
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+
+  return values.length ? values.join(", ") : undefined;
+}
+
 function postSummary(post) {
-  return post.fm.summary || post.fm.description || "";
+  return post.fm.summary || "";
 }
 
 function thumbnailForPost(post, className = "writing-card-thumb") {
@@ -814,7 +794,7 @@ function renderWritingCard(post, { compact = false } = {}) {
               <span class="writing-card-area">${escapeHtml(area.label)}</span>
               ${details ? `<span class="writing-card-details">${escapeHtml(details)}</span>` : ""}
             </span>
-            ${summary ? `<span class="writing-card-summary">${escapeHtml(summary)}</span>` : ""}
+            ${summary ? `<span class="writing-card-description">${escapeHtml(summary)}</span>` : ""}
           </span>
         </a>
       </article>`;
@@ -838,10 +818,8 @@ function renderAreaCard(area, posts) {
 }
 
 function renderSiteNav(currentPage = "blog") {
-  const links = NAV_ITEMS.filter((link) => isTabEnabled(link.page));
-
   return `<nav class="site-nav" aria-label="Primary">
-      ${links
+      ${NAV_ITEMS
         .map((link) => {
           const currentAttr =
             link.page === currentPage ? ' aria-current="page"' : "";
@@ -864,6 +842,7 @@ function pageShell({
   currentPage = "blog",
   jsonLd,
   mainHtml,
+  enableMath = false,
 }) {
   const image = absoluteUrl(ogImage || PROFILE_IMAGE);
   const jsonLdHtml = jsonLd
@@ -872,6 +851,19 @@ function pageShell({
         null,
         2,
       )}\n  </script>`
+    : "";
+  const mathHtml = enableMath
+    ? `
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\\\(', '\\\\)']],
+        displayMath: [['\\\\[', '\\\\]']],
+      },
+      svg: { fontCache: 'global' },
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>`
     : "";
 
   return `<!DOCTYPE html>
@@ -914,7 +906,7 @@ function pageShell({
     })();
   </script>
 
-  <link rel="stylesheet" type="text/css" href="/css/style.css">${jsonLdHtml}
+  <link rel="stylesheet" type="text/css" href="/css/style.css">${mathHtml}${jsonLdHtml}
 </head>
 <body class="${escapeAttribute(bodyClass)}">
   <h1 class="sr-only">${escapeHtml(ogTitle || title)}</h1>
@@ -979,9 +971,8 @@ function renderArticlePage(post) {
   const canonical = canonicalUrl(slug);
   const title = fm.title ? `${fm.title} - ${AUTHOR_NAME}` : `${AUTHOR_NAME} - Blog`;
   const image = absoluteUrl(fm.ogImage || fm.titleImage || PROFILE_IMAGE);
-  const keywords = Array.isArray(fm.keywords)
-    ? fm.keywords.join(", ")
-    : fm.keywords || undefined;
+  const keywords = articleKeywords(fm);
+  const summary = fm.summary || "Personal writing by Raffael Kaas";
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -1010,15 +1001,16 @@ function renderArticlePage(post) {
 
   return pageShell({
     title,
-    description: fm.description || "Personal writing by Raffael Kaas",
+    description: summary,
     canonical,
     ogTitle: fm.title || title,
-    ogDescription: fm.description || "Personal writing by Raffael Kaas",
+    ogDescription: summary,
     ogType: "article",
     ogImage: fm.ogImage || fm.titleImage || PROFILE_IMAGE,
     currentPage: "blog",
     jsonLd,
     mainHtml,
+    enableMath: post.hasMath,
   });
 }
 
@@ -1028,8 +1020,8 @@ function renderBlogIndex(posts) {
   const mainHtml = `<main class="blog-index-main">
     <div class="pb-container blog-index-shell">
       <section class="blog-index-hero">
-        <h1>All writing, newest first.</h1>
-        <p>A chronological archive of notes from all the different spaces: work, health, money, travel, life, and books.</p>
+        <h1>All articles, newest first.</h1>
+        <p>A chronological archive of notes from all the different topics on my website.</p>
       </section>
 
       <section class="featured-writing-section" aria-labelledby="featured-writing-title">
@@ -1110,7 +1102,7 @@ function renderHomepage(posts) {
       <div class="pb-container garden-hero-inner">
         <div class="garden-hero-copy">
           <h1>Raffael Kaas</h1>
-          <p>Welcome to my digital garden! I am writing about my thoughts and experiences of various topics that I want to share and remember. </p>
+          <p>This is my <a href="/blog/why-i-am-building-this-website/">personal website</a>. I write about what I am currently interested in, working on, and trying to remember.</p>
         </div>
         <img src="${PROFILE_IMAGE}" alt="Portrait of Raffael Kaas" class="garden-profile-photo">
       </div>
@@ -1147,7 +1139,7 @@ function renderHomepage(posts) {
       <div class="pb-container garden-section-inner about-grid">
         <h2 id="about-title" class="about-heading">About me</h2>
         <div class="about-copy">
-          <p>I am a software engineer living at Lake Constance and <a href="/work/">working</a> in the automotive industry. I have a Master of Engineering with a focus on autonomous systems. Over the past few years, I've worked on a wide range of complex software projects: building my own quadrocopter during university, launching autonomous shuttles in Rotterdam, and now developing series production software for e-mobility.</p>
+          <p>Hi, I am Raffael. I am a software engineer living at Lake Constance and <a href="/work/">working</a> in the automotive industry. I have a Master of Engineering with a focus on autonomous systems. Over the past few years, I've worked on a wide range of complex software projects: building my own quadrocopter during university, launching autonomous shuttles in Rotterdam, and now developing series production software for e-mobility.</p>
           <p>Outside of engineering, I'm usually in <a href="/health/">motion</a>: running, playing soccer, or lifting heavy weights. Besides sports, I have a strong interest in <a href="/money/">finance and investing</a>, and enjoy diving into <a href="/life/">new ideas</a> through <a href="/books/">books</a>, <a href="/travel/">travel</a>, or good conversations.</p>
           </div>
         ${renderNowTerminal()}
@@ -1336,9 +1328,9 @@ function updateStaticPageNavs() {
 
 function renderSitemap(posts) {
   const staticEntries = [
-    { page: "home", loc: `${SITE_URL}/`, lastmod: latestPostDate(posts) },
-    { page: "blog", loc: `${SITE_URL}/blog/`, lastmod: latestPostDate(posts) },
-  ].filter((entry) => isTabEnabled(entry.page));
+    { loc: `${SITE_URL}/`, lastmod: latestPostDate(posts) },
+    { loc: `${SITE_URL}/blog/`, lastmod: latestPostDate(posts) },
+  ];
   const areaEntries = AREAS
     .filter((area) => GENERATED_AREA_KEYS.has(area.key))
     .map((area) => ({
@@ -1346,12 +1338,10 @@ function renderSitemap(posts) {
       lastmod: latestPostDate(postsForArea(posts, area.key)) || latestPostDate(posts),
     }));
 
-  const postEntries = isTabEnabled("blog")
-    ? posts.map((post) => ({
+  const postEntries = posts.map((post) => ({
       loc: canonicalUrl(post.slug),
       lastmod: post.fm.lastmod || post.fm.date,
-    }))
-    : [];
+    }));
 
   const entries = [...staticEntries, ...areaEntries, ...SPECIAL_COLLECTION_PAGES, ...postEntries];
 
@@ -1377,18 +1367,6 @@ function latestPostDate(posts) {
     .at(-1);
 }
 
-function isPostBlacklisted(post) {
-  const identifiers = [
-    post.slug,
-    post.sourceFile,
-    slugFromFile(post.sourceFile),
-    blogUrl(post.slug),
-    canonicalUrl(post.slug),
-  ].map(normalizePostIdentifier);
-
-  return identifiers.some((identifier) => postBlacklist.has(identifier));
-}
-
 function loadPosts() {
   return readdirSync(BLOG_SOURCE_DIR)
     .filter((file) => file.endsWith(".md"))
@@ -1401,6 +1379,7 @@ function loadPosts() {
         slug,
         fm,
         body,
+        hasMath: containsMath(body),
         bodyHtml: renderMarkdown(body),
       };
     })
@@ -1429,18 +1408,17 @@ function removeStalePostPages(posts) {
 
 function main() {
   const posts = loadPosts();
-  const listedPosts = posts.filter((post) => !isPostBlacklisted(post));
   mkdirSync(BLOG_OUTPUT_DIR, { recursive: true });
-  removeStalePostPages(listedPosts);
-  listedPosts.forEach(writePost);
-  writeFileSync(join(BLOG_OUTPUT_DIR, "index.html"), renderBlogIndex(listedPosts), "utf8");
-  updateHomepage(listedPosts);
-  writeAreaPages(listedPosts);
+  removeStalePostPages(posts);
+  posts.forEach(writePost);
+  writeFileSync(join(BLOG_OUTPUT_DIR, "index.html"), renderBlogIndex(posts), "utf8");
+  updateHomepage(posts);
+  writeAreaPages(posts);
   updateStaticPageNavs();
-  writeFileSync("sitemap.xml", renderSitemap(listedPosts), "utf8");
+  writeFileSync("sitemap.xml", renderSitemap(posts), "utf8");
 
   console.log(
-    `Generated ${listedPosts.length} blog pages from ${posts.length} source posts, and sitemap.xml`,
+    `Generated ${posts.length} blog pages and sitemap.xml`,
   );
 }
 

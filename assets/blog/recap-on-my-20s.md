@@ -3,15 +3,16 @@ title: "Turning 30 - a personal recap and lessons from my 20s"
 slug: "recap-on-my-20s"
 date: "2026-03-11"
 lastmod: "2026-05-26"
-description: "A personal reflection on turning 30 and looking back at studies, moving, work, relationships, sports, reading, travel, and growth. The post collects ten lessons from my 20s that I want to carry into the next decade."
-keywords: ["turning 30","recap of my 20s","life lessons","personal reflection","relationships","dopamine", "goals", "personal growth", "habits"]
+summary: "A personal reflection on turning 30 and looking back. The post collects ten lessons from my 20s that I want to carry into the next decade."
+keywords: ["turning 30", "recap of my 20s", "personal reflection", "things I learned in my 20s", "relationships", "habits", "goals", "life after university"]
+area: "life"
 author: "Raffael Kaas"
 readingTime: 5
 titleImage: "/assets/blog/img/title/recap-on-my-20s-journey.webp"
 titleImageAlt: "Abstract illustration of a winding life journey with sport, studying, travel, friendship, reading, and reflection symbols."
 ogImage: "/assets/blog/img/title/recap-on-my-20s-journey.webp"
 canonical: "https://rkaas.de/blog/recap-on-my-20s/"
-tags: ["personal-growth","reflection"]
+tags: ["turning-30", "reflection", "relationships", "habits"]
 language: "en"
 draft: false
 ---

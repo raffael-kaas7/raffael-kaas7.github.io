@@ -1,0 +1,82 @@
+---
+title: "Practising the Power of Now"
+slug: "practising-the-power-of-now"
+date: "2026-07-03"
+summary: "Personal notes from one of the most famous books on mindfulness and spirituality."
+keywords: ["Practising the Power of Now", "The Power of Now", "Eckhart Tolle", "book notes", "presence", "mindfulness", "noticing thoughts"]
+area: "books"
+tags: ["book-notes", "mindfulness", "presence", "eckhart-tolle"]
+readingTime: 8
+titleImage: "/assets/blog/img/title/practising-the-power-of-now-covers.webp"
+titleImageAlt: "Front and back cover of the German practical edition of The Power of Now arranged side by side."
+ogImage: "/assets/blog/img/title/practising-the-power-of-now-covers.webp"
+language: "en"
+draft: false
+---
+
+Last year I read *The Power of Now* by Eckhart Tolle. I read it in German because I was a bit afraid of missing the key ideas in English. The book is about the mind, presence, and spiritual concepts, which are not my usual vocabulary as a software engineer. The German translation worked well for me.
+
+I read the book twice in the same year. For me, it became the perfect book for calm evenings on the couch or in bed before falling asleep. I could read a few pages and then directly try to notice what the book was pointing at. So far, it is one of the most inspiring books I have read. I had been interested in mindfulness and awareness before, and I had tried meditation plenty of times, but I don't think I really understood what I was looking for. Eckhart Tolle made something click for me. I would still be careful with big words, but it may have started something like a spiritual journey for me.
+
+When I wanted to continue with the topic, I bought *Practising the Power of Now (Leben im Jetzt. Das Praxisbuch)*, also by Eckhart Tolle. It is intended as a practical follow-up, but it also works as its own book. If I had to choose between the two, I would probably go with the original one. Nevertheless, the practical part also has its charm.
+
+Both books go through so many new ideas and concepts that they invited me to reflect and write a few notes.
+
+<div class="section-break"></div>
+
+
+## You are not your thoughts
+
+One of the central ideas is that we tend to identify ourselves with our thoughts. According to Tolle, this unconscious identification with the mind is part of what he calls the ego. Our mind is probably the most useful tool of our species. It can reflect, plan the future, and solve problems, but it should not be in use 100% of our lives, and we should not completely identify ourselves with this "tool".
+
+The problem is that the ego can never be in the present moment. It is in the past or in the future. It especially likes bad experiences from the past because they give it identity. According to the author, all psychological suffering comes from identifying ourselves with thoughts about the past or worries about the future. In Tolle's view, there is no suffering in the present moment.
+
+In the past, my mind was constantly running. Definitely not always in a constructive way, but quite often in a destructive way. The vision is to set the ego to idle mode and only activate my mind when I need it for planning my day, solving problems, learning, remembering, or reflecting. I am still far away from making that vision come true, but at least I have taken my first small steps in the right direction.
+
+<div class="section-break"></div>
+
+
+## The present moment is all we have
+
+I do not fully understand or fully agree with everything Tolle writes about "time". Some parts just feel too abstract for me. But one idea stayed with me strongly: life only happens in the present moment. All I ever really have is now. Not as a dogma, but as something to move closer to.
+
+According to Tolle, the ego tries to tell us that x or y needs to happen before life begins. But the ego will never be satisfied, because it cannot exist in the present moment, only in the past or in the future.
+
+I want to keep the difference between *life situation* and *life* active in my mind. The life situation can contain problems. Work can be stressful. Relationships can be complicated. Money, health, plans, responsibilities ... But in this framing, the present moment itself, life, does not contain any problem at all.
+
+<div class="section-break"></div>
+
+
+## Some other ideas
+
+As mentioned, the books guide you through so many new concepts. The following is just a short summary of what you could expect when reading them.
+
+**Acceptance:** This feels close to things I already know from the Stoics: accept what you cannot change. That does not mean giving up or approving everything. It just means that it makes no sense to negate the situation as it already is. Resisting what already exists creates additional suffering. When I am more present, I can notice thoughts and emotions without immediately identifying with them. From there, we are usually in a better position to act.
+
+**The pain body:** As far as I understand it, he means accumulated emotional pain that gets activated by certain triggers. A mostly normal situation can somehow trigger a much stronger emotional reaction than an outsider would expect. Often it is family or childhood related. The key is to feel and observe this pain body to resolve it.
+
+**Relationships:** The idea that stayed with me is to stay present and really listen. Do not already prepare the answer while the other person is still talking. Often the answer comes automatically (subconsciously). If we do not identify so strongly with our thoughts, we do not want to win or shine in the conversation as much.
+
+<div class="section-break"></div>
+
+
+## How I practise it
+
+Reading these things makes sense to me, and I want to try my best to bring them into daily life. I am far from perfect with these principles, but I like having them in mind.
+
+At the beginning, entering the present moment felt hard. I tried meditation for 30 minutes and often gave up or drifted away. That beginning was hard for me. At the time of writing this, I am not meditating for long periods regularly. I sometimes do 10-15 minutes when I am fully overstimulated. Instead, I try to return to the present moment several times throughout the day. I have a few small trigger points: waking up, going to bed, and some small reminders that I have set up to integrate it into my workday at the laptop.
+
+How do I enter the present moment? For me, this depends on the situation. For example, in the evenings I like to focus on the silence and observe the room I am in. Throughout the day, I first observe my own thoughts, create some distance, and then add awareness of the body, like my breath or fingertips.
+
+Busy days and emotionally loaded situations still make it harder to enter the present moment, because I strongly identify with my thoughts. It is hard, but especially in these situations it can be very helpful and can cool me down.
+
+<div class="section-break"></div>
+
+
+## Final thoughts
+
+For me, the books from Eckhart Tolle I have read so far were useful, probably because they touched a real problem I knew from my own life. My mind can be very active. It can jump from past experiences to future worries the whole day without me being in the present moment. I also tend to have the thought that I will be happy once some later condition is fulfilled. The funny part is that I remember thinking like this already as a teenager, and I am now way older than I thought my golden years would be back then.
+
+If someone does not experience that kind of mental noise, these ideas from Eckhart Tolle are probably less relevant for them. I think many people become interested in mindfulness and spirituality because there is some kind of pressure or inner demand for it.
+
+I do not know if I am just hyped about the topic these days or if it will stick with me for life. I think it is the latter. Let's see.

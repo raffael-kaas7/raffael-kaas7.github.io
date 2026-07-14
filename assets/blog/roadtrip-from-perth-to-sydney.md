@@ -1,17 +1,18 @@
 ---
-title: "Road trip from Perth to Sydney - one month and 6,700 km"
+title: "Road trip from Perth to Sydney - one month and 6,700 km (12/2025)"
 slug: "roadtrip-from-perth-to-sydney"
 date: "2026-02-05"
 lastmod: "2026-05-26"
-description: "A detailed one-month motorhome road trip recap from Perth to Sydney across Western Australia, the Nullarbor, South Australia, Victoria, and New South Wales. The post includes route notes, campsites, beaches, cities, wildlife, BBQ stops, and practical impressions from 6,700 km on the road."
-keywords: ["roadtrip","australia","motorhome","campervan", "perth","sydney", "melbourne", "great ocean road", "western australia"]
+summary: "A detailed one-month motorhome road trip recap from Perth to Sydney across Western Australia, the Nullarbor, South Australia, Victoria, and New South Wales."
+keywords: ["Perth to Sydney road trip", "Australia roadtrip", "motorhome Australia", "campervan Australia", "Nullarbor", "Great Ocean Road", "Western Australia", "Melbourne to Sydney"]
+area: "travel"
 author: "Raffael Kaas"
 readingTime: 15
-titleImage: "/assets/blog/img/title/roadtrip-from-perth-to-sydney-highlights.webp"
-titleImageAlt: "Illustrated southern Australia map with a dotted road trip route from Perth to Sydney, showing beaches, wildlife, a camper van, barbecue, Adelaide, the Blue Mountains, and Sydney landmarks."
-ogImage: "/assets/blog/img/title/roadtrip-from-perth-to-sydney-highlights.webp"
+titleImage: "/assets/blog/img/roadtrip/sydney_opera.webp"
+titleImageAlt: "Sydney Opera House viewed from the harbour."
+ogImage: "/assets/blog/img/roadtrip/sydney_opera.webp"
 canonical: "https://rkaas.de/blog/roadtrip-from-perth-to-sydney/"
-tags: ["roadtrip","australia","perth-sydney"]
+tags: ["roadtrip", "australia", "campervan", "perth-to-sydney", "travel-notes"]
 language: "en"
 draft: false
 ---
@@ -24,7 +25,7 @@ Since I created this website a few months ago, I wanted to write down this trip 
 
 In December 2025, we drove from Perth to Sydney in a motorhome. Western Australia, the Nullarbor, South Australia, Victoria, and New South Wales: beaches that look like paintings, exciting wildlife, weather in all seasons, lots of BBQ stations, big cities, and very friendly people. Here is the full recap:
 
-<div class="img-wide"> <figure> <img src="/assets/blog/img/roadtrip/sydney_opera.webp" alt="Sydney Opera House" > <figcaption>Sydney Opera House</figcaption> </figure> </div>
+<div class="img-wide"> <figure> <img src="/assets/blog/img/title/roadtrip-from-perth-to-sydney-highlights.webp" alt="Illustrated southern Australia road trip map from Perth to Sydney" loading="lazy" decoding="async"> <figcaption>Our route from Perth to Sydney</figcaption> </figure> </div>
 
 
 <div class="section-break"></div>

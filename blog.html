@@ -185,6 +185,28 @@
       } catch(e) { return pathOrUrl; }
     }
 
+    function frontMatterList(value) {
+      if (Array.isArray(value)) return value;
+      return value ? [value] : [];
+    }
+
+    function articleKeywords(fm) {
+      const seen = new Set();
+      const values = [
+        ...frontMatterList(fm.keywords).map(value => String(value || '').trim()),
+        ...frontMatterList(fm.tags).map(value => String(value || '').trim().replace(/-/g, ' '))
+      ]
+        .filter(Boolean)
+        .filter(value => {
+          const key = value.toLowerCase();
+          if (seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        });
+
+      return values.length ? values.join(', ') : undefined;
+    }
+
     async function loadBlogPost() {
       const blogContainer = document.querySelector('#blog');
       const blogDir = '/assets/blog/';
@@ -249,6 +271,7 @@
             meta.textContent = parts.join(' • ');
             postDiv.appendChild(meta);
           }
+
         }
 
         postDiv.insertAdjacentHTML('beforeend', marked.parse(body));
@@ -282,16 +305,17 @@
 
         if (fm) {
           const title = fm.title ? `${fm.title} – Raffael Kaas` : document.title;
+          const summary = fm.summary || '';
           if (fm.title) document.title = title;
 
-          setOrCreateMeta('description', fm.description || '');
+          setOrCreateMeta('description', summary);
           setOrCreateMeta('author', fm.author || 'Raffael Kaas');
 
           const canonical = fm.canonical || `${window.location.origin}/blog/${fm.slug || post}/`;
           setOrCreateLink('canonical', canonical);
 
           setOrCreateMeta('og:title', fm.title || '', 'property');
-          setOrCreateMeta('og:description', fm.description || '', 'property');
+          setOrCreateMeta('og:description', summary, 'property');
           setOrCreateMeta('og:type', 'article', 'property');
           setOrCreateMeta('og:url', canonical, 'property');
           const ogImgAbs = absoluteUrl(fm.ogImage || '/assets/img/me-tshirt.png');
@@ -299,7 +323,7 @@
 
           setOrCreateMeta('twitter:card', 'summary_large_image');
           setOrCreateMeta('twitter:title', fm.title || 'Raffael Kaas – Software Engineer');
-          setOrCreateMeta('twitter:description', fm.description || '');
+          setOrCreateMeta('twitter:description', summary);
           setOrCreateMeta('twitter:image', ogImgAbs);
 
           const jsonLd = {
@@ -314,7 +338,7 @@
             },
             image: ogImgAbs,
             mainEntityOfPage: canonical,
-            keywords: Array.isArray(fm.keywords) ? fm.keywords.join(', ') : undefined
+            keywords: articleKeywords(fm)
           };
           const oldLd = document.querySelector('script[data-dynamic-jsonld="article"]');
           if (oldLd) oldLd.remove();

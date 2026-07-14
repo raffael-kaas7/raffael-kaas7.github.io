@@ -3,15 +3,16 @@ title: "My first 5 years in the stock market - a personal reflection"
 slug: "5-years-in-the-stock-market"
 date: "2025-08-13"
 lastmod: "2026-05-26"
-description: "A personal reflection on my first five years of investing after university. The post covers how I moved from broad ETFs to a more personal mix of dividends, individual stocks, gold, Bitcoin, books, mistakes, and the idea of investing for fincancial independance."
-keywords: ["first 5 years investing","stock market lessons","investing mistakes","ETFs vs single stocks","dividend investing","books about investing"]
+summary: "Five years of investing, learning, changing strategies, and identifying what kind of portfolio fits me."
+keywords: ["first 5 years investing", "stock market lessons", "investing mistakes", "ETFs vs single stocks", "dividend investing", "investment portfolio", "buy and hold investing", "financial independence"]
+area: "money"
 author: "Raffael Kaas"
 readingTime: 5
 titleImage: "/assets/blog/img/title/5-years-in-the-stock-market-portfolio.webp"
 titleImageAlt: "Stylized illustration of an investing desk with books, a savings plan, ETF and stock cards, charts, quarterly reports, gold, Bitcoin, and dividend symbols."
 ogImage: "/assets/blog/img/title/5-years-in-the-stock-market-portfolio.webp"
 canonical: "https://rkaas.de/blog/5-years-in-the-stock-market/"
-tags: ["investing","personal-finance"]
+tags: ["investing", "personal-finance", "portfolio", "dividend-investing"]
 language: "en"
 draft: false
 ---
@@ -28,7 +29,6 @@ I wouldn't call myself a member of the FIRE movement (Frugalismus in Germany), b
     </blockquote>
 </center>
 <div class="section-break"></div>
-
 For me, building wealth has never been about buying expensive things later. It’s about having options. Freedom. The ability to decide how I want to spend my time and energy in the future.
 Building wealth based on multiple assets is a solid foundation for a free, self-determined life.  
 <div class="section-break"></div>
@@ -75,12 +75,20 @@ Beyond these foundation books, I'm glad I also read others that broadened my hor
 
 <div class="section-break"></div>
 
-<center>
-    <figure>
-        <img src="/assets/book_covers/ueber_die_psychologie_des_geldes_front.webp" alt="The Psychology of Money book cover" width="42%" />
-        <figcaption>One of the books that shaped my investing mindset.</figcaption>
-    </figure>
-</center>
+<div class="img-grid img-grid--three-row">
+  <figure>
+    <img src="/assets/book_covers/der_grosse_kostolany_front.webp" alt="Der große Kostolany book cover" loading="lazy" decoding="async">
+    <figcaption>Der große Kostolany</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/book_covers/die_zuerich_axiome_front.webp" alt="Die Zürich Axiome book cover" loading="lazy" decoding="async">
+    <figcaption>Die Zürich Axiome</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/book_covers/ueber_die_psychologie_des_geldes_front.webp" alt="The Psychology of Money book cover" loading="lazy" decoding="async">
+    <figcaption>The Psychology of Money</figcaption>
+  </figure>
+</div>
 
 <div class="section-break"></div>
 
@@ -90,11 +98,5 @@ Beyond these foundation books, I'm glad I also read others that broadened my hor
 Starting to invest at 24 turned out to be one of the best decisions I’ve made. I’m also glad I navigated the process myself instead of relying on an investment advisor or expensive financial products.
 
 It hasn't been a straight path. I've switched strategies, made mistakes, and spent months doubting certain decisions. Over time, I learned what fits my personality and my goals. For me, investing has become more than just a way to grow money. It's about freedom, patience, and understanding what really matters.
-
-<div class="section-break"></div>
-
-### Further Reading
-
-A macro view on why starting matters more than timing is still something I may rewrite into a calmer note later.
 
 <div class="section-break"></div>
