@@ -5,7 +5,7 @@ date: "2025-11-26"
 lastmod: "2026-05-26"
 summary: "A few regex patterns that are easy to remember and useful for searching in huge log files."
 keywords: ["regex for log files", "search log files", "grep regex", "regular expressions", "log search patterns", "word boundary regex", "non-zero error regex"]
-area: "work"
+area: "engineering"
 author: "Raffael Kaas"
 readingTime: 7
 titleImage: "/assets/blog/img/title/regex-for-searching-in-logfiles-terminal.webp"

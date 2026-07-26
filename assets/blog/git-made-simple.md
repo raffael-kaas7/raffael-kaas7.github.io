@@ -5,7 +5,7 @@ date: "2026-03-24"
 lastmod: "2026-05-26"
 summary: "A small and very easy Git workflow for people who ended up using Git while working with agentic AI."
 keywords: ["Git workflow for beginners", "Git CLI", "version control", "git commit amend", "git squash commits", "git rebase", "clean Git history", "AI coding workflow"]
-area: "work"
+area: "engineering"
 author: "Raffael Kaas"
 readingTime: 6
 titleImage: "/assets/blog/img/title/git-made-simple-workflow.webp"

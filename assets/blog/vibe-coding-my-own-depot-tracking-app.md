@@ -5,7 +5,7 @@ date: "2025-09-04"
 lastmod: "2026-05-26"
 summary: "My first real vibe coding project for a portfolio tracking app I use regularly. The approach and experiences might become outdated as the tech improves so fast."
 keywords: ["agentic AI", "vibe coding", "build app with AI", "dividend tracking app", "portfolio analysis app", "Comdirect API", "Flask Dash portfolio", "voice prompting"]
-area: "work"
+area: "engineering"
 author: "Raffael Kaas"
 readingTime: 8
 titleImage: "/assets/blog/img/title/vibe-coding-my-own-depot-tracking-app.webp"

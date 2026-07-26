@@ -38,9 +38,9 @@ const STATIC_NAV_PAGES = [
 ];
 const AREAS = [
   {
-    key: "work",
-    label: "Work",
-    href: "/work/",
+    key: "engineering",
+    label: "Engineering",
+    href: "/engineering/",
     marker: "Software, Experience, Projects",
     description:
       "Personal experiences with software trends and private projects.",
@@ -339,6 +339,7 @@ function areaCanonicalUrl(areaKey) {
 
 function normalizeAreaKey(value) {
   const key = String(value || "").trim().toLowerCase();
+  if (key === "work") return "engineering";
   return AREA_BY_KEY.has(key) ? key : "";
 }
 
@@ -373,7 +374,7 @@ function inferArea(fm) {
     /\bai\b/.test(haystack) ||
     haystack.includes("architecture")
   ) {
-    return "work";
+    return "engineering";
   }
 
   if (
@@ -1139,7 +1140,7 @@ function renderHomepage(posts) {
       <div class="pb-container garden-section-inner about-grid">
         <h2 id="about-title" class="about-heading">About me</h2>
         <div class="about-copy">
-          <p>Hi, I am Raffael. I am a software engineer living at Lake Constance and <a href="/work/">working</a> in the automotive industry. I have a Master of Engineering with a focus on autonomous systems. Over the past few years, I've worked on a wide range of complex software projects: building my own quadrocopter during university, launching autonomous shuttles in Rotterdam, and now developing series production software for e-mobility.</p>
+          <p>Hi, I am Raffael. I am a <a href="/engineering/">software engineer</a> living at Lake Constance and working in the automotive industry. I have a Master of Engineering with a focus on autonomous systems. Over the past few years, I've worked on a wide range of complex software projects: building my own quadrocopter during university, launching autonomous shuttles in Rotterdam, and now developing series production software for e-mobility.</p>
           <p>Outside of engineering, I'm usually in <a href="/health/">motion</a>: running, playing soccer, or lifting heavy weights. Besides sports, I have a strong interest in <a href="/money/">finance and investing</a>, and enjoy diving into <a href="/life/">new ideas</a> through <a href="/books/">books</a>, <a href="/travel/">travel</a>, or good conversations.</p>
           </div>
         ${renderNowTerminal()}

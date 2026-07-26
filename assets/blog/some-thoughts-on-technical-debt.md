@@ -5,7 +5,7 @@ date: "2026-06-11"
 lastmod: "2026-06-11"
 summary: "A personal view on technical debt and its symptoms in software engineering."
 keywords: ["technical debt", "software engineering", "architecture debt", "code quality", "delivery risk", "legacy code", "refactoring", "unplanned work"]
-area: "work"
+area: "engineering"
 author: "Raffael Kaas"
 readingTime: 6
 titleImage: "/assets/blog/img/title/some-thoughts-on-technical-debt.webp"

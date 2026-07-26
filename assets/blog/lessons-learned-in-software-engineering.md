@@ -5,7 +5,7 @@ date: "2025-07-30"
 lastmod: "2026-05-26"
 summary: "A quick recap of lessons learned in software engineering after five years in my first full-time job."
 keywords: ["software engineering lessons", "ASPICE V-Model", "systems engineering", "team alignment", "code quality", "process vs speed", "agile tools", "automotive software"]
-area: "work"
+area: "engineering"
 author: "Raffael Kaas"
 readingTime: 6
 titleImage: "/assets/blog/img/title/lessons-learned-in-software-engineering.webp"

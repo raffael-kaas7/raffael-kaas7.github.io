@@ -53,7 +53,7 @@
   --garden-surface: #e6e9e8;
   --garden-surface-soft: #d7dddc;
   --garden-ink-soft: #29465a;
-  --area-work: #315f8a;
+  --area-engineering: #315f8a;
   --area-health: #4b7b61;
   --area-money: #9a7432;
   --area-travel: #2f7c83;
@@ -100,7 +100,7 @@
   --garden-surface: #242523;
   --garden-surface-soft: #1d211f;
   --garden-ink-soft: rgba(255, 255, 255, 0.74);
-  --area-work: #8db7dc;
+  --area-engineering: #8db7dc;
   --area-health: #93c7a5;
   --area-money: #d7b66e;
   --area-travel: #80c8cc;
@@ -2469,9 +2469,9 @@ body.travel-page {
   margin: 0;
 }
 
-.is-work,
-.area-work {
-  --area-color: var(--area-work);
+.is-engineering,
+.area-engineering {
+  --area-color: var(--area-engineering);
 }
 
 .is-health,

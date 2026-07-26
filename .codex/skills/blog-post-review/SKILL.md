@@ -78,7 +78,7 @@ Do not change `slug`, `date`, or `draft` unless the user asked for it or the mis
 
 Treat `description` as the meta and social preview description. Keep it concrete and useful, not keyword-stuffed. Treat `summary` as card/list copy; it can be shorter and more personal.
 
-Use `area` values that match the generator: `work`, `health`, `money`, `travel`, `life`, or `books`.
+Use `area` values that match the generator: `engineering`, `health`, `money`, `travel`, `life`, or `books`.
 
 Propose optional SEO tags and `keywords` separately. Add them to the file only when the current metadata is clearly broken or the user asks for direct SEO updates.
 
