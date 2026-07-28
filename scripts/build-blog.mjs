@@ -13,6 +13,8 @@ const BLOG_SOURCE_DIR = "assets/blog";
 const BLOG_OUTPUT_DIR = "blog";
 const AUTHOR_NAME = "Raffael Kaas";
 const PROFILE_IMAGE = "/assets/img/me-tshirt.png";
+const PROFILE_AVATAR_IMAGE = "/assets/img/me-avatar-120.webp";
+const PROFILE_HERO_IMAGE = "/assets/img/me-tshirt-420.webp";
 const NOW_FILE_PATH = "now.txt";
 const HOME_POST_LIMIT = 6;
 const BOOKS_LASTMOD = "2026-06-15";
@@ -844,8 +846,10 @@ function pageShell({
   jsonLd,
   mainHtml,
   enableMath = false,
+  headExtra = "",
 }) {
   const image = absoluteUrl(ogImage || PROFILE_IMAGE);
+  const headExtraHtml = headExtra ? `\n${headExtra}` : "";
   const jsonLdHtml = jsonLd
     ? `\n  <script type="application/ld+json">\n${JSON.stringify(
         jsonLd,
@@ -879,7 +883,7 @@ function pageShell({
   <meta name="description" content="${escapeAttribute(description)}">
   <meta name="author" content="${AUTHOR_NAME}">
   <link rel="canonical" href="${escapeAttribute(canonical)}">
-  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/png" href="/favicon.png">${headExtraHtml}
 
   <meta property="og:title" content="${escapeAttribute(ogTitle || title)}">
   <meta property="og:description" content="${escapeAttribute(
@@ -914,7 +918,7 @@ function pageShell({
 
   <header class="site-header" id="top">
     <a class="site-brand" href="/" aria-label="Raffael Kaas homepage">
-      <img src="${PROFILE_IMAGE}" alt="" class="site-brand-avatar">
+      <img src="${PROFILE_AVATAR_IMAGE}" alt="" class="site-brand-avatar" width="40" height="40" decoding="async">
       <span class="site-brand-copy">
         <span class="site-brand-name">Raffael Kaas</span>
       </span>
@@ -1105,7 +1109,7 @@ function renderHomepage(posts) {
           <h1>Raffael Kaas</h1>
           <p>This is my <a href="/blog/why-i-am-building-this-website/">personal website</a>. I write about what I am currently interested in, working on, and trying to remember.</p>
         </div>
-        <img src="${PROFILE_IMAGE}" alt="Portrait of Raffael Kaas" class="garden-profile-photo">
+        <img src="${PROFILE_HERO_IMAGE}" alt="Portrait of Raffael Kaas" class="garden-profile-photo" width="420" height="420" fetchpriority="high" decoding="async">
       </div>
     </section>
 
@@ -1157,6 +1161,7 @@ function renderHomepage(posts) {
     ogDescription: "Software engineering, writing, books, travel, and personal notes by Raffael Kaas.",
     ogType: "website",
     ogImage: PROFILE_IMAGE,
+    headExtra: `  <link rel="preload" as="image" href="${PROFILE_HERO_IMAGE}" type="image/webp" fetchpriority="high">`,
     twitterCard: "summary",
     currentPage: "home",
     jsonLd: {
@@ -1314,6 +1319,9 @@ function updateStaticPageNavs() {
 
     const html = readFileSync(path, "utf8");
     const navRegex = /<nav class="site-nav" aria-label="Primary">\n[\s\S]*?\n\s*<\/nav>/;
+    const avatarRegex =
+      /<img src="\/?assets\/img\/me-tshirt\.png" alt="" class="site-brand-avatar">/g;
+    const avatarHtml = `<img src="${PROFILE_AVATAR_IMAGE}" alt="" class="site-brand-avatar" width="40" height="40" decoding="async">`;
 
     if (!navRegex.test(html)) {
       throw new Error(`Could not find site nav in ${path}`);
@@ -1321,7 +1329,7 @@ function updateStaticPageNavs() {
 
     writeFileSync(
       path,
-      html.replace(navRegex, renderSiteNav(page)),
+      html.replace(avatarRegex, avatarHtml).replace(navRegex, renderSiteNav(page)),
       "utf8",
     );
   });

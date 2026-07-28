@@ -2,11 +2,11 @@
 title: "Paying myself first for six years"
 slug: "pay-yourself-first"
 date: "2026-06-27"
-summary: "Looking back on six years of my most important money habit: investing with a monthly standing order."
+summary: "Looking back on six years of one of my most useful money habits: investing with a monthly standing order."
 keywords: ["pay yourself first", "saving automation", "monthly savings plan", "personal finance habit", "standing order saving", "money habits"]
 area: "money"
 tags: ["personal-finance", "saving", "automation", "money-habits"]
-readingTime: 7
+readingTime: 5
 titleImage: "/assets/blog/img/title/pay-yourself-first-72-transfers.webp"
 titleImageAlt: "Illustration of 72 monthly transfers into an investment plan with dividends being reinvested."
 ogImage: "/assets/blog/img/title/pay-yourself-first-72-transfers.webp"
@@ -14,11 +14,11 @@ language: "en"
 draft: false
 ---
 
-On 1 July 2020, directly after starting my first full-time job, I set up a monthly standing order from my main bank account to my brokerage account. That is basically what "pay yourself first" means, and you can read it everywhere across the internet and in finance books. Instead of saving what remains at the end of the month, a fixed amount moves away automatically, and I can spend for life what remains after paying myself first. It is a bit like paying my rent, but the account belongs to my future self.
+Six years ago, on 1 July 2020, right after starting my first full-time job, I set up a monthly standing order from my main bank account to my brokerage account. That is basically what "pay yourself first" means, and it shows up everywhere across the internet and in finance books. Instead of saving what remains at the end of the month, a fixed amount moves away first, automatically, and I can live on what remains after paying myself. It is a bit like paying my rent, but the account belongs to my future self.
 
-I was lucky that I got decent financial advice early. My flatmate at that time was very into finance and inspired me. Around that time I binge-watched Finanzfluss and Finanztip, read about ETFs, and started with a simple automated order plan almost immediately.
+I was lucky that I got decent financial advice early. My flatmate back then was very into finance and inspired me. Around that time I binge-watched Finanzfluss and Finanztip, read about ETFs, and started with a simple automated savings plan almost immediately.
 
-Looking back, this was a very good time to set up this automated process. For the first time in my life, I had more income than I needed for normal life. Before I was able to unintentionally increase my lifestyle costs, I did the necessary work to examine what was worth paying for and what really benefited my life and well-being. The remaining part went into the stock market, fully automated. I was living in a shared flat in Friedrichshafen, Germany. Rent is usually one of the biggest fixed monthly expenses, but because my rent was still student-style, I was able to start with a high savings rate from the beginning.
+Looking back, this was a very good time to set up this automated process. For the first time in my life, I had more income than I needed for normal life. Before my lifestyle costs could creep up, I spent some time looking at what was worth paying for and what really benefited my life and well-being. The rest went into the stock market, fully automated. I was living in a shared flat in Friedrichshafen, Germany. Rent is usually one of the biggest fixed monthly expenses, but because my rent was still student-style, I was able to start with a high savings rate from the beginning.
 
 <div class="section-break"></div>
 
@@ -28,13 +28,13 @@ The standing order has been running since July 2020. Every month, money leaves m
 
 During these six years, I changed the plan many times. I switched between funds and individual stocks. I adjusted the allocation. I learned more, changed my mind, and probably overthought many things. I already wrote about that investing path in [my first 5 years in the stock market](/blog/5-years-in-the-stock-market/).
 
-What I have not done: I never stopped paying myself first. I reduced the amount for a few months when life got more expensive, but most adjustments went in the other direction. In general, I tried to increase the standing order when my salary increased. It was not a clean straight line upward, but the principle behind it stayed. For me, automation is the important part. Some frugal people might be able to save the same amount by manually shifting it to their brokerage account at the end of the month, but even for them it costs mental capacity to actually do the work.
+But what I have not done: I never stopped paying myself first. I reduced the amount for a few months when life got more expensive, but most adjustments went in the other direction. In general, I tried to increase the standing order when my salary increased. It was not a clean straight line upward, but the principle behind it stayed.
 
-From July 2020 to the day I started writing this, that means 6 years in total: 72 monthly orders in a row. Even starting from zero, that is an extremely powerful number. The thought experiment I like: take an amount I can afford to save every month and multiply it by 72. I did all of this in my twenties. A moment to be proud of.
+For me, automation is the important part. Some frugal people like me might be able to save the same amount by manually shifting it to their brokerage account at the end of the month, but even then it costs mental capacity to actually do it.
 
-If we take average stock market returns of 7% per year, the portfolio built from these six years of saving would now have an expected monthly return close to half of my monthly savings amount.
+From July 2020 to the day I started writing this, the standing order has been running for six years: 72 monthly transfers in a row. Even starting from zero, that number feels powerful to me. Right now, think about an amount you could save every month and multiply it by 72. Crazy, isn't it? I did all of this in my twenties, and it is something I am really proud of.
 
-That is only a theoretical average. Markets do not move smoothly, and they definitely do not hand out the same amount every month. But as a mental model, I find it motivating: after around 10 years of the same habit, a 7% average return would roughly match the same amount as my own saving. I had luck. In my first years in the stock market, returns were even much higher.
+If I use a rough 7% annual return assumption, the portfolio built from these six years of saving would now have an expected average monthly return close to half of my monthly savings amount. Of course, this is only a theoretical average. Markets do not move smoothly. But as a mental model, I find it motivating: after around 10 years of the same habit, a 7% average return would roughly match my own monthly saving.
 
 <div class="section-break"></div>
 
@@ -42,19 +42,19 @@ That is only a theoretical average. Markets do not move smoothly, and they defin
 
 The more concrete part for me is my dividend strategy. After doing this for several years, I was able to set up a second automated savings plan. Thanks to my [depot tracker app](/blog/vibe-coding-my-own-depot-tracking-app/), I know the average amount of dividends I receive each month. I used that information to create another savings plan that reinvests those dividends automatically because I do not need that cash flow. From time to time, I can increase the amount or change the companies and funds I want to buy.
 
-The number I like tracking in this context is average dividends per month compared to my average monthly expenses:
+The number I like tracking in this context is average net dividends per month compared to my average monthly expenses:
 
 <div class="section-break"></div>
 
 $$
 \text{dividend-to-expense ratio}
-= \frac{\text{average monthly dividends}}{\text{average monthly expenses}}
+= \frac{\text{average monthly net dividends}}{\text{average monthly expenses}}
 \cdot 100\%
 $$
 
 <div class="section-break"></div>
 
-For me, this is now getting close to 10%. That is still far away from covering life, but it is a reasonable amount. The numerator is slowly increasing automatically. I just need to take care of the denominator and think twice before increasing it. I definitely have lifestyle inflation as well, but at least I am aware of it and did the reasoning.
+For me, this is now getting close to 10%. That is still far away from covering my life, but it is a meaningful amount. The numerator is slowly increasing automatically. I just need to watch the denominator and think twice before increasing it. I definitely have lifestyle inflation as well, but at least I am aware of it and think it through.
 
 <div class="section-break"></div>
 
@@ -66,8 +66,8 @@ This habit worked well for me because my context made it possible: stable income
 
 What I want to keep:
 
-- Saving plan always stays automated
+- Savings plan always stays automated
 - Increase the amount when income increases. Allow (temporary) reductions when life needs flexibility.
-- Track and increase average dividends / expense ratio.
+- Track and increase the dividend-to-expense ratio.
 - Do not let saving reduce things that are actually worth spending money on.
-- My personal minimum target is 10% of gross income, although I do not yet know whether this will be possible in every life phase, especially with family.
+- My personal minimum savings plan is 10% of gross income, although I do not yet know whether this will be possible in every life phase, especially with family.
