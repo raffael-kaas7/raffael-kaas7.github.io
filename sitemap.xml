@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rkaas.de/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-31</lastmod>
   </url>
   <url>
     <loc>https://rkaas.de/blog/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-31</lastmod>
   </url>
   <url>
     <loc>https://rkaas.de/engineering/</loc>
@@ -18,7 +18,7 @@
   </url>
   <url>
     <loc>https://rkaas.de/money/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
   </url>
   <url>
     <loc>https://rkaas.de/travel/</loc>
@@ -39,6 +39,10 @@
   <url>
     <loc>https://rkaas.de/travel/map/</loc>
     <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://rkaas.de/blog/why-i-am-looking-at-duolingo-as-an-investor/</loc>
+    <lastmod>2026-07-31</lastmod>
   </url>
   <url>
     <loc>https://rkaas.de/blog/usa-west-coast-travel-notes-2024/</loc>
