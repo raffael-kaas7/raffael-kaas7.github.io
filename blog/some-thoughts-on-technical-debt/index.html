@@ -10,13 +10,22 @@
   <meta name="description" content="A personal view on technical debt and its symptoms in software engineering.">
   <meta name="author" content="Raffael Kaas">
   <link rel="canonical" href="https://rkaas.de/blog/some-thoughts-on-technical-debt/">
-  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+  <meta property="article:published_time" content="2026-06-11">
+  <meta property="article:modified_time" content="2026-06-11">
+  <meta property="article:author" content="Raffael Kaas">
+  <meta property="article:section" content="Engineering">
+  <meta property="article:tag" content="software-engineering">
+  <meta property="article:tag" content="technical-debt">
+  <meta property="article:tag" content="code-quality">
+  <meta property="article:tag" content="delivery-risk">
 
   <meta property="og:title" content="A few thoughts on technical debt in Software Engineering">
   <meta property="og:description" content="A personal view on technical debt and its symptoms in software engineering.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://rkaas.de/blog/some-thoughts-on-technical-debt/">
   <meta property="og:image" content="https://rkaas.de/assets/blog/img/title/some-thoughts-on-technical-debt.webp">
+  <meta property="og:site_name" content="Raffael Kaas">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="A few thoughts on technical debt in Software Engineering">
@@ -38,24 +47,40 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "headline": "A few thoughts on technical debt in Software Engineering",
+  "description": "A personal view on technical debt and its symptoms in software engineering.",
+  "url": "https://rkaas.de/blog/some-thoughts-on-technical-debt/",
   "datePublished": "2026-06-11",
   "dateModified": "2026-06-11",
   "author": {
     "@type": "Person",
-    "name": "Raffael Kaas"
+    "name": "Raffael Kaas",
+    "url": "https://rkaas.de"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Raffael Kaas",
+    "url": "https://rkaas.de"
   },
   "image": "https://rkaas.de/assets/blog/img/title/some-thoughts-on-technical-debt.webp",
-  "mainEntityOfPage": "https://rkaas.de/blog/some-thoughts-on-technical-debt/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://rkaas.de/blog/some-thoughts-on-technical-debt/"
+  },
+  "articleSection": "Engineering",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "Raffael Kaas - Blog",
+    "url": "https://rkaas.de/blog/"
+  },
   "keywords": "technical debt, software engineering, architecture debt, code quality, delivery risk, legacy code, refactoring, unplanned work"
 }
   </script>
 </head>
 <body class="blog-page">
-  <h1 class="sr-only">A few thoughts on technical debt in Software Engineering</h1>
-
-  <header class="site-header" id="top">
+  <header class="site-header" id="top" data-nosnippet>
     <a class="site-brand" href="/" aria-label="Raffael Kaas homepage">
       <img src="/assets/img/me-avatar-120.webp" alt="" class="site-brand-avatar" width="40" height="40" decoding="async">
       <span class="site-brand-copy">
@@ -79,6 +104,7 @@
         <img class="blog-title-image" src="/assets/blog/img/title/some-thoughts-on-technical-debt.webp" alt="Stylized scrum planning board with one team planning discussion, blocked technical debt work, an empty Done column, and a delayed release plan." decoding="async" fetchpriority="high">
         <h1>A few thoughts on technical debt in Software Engineering</h1>
         <p class="post-meta">Jun 11, 2026 &bull; 6 min read</p>
+        <p class="post-summary">A personal view on technical debt and its symptoms in software engineering.</p>
         <p>Technical debt is a term almost everyone in software engineering has heard before. Nevertheless, I think it is often not treated as seriously as it should be. People know about it and talk about it, but often in a very vague way.</p>
 <p>Choosing quick solutions to meet deadlines, adding temporary workarounds that stay forever, and building small architectural balconies are part of daily life for almost every developer and project manager.</p>
 <p>The cost is often not directly visible but accumulates over the years, just like a stock savings plan, but for the worse. Technical debt should be visible and, if needed, we should pay it down like a mortgage.</p>
@@ -111,7 +137,7 @@
     </div>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" data-nosnippet>
     <div class="pb-container site-footer-inner">
       <div class="footer-links" aria-label="Contact links">
         <a class="footer-link" href="mailto:mail@rkaas.de?subject=Hello%20from%20your%20website">text me: mail@rkaas.de</a>

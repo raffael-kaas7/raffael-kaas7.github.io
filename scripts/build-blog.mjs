@@ -32,7 +32,6 @@ const NAV_ITEMS = [
 ];
 const STATIC_NAV_PAGES = [
   { path: "index.html", page: "home" },
-  { path: "blog.html", page: "blog" },
   { path: "books/index.html", page: "books" },
   { path: "books/bookshelf/index.html", page: "books" },
   { path: "travel/index.html", page: "travel" },
@@ -834,6 +833,7 @@ function renderSiteNav(currentPage = "blog") {
 
 function pageShell({
   bodyClass = "blog-page",
+  lang = "en",
   title,
   description,
   canonical,
@@ -872,7 +872,7 @@ function pageShell({
     : "";
 
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="${escapeAttribute(lang)}">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -883,7 +883,7 @@ function pageShell({
   <meta name="description" content="${escapeAttribute(description)}">
   <meta name="author" content="${AUTHOR_NAME}">
   <link rel="canonical" href="${escapeAttribute(canonical)}">
-  <link rel="icon" type="image/png" href="/favicon.png">${headExtraHtml}
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">${headExtraHtml}
 
   <meta property="og:title" content="${escapeAttribute(ogTitle || title)}">
   <meta property="og:description" content="${escapeAttribute(
@@ -892,6 +892,7 @@ function pageShell({
   <meta property="og:type" content="${escapeAttribute(ogType)}">
   <meta property="og:url" content="${escapeAttribute(canonical)}">
   <meta property="og:image" content="${escapeAttribute(image)}">
+  <meta property="og:site_name" content="${escapeAttribute(AUTHOR_NAME)}">
 
   <meta name="twitter:card" content="${escapeAttribute(twitterCard)}">
   <meta name="twitter:title" content="${escapeAttribute(ogTitle || title)}">
@@ -914,9 +915,7 @@ function pageShell({
   <link rel="stylesheet" type="text/css" href="/css/style.css">${mathHtml}${jsonLdHtml}
 </head>
 <body class="${escapeAttribute(bodyClass)}">
-  <h1 class="sr-only">${escapeHtml(ogTitle || title)}</h1>
-
-  <header class="site-header" id="top">
+  <header class="site-header" id="top" data-nosnippet>
     <a class="site-brand" href="/" aria-label="Raffael Kaas homepage">
       <img src="${PROFILE_AVATAR_IMAGE}" alt="" class="site-brand-avatar" width="40" height="40" decoding="async">
       <span class="site-brand-copy">
@@ -933,7 +932,7 @@ function pageShell({
 
   ${mainHtml}
 
-  <footer class="site-footer">
+  <footer class="site-footer" data-nosnippet>
     <div class="pb-container site-footer-inner">
       <div class="footer-links" aria-label="Contact links">
         <a class="footer-link" href="mailto:mail@rkaas.de?subject=Hello%20from%20your%20website">text me: mail@rkaas.de</a>
@@ -974,22 +973,51 @@ function pageShell({
 function renderArticlePage(post) {
   const { fm, bodyHtml, slug } = post;
   const canonical = canonicalUrl(slug);
+  const area = areaForPost(post);
   const title = fm.title ? `${fm.title} - ${AUTHOR_NAME}` : `${AUTHOR_NAME} - Blog`;
   const image = absoluteUrl(fm.ogImage || fm.titleImage || PROFILE_IMAGE);
   const keywords = articleKeywords(fm);
-  const summary = fm.summary || "Personal writing by Raffael Kaas";
+  const summary = fm.description || fm.summary || "Personal writing by Raffael Kaas";
+  const articleIntro = fm.description || fm.summary || "";
+  const articleMetaTags = [
+    fm.date ? `  <meta property="article:published_time" content="${escapeAttribute(fm.date)}">` : "",
+    (fm.lastmod || fm.date) ? `  <meta property="article:modified_time" content="${escapeAttribute(fm.lastmod || fm.date)}">` : "",
+    `  <meta property="article:author" content="${escapeAttribute(fm.author || AUTHOR_NAME)}">`,
+    `  <meta property="article:section" content="${escapeAttribute(area.label)}">`,
+    ...frontMatterList(fm.tags).map((tag) =>
+      `  <meta property="article:tag" content="${escapeAttribute(tag)}">`,
+    ),
+  ].filter(Boolean).join("\n");
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: fm.title || "",
+    description: summary,
+    url: canonical,
     datePublished: fm.date || undefined,
     dateModified: fm.lastmod || fm.date || undefined,
     author: {
       "@type": "Person",
       name: fm.author || AUTHOR_NAME,
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Person",
+      name: AUTHOR_NAME,
+      url: SITE_URL,
     },
     image,
-    mainEntityOfPage: canonical,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": canonical,
+    },
+    articleSection: area.label,
+    inLanguage: fm.language || "en",
+    isPartOf: {
+      "@type": "Blog",
+      name: `${AUTHOR_NAME} - Blog`,
+      url: `${SITE_URL}/blog/`,
+    },
     keywords,
   };
 
@@ -999,6 +1027,7 @@ function renderArticlePage(post) {
         ${titleImageHtml(fm)}
         <h1>${escapeHtml(fm.title || "Blog post")}</h1>
         ${articleMetaHtml(fm)}
+        ${articleIntro ? `<p class="post-summary">${escapeHtml(articleIntro)}</p>` : ""}
         ${bodyHtml}
       </article>
     </div>
@@ -1012,6 +1041,8 @@ function renderArticlePage(post) {
     ogDescription: summary,
     ogType: "article",
     ogImage: fm.ogImage || fm.titleImage || PROFILE_IMAGE,
+    headExtra: articleMetaTags,
+    lang: fm.language || "en",
     currentPage: "blog",
     jsonLd,
     mainHtml,
@@ -1166,12 +1197,25 @@ function renderHomepage(posts) {
     currentPage: "home",
     jsonLd: {
       "@context": "https://schema.org",
-      "@type": "Person",
-      name: AUTHOR_NAME,
-      jobTitle: "Software Engineer",
-      url: `${SITE_URL}/`,
-      image: `${SITE_URL}${PROFILE_IMAGE}`,
-      knowsAbout: ["Embedded Systems", "Linux", "C++", "Python", "Software Engineering", "ADAS", "Automotive"],
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": `${SITE_URL}/#website`,
+          name: AUTHOR_NAME,
+          alternateName: "rkaas.de",
+          url: `${SITE_URL}/`,
+          inLanguage: "en",
+        },
+        {
+          "@type": "Person",
+          "@id": `${SITE_URL}/#person`,
+          name: AUTHOR_NAME,
+          jobTitle: "Software Engineer",
+          url: `${SITE_URL}/`,
+          image: `${SITE_URL}${PROFILE_IMAGE}`,
+          knowsAbout: ["Embedded Systems", "Linux", "C++", "Python", "Software Engineering", "ADAS", "Automotive"],
+        },
+      ],
     },
     mainHtml,
   });

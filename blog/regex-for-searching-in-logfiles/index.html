@@ -10,13 +10,23 @@
   <meta name="description" content="A few regex patterns that are easy to remember and useful for searching in huge log files.">
   <meta name="author" content="Raffael Kaas">
   <link rel="canonical" href="https://rkaas.de/blog/regex-for-searching-in-logfiles/">
-  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+  <meta property="article:published_time" content="2025-11-26">
+  <meta property="article:modified_time" content="2026-05-26">
+  <meta property="article:author" content="Raffael Kaas">
+  <meta property="article:section" content="Engineering">
+  <meta property="article:tag" content="regex">
+  <meta property="article:tag" content="log-files">
+  <meta property="article:tag" content="debugging">
+  <meta property="article:tag" content="cli">
+  <meta property="article:tag" content="search">
 
   <meta property="og:title" content="Regex patterns I actually use when searching log files">
   <meta property="og:description" content="A few regex patterns that are easy to remember and useful for searching in huge log files.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://rkaas.de/blog/regex-for-searching-in-logfiles/">
   <meta property="og:image" content="https://rkaas.de/assets/blog/img/title/regex-for-searching-in-logfiles-terminal.webp">
+  <meta property="og:site_name" content="Raffael Kaas">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Regex patterns I actually use when searching log files">
@@ -38,24 +48,40 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "headline": "Regex patterns I actually use when searching log files",
+  "description": "A few regex patterns that are easy to remember and useful for searching in huge log files.",
+  "url": "https://rkaas.de/blog/regex-for-searching-in-logfiles/",
   "datePublished": "2025-11-26",
   "dateModified": "2026-05-26",
   "author": {
     "@type": "Person",
-    "name": "Raffael Kaas"
+    "name": "Raffael Kaas",
+    "url": "https://rkaas.de"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Raffael Kaas",
+    "url": "https://rkaas.de"
   },
   "image": "https://rkaas.de/assets/blog/img/title/regex-for-searching-in-logfiles-terminal.webp",
-  "mainEntityOfPage": "https://rkaas.de/blog/regex-for-searching-in-logfiles/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://rkaas.de/blog/regex-for-searching-in-logfiles/"
+  },
+  "articleSection": "Engineering",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "Blog",
+    "name": "Raffael Kaas - Blog",
+    "url": "https://rkaas.de/blog/"
+  },
   "keywords": "regex for log files, search log files, grep regex, regular expressions, log search patterns, word boundary regex, non-zero error regex, regex, log files, debugging, cli, search"
 }
   </script>
 </head>
 <body class="blog-page">
-  <h1 class="sr-only">Regex patterns I actually use when searching log files</h1>
-
-  <header class="site-header" id="top">
+  <header class="site-header" id="top" data-nosnippet>
     <a class="site-brand" href="/" aria-label="Raffael Kaas homepage">
       <img src="/assets/img/me-avatar-120.webp" alt="" class="site-brand-avatar" width="40" height="40" decoding="async">
       <span class="site-brand-copy">
@@ -79,6 +105,7 @@
         <img class="blog-title-image" src="/assets/blog/img/title/regex-for-searching-in-logfiles-terminal.webp" alt="Stylized terminal window showing regex searches in a log file with highlighted matches for errors, failed tasks, process names, and non-zero error counts." decoding="async" fetchpriority="high">
         <h1>Regex patterns I actually use when searching log files</h1>
         <p class="post-meta">Nov 26, 2025 &bull; 7 min read</p>
+        <p class="post-summary">A few regex patterns that are easy to remember and useful for searching in huge log files.</p>
         <p>Sometimes regex feels like this mysterious thing you only touch when you really, really have to. At least for me, it's rarely part of my daily work. In the few cases where I need to implement a feature with regex, I usually Google the specific pattern I need or ask Copilot, quickly verify it, and move on. For this, I like using the <a href="https://regex101.com/">regex101</a> website to test, visualize, and understand patterns.</p>
 <p>There is one place where knowing a few regex basics pays off almost every week for me: searching log files.</p>
 <p>Log files, depending on the context, can easily have hundreds of thousands of lines. When something in the build goes wrong, or you just want to verify whether the correct work products are used or the right steps are executed, searching through those large files is inevitable.</p>
@@ -168,7 +195,7 @@ Regex example: <span class="mark-alt">[1-9][0-9]* error</span>
     </div>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" data-nosnippet>
     <div class="pb-container site-footer-inner">
       <div class="footer-links" aria-label="Contact links">
         <a class="footer-link" href="mailto:mail@rkaas.de?subject=Hello%20from%20your%20website">text me: mail@rkaas.de</a>

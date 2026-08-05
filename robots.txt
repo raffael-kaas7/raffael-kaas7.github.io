@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /assets/blog/*.md$
 Allow: /
 
 Sitemap: https://rkaas.de/sitemap.xml
