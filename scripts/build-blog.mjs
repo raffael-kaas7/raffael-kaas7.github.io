@@ -977,8 +977,7 @@ function renderArticlePage(post) {
   const title = fm.title ? `${fm.title} - ${AUTHOR_NAME}` : `${AUTHOR_NAME} - Blog`;
   const image = absoluteUrl(fm.ogImage || fm.titleImage || PROFILE_IMAGE);
   const keywords = articleKeywords(fm);
-  const summary = fm.description || fm.summary || "Personal writing by Raffael Kaas";
-  const articleIntro = fm.description || fm.summary || "";
+  const summary = fm.summary || "Personal writing by Raffael Kaas";
   const articleMetaTags = [
     fm.date ? `  <meta property="article:published_time" content="${escapeAttribute(fm.date)}">` : "",
     (fm.lastmod || fm.date) ? `  <meta property="article:modified_time" content="${escapeAttribute(fm.lastmod || fm.date)}">` : "",
@@ -1027,7 +1026,6 @@ function renderArticlePage(post) {
         ${titleImageHtml(fm)}
         <h1>${escapeHtml(fm.title || "Blog post")}</h1>
         ${articleMetaHtml(fm)}
-        ${articleIntro ? `<p class="post-summary">${escapeHtml(articleIntro)}</p>` : ""}
         ${bodyHtml}
       </article>
     </div>

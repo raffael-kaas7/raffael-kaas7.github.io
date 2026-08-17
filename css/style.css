@@ -702,14 +702,6 @@ pre code {
   margin: 0.7rem 0 1rem;
 }
 
-.blog-page .blog-post .post-summary {
-  color: var(--pb-muted);
-  font-size: 1.16rem;
-  line-height: 1.65;
-  margin: 0 0 1.8rem;
-  max-width: 880px;
-}
-
 .blog-page .blog-post .post-tags {
   display: flex;
   flex-wrap: wrap;
