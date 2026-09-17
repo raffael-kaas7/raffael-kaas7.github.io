@@ -1,0 +1,567 @@
+{
+  "type": "FeatureCollection",
+  "name": "lindau-lago-maggiore-bikepacking-2026",
+  "properties": {
+    "trip": "Bikepacking from Lindau to Lago Maggiore",
+    "dates": [
+      "2026-08-12",
+      "2026-08-13",
+      "2026-08-14",
+      "2026-08-15"
+    ],
+    "stats": {
+      "trackedDistanceKm": 230.45,
+      "estimatedFridayKmRange": [
+        23,
+        35
+      ],
+      "estimatedSaturdayKmRange": [
+        10,
+        12
+      ],
+      "estimatedTotalKmRange": [
+        260,
+        280
+      ],
+      "trackedElevationGainM": 2154,
+      "trackedElevationLossM": 2342,
+      "maxElevationM": 2062.2,
+      "note": "Friday and Saturday distances are article estimates because those rides were not tracked. The Friday range depends on whether only Bellinzona to Locarno is counted or also the campsite detour/return."
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "route",
+        "id": "wednesday-lindau-andeer",
+        "label": "Wednesday: Lindau to Andeer",
+        "source": "tracked-gpx",
+        "color": "#e4572e",
+        "stats": {
+          "distanceKm": 142.11099358035347,
+          "elevationGainM": 927.1,
+          "elevationLossM": 366.4000000000001,
+          "movingSeconds": 27743,
+          "movingAverageKmh": 18.39856295675218,
+          "elapsedSeconds": 38424,
+          "elapsedAverageKmh": 13.314584033137427,
+          "minElevationM": 395.8,
+          "maxElevationM": 984.4,
+          "startTime": "2026-08-12T04:19:32Z",
+          "endTime": "2026-08-12T14:59:56Z",
+          "start": {
+            "lat": 47.559972,
+            "lon": 9.664428,
+            "ele": 415.5
+          },
+          "end": {
+            "lat": 46.606436,
+            "lon": 9.42637,
+            "ele": 973.5
+          },
+          "points": 27879
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            9.664428,
+            47.559972,
+            415.5
+          ],
+          [
+            9.685451,
+            47.558523,
+            401.7
+          ],
+          [
+            9.69215,
+            47.550162,
+            400.8
+          ],
+          [
+            9.717363,
+            47.549343,
+            399.4
+          ],
+          [
+            9.753868,
+            47.514795,
+            397.7
+          ],
+          [
+            9.73762,
+            47.502694,
+            398.9
+          ],
+          [
+            9.70133,
+            47.50483,
+            398.8
+          ],
+          [
+            9.699123,
+            47.495946,
+            403.5
+          ],
+          [
+            9.707615,
+            47.491626,
+            407.6
+          ],
+          [
+            9.67975,
+            47.4779,
+            398.2
+          ],
+          [
+            9.667478,
+            47.477994,
+            402.2
+          ],
+          [
+            9.664686,
+            47.45609,
+            401.7
+          ],
+          [
+            9.642874,
+            47.436274,
+            405.1
+          ],
+          [
+            9.649982,
+            47.406201,
+            409.7
+          ],
+          [
+            9.642828,
+            47.387171,
+            409.5
+          ],
+          [
+            9.59932,
+            47.34635,
+            418.5
+          ],
+          [
+            9.5881,
+            47.314987,
+            422.9
+          ],
+          [
+            9.559896,
+            47.299862,
+            426.2
+          ],
+          [
+            9.548461,
+            47.280309,
+            433.8
+          ],
+          [
+            9.532539,
+            47.270792,
+            435.8
+          ],
+          [
+            9.49051,
+            47.195883,
+            449.9
+          ],
+          [
+            9.491244,
+            47.165535,
+            455.5
+          ],
+          [
+            9.509657,
+            47.139886,
+            461.9
+          ],
+          [
+            9.520447,
+            47.097391,
+            472.8
+          ],
+          [
+            9.513891,
+            47.084959,
+            476.3
+          ],
+          [
+            9.474109,
+            47.067318,
+            485.3
+          ],
+          [
+            9.470863,
+            47.061356,
+            487.3
+          ],
+          [
+            9.519122,
+            47.00106,
+            508.4
+          ],
+          [
+            9.552883,
+            46.971066,
+            522.3
+          ],
+          [
+            9.561224,
+            46.923414,
+            535.2
+          ],
+          [
+            9.543816,
+            46.904229,
+            543.4
+          ],
+          [
+            9.532313,
+            46.876766,
+            557.9
+          ],
+          [
+            9.513542,
+            46.86188,
+            563.7
+          ],
+          [
+            9.50254,
+            46.860012,
+            563
+          ],
+          [
+            9.484094,
+            46.845507,
+            569.6
+          ],
+          [
+            9.438944,
+            46.839593,
+            581.6
+          ],
+          [
+            9.405526,
+            46.828258,
+            646.3
+          ],
+          [
+            9.397867,
+            46.798764,
+            658.8
+          ],
+          [
+            9.419129,
+            46.771855,
+            640.8
+          ],
+          [
+            9.427515,
+            46.723797,
+            654.2
+          ],
+          [
+            9.449859,
+            46.677215,
+            866.9
+          ],
+          [
+            9.445052,
+            46.635054,
+            946.9
+          ],
+          [
+            9.42637,
+            46.606436,
+            973.5
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "route",
+        "id": "thursday-andeer-bellinzona",
+        "label": "Thursday: Andeer to Bellinzona",
+        "source": "tracked-gpx",
+        "color": "#0f7c80",
+        "stats": {
+          "distanceKm": 88.34388614922844,
+          "elevationGainM": 1227.1999999999998,
+          "elevationLossM": 1975.4999999999986,
+          "movingSeconds": 20883,
+          "movingAverageKmh": 15.139417125325874,
+          "elapsedSeconds": 30240,
+          "elapsedAverageKmh": 10.517129303479576,
+          "minElevationM": 236.8,
+          "maxElevationM": 2062.2,
+          "startTime": "2026-08-13T07:42:03Z",
+          "endTime": "2026-08-13T16:06:03Z",
+          "start": {
+            "lat": 46.601939,
+            "lon": 9.426769,
+            "ele": 985.9
+          },
+          "end": {
+            "lat": 46.212282,
+            "lon": 9.038732,
+            "ele": 236.9
+          },
+          "points": 22390
+        }
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            9.426769,
+            46.601939,
+            985.9
+          ],
+          [
+            9.430762,
+            46.597855,
+            1013.9
+          ],
+          [
+            9.41344,
+            46.568912,
+            1267.3
+          ],
+          [
+            9.381084,
+            46.570173,
+            1406.8
+          ],
+          [
+            9.310756,
+            46.548749,
+            1470.7
+          ],
+          [
+            9.19436,
+            46.530296,
+            1620.6
+          ],
+          [
+            9.181589,
+            46.52125,
+            1629.7
+          ],
+          [
+            9.189962,
+            46.520229,
+            1820.6
+          ],
+          [
+            9.168234,
+            46.486625,
+            2022.2
+          ],
+          [
+            9.197882,
+            46.455232,
+            1636.8
+          ],
+          [
+            9.205373,
+            46.434292,
+            1521
+          ],
+          [
+            9.212098,
+            46.437522,
+            1393.5
+          ],
+          [
+            9.223899,
+            46.426301,
+            1184.3
+          ],
+          [
+            9.233889,
+            46.387899,
+            771.6
+          ],
+          [
+            9.224492,
+            46.363725,
+            561.2
+          ],
+          [
+            9.203892,
+            46.32177,
+            437.6
+          ],
+          [
+            9.173373,
+            46.286832,
+            381.3
+          ],
+          [
+            9.172878,
+            46.275945,
+            357.3
+          ],
+          [
+            9.155605,
+            46.252117,
+            323.8
+          ],
+          [
+            9.132486,
+            46.236873,
+            299.8
+          ],
+          [
+            9.094337,
+            46.238082,
+            271.5
+          ],
+          [
+            9.047468,
+            46.222501,
+            243
+          ],
+          [
+            9.041978,
+            46.22594,
+            241.5
+          ],
+          [
+            9.038732,
+            46.212282,
+            236.9
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "route",
+        "id": "friday-bellinzona-lago-maggiore-estimated",
+        "label": "Friday estimate: Bellinzona to Lago Maggiore via Camping La Serta",
+        "source": "estimated-untracked"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            9.038732,
+            46.212282
+          ],
+          [
+            8.938494,
+            46.173611
+          ],
+          [
+            8.795,
+            46.169
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "stop",
+        "id": "lindau",
+        "label": "Lindau",
+        "elevationM": 415.5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.664428,
+          47.559972
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "stop",
+        "id": "andeer",
+        "label": "Andeer",
+        "elevationM": 973.5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.42637,
+          46.606436
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "stop",
+        "id": "san-bernardino-pass",
+        "label": "San Bernardino Pass",
+        "elevationM": 2062.2
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.170529,
+          46.491612
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "stop",
+        "id": "bellinzona",
+        "label": "Bellinzona",
+        "elevationM": 236.9
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.038732,
+          46.212282
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "stop",
+        "id": "camping-la-serta",
+        "label": "Camping La Serta"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.938494,
+          46.173611
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "kind": "stop",
+        "id": "locarno",
+        "label": "Locarno / Lago Maggiore"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.795,
+          46.169
+        ]
+      }
+    }
+  ]
+}

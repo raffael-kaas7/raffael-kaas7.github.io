@@ -236,3 +236,5 @@ Give something to community, club
 What safety net I like? For me it is the wealth that pays my living cost. Not as 0 or 1 but constantly increasing 
 
 What would change if I have reached this? Why not changing this directly and reach the goal few years later? 
+
+

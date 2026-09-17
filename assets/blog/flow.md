@@ -14,3 +14,5 @@ language: "en"
 draft: true
 ---
 
+take notes on second read.
+how can i optimize flow in my life concreley
