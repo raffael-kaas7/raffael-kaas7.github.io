@@ -1,6 +1,9 @@
 {
   "scripts": {
     "build": "node scripts/build-blog.mjs",
-    "build:travel-map": "node scripts/build-travel-map.mjs"
+    "build:travel-map": "node scripts/build-travel-map.mjs",
+    "stats:refresh": "node scripts/fetch-liftlytics-stats.mjs assets/data/strength.json",
+    "build:pages": "npm run build && node scripts/package-site.mjs",
+    "test": "node --test scripts/strength-stats.test.mjs scripts/fetch-liftlytics-stats.test.mjs"
   }
 }

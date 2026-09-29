@@ -1,3 +1,4 @@
+import { readStrengthSnapshot, renderStrengthContent } from "./strength-stats.mjs";
 import {
   existsSync,
   mkdirSync,
@@ -9,6 +10,7 @@ import {
 import { basename, join } from "node:path";
 
 const SITE_URL = "https://rkaas.de";
+const strengthSnapshot = readStrengthSnapshot();
 const BLOG_SOURCE_DIR = "assets/blog";
 const BLOG_OUTPUT_DIR = "blog";
 const AUTHOR_NAME = "Raffael Kaas";
@@ -78,7 +80,7 @@ const AREAS = [
       },
       {
         type: "p",
-        text: "I used to actively play soccer, but due to many injuries I decided to quit. Now I keep myself fit with running and gym training / calisthenics.",
+        text: "I used to actively play soccer, but due to many injuries I decided to quit. Now I keep myself fit with running and gym training / calisthenics. You can find my [strength stats](/health/strength/) here.",
       },
       {
         type: "p",
@@ -163,6 +165,7 @@ const AREA_BY_KEY = new Map(AREAS.map((area) => [area.key, area]));
 const GENERATED_AREA_KEYS = new Set(AREAS.map((area) => area.key));
 const AREA_SPECIAL_LINKS = {};
 const SPECIAL_COLLECTION_PAGES = [
+  { loc: `${SITE_URL}/health/strength/`, lastmod: strengthSnapshot?.generatedAt.slice(0, 10) },
   { loc: `${SITE_URL}/books/bookshelf/`, lastmod: BOOKS_LASTMOD },
   { loc: `${SITE_URL}/travel/map/`, lastmod: TRAVEL_LASTMOD },
 ];
@@ -1347,6 +1350,22 @@ function renderAreaPage(area, posts) {
   });
 }
 
+function writeStrengthPage() {
+  mkdirSync("health/strength", { recursive: true });
+  writeFileSync("health/strength/index.html", pageShell({
+    bodyClass: "blog-page area-page area-health strength-page",
+    title: `My strength stats - ${AUTHOR_NAME}`,
+    description: "My best-ever sets and latest gym sessions for pull-ups, bench press, deadlift and back squat.",
+    canonical: `${SITE_URL}/health/strength/`,
+    ogType: "website",
+    ogImage: PROFILE_IMAGE,
+    twitterCard: "summary",
+    currentPage: "blog",
+    headExtra: '  <link rel="stylesheet" href="/css/strength.css">',
+    mainHtml: renderStrengthContent(strengthSnapshot),
+  }), "utf8");
+}
+
 function writeAreaPages(posts) {
   AREAS.filter((area) => GENERATED_AREA_KEYS.has(area.key)).forEach((area) => {
     const outputDir = area.key;
@@ -1465,6 +1484,7 @@ function main() {
   writeFileSync(join(BLOG_OUTPUT_DIR, "index.html"), renderBlogIndex(posts), "utf8");
   updateHomepage(posts);
   writeAreaPages(posts);
+  writeStrengthPage();
   updateStaticPageNavs();
   writeFileSync("sitemap.xml", renderSitemap(posts), "utf8");
 
