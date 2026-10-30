@@ -1,3 +1,9 @@
 backlog/*
 hidden/*
 .codex/*
+# Build output and local integration credentials
+_site/
+.env
+.env.*
+!.env.example
+assets/data/strength.json
