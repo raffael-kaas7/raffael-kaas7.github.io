@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rkaas.de/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-11-06</lastmod>
   </url>
   <url>
     <loc>https://rkaas.de/blog/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-11-06</lastmod>
   </url>
   <url>
     <loc>https://rkaas.de/engineering/</loc>
@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://rkaas.de/travel/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-11-06</lastmod>
   </url>
   <url>
     <loc>https://rkaas.de/life/</loc>
@@ -43,6 +43,10 @@
   <url>
     <loc>https://rkaas.de/travel/map/</loc>
     <lastmod>2026-06-15</lastmod>
+  </url>
+  <url>
+    <loc>https://rkaas.de/blog/brazil-travel-notes/</loc>
+    <lastmod>2026-11-06</lastmod>
   </url>
   <url>
     <loc>https://rkaas.de/blog/my-thoughts-on-ai-09-2026/</loc>

@@ -1,74 +1,133 @@
 ---
-title: "Visitando os meus sogros no Brasil"
+title: "Visitando os meus sogros no Brasil (09/2026)"
 slug: "brazil-travel-notes"
-date: "2026-10-30"
-summary: "Notes from our Brazil trip: Salvador, Praia do Forte, an island stop, and Rio de Janeiro."
+date: "2026-11-06"
+summary: "Notes from spending three weeks in Brazil: Salvador, Praia do Forte, Ilha de Itaparica, and Rio de Janeiro."
+keywords: ["brazil", "bahia", "travel experience", "rio de janeiro", "praia do forte"]
+thumbnail: "/assets/blog/img/brazil/016_2026-08-25_IMG_7273.webp"
+titleImage: "/assets/blog/img/brazil/016_2026-08-25_IMG_7273.webp"
+titleImageAlt: "Sun over the ocean and the beachfront buildings in Salvador"
 area: "travel"
 author: "Raffael Kaas"
 tags: ["brazil", "travel-notes"]
 language: "en"
-draft: true
+draft: false
 ---
 
-In August and September of 2026 I had the chance to travel to Brasil for the first time. My girlfriend is brasilian and she grew up there and here parents are still living there. We had a good mix of visiting family and friends, enjoying time as a couple in bahias beatufil places and traveling. We stayed two week ins Bahia and one week in Rio de Janeiro
+In August and September of 2026, I had the chance to travel to Brazil for the first time. My girlfriend is Brazilian and she grew up there. Her parents are still living on site. We had a good mix of traveling, visiting family & friends and enjoying time as a couple in Bahia's beautiful places. We had two weeks in Bahia and one week in Rio de Janeiro.
+<div class="section-break"></div>
+
 
 ## Salvador da Bahia
 
-We stayed at her familys place, in Salvador the multi million capital of bahia. The city part is called Cabula. Probably nothing were you would go as a normal tourist. Its just a normal quarter where natives are living, no sightseeing, no leisure activities, just Bahia City life as it is. 
+We stayed at her family's place, in Salvador, the capital of Bahia with several million inhabitants. The city district is called Cabula. It's probably not somewhere you would go as a regular tourist. It's a normal quarter where locals are living, with no sightseeing or any special leisure activities, just Bahia city life as it is.
 
-I met her parents already in germany once they visited us, but visiting them and staying at their place was definitly a more intense get to gether. I really like it and felt so warm welcome. I already miss the awesome food and dinners where my girlfriend played the dolmecher to keep us all involved. My portuguese has improved the last years but it is still not that good to really follow normal conversations for long time. And I am pretty sure her dad is talking some really heavy street slang :D. We also visited friends and grandma and celebrated the birthdas of my grildfriends nethew in thr local *freibad*. Being so integrated into local live mad this trip very special. I traveled to different countries and cultures but never that close to locas. 
+Her parents live in a so-called condomínio, where we could walk around in the evenings while kids were playing and adults were talking to each other in a safe area. It felt strange to me to have a wall around the whole condomínio, though.
 
-*needs to be integrated above: Condomino (where the parents live), walkoing through it in the evening, kids playing, aduls talking to each other. although strange to have a wall around the condominio.*
+I had already met her parents in Germany, but visiting them and staying at their place was definitely a more intense get-together. I really enjoyed it and felt so warmly welcomed. I already miss the awesome food and dinners where my girlfriend played the translator to keep us all involved. [My Portuguese has improved](/blog/how-to-learn-a-new-language/) over the last few years, but it is still not good enough to fully take part in normal conversations for a long time. And I am pretty sure her dad speaks some really heavy street slang ;-).
 
-What I liked most about the city: 
+During the weeks, we also visited friends, her grandma's place and celebrated her nephew's birthday at one of the city's large outdoor swimming pools. Being so integrated into local life made this trip very special. I have traveled to different countries and cultures, but never been that close to locals.
 
-The historic old town *forgot the name, prop Pelourinho*. Walking through the quarter, small shops, historical buildings, churchs, great view on the atlantik from above. It is just not that clean and *hergerichtet* as you would have it in european old downtowns.
+I really enjoyed the Bahian food. Comida baiana, cozido and moqueca I liked the most. Lots of food comes with farofa and pirão. Sweet potatoes, manioc and plantains are on the table all the time. And there were so many fruits and juices I tried: goiaba, acerola, cacau, caju, just to name a few that I can remember by name.
 
-bar st monica. Local bar directly at the water. You go there by boat, to now walk through the favela close to it. We stayed until sundown (17:30, it is winter). Enjoyed coconut water, local beers and the water. What is strange, that people bring their own music. I think it is offically not allowed (anymore) but they still do. So you sit in between 3 groups where all of them try to play their brasilian *schlager musik, wie heißt die richtig von george & mateus zum beispiel* louder than the others. 
+One of the places I liked most in the city was the historic old town, Pelourinho. We walked through the quarter with small shops, historical buildings, lots of churches and a great view of the Atlantic. It is just not as clean and well-kept as European old towns.
 
-I liked the local gym. We always went very early. Nevertheless lots of people in there, usually more than in germany for the same size. It is common to share the exercise *Trainingsgerät* in between sets, so you automatically talk to people. I liked how they tried to talk to me. I think it is not usally in cabula to meet tourists. Something I recongnized: lots of young people are very religious. Havrnt recognized this somewhere else that itense yet. 
-
-Farol do Barra. Probalbyl the nicest places and worth to visit for tourist. I can recommend to spend some time there during sundown. Lots of locals also spend their evening there, so prices are normal. You can go there for a run, along the coast. Lots of people are doing it. and lots of people are trying to take pictures from you in your best pose. You can support them for a little money and buy the picutes then online. I recommend Coco nut water and Acaii Ice cream with yout favorite toppings for the sundown. 
-
-One evening we went to a local pagode. I can recommend to visit such a local event, although I dont really like the music. I do enjoy brasilian music but not the pagode one.
-
-One thing I wont miss is the traffic. I mean I have experienced chaotic traffic yet in e.g. some asian big cities, but at leat they respect the rules. Salvador is defitnitly next level of chaos and noise.
 
 <div class="img-grid">
   <figure>
-    <img src="/assets/blog/img/brazil/003_2026-08-23_IMG_7190.webp" alt="Together by the waterfront in Salvador" >
-    <figcaption>Together by the waterfront in Salvador</figcaption>
+    <img src="/assets/blog/img/brazil/009_2026-08-24_IMG_7221.webp" alt="View over Salvador’s waterfront and bay, with boats below and sunlight breaking through clouds" loading="lazy" decoding="async">
+    <figcaption>The view from Salvador’s old town</figcaption>
   </figure>
   <figure>
-    <img src="/assets/blog/img/brazil/007_2026-08-24_IMG_6922.webp" alt="In front of Elevador Lacerda" >
-    <figcaption>In front of Elevador Lacerda</figcaption>
+    <img src="/assets/blog/img/brazil/013_2026-08-24_IMG_7247.webp" alt="A church with two towers beside a cobbled street in Salvador’s old town" loading="lazy" decoding="async">
+    <figcaption>Walking through the old town</figcaption>
+  </figure>
+</div>
+<div class="section-break"></div>
+
+Bar St. Monica is a local bar directly by the water. You go there by boat to avoid walking through the favela close to it. We stayed until sundown (17:30, it is winter in August), enjoying coconut water, local beers and the water. What is strange is that people bring their own music. I think it is officially not allowed anymore, but they still do it. So you sit in between 3 groups, all of them trying to play their Brazilian sertanejo music louder than the others.
+
+<div class="img-grid">
+  <figure>
+    <img src="/assets/blog/img/brazil/003_2026-08-23_IMG_7190.webp" alt="Together on a boat with Salvador’s waterfront buildings behind us" loading="lazy" decoding="async">
+    <figcaption>By boat to the waterfront bar</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/blog/img/brazil/006_2026-08-23_IMG_6911.webp" alt="Standing on the rocky shore below Salvador’s waterfront bars in the evening sun" loading="lazy" decoding="async">
+    <figcaption>The waterfront by the bar, just before sunset</figcaption>
+  </figure>
+</div>
+<div class="section-break"></div>
+
+
+I liked the local gym, where we always went very early in the morning. There were lots of people in there, usually more than in gyms of the same size in Germany, I would say. It is common to share the exercise equipment between sets, so you automatically talk to people. I liked how they tried to talk to me. I think it is not usual in Cabula to meet tourists. Something I noticed was that lots of young people are very religious. I haven't noticed this anywhere else that intensely yet.
+
+Farol da Barra is probably one of the nicest places and worth visiting for tourists. I can recommend spending some time there during sundown. Lots of locals also spend their evenings there, so prices are normal. You can go there for a run along the coast, which lots of people do. I recommend coconut water and açaí ice cream with your favorite toppings for the sundown.
+
+<div class="img-grid img-grid--left-stack">
+  <figure>
+    <img src="/assets/blog/img/brazil/020_2026-08-25_IMG_7289.webp" alt="Together holding fresh coconuts by the sea at sunset" loading="lazy" decoding="async">
+    <figcaption>Coconut water for the sunset</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/blog/img/brazil/015_2026-08-25_IMG_7268.webp" alt="Waves washing around rocks beside Salvador’s beachfront buildings in the evening sun" loading="lazy" decoding="async">
+    <figcaption>Along the coast in Salvador</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/blog/img/brazil/019_2026-08-25_IMG_7285.webp" alt="Farol da Barra lighthouse above a grassy slope beside the sea at sunset" loading="lazy" decoding="async">
+    <figcaption>Sunset at Farol da Barra</figcaption>
   </figure>
 </div>
 
 <div class="section-break"></div>
 
+One evening we went to a local pagode. I can recommend visiting such a local event, although I don't really like the music. I do enjoy Brazilian music, but not pagode.
+
+One thing I won't miss is the traffic. I mean, I have experienced chaotic traffic before, e.g. in some big Asian cities, but at least they respect the rules. Salvador is definitely the next level of chaos and noise.
+
+
+<div class="section-break"></div>
+
 ## Praia do Forte
 
-We rented a car for a few days and drowve along the coast "linha verde" to a beatiful holiday place called praia do forte. It is one of the famous holiday places in Bahia where brailians spend their holidays too. Actually I haven't heard people not speaking portugues much. 
+We rented a car for a few days and drove along the coast on the "Linha Verde" to a beautiful holiday place called Praia do Forte. It is one of the famous holiday places in Bahia where Brazilians spend their holidays too. Actually, I didn't hear people speaking anything other than Portuguese much.
 
-we stayed at *hostel praia do forte* which I can more than recommend. The Breakfast buffet is great. 
+We stayed at [Hostel Praia do Forte](https://praiadofortehostel.com.br/), which I can more than recommend. The breakfast buffet is great.
 
-Directly, in praia do forte there are so many beatufiul restaurants that we havent had neough time to try everything. I think my favorte food to order is moqueca with camerao. In general it felt calm and relaxining, after a few days being in the city. Brasilian cities are loud, very loud, whole day and night.
+Directly in Praia do Forte there are so many beautiful restaurants that we didn't have enough time to try everything. I think my favorite food to order is moqueca de camarão. In general, it felt calm and relaxing after a few days in the city. Brazilian cities are loud, very loud, all day and night.
 
-We spend our days doing some exercise, walking along beatiful beaches closeby (Imbassai), visiting the local *schildkröten project von petrobras, was genau machen die*. 
-
-We also visited the famous castelo there where portuges colocnist orignally arrived and explored the country from. Nothing special but I can recommned to go beofre closing and watch the *beamer* show. 
-
-We walked through the *wald, naturschutzgebiet, wie hieß das nochmal. Prop Saipirranga* to explore the *mata altantica*. All the plants that we have in german as hip *Zimmerplanzen* are native there. 
+We spent our days doing some exercise, walking along beautiful beaches both in Praia do Forte and close by in Imbassaí.
 
 <div class="img-grid">
   <figure>
-    <img src="/assets/blog/img/brazil/028_2026-08-29_IMG_7351.webp" alt="Beach near Praia do Forte" >
-    <figcaption>Beach near Praia do Forte</figcaption>
+    <img src="/assets/blog/img/brazil/042_2026-08-31_IMG_7520.webp" alt="Walking along a sandy beach lined with tall palm trees beneath a cloudy sky" loading="lazy" decoding="async">
+    <figcaption>A walk along the beach</figcaption>
   </figure>
   <figure>
-    <img src="/assets/blog/img/brazil/035_2026-08-30_IMG_7397.webp" alt="Palm trees along the river" >
-    <figcaption>Palm trees along the river</figcaption>
+    <img src="/assets/blog/img/brazil/038_2026-08-30_IMG_7126.webp" alt="Standing beneath the colorful Imbassaí sign beside the river" loading="lazy" decoding="async">
+    <figcaption>Exploring Imbassaí</figcaption>
+  </figure>
+</div>
+
+<div class="img-wide">
+  <figure>
+    <img src="/assets/blog/img/brazil/035_2026-08-30_IMG_7397.webp" alt="Palm trees and a small passenger boat beside the calm river in Imbassaí" loading="lazy" decoding="async">
+    <figcaption>By the river in Imbassaí</figcaption>
+  </figure>
+</div>
+
+We also visited the famous castle there (Castelo Garcia d’Ávila), a fortification from the Portuguese colonial period. It was nothing special, but I can recommend going before closing and watching the projection show in the dark.
+
+We walked through Sapiranga, a nature reserve just around the corner, to explore the Mata Atlântica. I recognized plants that we keep as houseplants in Germany.
+
+<div class="img-grid">
+  <figure>
+    <img src="/assets/blog/img/brazil/IMG_7075.webp" alt="Stone walls, empty windows and doorways of the castle ruins near Praia do Forte" loading="lazy" decoding="async">
+    <figcaption>Exploring the castle ruins</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/blog/img/brazil/041_2026-08-31_IMG_7509.webp" alt="Standing beside a small waterfall surrounded by dense Atlantic forest" loading="lazy" decoding="async">
+    <figcaption>In the Mata Atlântica</figcaption>
   </figure>
 </div>
 
@@ -76,18 +135,18 @@ We walked through the *wald, naturschutzgebiet, wie hieß das nochmal. Prop Saip
 
 ## Ilha de Itaparica
 
-Back to Salvador after our stay in praia do forte, we went by ferry with our to Uhla de Itaparica. We stayed one night in Ourives. It's just two dozens of houses, a really small village. My girlfriends mother was born and raised there. The house is still there but no often used. We only stayed one night, but it was one more really special experience you wont have wuthout knowing any local. The whole village was interest about me and everyone let me try their special food and fruits. 
+Back in Salvador after our stay in Praia do Forte, we went by ferry with our car to Ilha de Itaparica. We stayed one night in Ourives, a really small village of just two dozen houses where my girlfriend's mother was born and raised. The house is still there, but not often used. We only stayed one night, but it was one more really special experience you wouldn't have without knowing any locals. The whole village was interested in me, and everyone let me try their special food and fruits.
 
-We had bad weather these day but nevertheless explored the island a bit. yet another contrast to the big 3 million people cuity and the nice holiday region in praia do forte. The island is simple, untouched, not much to do but some beatiful places and really happy habitants. I am really wondering what these people are doing all day long there. They would probably think the same when they would now my day to day. It really makes you quest parts of your life.
+We had bad weather during those days, but nevertheless explored the island a bit. It was yet another contrast to the big city of 3 million people and the nice holiday region in Praia do Forte. The island is simple and untouched, with not much to do, but some beautiful places and happy inhabitants. I wonder what these people are doing all day. They would probably think the same if they knew my day-to-day life. It really makes you question parts of your life.
 
 <div class="img-grid">
   <figure>
-    <img src="/assets/blog/img/brazil/046_2026-09-02_IMG_7548.webp" alt="Palm trees where we stayed" >
-    <figcaption>Palm trees where we stayed</figcaption>
+    <img src="/assets/blog/img/brazil/IMG_7556.webp" alt="Small houses with red-tiled roofs along a sandy lane on Itaparica" loading="lazy" decoding="async">
+    <figcaption>Village life on Itaparica</figcaption>
   </figure>
   <figure>
-    <img src="/assets/blog/img/brazil/050_2026-09-03_IMG_7594.webp" alt="A small boat by the shore" >
-    <figcaption>A small boat by the shore</figcaption>
+    <img src="/assets/blog/img/brazil/050_2026-09-03_IMG_7594.webp" alt="A small white boat in shallow water beneath a cloudy sky on Itaparica" loading="lazy" decoding="async">
+    <figcaption>A quiet shore on Itaparica</figcaption>
   </figure>
 </div>
 
@@ -95,56 +154,47 @@ We had bad weather these day but nevertheless explored the island a bit. yet ano
 
 ## Rio de Janeiro
 
-The waeather in rio is different. Although we had Winter in bahia, we had mostly sunny days with 28 degrees celcius. In rio we had 10 degrees less and cloudy, often rainy days. I'll never come back to Rio ... in winter. Beside that we had a good time exploring the city in 5 days, which in my opinion is enough to see most of the famous places within the city.
+The weather in Rio is different. Although it was winter in Bahia, we had mostly sunny days with 28 degrees Celsius. In Rio it was around 20 degrees, with cloudy, often rainy days. I'll never come back to Rio ... in winter. Besides that, we had a good time exploring the city in 5 days, which in my opinion is enough to see most of the famous places within the city.
 
-Our hotel was in capacabano, so for sure we explored copacabana and ipanema beach. Although it is off season it is crowed in the evening with lots of food options and markets. Throughout the day, people are playing footvolei at the beach. Its basicall volleyball but without the hands, mainly playing with foods. They play really well. 
+Our hotel was in Copacabana, so for sure we explored Copacabana and Ipanema beaches. Although it was off-season, it was crowded in the evening with lots of food options and markets. Throughout the day, people were playing footvolley at the beach. It's basically volleyball but without the hands, mainly playing with feet. They play really well!
 
-Most do, for sure is visiting Cristo. You can take a old *zahnradbahn* to drive through the forsts up to the hill of christo *whats the name of the hill*. Above you can try to take a picture without any other person on the foto, we failed. It was very crowed. Dont want to image how this in barsilians summer during holiday season. Nevertheless I enjoyed. Not much cristo, but the view over Rio. You are starting to understand the map of this big city.
-
-The same day we also vitied a garden *what was the name* where you are sourrouned by the mata atalantic within the big city. It also has a lot of big Jackfruit trees. I somewhere heard that they got imported by indians. We thought about going into the botanic garden but it was really expensive for non-brasilians and we've had already been around a lot this day. 
-
-Things also worth to visit is Santa teressa as a whole quater. You can use the historic tram to drive up the hill and then walk the quater hilldown. There are some beatifuls shops and caffes. Going down one can walk the famous 'escadas', very long stairs full of *fließen* from around the world created by *who*. Arc lapo is also known as a sightseeing spot, but in my opinion you do not miss anything not seeing it. 
-
-Instead dont miss: Praia vermehlha, ingredbile beatiful *bucht* with a great view on the *Zuckerhut*. It was cloudy and we went there jst short after lots of city sughtseeing. I would have loved to take a *baden gehen*. 
-
-For dinner, we went to differen churrasco places. Great food, but the really special once I enjoyed most whrer in bahia.
-
-<div class="img-grid">
-  <figure>
-    <img src="/assets/blog/img/brazil/058_2026-09-07_IMG_7376__new_15864ac3d32c.webp" alt="Along the coast in Rio de Janeiro" >
-    <figcaption>Along the coast in Rio de Janeiro</figcaption>
-  </figure>
-  <figure>
-    <img src="/assets/blog/img/brazil/066_2026-09-08_IMG_7695.webp" alt="A cloudy day by the lagoon" >
-    <figcaption>A cloudy day by the lagoon</figcaption>
-  </figure>
-</div>
+A must-do, for sure, is visiting Cristo. You can take an old cog railway through the forests up to the hill of Cristo. Up there you can challenge yourself to take a picture without any other person in the photo. We failed. It was very crowded. I don't want to imagine how this is in the Brazilian summer during the main season. Nevertheless, I enjoyed it, not so much for Cristo, but for the view over Rio.
 
 <div class="img-wide">
   <figure>
-    <img src="/assets/blog/img/brazil/060_2026-09-08_IMG_7390(1).webp" alt="Above Rio with Christ the Redeemer in the background" >
-    <figcaption>Above Rio with Christ the Redeemer in the background</figcaption>
+    <img src="/assets/blog/img/brazil/061_2026-09-08_IMG_7652.webp" alt="View from above Rio across the city, lagoon and coastline under a cloudy sky" loading="lazy" decoding="async">
+    <figcaption>The view over Rio</figcaption>
   </figure>
 </div>
 
-I'd love to come back to brasil the next years. Bahia for sure agains most of the time, and then visit some other places. Probably amazonia the next time.
+The same day we also visited a garden (Parque Lage) where you are surrounded by the Mata Atlântica within the big city. It also has a lot of big jackfruit trees. They were introduced to Brazil by the Portuguese. We also thought about going into the botanical garden the same day, but it was really expensive for non-Brazilians, and we'd already been around a lot.
 
+Also worth visiting is the whole historic quarter of Santa Teresa. You can use the old tram to go up the hill and then walk through the quarter downhill. There are some beautiful shops and cafés. Going down, you can walk down the famous 'Escadaria Selarón', 215 steps with more than 2,000 tiles from around the world. Arcos da Lapa is also known as a sightseeing spot, but in my opinion you do not miss anything by not seeing it.
 
-# notes to include 
+<div class="img-grid">
+  <figure>
+    <img src="/assets/blog/img/brazil/065_2026-09-08_IMG_7453.webp" alt="Standing on a moss-covered stone path surrounded by dense greenery in Rio" loading="lazy" decoding="async">
+    <figcaption>A green break from the city</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/blog/img/brazil/076_2026-09-10_IMG_7550__new_7a577c481f46.webp" alt="Standing in front of a colorful Santa Teresa mural" loading="lazy" decoding="async">
+    <figcaption>Walking through Santa Teresa</figcaption>
+  </figure>
+</div>
 
-## food
-comida bahiana
-cocido
-farinha
-farofa
-wie hist das cremige aus der soße gemacht mit farinha?
-sweet patatos, manioc, kochbanene all the time
-chrussaco in rio. Nvertheless the best picanha, i grilled by myself in germany.
-fruits, juices (goiaba, acerola, cacau, caju, ...)
+Instead, don't miss Praia Vermelha, an incredibly beautiful bay with a (normally) great view of Sugarloaf Mountain. It was cloudy, and we went there just after lots of city sightseeing. I would have loved to go for a swim.
 
-## else
-winter in bahia. sunny 28 degres celcius.
-winter in rio, rainy 20 degress. 
+For dinner, we went to different churrasco places with great food, but the really special ones I enjoyed most were in Bahia. In the end, I think the best picanha I've had was the one I grilled myself in Germany :-).
 
-drivin uber all the time, secure and affordable. thought strange quaters and streets in the evening when the main roads where blocked by traffic jam. 
+I'd love to come back to Brazil in the next few years and spend most of the time in Bahia again for sure. Then I'd like to visit some other places, probably Amazonia next time. For now, I am deeply grateful for this special experience.
 
+<div class="img-grid">
+  <figure>
+    <img src="/assets/blog/img/brazil/IMG_7584__new_cb2489137549.webp" alt="Sitting on colorful tiled steps beside a mosaic of the Brazilian flag" loading="lazy" decoding="async">
+    <figcaption>The tiled steps in Rio</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/blog/img/brazil/075_2026-09-09_IMG_7740.webp" alt="Standing on Praia Vermelha with the bay and cloud-covered hills ahead" loading="lazy" decoding="async">
+    <figcaption>Praia Vermelha on a cloudy day</figcaption>
+  </figure>
+</div>
